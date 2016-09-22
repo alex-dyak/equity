@@ -69,11 +69,10 @@
 			     alt=""/>
 		<?php } endif; /* End check for header image. */ ?>
 
-		<div class="socialIcons" align="right">
-			<a href="<?php echo get_option( 'w4p_social_profiles' )['linkedin'][1]; ?>"
-			   target="_blank" title="Connect with Linkedin">
-				<?php _e(strtoupper('Connect with Linkedin'), 'w4ptheme'); ?>
-			</a>
+		<div class="header-sidebar">
+			<?php if ( is_active_sidebar( 'header-sidebar' ) ) : ?>
+				<?php dynamic_sidebar( 'header-sidebar' ); ?>
+			<?php endif; ?>
 		</div>
 
 	</header>
