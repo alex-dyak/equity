@@ -49,16 +49,10 @@
 <div id="wrapper">
 
 	<header id="header" role="banner">
-		<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-			   title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
-			   rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 
-		<div class="socialIcons" align="right">
-			<a href="<?php echo get_option( 'w4p_social_profiles' )['linkedin'][1]; ?>"
-			   target="_blank" title="Connect with Linkedin">
-				<?php _e(strtoupper('Connect with Linkedin'), 'w4ptheme'); ?>
-			</a>
-		</div>
+		<nav id="nav" role="navigation">
+			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+		</nav>
 
 		<?php
 		if ( get_header_image() && ! display_header_text() ) : /* If there's a header image but no header text. */ { ?>
@@ -70,13 +64,16 @@
 					alt=""/></a>
 		<?php } elseif ( get_header_image() ) : /* If there's a header image. */ { ?>
 			<img class="header-image" src="<?php header_image(); ?>"
-				 width="<?php echo absint( get_custom_header()->width ); ?>"
-				 height="<?php echo absint( get_custom_header()->height ); ?>"
-				 alt=""/>
+			     width="<?php echo absint( get_custom_header()->width ); ?>"
+			     height="<?php echo absint( get_custom_header()->height ); ?>"
+			     alt=""/>
 		<?php } endif; /* End check for header image. */ ?>
+
+		<div class="socialIcons" align="right">
+			<a href="<?php echo get_option( 'w4p_social_profiles' )['linkedin'][1]; ?>"
+			   target="_blank" title="Connect with Linkedin">
+				<?php _e(strtoupper('Connect with Linkedin'), 'w4ptheme'); ?>
+			</a>
+		</div>
+
 	</header>
-
-	<nav id="nav" role="navigation">
-		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-	</nav>
-
