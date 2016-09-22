@@ -53,7 +53,12 @@
 			   title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
 			   rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 
-		<div class="description"><?php bloginfo( 'description' ); ?></div>
+		<div class="socialIcons" align="right">
+			<a href="<?php echo get_option( 'w4p_social_profiles' )['linkedin'][1]; ?>"
+			   target="_blank" title="Connect with Linkedin">
+				<?php _e(strtoupper('Connect with Linkedin'), 'w4ptheme'); ?>
+			</a>
+		</div>
 
 		<?php
 		if ( get_header_image() && ! display_header_text() ) : /* If there's a header image but no header text. */ { ?>
