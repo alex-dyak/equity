@@ -19,28 +19,15 @@ get_header(); ?>
 		<article class="post" id="post-<?php the_ID(); ?>">
 
 			<h2><?php the_title(); ?></h2>
-
-			<div class="entry">
-
-				<?php the_content(); ?>
-
-				<?php
-				wp_link_pages(array(
-					'before' => __( 'Pages: ', 'w4ptheme' ),
-					'next_or_number' => 'number',
-				)); ?>
-
+			<div id="back-img">
+				<?php if(get_the_post_thumbnail()): ?>
+					<?php the_post_thumbnail(); ?>    <!-- need change imagesize -->
+				<?php endif; ?>
 			</div>
-
-			<?php edit_post_link( __( 'Edit this entry', 'w4ptheme' ), '<p>', '</p>' ); ?>
 
 		</article>
 
-		<?php comments_template(); ?>
-
 	<?php endwhile;
 endif; ?>
-
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
