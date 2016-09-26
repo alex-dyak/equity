@@ -319,13 +319,15 @@ class Join_Us_Button_Widget extends WP_Widget {
 		$title_content = $instance['title_content'];
 		$content = $instance['content'];
 
+
+
 		echo  $args['before_widget']; ?>
 
 		<div class="join-us-widget">
 			<a href="<?php echo $link ?>">
 				<button class="joinUs-button-in">
 					<img class="joinUs-button-in-icon" alt=""
-					     src="//www.equityx.io/wp-content/themes/equityx/img/icon/linkedin-letters.png">
+					     src="<?php echo get_template_directory_uri(); ?>/img/icon/linkedin-letters.png">
 					<span
 						class="joinUs-button-in-text"><?php _e( strtoupper( $title ), 'w4ptheme' ); ?></span>
 				</button>
@@ -333,7 +335,7 @@ class Join_Us_Button_Widget extends WP_Widget {
 		</div>
 
 		<img class="joinUs-inform" alt=""
-		     src="//www.equityx.io/wp-content/themes/equityx/img/icon/info-blue.png">
+		     src="<?php echo get_template_directory_uri(); ?>/img/icon/info-blue.png">
 		<div class="joinUs-poupap">
 			<div >
 				<h5 class="joinUs-poupap-title"><?php _e( strtoupper( $title_content ), 'w4ptheme' ); ?></h5>
