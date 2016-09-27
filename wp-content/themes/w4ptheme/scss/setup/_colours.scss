@@ -1,13 +1,16 @@
 //Colours should always only appear in this colours.scss
-$black: rbg(0, 0, 0);
+$black: rgb(0, 0, 0);
 $black--light: rgb(17, 18, 19);
+$black--lighter: rgb(64, 64, 64);
 $black--light80op: rgba(17, 18, 19, .8);
 $blue: rgb(9, 172, 248);
 $blue--6op: rgba(9, 172, 248, .06);
 $leaf: rgb(150, 228, 218);
 $leaf--6op: rgba(150, 228, 218, .06);
 $gray: rgb(125, 137, 149);
+$gray--light: rgb(227, 229, 232);
 $gray--80op: rgba(125, 137, 149, 0.8);
 $gray--60op: rgba(125, 137, 149, 0.6);
 $mystic: rgb(241, 245, 246);
 $white: rgb(255, 255, 255);
+$white--60op: rgba(255, 255, 255, .6);

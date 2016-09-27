@@ -28,6 +28,7 @@
 <head data-template-set="W4P-Theme">
 
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- Always force latest IE rendering engine (even in intranet) -->
 	<!--[if IE ]>
@@ -46,35 +47,38 @@
 
 <body <?php body_class(); ?>>
 
-<div id="wrapper">
-	<div id="svgPlaceholder"></div>
+<div id="wrapper" class="js-wrapper">
+	<div id="svgPlaceholder" class="u-hidden"></div>
 
-	<header id="header" role="banner">
-		<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-			   title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
-			   rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+	<header id="header" class="mainHeader" role="banner">
+		<div class="container">
+			<nav id="nav" class="mainNavigation" role="navigation">
+				<a href="#" class="hamburger js-mobTrigger">
+					<span></span>
+				</a>
+				<div class="mainNavigation-menuItem js-mobWrap">
+					<span class="mobileClose js-mobClose"></span>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+				</div>
+			</nav>
 
-		<div class="description"><?php bloginfo( 'description' ); ?></div>
-
-		<?php
-		if ( get_header_image() && ! display_header_text() ) : /* If there's a header image but no header text. */ { ?>
-			<a href="<?php echo esc_url( home_url() ); ?>"
-			   title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" rel="home"><img
-					class="header-image" src="<?php header_image(); ?>"
-					width="<?php echo esc_attr( get_custom_header()->width ); ?>"
-					height="<?php echo esc_attr( get_custom_header()->height ); ?>"
-					alt=""/></a>
-		<?php } elseif ( get_header_image() ) : /* If there's a header image. */ { ?>
-			<img class="header-image" src="<?php header_image(); ?>"
-				 width="<?php echo absint( get_custom_header()->width ); ?>"
-				 height="<?php echo absint( get_custom_header()->height ); ?>"
-				 alt=""/>
-		<?php } endif; /* End check for header image. */ ?>
+			<?php
+			if ( get_header_image() && ! display_header_text() ) : /* If there's a header image but no header text. */ { ?>
+				<a href="<?php echo esc_url( home_url() ); ?>"
+				   title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="mainHeader-logo" rel="home"><img
+						src="<?php header_image(); ?>"
+						width="<?php echo esc_attr( get_custom_header()->width ); ?>"
+						height="<?php echo esc_attr( get_custom_header()->height ); ?>"
+						alt=""/></a>
+			<?php } elseif ( get_header_image() ) : /* If there's a header image. */ { ?>
+				<img class="header-image" src="<?php header_image(); ?>"
+					 width="<?php echo absint( get_custom_header()->width ); ?>"
+					 height="<?php echo absint( get_custom_header()->height ); ?>"
+					 alt=""/>
+			<?php } endif; /* End check for header image. */ ?>
+		</div>
 	</header>
 
-	<nav id="nav" role="navigation">
-		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-	</nav>
-
-	<div class="container"> <!-- Start main container -->
+	<div class="main"> <!-- Start main container -->
+		<div class="container">
 

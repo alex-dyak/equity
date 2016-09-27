@@ -10,24 +10,24 @@
  */
 
 ?>
-			</div> <!-- End main container -->
-
-			<footer id="footer" class="source-org vcard copyright" role="contentinfo">
-				<small>
-					<?php
-					if ( $copyright = get_option( 'w4p_copyright' ) ) {
-						echo esc_html( $copyright );
-					} else {
-						echo sprintf( esc_html__( 'Copyright © %d. %s. All Rights Reserved.', 'w4ptheme' ), date( 'Y' ), get_bloginfo( 'name' ) );
-					}
-					?>
-				</small>
-			</footer>
-
 		</div>
+	</div> <!-- end main container -->
+</div><!-- end wrapper -->
 
-		<?php wp_footer(); ?>
+<footer id="footer" class="source-org vcard copyright" role="contentinfo">
+	<small>
+		<?php
+		if ( $copyright = get_option( 'w4p_copyright' ) ) {
+			echo esc_html( $copyright );
+		} else {
+			echo sprintf( esc_html__( 'Copyright © %d. %s. All Rights Reserved.', 'w4ptheme' ), date( 'Y' ), get_bloginfo( 'name' ) );
+		}
+		?>
+	</small>
+</footer>
 
-	</body>
+	<?php wp_footer(); ?>
+
+</body>
 
 </html>
