@@ -11,8 +11,6 @@ module.exports = function (grunt) {
       all: {
         options: {
           includePaths: [
-            'bower_components/foundation-sites/scss',
-            'bower_components/motion-ui/'
           ]
         },
         files: {
@@ -35,23 +33,6 @@ module.exports = function (grunt) {
       }
     },
 
-    /**
-     *  foundation needs to go first through Babel, because foundation uses ES6
-     *  in array add all needed foundation libs
-     *  */
-    babel: {
-      options: {
-        presets: ['es2015']
-      },
-      vendor: {
-        files: {
-          'js/vendor/foundation/foundation.core.js': 'bower_components/foundation-sites/js/foundation.core.js'
-          // other components goes here
-          // 'bower_components/foundation-sites/js/
-        }
-      }
-    },
-
     uglify: {
       options: {
         sourceMap: true
@@ -61,8 +42,7 @@ module.exports = function (grunt) {
           'js/vendor.min.js': [
             'bower_components/jquery/dist/jquery.min.js',
             'js/vendor/jquery-ui.min.js',
-            'js/vendor/jquery.selectBoxIt.min.js',
-            'js/vendor/foundation/*.js'
+            'js/vendor/jquery.selectBoxIt.min.js'
           ]
         }
       },
@@ -112,92 +92,19 @@ module.exports = function (grunt) {
     watch: {
       sass: {
         files: 'scss/**/*.scss',
-        tasks: ['sass', 'postcss', 'copy:styles']
+        tasks: ['sass', 'postcss']
       },
       jsVendor: {
         files: 'js/vendor/**/*.js',
-        tasks: ['babel', 'uglify:vendor', 'copy:js']
+        tasks: ['uglify:vendor']
       },
       jsCustom: {
         files: 'js/custom/**/*.js',
-        tasks: ['uglify:custom', 'copy:js']
+        tasks: ['uglify:custom']
       },
       svg: {
         files: 'images/svgs/*.svg',
-        tasks: ['svgstore', 'svginjector', 'copy:media']
-      },
-      system: {
-        files: ['Gruntfile.js', 'package.json', 'bower.json'],
-        tasks: ['copy:system']
-      }
-    },
-
-    copy: {
-      options: {
-        expand: true
-      },
-      styles: {
-        files: [
-          {
-            src: [
-              'css/**',
-              'scss/**'
-            ],
-            dest: '../wp-content/themes/w4ptheme/'
-          }
-        ]
-      },
-      js: {
-        files: [
-          {
-            src: [
-              'js/**'
-            ],
-            dest: '../wp-content/themes/w4ptheme/'
-          }
-        ]
-      },
-      media: {
-        files: [
-          {
-            src: [
-              'images/**',
-              'favicons/**'
-            ],
-            dest: '../wp-content/themes/w4ptheme/'
-          }
-        ]
-      },
-      system: {
-        files: [
-          {
-            src: [
-              'Gruntfile.js',
-              'package.json',
-              'bower.json'
-            ],
-            dest: '../wp-content/themes/w4ptheme/'
-          }
-        ]
-      },
-      build: {
-        files: [
-          {
-            expand: true,
-            src: [
-              'css/**',
-              'js/**',
-              'images/**',
-              'favicons/**',
-              'fonts/**',
-              'scss/**',
-              'Gruntfile.js',
-              'package.json',
-              'bower.json'
-            ],
-            dest: '../wp-content/themes/w4ptheme/'
-          }
-        ]
+        tasks: ['svgstore', 'svginjector']
       }
     }
   });
@@ -207,14 +114,9 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-babel');
   grunt.loadNpmTasks('grunt-svgstore');
   grunt.loadNpmTasks('grunt-svginjector');
-  grunt.loadNpmTasks('grunt-contrib-copy');
 
-  grunt.registerTask('default', ['sass', 'postcss', 'imagemin', 'svgstore', 'svginjector', 'babel', 'uglify']);
-
-  // task 'wpbuild' for copy all needed files to wp theme.
-  grunt.registerTask('wpbuild', ['copy:build']);
+  grunt.registerTask('default', ['sass', 'postcss', 'imagemin', 'svgstore', 'svginjector', 'uglify']);
 
 };

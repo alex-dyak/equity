@@ -10,6 +10,8 @@
  */
 
 ?>
+			</div> <!-- End main container -->
+
 			<footer id="footer" class="source-org vcard copyright" role="contentinfo">
 				<small>
 					<?php
