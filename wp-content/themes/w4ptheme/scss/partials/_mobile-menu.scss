@@ -1,7 +1,7 @@
 .material-menu-wrapper {
 	background: $white--95op;
 	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-bottom: 10px;
 }
 .mobileMenu {
 	@media #{$large-up} {
@@ -39,9 +39,17 @@
 		border-bottom: 1px solid $gray--light;
 		margin-bottom: 20px;
 	}
+	.btn--hasIcon {
+		width: 100%;
+		padding-left: 40px;
+		text-align: right;
+	}
 }
 .mobileMenu-logo {
 	max-width: 90px;
 	margin-left: 20px;
 	margin-bottom: 20px;
+}
+.mobileMenu-socialLink {
+	margin: 0 15px;
 }

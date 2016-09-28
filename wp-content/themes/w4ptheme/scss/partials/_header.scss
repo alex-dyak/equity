@@ -4,10 +4,16 @@
     left: 0;
     width: 100%;
     padding: 10px 0;
+    transition: all .3s;
     z-index: 200;
     @media #{$medium-up} {
         padding-top: 25px;
         padding-bottom: 25px;
+    }
+    &.not-top {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: $white;
     }
 }
 .mainHeader .container {
@@ -29,8 +35,25 @@
         width: 170px;
     }
 }
-
+.mainHeader-social {
+    display: none;
+    float: right;
+    @media #{$medium-up} {
+        display: block;
+    }
+    .btn {
+        margin-top: 1px;
+        margin-bottom: 1px;
+        @media #{$large-up} {
+            margin-top: 6px;
+            margin-bottom: 6px;
+        }
+    }
+}
 //if adminbar shown
 .admin-bar .mainHeader {
     top: 46px;
+}
+#wpadminbar {
+    position: fixed;
 }

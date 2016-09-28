@@ -49,6 +49,7 @@
 
 <div id="wrapper" class="js-wrapper">
 	<div id="svgPlaceholder" class="u-hidden"></div>
+    <?php $linkedin_link = get_option( 'w4p_social_profiles' )['linkedin'][1]; ?>
 
 	<div class="mobileMenu js-mobWrap">
         <div class="mobileMenu-logo">
@@ -59,12 +60,24 @@
                     height="<?php echo esc_attr( get_custom_header()->height ); ?>"
                     alt=""/></a>
         </div>
+        <div class="mobileMenu-socialLink">
+            <?php if ( $linkedin_link ) : ?>
+                <a href="<?php echo $linkedin_link; ?>" class="btn btn--hasIcon btn--linkedIn" target="_blank" title="Follow us on LinkedIn">
+                    <span class="btn-icon">
+                        <svg class="svgIcon btn-icon-svgLinkedin">
+                            <use xlink:href="#linkedin" />
+                        </svg>
+                    </span>
+                    <?php _e( 'Connect with LinkedIn', 'w4ptheme' ); ?>
+                </a>
+            <?php endif; ?>
+        </div>
 		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		<?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
-	</div>
+	</div><!-- Mobile menu -->
 
-	<header id="header" class="mainHeader" role="banner">
-		<div class="container">
+	<header id="header" class="mainHeader js-header" role="banner">
+		<div class="container u-clearfix">
 			<nav id="nav" class="mainNavigation" role="navigation">
 				<a href="#" class="hamburger js-mobTrigger">
 					<span></span>
@@ -88,8 +101,22 @@
 					 height="<?php echo absint( get_custom_header()->height ); ?>"
 					 alt=""/>
 			<?php } endif; /* End check for header image. */ ?>
+
+            <div class="mainHeader-social">
+                <?php if ( $linkedin_link ) : ?>
+                    <a href="<?php echo $linkedin_link; ?>" class="btn btn--hasIcon btn--linkedIn" target="_blank" title="Follow us on LinkedIn">
+                    <span class="btn-icon">
+                        <svg class="svgIcon btn-icon-svgLinkedin">
+                            <use xlink:href="#linkedin" />
+                        </svg>
+                    </span>
+                    <?php _e( 'Connect with LinkedIn', 'w4ptheme' ); ?>
+                    </a>
+                <?php endif; ?>
+            </div>
+
 		</div>
-	</header>
+	</header><!-- Header -->
 
 	<div class="main"> <!-- Start main container -->
 		<div class="container">
