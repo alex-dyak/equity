@@ -42,8 +42,17 @@ function w4ptheme_setup() {
 		)
 	);
 	register_nav_menu( 'primary', __( 'Navigation Menu', 'w4ptheme' ) );
+	register_nav_menu( 'footer-menu', __( 'Footer Menu', 'w4ptheme' ) );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'title-tag' );
+
+	if ( function_exists( 'add_image_size' ) ) {
+		add_image_size( 'footer_logo', 240, 89, true );
+		add_image_size( 'logo_150_111', 150, 111, true );
+		add_image_size( 'logo_300_111', 300, 111, true );
+	}
+
+
 }
 
 add_action( 'after_setup_theme', 'w4ptheme_setup' );

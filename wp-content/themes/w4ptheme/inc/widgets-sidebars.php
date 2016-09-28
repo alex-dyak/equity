@@ -33,9 +33,26 @@ if ( function_exists( 'register_sidebar' ) ) {
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
 		) );
+		register_sidebar( array(
+			'name'          => __( 'Sidebar Footer', 'w4ptheme' ),
+			'id'            => 'sidebar-footer',
+			'before_widget' => '<section class="row column">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2>',
+			'after_title'   => '</h2>',
+		) );
+		register_sidebar( array(
+			'name'          => __( 'Join Us Footer', 'w4ptheme' ),
+			'id'            => 'join-us-footer',
+			'before_widget' => '<section class="row column">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2>',
+			'after_title'   => '</h2>',
+		) );
 
 		register_widget( 'W4P_Contacts_Widget' );
 		register_widget( 'W4P_Social_Profiles_Widget' );
+		register_widget( 'Join_Us_Button_Widget' );
 
 	}
 	add_action( 'widgets_init', 'w4ptheme_widgets_init' );
@@ -274,3 +291,93 @@ class W4P_Social_Profiles_Widget extends WP_Widget {
 		</p>
 	<?php }
 } /* End class W4P_Contacts_Widget. */
+
+class Join_Us_Button_Widget extends WP_Widget {
+	/**
+	 * Constructor
+	 */
+	public function __construct() {
+		parent::__construct(
+			'join_us_widget', // Base ID
+			$name = __( 'Join Us Button Widget', 'w4ptheme' ), // Name
+			array( 'description' => __('Displays Join Us Button Widget.', 'w4ptheme') ) // Args
+		);
+	}
+
+	/**
+	 * Front-end display of widget.
+	 *
+	 * @see WP_Widget::widget()
+	 *
+	 * @param array $args     Widget arguments.
+	 * @param array $instance Saved values from database.
+	 */
+	public function widget( $args, $instance ) {
+		extract( $args );
+		$title  = apply_filters( 'widget_title', $instance['title'] ); /* The widget title. */
+		$link = $instance['link'];
+		$title_content = $instance['title_content'];
+		$content = $instance['content'];
+
+
+
+		echo  $args['before_widget']; ?>
+
+		<div class="join-us-widget">
+			<a href="<?php echo $link ?>">
+				<button class="joinUs-button-in">
+					<img class="joinUs-button-in-icon" alt=""
+					     src="<?php echo get_template_directory_uri(); ?>/img/icon/linkedin-letters.png">
+					<span
+						class="joinUs-button-in-text"><?php _e( strtoupper( $title ), 'w4ptheme' ); ?></span>
+				</button>
+			</a>
+		</div>
+
+		<img class="joinUs-inform" alt=""
+		     src="<?php echo get_template_directory_uri(); ?>/img/icon/info-blue.png">
+		<div class="joinUs-poupap">
+			<div >
+				<h5 class="joinUs-poupap-title"><?php _e( strtoupper( $title_content ), 'w4ptheme' ); ?></h5>
+				<span class="joinUs-poupap-text">
+					<div class="textwidget"><?php echo strip_tags( $content ); ?></div>
+				</span>
+			</div>
+		</div>
+
+<?php
+		echo $args['after_widget'];
+
+	}
+
+	/**
+	 * Sanitize widget form values as they are saved.
+	 *
+	 * @see WP_Widget::update()
+	 *
+	 * @param array $new_instance Values just sent to be saved.
+	 * @param array $old_instance Previously saved values from database.
+	 *
+	 * @return array Updated safe values to be saved.
+	 */
+	public function update( $new_instance, $old_instance ) {
+		$instance = array();
+		$instance['title'] = get_field( 'title', 'widget_' . $this->id );
+		$instance['link'] = get_field( 'link', 'widget_' . $this->id );
+		$instance['title_content'] = get_field( 'title_content', 'widget_' . $this->id );
+		$instance['content'] = get_field( 'content', 'widget_' . $this->id );
+
+		return $instance;
+	}
+
+	/**
+	 * Back-end widget form.
+	 *
+	 * @see WP_Widget::form()
+	 *
+	 * @param array $instance Previously saved values from database.
+	 */
+	public function form( $instance ) {
+	}
+
+}

@@ -55,20 +55,9 @@
 
 		<div class="description"><?php bloginfo( 'description' ); ?></div>
 
-		<?php
-		if ( get_header_image() && ! display_header_text() ) : /* If there's a header image but no header text. */ { ?>
-			<a href="<?php echo esc_url( home_url() ); ?>"
-			   title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" rel="home"><img
-					class="header-image" src="<?php header_image(); ?>"
-					width="<?php echo esc_attr( get_custom_header()->width ); ?>"
-					height="<?php echo esc_attr( get_custom_header()->height ); ?>"
-					alt=""/></a>
-		<?php } elseif ( get_header_image() ) : /* If there's a header image. */ { ?>
-			<img class="header-image" src="<?php header_image(); ?>"
-				 width="<?php echo absint( get_custom_header()->width ); ?>"
-				 height="<?php echo absint( get_custom_header()->height ); ?>"
-				 alt=""/>
-		<?php } endif; /* End check for header image. */ ?>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" >
+               <img src="<?php echo get_template_directory_uri(); ?>/img/Logo/sidebar-logo.png" alt="">
+			   </a>
 	</header>
 
 	<nav id="nav" role="navigation">
