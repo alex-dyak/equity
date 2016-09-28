@@ -47,6 +47,7 @@
 <body <?php body_class(); ?>>
 
 <div id="wrapper">
+	<div id="svgPlaceholder"></div>
 
 	<header id="header" role="banner">
 
@@ -74,5 +75,6 @@
 				<?php dynamic_sidebar( 'header-sidebar' ); ?>
 			<?php endif; ?>
 		</div>
-
+        
 	</header>
+	<div class="container"> <!-- Start main container -->
