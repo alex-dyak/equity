@@ -18,6 +18,7 @@
     "oscarotero/env": "^1.0",
     "roots/wp-password-bcrypt": "1.0.0",
     "wpackagist-plugin/wordpress-seo": "*",
+    "wpackagist-plugin/svg-support": ">2.2.3",
     "wpackagist-plugin/types": ">2.0"
   },
   "extra": {
