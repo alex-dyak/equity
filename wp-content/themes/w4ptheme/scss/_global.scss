@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 body {
+    margin: 0;
     min-width: 320px;
     font-family: $font-base;
     font-size: $fontSize-base;
@@ -83,4 +84,10 @@ ol {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 10px;
+}
+.main {
+    padding-top: 110px;
+}
+.admin-bar .mobileClose {
+    top: 56px;
 }
