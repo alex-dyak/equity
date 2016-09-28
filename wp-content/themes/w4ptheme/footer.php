@@ -10,6 +10,7 @@
  */
 
 ?>
+</div> <!-- End main container -->
 <footer id="footer" class="source-org vcard copyright" role="contentinfo">
 
 	<?php if ( is_active_sidebar( 'join-us-footer' ) ) : ?>

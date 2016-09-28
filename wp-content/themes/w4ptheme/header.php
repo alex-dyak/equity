@@ -47,6 +47,7 @@
 <body <?php body_class(); ?>>
 
 <div id="wrapper">
+	<div id="svgPlaceholder"></div>
 
 	<header id="header" role="banner">
 		<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
@@ -63,4 +64,6 @@
 	<nav id="nav" role="navigation">
 		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 	</nav>
+
+	<div class="container"> <!-- Start main container -->
 
