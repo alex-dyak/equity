@@ -5,7 +5,7 @@
     height: 50px;
     border-radius: 100%;
     background-color: $white--60op;
-    @media #{$large-up} {
+    @include breakpoint(large) {
         display: none;
     }
     span,

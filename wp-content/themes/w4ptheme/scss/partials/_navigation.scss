@@ -31,7 +31,7 @@
 }
 .mainNavigation-menuItem {
 	display: none;
-	@media #{$large-up} {
+	@include breakpoint(large) {
 		display: block;
 	}
 }

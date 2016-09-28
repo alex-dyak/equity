@@ -6,11 +6,11 @@
     padding: 10px 0;
     transition: all .3s;
     z-index: 200;
-    @media #{$medium-up} {
+    @include breakpoint(medium) {
         padding-top: 25px;
         padding-bottom: 25px;
     }
-    &.not-top {
+    &.is-not-top {
         padding-top: 10px;
         padding-bottom: 10px;
         background-color: $white;
@@ -31,20 +31,20 @@
     &:hover {
         opacity: 0.8;
     }
-    @media #{$large-up} {
+    @include breakpoint(large) {
         width: 170px;
     }
 }
 .mainHeader-social {
     display: none;
     float: right;
-    @media #{$medium-up} {
+    @include breakpoint(medium) {
         display: block;
     }
     .btn {
         margin-top: 1px;
         margin-bottom: 1px;
-        @media #{$large-up} {
+        @include breakpoint(large) {
             margin-top: 6px;
             margin-bottom: 6px;
         }

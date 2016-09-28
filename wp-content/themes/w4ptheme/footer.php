@@ -26,7 +26,8 @@
 	</small>
 </footer>
 
-	<?php wp_footer(); ?>
+<div id="svgPlaceholder" class="u-hidden"></div>
+<?php wp_footer(); ?>
 
 </body>
 
