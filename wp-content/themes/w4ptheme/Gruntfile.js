@@ -40,7 +40,7 @@ module.exports = function (grunt) {
       vendor: {
         files: {
           'js/vendor.min.js': [
-
+            'js/vendor/mobile-menu.js'
           ]
         }
       },

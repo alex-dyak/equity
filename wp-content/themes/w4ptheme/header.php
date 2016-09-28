@@ -50,15 +50,27 @@
 <div id="wrapper" class="js-wrapper">
 	<div id="svgPlaceholder" class="u-hidden"></div>
 
+	<div class="mobileMenu js-mobWrap">
+        <div class="mobileMenu-logo">
+            <a href="<?php echo esc_url( home_url() ); ?>"
+               title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" rel="home"><img
+                    src="<?php header_image(); ?>"
+                    width="<?php echo esc_attr( get_custom_header()->width ); ?>"
+                    height="<?php echo esc_attr( get_custom_header()->height ); ?>"
+                    alt=""/></a>
+        </div>
+		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+		<?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
+	</div>
+
 	<header id="header" class="mainHeader" role="banner">
 		<div class="container">
 			<nav id="nav" class="mainNavigation" role="navigation">
 				<a href="#" class="hamburger js-mobTrigger">
 					<span></span>
 				</a>
-				<div class="mainNavigation-menuItem js-mobWrap">
-					<span class="mobileClose js-mobClose"></span>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+				<div class="mainNavigation-menuItem">
+                    <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 				</div>
 			</nav>
 
