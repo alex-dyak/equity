@@ -41,7 +41,8 @@ module.exports = function (grunt) {
         files: {
           'js/vendor.min.js': [
             'js/vendor/parallax.min.js',
-            'js/vendor/swipebox.min.js'
+            'js/vendor/swipebox.min.js',
+            'js/vendor/mobile-menu.js'
           ]
         }
       },

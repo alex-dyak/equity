@@ -10,7 +10,9 @@
  */
 
 ?>
-</div> <!-- End main container -->
+		</div>
+	</div> <!-- end main container -->
+</div><!-- end wrapper -->
 <footer id="footer" class="source-org vcard copyright" role="contentinfo">
 
 	<?php if ( is_active_sidebar( 'join-us-footer' ) ) : ?>
@@ -72,6 +74,8 @@
 </footer>
 
 </div>
+
+<div id="svgPlaceholder" class="u-hidden"></div>
 <?php wp_footer(); ?>
 
 </body>

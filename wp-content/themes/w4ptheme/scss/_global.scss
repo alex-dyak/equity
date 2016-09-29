@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 body {
-    min-width: 320px;
     margin: 0;
+    min-width: 320px;
     font-family: $font-base;
     font-size: $fontSize-base;
     font-weight: $fontWeight-light;
@@ -118,7 +118,7 @@ ol {
         width: 100%;
         height: 20%;
         background: $mystic;
-        background: linear-gradient(to bottom, $mystic-0op 0%, $mystic 100%);
+        background: linear-gradient(to bottom, $mystic--0op 0%, $mystic 100%);
         z-index: 200;
     }
 }
@@ -159,7 +159,7 @@ ol {
     border: 1px solid $white;
     border-radius: 48px;
     font-size: $fontSize-small;
-    background: $white-80op;
+    background: $white--80op;
     color: $black--light;
     box-shadow: 0 5px 20px 0 $black--20op;
     transition: all .3s;
@@ -294,11 +294,4 @@ ol {
             transform: translateY(-50%);
         }
     }
-}
-// TODO: remove this!!!
-#header {
-    display: none;
-}
-#nav {
-    display: none;
 }

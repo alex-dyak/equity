@@ -59,6 +59,15 @@ if ( function_exists( 'register_sidebar' ) ) {
 			'after_title'   => '</h2>',
 		) );
 
+		register_sidebar( array(
+			'name'          => __( 'Header Sidebar', 'w4ptheme' ),
+			'id'            => 'header-sidebar',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
+
 		register_widget( 'W4P_Contacts_Widget' );
 		register_widget( 'W4P_Social_Profiles_Widget' );
 		register_widget( 'Join_Us_Button_Widget' );
@@ -522,12 +531,12 @@ class Homepage_Intro_Section_Widget extends WP_Widget {
 			<h1 class="introSection-title"><?php echo $intro_title; ?></h1>
 			<div class="introSection-description"><?php echo $intro_description; ?></div>
 			<?php if (!empty($intro_video_url)): ?>
-			<a href="<?php echo $intro_video_url ?>" class="js-videoBox playBtn">
-				<span class="playBtn-icon"></span>
-				<?php if (!empty($intro_duration)): ?>
-					<span class="playBtn-timing"><strong><?php echo $intro_duration; ?></strong> minutes</span>
-				<?php endif; ?>
-			</a>
+				<a href="<?php echo $intro_video_url ?>" class="js-videoBox playBtn">
+					<span class="playBtn-icon"></span>
+					<?php if (!empty($intro_duration)): ?>
+						<span class="playBtn-timing"><strong><?php echo $intro_duration; ?></strong> minutes</span>
+					<?php endif; ?>
+				</a>
 			<?php endif; ?>
 		</div>
 
