@@ -69,7 +69,7 @@ function w4ptheme_scripts_styles() {
 	}
 
 	// Load Stylesheets.
-	wp_enqueue_style( 'w4ptheme-style', get_template_directory_uri() . '/css/application.css');
+	wp_enqueue_style( 'w4ptheme-style', get_template_directory_uri() . '/css/application.css', array('js_composer_front') );
 
 	// Jquery
 	wp_enqueue_script( 'w4ptheme-jquery', get_template_directory_uri() . '/js/vendor/jquery.min.js', array(), NULL, TRUE );

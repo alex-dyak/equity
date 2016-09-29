@@ -14,6 +14,10 @@ get_header(); ?>
 		        <?php dynamic_sidebar( 'intro-section' ); ?>
 	        <?php endif; ?>
 
+            <div class="entry">
+                <?php the_content(); ?>
+            </div>
+
         </article>
 
     <?php endwhile;

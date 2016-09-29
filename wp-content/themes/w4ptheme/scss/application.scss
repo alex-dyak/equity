@@ -2,9 +2,13 @@
 @import 'setup/setup';
 
 @import 'wp-core';
+@import 'partials/composer';
 @import 'global';
 @import 'partials/forms';
 
+@import 'partials/client-list';
 @import 'partials/footer';
+@import 'partials/intro-section';
 @import 'partials/header';
 @import 'partials/layout';
+@import 'partials/motivation-box';

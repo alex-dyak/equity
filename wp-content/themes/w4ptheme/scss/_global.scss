@@ -5,6 +5,7 @@
 }
 body {
     min-width: 320px;
+    margin: 0;
     font-family: $font-base;
     font-size: $fontSize-base;
     font-weight: $fontWeight-light;
@@ -14,6 +15,7 @@ body {
     -ms-text-size-adjust: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: $mystic;
 }
 a {
     color: $black;
@@ -33,22 +35,28 @@ p {
     }
 }
 h1 {
-    margin: 0 0 27px;
+    margin: 0 0 30px;
+    font-family: $font-base;
     font-size: $fontSize-largest;
     font-weight: $fontWeight-extraLight;
     line-height: $lineHeight-stightest;
+    color: $black--light;
 }
 h2 {
-    margin: 1.25em 0 .75em 0;
+    margin: 15px 0;
+    font-family: $font-base;
     font-size: $fontSize-larger;
-    font-weight: $fontWeight-bold;
+    font-weight: $fontWeight-normal;
     line-height: $lineHeight-tightest;
+    color: $black--light;
 }
 h3 {
     margin: 0 0 .75em;
+    font-family: $font-medium;
     font-size: $fontSize-large;
-    font-weight: $fontWeight-bold;
+    font-weight: $fontWeight-normal;
     line-height: $lineHeight-tighter;
+    color: $black--light;
 }
 blockquote {
     margin: 1em 0;
@@ -80,7 +88,217 @@ ol {
     fill: currentColor;
 }
 .container {
-    max-width: 1200px;
+    max-width: 1210px;
     margin: 0 auto;
-    padding: 0 10px;
+    padding: 0 15px;
+}
+.parallaxHolder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -100;
+}
+.parallaxHolder-item {
+    width: 100%;
+    &::before {
+        content: "";
+        display: block;
+        height: 0;
+        width: 100%;
+        padding-bottom: 50%;
+    }
+}
+.parallax-mirror {
+    &::before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 20%;
+        background: $mystic;
+        background: linear-gradient(to bottom, $mystic-0op 0%, $mystic 100%);
+        z-index: 200;
+    }
+}
+#swipebox-close {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    &::before,
+    &::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        content: "";
+        width: 30px;
+        height: 4px;
+        margin-left: -15px;
+        margin-top: -2px;
+        background: $white;
+        transition: background .3s;
+    }
+    &::before {
+        transform: rotate(45deg);
+    }
+    &::after {
+        transform: rotate(-45deg);
+    }
+    &:hover,
+    &:active {
+        &::before,
+        &::after {
+            background: $blue;
+        }
+    }
+}
+.playBtn {
+    display: inline-block;
+    padding: 5px;
+    border: 1px solid $white;
+    border-radius: 48px;
+    font-size: $fontSize-small;
+    background: $white-80op;
+    color: $black--light;
+    box-shadow: 0 5px 20px 0 $black--20op;
+    transition: all .3s;
+    &:hover {
+        background: $blue;
+        border-color: $blue;
+        color: $white;
+        text-decoration: none;
+        .playBtn-icon {
+            background: $white;
+            &::before {
+                border-color: transparent transparent transparent $blue;
+            }
+        }
+    }
+    span {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    strong {
+        font-size: $fontSize-base;
+        font-family: $font-medium;
+    }
+}
+.playBtn-icon {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    background: $blue;
+    border-radius: 100%;
+    transition: all .3s;
+    &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        content: "";
+        margin-left: 2px;
+        border-style: solid;
+        border-width: 5px 0 5px 8px;
+        border-color: transparent transparent transparent $white;
+        transform: translateX(-50%) translateY(-50%);
+        transition: all .3s;
+    }
+}
+.defaultSection {
+    > .vc_column-inner > .wpb_wrapper {
+        padding: 50px 30px 10px 30px;
+        margin-bottom: 15px;
+        font-family: $font-light;
+        color: $gray--80op;
+        background: $white;
+        border-radius: 3px;
+        box-shadow: 0 5px 20px 0 $black--20op;
+    }
+}
+.plainSection {
+    > .vc_column-inner > .wpb_wrapper {
+        margin-bottom: 15px;
+        font-family: $font-light;
+        color: $black--light80op;
+        background: $white;
+        border-radius: 3px;
+        box-shadow: 0 5px 20px 0 $black--20op;
+    }
+    .vc_row {
+        margin: 0;
+    }
+}
+.decoLines {
+    > .vc_column-inner > .wpb_wrapper {
+        position: relative;
+        &::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            content: "";
+            border-radius: 3px 3px 0 0;
+        }
+    }
+}
+.decoLines--fourLined {
+    > .vc_column-inner > .wpb_wrapper {
+        &::after {
+            background: rgba(9, 172, 248, 1);
+            background: linear-gradient(to right, rgba(9, 172, 248, 1) 0%, rgba(9, 172, 248, 1) 25%, rgba(80, 210, 195, 1) 25%, rgba(80, 210, 195, 1) 50%, rgba(255, 153, 0, 1) 50%, rgba(255, 153, 0, 1) 75%, rgba(237, 85, 100, 1) 75%, rgba(237, 85, 100, 1) 100%);
+        }
+    }
+}
+.decoLines--twoLined {
+    > .vc_column-inner > .wpb_wrapper {
+        &::after {
+            background: rgba(9, 172, 248, 1);
+            background: linear-gradient(to right, rgba(9, 172, 248, 1) 0%, rgba(9, 172, 248, 1) 50%, rgba(148, 228, 218, 1) 50%, rgba(148, 228, 218, 1) 100%);
+        }
+    }
+}
+.decoLines--halfVertical {
+    > .vc_column-inner > .wpb_wrapper {
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            content: "";
+            margin-left: -3px;
+            width: 6px;
+            height: 100%;
+            background: $white;
+            z-index: 100;
+        }
+    }
+}
+.imageBullet-item {
+    margin-top: 35px;
+    p {
+        position: relative;
+        padding-left: 60px;
+        margin-bottom: 35px;
+        font-size: $fontSize-small;
+        line-height: $lineHeight-tight;
+        img {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            max-width: 45px;
+            margin: 0;
+            transform: translateY(-50%);
+        }
+    }
+}
+// TODO: remove this!!!
+#header {
+    display: none;
+}
+#nav {
+    display: none;
 }
