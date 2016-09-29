@@ -3,8 +3,14 @@
 	margin-right: 0;
 }
 .motivationList-box {
-	padding-left: 30px;
-	padding-right: 30px;
+	.vc_column-inner {
+		padding-left: 10px;
+		padding-right: 10px;
+		@include breakpoint(large) {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+	}
 	img {
 		min-width: 60px;
 	}
