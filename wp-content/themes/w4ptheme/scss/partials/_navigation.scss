@@ -1,0 +1,37 @@
+.mainNavigation {
+	float: left;
+	ul {
+		padding-left: 0;
+		margin: 0;
+		list-style: none;
+		li {
+			display: inline-block;
+			margin-right: 25px;
+			font-size: $fontSize-small;
+			font-family: $font-medium;
+			line-height: $lineHeight-stightest;
+			text-align: center;
+			text-transform: uppercase;
+			border-top: 0;
+			a {
+				display: block;
+				padding: 22px 0;
+				transition: color .3s;
+				color: $black--light;
+				&:hover {
+					color: $blue;
+					text-decoration: none;
+				}
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}
+.mainNavigation-menuItem {
+	display: none;
+	@include breakpoint(large) {
+		display: block;
+	}
+}

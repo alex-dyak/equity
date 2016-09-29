@@ -52,7 +52,6 @@ function w4ptheme_setup() {
 		add_image_size( 'logo_300_111', 300, 111, true );
 	}
 
-
 }
 
 add_action( 'after_setup_theme', 'w4ptheme_setup' );

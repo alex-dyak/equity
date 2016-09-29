@@ -1,3 +1,59 @@
-.siteHeader {
-
+.mainHeader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    transition: all .3s;
+    z-index: 200;
+    @include breakpoint(medium) {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+    &.is-not-top {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: $white;
+    }
+}
+.mainHeader .container {
+    position: relative;
+}
+.mainHeader-logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 130px;
+    max-height: 60px;
+    line-height: 0;
+    transform: translateX(-50%) translateY(-50%);
+    transition: opacity .3s;
+    &:hover {
+        opacity: 0.8;
+    }
+    @include breakpoint(large) {
+        width: 170px;
+    }
+}
+.mainHeader-social {
+    display: none;
+    float: right;
+    @include breakpoint(medium) {
+        display: block;
+    }
+    .btn {
+        margin-top: 1px;
+        margin-bottom: 1px;
+        @include breakpoint(large) {
+            margin-top: 6px;
+            margin-bottom: 6px;
+        }
+    }
+}
+//if adminbar shown
+.admin-bar .mainHeader {
+    top: 46px;
+}
+#wpadminbar {
+    position: fixed;
 }

@@ -59,6 +59,15 @@ if ( function_exists( 'register_sidebar' ) ) {
 			'after_title'   => '</h2>',
 		) );
 
+		register_sidebar( array(
+			'name'          => __( 'Header Sidebar', 'w4ptheme' ),
+			'id'            => 'header-sidebar',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
+
 		register_widget( 'W4P_Contacts_Widget' );
 		register_widget( 'W4P_Social_Profiles_Widget' );
 		register_widget( 'Join_Us_Button_Widget' );
@@ -510,7 +519,6 @@ class Homepage_Intro_Section_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		extract( $args );
 		$intro_title       = apply_filters( 'widget_title', $instance['intro_title'] );
-		$intro_image       = $instance['intro_image'];
 		$intro_description = $instance['intro_description'];
 		$intro_video_url   = $instance['intro_video_url'];
 
@@ -521,7 +529,6 @@ class Homepage_Intro_Section_Widget extends WP_Widget {
 		<div class="intro_section_widget">
 			<h1><?php echo $intro_title; ?></h1>
 			<div><?php echo $intro_description; ?></div>
-			<img class="joinUs-button-in-icon" alt="" src="<?php echo $intro_image; ?>">
 			<a href="<?php echo $intro_video_url ?>">Video Link</a>
 		</div>
 
@@ -543,7 +550,6 @@ class Homepage_Intro_Section_Widget extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 		$instance                      = array();
 		$instance['intro_title']       = get_field( 'intro_title', 'widget_' . $this->id );
-		$instance['intro_image']       = get_field( 'intro_image', 'widget_' . $this->id );
 		$instance['intro_description'] = get_field( 'intro_description', 'widget_' . $this->id );
 		$instance['intro_video_url']   = get_field( 'intro_video_url', 'widget_' . $this->id );
 
