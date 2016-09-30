@@ -36,3 +36,8 @@
 		font-size: $fontSize-introTitle--large;
 	}
 }
+.introSection-social {
+	@include breakpoint(medium) {
+		display: none;
+	}
+}
