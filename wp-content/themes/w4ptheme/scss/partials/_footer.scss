@@ -1,2 +1,103 @@
-.siteFooter {
+.footer-menu {
+	position: relative;
+	padding-top: 6px;
+	margin-bottom: 20px;
+	text-align: center;
+	background-color: $white;
+	box-shadow: 0 0 20px 0 $black--20op;
+	&::after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 6px;
+		content: "";
+		background: rgba(9, 172, 248, 1);
+		background: linear-gradient(to right, rgba(9, 172, 248, 1) 0%, rgba(9, 172, 248, 1) 25%, rgba(80, 210, 195, 1) 25%, rgba(80, 210, 195, 1) 50%, rgba(255, 153, 0, 1) 50%, rgba(255, 153, 0, 1) 75%, rgba(237, 85, 100, 1) 75%, rgba(237, 85, 100, 1) 100%);
+	}
+	@include breakpoint(medium) {
+		padding-top: 35px;
+		margin-bottom: 45px;
+		background-color: transparent;
+		box-shadow: none;
+		&::after {
+			display: none;
+		}
+	}
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		li {
+			@include breakpoint(medium) {
+				display: inline-block;
+			}
+		}
+	}
+	a {
+		display: block;
+		padding: 15px;
+		text-transform: uppercase;
+		color: $black--light;
+		transition: color .3s;
+		border-bottom: 1px solid $gray--light;
+		&:hover {
+			text-decoration: none;
+			color: $blue;
+		}
+		@include breakpoint(medium) {
+			display: inline-block;
+			border: 0;
+		}
+	}
+}
+.footer-logo {
+	margin-bottom: 20px;
+	text-align: center;
+	@include breakpoint(medium) {
+		margin-bottom: 30px;
+	}
+	a {
+		display: inline-block;
+		max-width: 130px;
+		line-height: 0;
+		transition: opacity .3s;
+		&:hover {
+			opacity: .8;
+		}
+	}
+}
+.footer-text {
+	max-width: 600px;
+	margin: 0 35px 40px;
+	font-family: $font-light;
+	font-size: $fontSize-small;
+	line-height: $lineHeight-tight;
+	text-align: center;
+	color: $gray;
+	@include breakpoint(medium) {
+		margin: 0 auto 35px;
+	}
+	p {
+		margin-bottom: 0;
+	}
+}
+.footer-social {
+	text-align: center;
+	margin-bottom: 30px;
+	@include breakpoint(medium) {
+		margin-bottom: 45px;
+	}
+}
+.footer-credentials {
+	max-width: 160px;
+	margin: 0 auto 50px;
+	text-align: center;
+	font-family: $font-light;
+	font-size: $fontSize-smaller;
+	color: $gray--60op;
+	@include breakpoint(medium) {
+		max-width: 100%;
+		margin-bottom: 75px;
+	}
 }
