@@ -2,13 +2,18 @@
 @import 'setup/setup';
 
 @import 'wp-core';
+@import 'partials/composer';
 @import 'global';
 @import 'partials/forms';
 
+@import 'partials/client-list';
+@import 'partials/deco-lines';
 @import 'partials/footer';
+@import 'partials/intro-section';
 @import 'partials/hamburger';
 @import 'partials/header';
 @import 'partials/mobile-menu';
 @import 'partials/navigation';
 @import 'partials/layout';
 @import 'partials/social-link';
+@import 'partials/motivation-box';
