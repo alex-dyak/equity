@@ -91,3 +91,112 @@ ol {
 .admin-bar .mobileClose {
     top: 56px;
 }
+.defaultSection {
+    .defaultSection-inner,
+    > .vc_column-inner > .wpb_wrapper {
+        padding: 50px 30px 10px 30px;
+        margin-bottom: 15px;
+        font-family: $font-light;
+        font-size: $fontSize-small;
+        color: $gray--80op;
+        background: $white;
+        box-shadow: 0 0 20px 0 $black--20op;
+        @include breakpoint(medium) {
+            border-radius: 3px;
+            box-shadow: 0 5px 20px 0 $black--20op;
+        }
+        @include breakpoint(large) {
+            font-size: $fontSize-base;
+        }
+    }
+}
+.defaultSection-inner section {
+    max-width: 400px;
+    margin: 0 auto;
+}
+.joinUsSection {
+    text-align: center;
+    h1 {
+        margin-bottom: 15px;
+    }
+}
+.infoIcon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    background: url("../images/info.png") 50% 50% no-repeat;
+    background-size: 100%;
+    transition: all .3s;
+    opacity: .3;
+    cursor: pointer;
+}
+.linkTooltip {
+    display: inline-block;
+    position: relative;
+    margin-left: 15px;
+    &:hover,
+    &:active,
+    &:focus {
+        .infoIcon {
+            opacity: 1;
+        }
+        .linkTooltip-item {
+            display: block;
+        }
+    }
+}
+.linkTooltip-item {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: -30px;
+    width: 290px;
+    padding: 25px 32px;
+    margin: 0 auto;
+    text-align: left;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 6px 13px 0 rgba(140,160,179,.4);
+    transform: translateX(100%) translateY(-50%);
+    &::before {
+        position: absolute;
+        top: 50%;
+        left: -10px;
+        width: 10px;
+        height: 20px;
+        margin-top: -10px;
+        content: "";
+        border-style: solid;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent $white transparent transparent;
+    }
+}
+.linkTooltip-item p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.linkTooltip-item-title {
+    text-transform: uppercase;
+    color: $blue;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+// TODO delete before push
+h1 {
+    margin: 0 0 15px;
+    font-family: $font-base;
+    font-size: $fontSize-large;
+    font-weight: $fontWeight-extraLight;
+    line-height: $lineHeight-stightest;
+    color: $black--light;
+    @include breakpoint(medium) {
+        margin-bottom: 20px;
+        font-size: $fontSize-larger;
+    }
+    @include breakpoint(large) {
+        margin-bottom: 30px;
+        font-size: $fontSize-largest;
+    }
+}

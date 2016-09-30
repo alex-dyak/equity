@@ -17,8 +17,29 @@
 <footer id="footer" class="source-org vcard copyright" role="contentinfo">
 
 	<?php if ( is_active_sidebar( 'join-us-footer' ) ) : ?>
-		<div class="join-us-footer">
-			<?php dynamic_sidebar( 'join-us-footer' ); ?>
+		<div class="container">
+			<div class="join-us-footer defaultSection">
+				<div class="defaultSection-inner">
+					<?php dynamic_sidebar( 'join-us-footer' ); ?>
+					<div class="u-text--center">
+						<a href="https://www.linkedin.com/company/equityx" class="btn btn--hasIcon btn--linkedIn" target="_blank" title="Follow us on LinkedIn">
+							<span class="btn-icon">
+								<svg class="svgIcon btn-icon-svgLinkedin">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+								</svg>
+							</span>
+							Connect with LinkedIn
+						</a>
+						<div class="linkTooltip">
+							<span class="linkTooltip-trigger infoIcon"></span>
+							<div class="linkTooltip-item">
+								<p class="linkTooltip-item-title">Why Linkedin?</p>
+								<p>We are doing our best to keep our community professional. Connecting with LinkedIn helps us ensure you are a real business user.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	<?php endif; ?>
 

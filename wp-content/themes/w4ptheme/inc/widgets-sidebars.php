@@ -44,10 +44,10 @@ if ( function_exists( 'register_sidebar' ) ) {
 		register_sidebar( array(
 			'name'          => __( 'Join Us Footer', 'w4ptheme' ),
 			'id'            => 'join-us-footer',
-			'before_widget' => '<section class="row column">',
+			'before_widget' => '<section class="joinUsSection">',
 			'after_widget'  => '</section>',
-			'before_title'  => '<h2>',
-			'after_title'   => '</h2>',
+			'before_title'  => '<h1 class="u-text--center">',
+			'after_title'   => '</h1>',
 		) );
 		register_sidebar( array(
 			'name'          => __( 'Header Sidebar', 'w4ptheme' ),
