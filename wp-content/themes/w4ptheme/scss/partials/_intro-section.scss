@@ -1,0 +1,38 @@
+.introSection {
+	padding: 180px 10px 30px 10px;
+	text-align: center;
+	@include breakpoint(medium) {
+		padding-left: 0;
+		padding-right: 0;
+		text-align: left;
+	}
+	@include breakpoint(large) {
+		padding-top: 250px;
+		padding-bottom: 50px;
+	}
+	@include breakpoint(xlarge) {
+		padding-top: 350px;
+	}
+}
+.introSection-title {
+	max-width: 280px;
+	margin: 0 auto 15px;
+	font-size: $fontSize-introTitle--small;
+	line-height: $lineHeight-stightest;
+	text-align: center;
+	color: $black--light;
+	@include breakpoint(medium) {
+		max-width: 580px;
+		margin-left: 0;
+		margin-right: 0;
+		text-align: left;
+	}
+	@include breakpoint(large) {
+		margin-bottom: 25px;
+		font-size: $fontSize-introTitle--medium;
+	}
+	@include breakpoint(xlarge) {
+		margin-bottom: 35px;
+		font-size: $fontSize-introTitle--large;
+	}
+}
