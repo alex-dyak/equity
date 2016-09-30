@@ -527,6 +527,14 @@ class Homepage_Intro_Section_Widget extends WP_Widget {
 
 		echo $args['before_widget']; ?>
 
+		<?php
+			if ( isset(get_option( 'w4p_social_profiles' )['linkedin'][1]) ) {
+				$linkedin_link = get_option( 'w4p_social_profiles' )['linkedin'][1];
+			} else{
+				$linkedin_link = '';
+			}
+		?>
+
 		<div class="intro_section_widget introSection">
 			<h1 class="introSection-title"><?php echo $intro_title; ?></h1>
 			<div class="introSection-description"><?php echo $intro_description; ?></div>
@@ -538,6 +546,18 @@ class Homepage_Intro_Section_Widget extends WP_Widget {
 					<?php endif; ?>
 				</a>
 			<?php endif; ?>
+			<div class="introSection-social">
+				<?php if ( $linkedin_link ) : ?>
+					<a href="<?php echo $linkedin_link; ?>" class="btn btn--hasIcon btn--linkedIn" target="_blank" title="Follow us on LinkedIn">
+						<span class="btn-icon">
+							<svg class="svgIcon btn-icon-svgLinkedin">
+								<use xlink:href="#linkedin" />
+							</svg>
+						</span>
+						<?php _e( 'Connect with LinkedIn', 'w4ptheme' ); ?>
+					</a>
+				<?php endif; ?>
+			</div>
 		</div>
 
 		<?php

@@ -35,20 +35,32 @@ p {
     }
 }
 h1 {
-    margin: 0 0 30px;
+    margin: 0 0 15px;
     font-family: $font-base;
-    font-size: $fontSize-largest;
+    font-size: $fontSize-large;
     font-weight: $fontWeight-extraLight;
     line-height: $lineHeight-stightest;
     color: $black--light;
+    @include breakpoint(medium) {
+        margin-bottom: 20px;
+        font-size: $fontSize-larger;
+    }
+    @include breakpoint(large) {
+        margin-bottom: 30px;
+        font-size: $fontSize-largest;
+    }
 }
 h2 {
     margin: 15px 0;
     font-family: $font-base;
-    font-size: $fontSize-larger;
+    font-size: $fontSize-large;
     font-weight: $fontWeight-normal;
     line-height: $lineHeight-tightest;
     color: $black--light;
+    @include breakpoint(medium) {
+        margin-bottom: 15px;
+        font-size: $fontSize-larger;
+    }
 }
 h3 {
     margin: 0 0 .75em;
@@ -90,7 +102,9 @@ ol {
 .container {
     max-width: 1210px;
     margin: 0 auto;
-    padding: 0 15px;
+    @include breakpoint(medium) {
+        padding: 0 15px;
+    }
 }
 .parallaxHolder {
     position: absolute;
@@ -104,9 +118,13 @@ ol {
     &::before {
         content: "";
         display: block;
-        height: 0;
+        height: 500px;
         width: 100%;
-        padding-bottom: 50%;
+        @include breakpoint(medium) {
+            height: 0;
+            width: 100%;
+            padding-bottom: 50%;
+        }
     }
 }
 .parallax-mirror {
@@ -213,10 +231,17 @@ ol {
         padding: 50px 30px 10px 30px;
         margin-bottom: 15px;
         font-family: $font-light;
+        font-size: $fontSize-small;
         color: $gray--80op;
         background: $white;
-        border-radius: 3px;
-        box-shadow: 0 5px 20px 0 $black--20op;
+        box-shadow: 0 0 20px 0 $black--20op;
+        @include breakpoint(medium) {
+            border-radius: 3px;
+            box-shadow: 0 5px 20px 0 $black--20op;
+        }
+        @include breakpoint(large) {
+            font-size: $fontSize-base;
+        }
     }
 }
 .plainSection {
@@ -225,8 +250,11 @@ ol {
         font-family: $font-light;
         color: $black--light80op;
         background: $white;
-        border-radius: 3px;
-        box-shadow: 0 5px 20px 0 $black--20op;
+        box-shadow: 0 0 20px 0 $black--20op;
+        @include breakpoint(medium) {
+            border-radius: 3px;
+            box-shadow: 0 5px 20px 0 $black--20op;
+        }
     }
     .vc_row {
         margin: 0;
@@ -235,18 +263,28 @@ ol {
 .imageBullet-item {
     margin-top: 35px;
     p {
-        position: relative;
-        padding-left: 60px;
-        margin-bottom: 35px;
+        margin-bottom: 25px;
         font-size: $fontSize-small;
         line-height: $lineHeight-tight;
+        @include breakpoint(medium) {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 35px;
+        }
         img {
-            position: absolute;
-            top: 50%;
-            left: 0;
+            display: block;
             max-width: 45px;
-            margin: 0;
-            transform: translateY(-50%);
+            margin: 0 auto;
+            padding-bottom: 15px;
+            @include breakpoint(medium) {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                max-width: 45px;
+                margin: 0;
+                padding-bottom: 0;
+                transform: translateY(-50%);
+            }
         }
     }
 }
