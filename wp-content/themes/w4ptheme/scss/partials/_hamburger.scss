@@ -3,8 +3,12 @@
     position: relative;
     width: 50px;
     height: 50px;
+    margin-left: 10px;
     border-radius: 100%;
     background-color: $white--60op;
+    @include breakpoint(medium) {
+        margin-left: 0;
+    }
     @include breakpoint(large) {
         display: none;
     }

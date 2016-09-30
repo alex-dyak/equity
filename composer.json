@@ -18,11 +18,11 @@
     "oscarotero/env": "^1.0",
     "roots/wp-password-bcrypt": "1.0.0",
     "wpackagist-plugin/wordpress-seo": "*",
-    "wpackagist-plugin/types": ">2.0",
     "wpackagist-plugin/wysiwyg-widgets": ">2.3.0",
     "wpackagist-plugin/tinymce-advanced": ">4.3.10",
     "wpackagist-plugin/regenerate-thumbnails": ">2.2.5",
-    "wpackagist-plugin/svg-support": ">2.2.3"
+    "wpackagist-plugin/svg-support": ">2.2.3",
+    "wpackagist-plugin/types": ">2.0"
   },
   "extra": {
     "installer-paths": {

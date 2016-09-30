@@ -1,0 +1,49 @@
+.decoLines {
+	> .vc_column-inner > .wpb_wrapper {
+		position: relative;
+		&::after {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 6px;
+			content: "";
+			@include breakpoint(medium) {
+				border-radius: 3px 3px 0 0;
+			}
+		}
+	}
+}
+.decoLines--fourLined {
+	> .vc_column-inner > .wpb_wrapper {
+		&::after {
+			background: rgba(9, 172, 248, 1);
+			background: linear-gradient(to right, rgba(9, 172, 248, 1) 0%, rgba(9, 172, 248, 1) 25%, rgba(80, 210, 195, 1) 25%, rgba(80, 210, 195, 1) 50%, rgba(255, 153, 0, 1) 50%, rgba(255, 153, 0, 1) 75%, rgba(237, 85, 100, 1) 75%, rgba(237, 85, 100, 1) 100%);
+		}
+	}
+}
+.decoLines--twoLined {
+	> .vc_column-inner > .wpb_wrapper {
+		&::after {
+			background: rgba(9, 172, 248, 1);
+			background: linear-gradient(to right, rgba(9, 172, 248, 1) 0%, rgba(9, 172, 248, 1) 50%, rgba(148, 228, 218, 1) 50%, rgba(148, 228, 218, 1) 100%);
+		}
+	}
+}
+.decoLines--halfVertical {
+	> .vc_column-inner > .wpb_wrapper {
+		&::before {
+			@include breakpoint(medium) {
+				position: absolute;
+				top: 0;
+				left: 50%;
+				content: "";
+				margin-left: -3px;
+				width: 6px;
+				height: 100%;
+				background: $white;
+				z-index: 100;
+			}
+		}
+	}
+}
