@@ -36,7 +36,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 		register_sidebar( array(
 			'name'          => __( 'Sidebar Footer', 'w4ptheme' ),
 			'id'            => 'sidebar-footer',
-			'before_widget' => '<section class="row column">',
+			'before_widget' => '<section class="row column footer-text">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2>',
 			'after_title'   => '</h2>',
@@ -331,25 +331,22 @@ class Join_Us_Button_Widget extends WP_Widget {
 
 		echo  $args['before_widget']; ?>
 
-		<div class="join-us-widget">
-			<a href="<?php echo $link ?>">
-				<button class="joinUs-button-in">
-					<img class="joinUs-button-in-icon" alt=""
-					     src="<?php echo get_template_directory_uri(); ?>/img/icon/linkedin-letters.png">
-					<span
-						class="joinUs-button-in-text"><?php _e( strtoupper( $title ), 'w4ptheme' ); ?></span>
-				</button>
-			</a>
-		</div>
-
-		<img class="joinUs-inform" alt=""
-		     src="<?php echo get_template_directory_uri(); ?>/img/icon/info-blue.png">
-		<div class="joinUs-poupap">
-			<div >
-				<h5 class="joinUs-poupap-title"><?php _e( strtoupper( $title_content ), 'w4ptheme' ); ?></h5>
-				<span class="joinUs-poupap-text">
-					<div class="textwidget"><?php echo strip_tags( $content ); ?></div>
+		<div class="u-text--center join-us-widget">
+			<a href="<?php echo $link ?>" class="btn btn--hasIcon btn--linkedIn" target="_blank">
+				<span class="btn-icon">
+					<svg class="svgIcon btn-icon-svgLinkedin">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+					</svg>
 				</span>
+				<?php _e( strtoupper( $title ), 'w4ptheme' ); ?>
+			</a>
+
+			<div class="linkTooltip">
+				<span class="linkTooltip-trigger infoIcon"></span>
+				<div class="linkTooltip-item">
+					<p class="linkTooltip-item-title"><?php _e( strtoupper( $title_content ), 'w4ptheme' ); ?></p>
+					<p><?php echo strip_tags( $content ); ?></p>
+				</div>
 			</div>
 		</div>
 

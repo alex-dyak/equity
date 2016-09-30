@@ -81,9 +81,11 @@ ol {
     fill: currentColor;
 }
 .container {
-    max-width: 1200px;
+    max-width: 1210px;
     margin: 0 auto;
-    padding: 0 10px;
+    @include breakpoint(medium) {
+        padding: 0 15px;
+    }
 }
 .main {
     padding-top: 110px;
@@ -116,6 +118,9 @@ ol {
 }
 .joinUsSection {
     text-align: center;
+    p {
+        margin-bottom: 25px;
+    }
     h1 {
         margin-bottom: 15px;
     }
@@ -132,9 +137,12 @@ ol {
     cursor: pointer;
 }
 .linkTooltip {
-    display: inline-block;
+    display: none;
     position: relative;
     margin-left: 15px;
+    @include breakpoint(medium) {
+        display: inline-block;
+    }
     &:hover,
     &:active,
     &:focus {
@@ -182,21 +190,11 @@ ol {
     margin-top: 0;
     margin-bottom: 10px;
 }
-
-// TODO delete before push
-h1 {
-    margin: 0 0 15px;
-    font-family: $font-base;
-    font-size: $fontSize-large;
-    font-weight: $fontWeight-extraLight;
-    line-height: $lineHeight-stightest;
-    color: $black--light;
-    @include breakpoint(medium) {
-        margin-bottom: 20px;
-        font-size: $fontSize-larger;
-    }
-    @include breakpoint(large) {
-        margin-bottom: 30px;
-        font-size: $fontSize-largest;
-    }
+.svgTwitter {
+    width: 14px;
+    height: 10px;
+}
+.svgLinkedin {
+    width: 14px;
+    height: 12px;
 }
