@@ -519,6 +519,7 @@ class Homepage_Intro_Section_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		extract( $args );
 		$intro_title       = apply_filters( 'widget_title', $instance['intro_title'] );
+		$intro_duration       = $instance['video_duration'];
 		$intro_description = $instance['intro_description'];
 		$intro_video_url   = $instance['intro_video_url'];
 
@@ -526,10 +527,37 @@ class Homepage_Intro_Section_Widget extends WP_Widget {
 
 		echo $args['before_widget']; ?>
 
-		<div class="intro_section_widget">
-			<h1><?php echo $intro_title; ?></h1>
-			<div><?php echo $intro_description; ?></div>
-			<a href="<?php echo $intro_video_url ?>">Video Link</a>
+		<?php
+			if ( isset(get_option( 'w4p_social_profiles' )['linkedin'][1]) ) {
+				$linkedin_link = get_option( 'w4p_social_profiles' )['linkedin'][1];
+			} else{
+				$linkedin_link = '';
+			}
+		?>
+
+		<div class="intro_section_widget introSection">
+			<h1 class="introSection-title"><?php echo $intro_title; ?></h1>
+			<div class="introSection-description"><?php echo $intro_description; ?></div>
+			<?php if (!empty($intro_video_url)): ?>
+				<a href="<?php echo $intro_video_url ?>" class="js-videoBox playBtn">
+					<span class="playBtn-icon"></span>
+					<?php if (!empty($intro_duration)): ?>
+						<span class="playBtn-timing"><strong><?php echo $intro_duration; ?></strong> minutes</span>
+					<?php endif; ?>
+				</a>
+			<?php endif; ?>
+			<div class="introSection-social">
+				<?php if ( $linkedin_link ) : ?>
+					<a href="<?php echo $linkedin_link; ?>" class="btn btn--hasIcon btn--linkedIn" target="_blank" title="Follow us on LinkedIn">
+						<span class="btn-icon">
+							<svg class="svgIcon btn-icon-svgLinkedin">
+								<use xlink:href="#linkedin" />
+							</svg>
+						</span>
+						<?php _e( 'Connect with LinkedIn', 'w4ptheme' ); ?>
+					</a>
+				<?php endif; ?>
+			</div>
 		</div>
 
 		<?php
@@ -550,6 +578,7 @@ class Homepage_Intro_Section_Widget extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 		$instance                      = array();
 		$instance['intro_title']       = get_field( 'intro_title', 'widget_' . $this->id );
+		$instance['video_duration']       = get_field( 'video_duration', 'widget_' . $this->id );
 		$instance['intro_description'] = get_field( 'intro_description', 'widget_' . $this->id );
 		$instance['intro_video_url']   = get_field( 'intro_video_url', 'widget_' . $this->id );
 
