@@ -52,7 +52,6 @@ function w4ptheme_setup() {
 		add_image_size( 'logo_300_111', 300, 111, true );
 	}
 
-
 }
 
 add_action( 'after_setup_theme', 'w4ptheme_setup' );
@@ -72,14 +71,14 @@ function w4ptheme_scripts_styles() {
 	wp_enqueue_style( 'w4ptheme-style', get_template_directory_uri() . '/css/application.css');
 
 	// Jquery
-	wp_enqueue_script( 'w4ptheme-jquery', get_template_directory_uri() . '/js/vendor/jquery-1.12.4.min.js', array(), null, true );
+	wp_enqueue_script( 'w4ptheme-jquery', get_template_directory_uri() . '/js/vendor/jquery.min.js', array(), NULL, TRUE );
 
-	// Modernizr.
-	// This is an un-minified, complete version of Modernizr. Before you move to production, you should generate a custom build that only has the detects you need.
-	wp_enqueue_script( 'w4ptheme-modernizr', get_template_directory_uri() . '/js/vendor/modernizr-2.8.0.dev.js', array( 'w4ptheme-jquery' ), null, true );
+	// This is where we put vendors JS functions.
+	wp_enqueue_script( 'w4ptheme-vendor', get_template_directory_uri() . '/js/vendor.min.js', array( 'w4ptheme-jquery' ), null, true );
 
 	// This is where we put our custom JS functions.
-	wp_enqueue_script( 'w4ptheme-application', get_template_directory_uri() . '/js/custom/applications.js', array( 'w4ptheme-jquery' ), null, true );
+	wp_enqueue_script( 'w4ptheme-application', get_template_directory_uri() . '/js/app.min.js', array( 'w4ptheme-jquery' ), null, true );
+
 }
 
 add_action( 'wp_enqueue_scripts', 'w4ptheme_scripts_styles' );
