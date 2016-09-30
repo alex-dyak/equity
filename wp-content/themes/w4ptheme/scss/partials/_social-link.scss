@@ -7,11 +7,13 @@
 	border-radius: 100%;
 	color: $white;
 	transition: background .3s;
-	svg {
+	span {
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translateX(-50%) translateY(-50%);
+	}
+	svg {
 		transition: fill .3s;
 	}
 	&:hover {
