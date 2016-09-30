@@ -44,8 +44,18 @@
 		<?php endif; ?>
 	</div>
 
-	<?php $twitter_link = get_option( 'w4p_social_profiles' )['twitter'][1]; ?>
-	<?php $linkedin_link = get_option( 'w4p_social_profiles' )['linkedin'][1]; ?>
+	<?php
+	if ( isset( get_option( 'w4p_social_profiles' )['twitter'][1] ) ) {
+		$twitter_link = get_option( 'w4p_social_profiles' )['twitter'][1];
+	} else {
+		$twitter_link = '';
+	}
+	if ( isset( get_option( 'w4p_social_profiles' )['twitter'][1] ) ) {
+		$linkedin_link = get_option( 'w4p_social_profiles' )['linkedin'][1];
+	} else {
+		$linkedin_link = '';
+	}
+	?>
 	<?php if ( $twitter_link || $linkedin_link ) : ?>
 		<div class="footer-social">
 			<?php if ( $twitter_link ) : ?>
