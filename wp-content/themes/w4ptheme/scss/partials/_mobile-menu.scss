@@ -2,6 +2,9 @@
 	background: $white--95op;
 	padding-top: 20px;
 	padding-bottom: 10px;
+	@include breakpoint(large) {
+		display: none !important;
+	}
 }
 .mobileMenu {
 	@include breakpoint(large) {
