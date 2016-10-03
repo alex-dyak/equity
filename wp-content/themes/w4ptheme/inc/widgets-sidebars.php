@@ -46,8 +46,8 @@ if ( function_exists( 'register_sidebar' ) ) {
 			'id'            => 'join-us-footer',
 			'before_widget' => '<section class="joinUsSection">',
 			'after_widget'  => '</section>',
-			'before_title'  => '<h1 class="u-text--center">',
-			'after_title'   => '</h1>',
+			'before_title'  => '<h2 class="u-text--center">',
+			'after_title'   => '</h2>',
 		) );
 		register_sidebar( array(
 			'name'          => __( 'Homepage Intro Section', 'w4ptheme' ),
