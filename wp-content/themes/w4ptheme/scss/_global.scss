@@ -293,6 +293,11 @@ ol {
     max-width: 400px;
     margin: 0 auto;
 }
+.joinUsWidget {
+    display: inline-block;
+    position: relative;
+}
+
 .joinUsSection {
     text-align: center;
     p {
@@ -315,10 +320,12 @@ ol {
 }
 .linkTooltip {
     display: none;
-    position: relative;
-    margin-left: 15px;
+    position: absolute;
+    right: -35px;
+    top: 50%;
+    transform: translateY(-50%);
     @include breakpoint(medium) {
-        display: inline-block;
+        display: block;
     }
     &:hover,
     &:active,
