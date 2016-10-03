@@ -65,18 +65,6 @@
                     height="<?php echo esc_attr( get_custom_header()->height ); ?>"
                     alt=""/></a>
         </div>
-        <?php if ( $linkedin_link ) : ?>
-            <div class="mobileMenu-socialLink">
-                <a href="<?php echo $linkedin_link; ?>" class="btn btn--hasIcon btn--linkedIn" target="_blank" title="Follow us on LinkedIn">
-                    <span class="btn-icon">
-                        <svg class="svgIcon btn-icon-svgLinkedin">
-                            <use xlink:href="#linkedin" />
-                        </svg>
-                    </span>
-                    <?php _e( 'Connect with LinkedIn', 'w4ptheme' ); ?>
-                </a>
-            </div>
-        <?php endif; ?>
         <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
         <?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
     </div><!-- Mobile menu -->
