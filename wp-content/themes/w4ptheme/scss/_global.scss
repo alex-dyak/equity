@@ -293,6 +293,11 @@ ol {
     max-width: 400px;
     margin: 0 auto;
 }
+.joinUsWidget {
+    display: inline-block;
+    position: relative;
+}
+
 .joinUsSection {
     text-align: center;
     p {
@@ -312,60 +317,6 @@ ol {
     transition: all .3s;
     opacity: .3;
     cursor: pointer;
-}
-.linkTooltip {
-    display: none;
-    position: relative;
-    margin-left: 15px;
-    @include breakpoint(medium) {
-        display: inline-block;
-    }
-    &:hover,
-    &:active,
-    &:focus {
-        .infoIcon {
-            opacity: 1;
-        }
-        .linkTooltip-item {
-            display: block;
-        }
-    }
-}
-.linkTooltip-item {
-    display: none;
-    position: absolute;
-    top: 50%;
-    right: -30px;
-    width: 290px;
-    padding: 25px 32px;
-    margin: 0 auto;
-    text-align: left;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 6px 13px 0 rgba(140,160,179,.4);
-    transform: translateX(100%) translateY(-50%);
-    &::before {
-        position: absolute;
-        top: 50%;
-        left: -10px;
-        width: 10px;
-        height: 20px;
-        margin-top: -10px;
-        content: "";
-        border-style: solid;
-        border-width: 10px 10px 10px 0;
-        border-color: transparent $white transparent transparent;
-    }
-}
-.linkTooltip-item p {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-.linkTooltip-item-title {
-    text-transform: uppercase;
-    color: $blue;
-    margin-top: 0;
-    margin-bottom: 10px;
 }
 .svgTwitter {
     width: 14px;

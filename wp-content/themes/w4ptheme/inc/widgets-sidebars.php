@@ -46,8 +46,8 @@ if ( function_exists( 'register_sidebar' ) ) {
 			'id'            => 'join-us-footer',
 			'before_widget' => '<section class="joinUsSection">',
 			'after_widget'  => '</section>',
-			'before_title'  => '<h1 class="u-text--center">',
-			'after_title'   => '</h1>',
+			'before_title'  => '<h2 class="u-text--center">',
+			'after_title'   => '</h2>',
 		) );
 		register_sidebar( array(
 			'name'          => __( 'Homepage Intro Section', 'w4ptheme' ),
@@ -426,7 +426,7 @@ class Join_Us_Button_Widget extends WP_Widget {
 
 		echo $args['before_widget']; ?>
 
-		<div class="u-text--center join-us-widget">
+		<div class="u-text--center joinUsWidget">
 			<a href="<?php echo $link ?>" class="btn btn--hasIcon btn--linkedIn" target="_blank">
 				<span class="btn-icon">
 					<svg class="svgIcon btn-icon-svgLinkedin">
