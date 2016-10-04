@@ -532,6 +532,9 @@ class Homepage_Intro_Section_Widget extends WP_Widget {
 			<div class="introSection-description"><?php echo $intro_description; ?></div>
 			<?php if (!empty($intro_video_url)): ?>
 				<a href="<?php echo $intro_video_url ?>" class="js-videoBox playBtn">
+					<svg class="svgIcon playBtn-svg">
+						<use xlink:href="#icon-play" />
+					</svg>
 					<span class="playBtn-icon"></span>
 					<?php if (!empty($intro_duration)): ?>
 						<span class="playBtn-timing"><strong><?php echo $intro_duration; ?></strong> minutes</span>
