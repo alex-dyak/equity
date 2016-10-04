@@ -37,8 +37,24 @@ p {
 h1 {
     margin: 0 0 15px;
     font-family: $font-base;
+    font-size: $fontSize-h1--small;
+    font-weight: $fontWeight-normal;
+    line-height: $lineHeight-stightest;
+    color: $black--light;
+    @include breakpoint(medium) {
+        margin-bottom: 20px;
+        font-size: $fontSize-h1--medium;
+    }
+    @include breakpoint(large) {
+        margin-bottom: 30px;
+        font-size: $fontSize-h1--large;
+    }
+}
+h2 {
+    margin: 0 0 15px;
+    font-family: $font-base;
     font-size: $fontSize-large;
-    font-weight: $fontWeight-extraLight;
+    font-weight: $fontWeight-normal;
     line-height: $lineHeight-stightest;
     color: $black--light;
     @include breakpoint(medium) {
@@ -50,8 +66,8 @@ h1 {
         font-size: $fontSize-largest;
     }
 }
-h2 {
-    margin: 15px 0;
+h3 {
+    margin: 0 0 15px;
     font-family: $font-base;
     font-size: $fontSize-large;
     font-weight: $fontWeight-normal;
@@ -62,7 +78,7 @@ h2 {
         font-size: $fontSize-larger;
     }
 }
-h3 {
+h4 {
     margin: 0 0 .75em;
     font-family: $font-medium;
     font-size: $fontSize-large;
@@ -173,19 +189,25 @@ ol {
 }
 .playBtn {
     display: inline-block;
-    padding: 5px;
-    border: 1px solid $white;
-    border-radius: 48px;
     font-size: $fontSize-small;
-    background: $white--80op;
-    color: $black--light;
-    box-shadow: 0 5px 20px 0 $black--20op;
+    color: $black--light30op;
     transition: all .3s;
+    @include breakpoint(medium) {
+        padding: 5px;
+        border-radius: 48px;
+        border: 1px solid $white;
+        background: $white--80op;
+        color: $black--light;
+        box-shadow: 0 5px 20px 0 $black--20op;
+    }
     &:hover {
-        background: $blue;
-        border-color: $blue;
-        color: $white;
+        color: $blue;
         text-decoration: none;
+        @include breakpoint(medium) {
+            background: $blue;
+            border-color: $blue;
+            color: $white;
+        }
         .playBtn-icon {
             background: $white;
             &::before {
@@ -193,10 +215,20 @@ ol {
             }
         }
     }
+    .playBtn-svg {
+        width: 50px;
+        height: 50px;
+        @include breakpoint(medium) {
+            display: none;
+        }
+    }
     span {
-        display: inline-block;
+        display: none;
         vertical-align: middle;
         margin-right: 5px;
+        @include breakpoint(medium) {
+            display: inline-block;
+        }
         &:last-child {
             margin-right: 0;
         }
