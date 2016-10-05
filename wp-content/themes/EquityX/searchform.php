@@ -12,10 +12,10 @@
 	  action="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<div>
 		<label for="s"
-			   class="screen-reader-text"><?php esc_html_e( 'Search for:', 'w4ptheme' ); ?></label>
+			   class="screen-reader-text"><?php esc_html_e( 'Search for:', 'EquityX' ); ?></label>
 		<input type="search" id="s" name="s" value=""/>
 
-		<input type="submit" value="<?php esc_attr_e( 'Search', 'w4ptheme' ); ?>"
+		<input type="submit" value="<?php esc_attr_e( 'Search', 'EquityX' ); ?>"
 			   id="searchsubmit"/>
 	</div>
 </form>

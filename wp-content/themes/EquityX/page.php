@@ -25,6 +25,10 @@ get_header(); ?>
 				<?php endif; ?>
 			</div>
 
+			<div class="entry">
+				<?php the_content(); ?>
+			</div>
+
 		</article>
 
 	<?php endwhile;

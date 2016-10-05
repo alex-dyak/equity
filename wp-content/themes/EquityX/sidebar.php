@@ -17,12 +17,12 @@
 
 		<?php get_search_form(); ?>
 
-		<h2><?php esc_html_e( 'Archives', 'w4ptheme' ); ?></h2>
+		<h2><?php esc_html_e( 'Archives', 'EquityX' ); ?></h2>
 		<ul>
 			<?php wp_get_archives( 'type=monthly' ); ?>
 		</ul>
 
-		<h2><?php esc_html_e( 'Meta', 'w4ptheme' ); ?></h2>
+		<h2><?php esc_html_e( 'Meta', 'EquityX' ); ?></h2>
 		<ul>
 			<?php wp_register(); ?>
 			<li><?php wp_loginout(); ?></li>

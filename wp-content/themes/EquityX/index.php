@@ -27,10 +27,10 @@ get_header(); ?>
 		</div>
 
 		<footer class="postmetadata">
-			<?php the_tags( __( 'Tags: ', 'w4ptheme' ), ', ', '<br />' ); ?>
-			<?php esc_html_e( 'Posted in', 'w4ptheme' ); ?> <?php the_category( ', ' ) ?>
+			<?php the_tags( __( 'Tags: ', 'EquityX' ), ', ', '<br />' ); ?>
+			<?php esc_html_e( 'Posted in', 'EquityX' ); ?> <?php the_category( ', ' ) ?>
 			|
-			<?php comments_popup_link( __( 'No Comments &#187;', 'w4ptheme' ), __( '1 Comment &#187;', 'w4ptheme' ), __( '% Comments &#187;', 'w4ptheme' ) ); ?>
+			<?php comments_popup_link( __( 'No Comments &#187;', 'EquityX' ), __( '1 Comment &#187;', 'EquityX' ), __( '% Comments &#187;', 'EquityX' ) ); ?>
 		</footer>
 
 	</article>
@@ -41,7 +41,7 @@ get_header(); ?>
 
 <?php else : ?>
 
-	<h2><?php esc_html_e( 'Nothing Found', 'w4ptheme' ); ?></h2>
+	<h2><?php esc_html_e( 'Nothing Found', 'EquityX' ); ?></h2>
 
 <?php endif; ?>
 

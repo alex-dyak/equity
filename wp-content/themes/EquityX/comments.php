@@ -15,14 +15,14 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && 'comments.php' === basename( $_SE
 }
 
 if ( post_password_required() ) {
-	esc_html_e( 'This post is password protected. Enter the password to view comments.', 'w4ptheme' );
+	esc_html_e( 'This post is password protected. Enter the password to view comments.', 'EquityX' );
 	return false;
 }
 ?>
 
 <?php if ( have_comments() ) : ?>
 
-	<h2 id="comments"><?php comments_number( __( 'No Responses', 'w4ptheme' ), __( 'One Response', 'w4ptheme' ), __( '% Responses', 'w4ptheme' ) ); ?></h2>
+	<h2 id="comments"><?php comments_number( __( 'No Responses', 'EquityX' ), __( 'One Response', 'EquityX' ), __( '% Responses', 'EquityX' ) ); ?></h2>
 
 	<div class="navigation">
 		<div class="next-posts"><?php previous_comments_link() ?></div>
@@ -44,7 +44,7 @@ if ( post_password_required() ) {
 		<!-- If comments are open, but there are no comments. -->
 
 	<?php else : /* comments are closed */ { ?>
-		<p><?php esc_html_e( 'Comments are closed.', 'w4ptheme' ); ?></p>
+		<p><?php esc_html_e( 'Comments are closed.', 'EquityX' ); ?></p>
 
 	<?php } endif; ?>
 

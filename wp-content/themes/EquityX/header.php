@@ -103,7 +103,7 @@
                             <use xlink:href="#linkedin" />
                         </svg>
                     </span>
-                        <?php _e( 'Connect with LinkedIn', 'w4ptheme' ); ?>
+                        <?php _e( 'Connect with LinkedIn', 'EquityX' ); ?>
                     </a>
                 </div>
             <?php endif; ?>

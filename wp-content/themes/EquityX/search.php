@@ -11,7 +11,7 @@ get_header(); ?>
 
 <?php if ( have_posts() ) : ?>
 
-	<h2><?php esc_html_e( 'Search Results', 'w4ptheme' ); ?></h2>
+	<h2><?php esc_html_e( 'Search Results', 'EquityX' ); ?></h2>
 
 	<?php post_navigation(); ?>
 
@@ -35,7 +35,7 @@ get_header(); ?>
 
 <?php else : ?>
 
-	<h2><?php esc_html_e( 'Nothing Found', 'w4ptheme' ); ?></h2>
+	<h2><?php esc_html_e( 'Nothing Found', 'EquityX' ); ?></h2>
 
 <?php endif; ?>
 
