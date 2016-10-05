@@ -146,3 +146,51 @@ require_once( get_template_directory() . '/inc/filters.php' );
 
 // Custom shortcodes.
 require_once( get_template_directory() . '/inc/shortcodes.php' );
+
+/**
+ * Widget to VC
+ */
+static $block_term_counter = 0;
+add_shortcode( 'bartag', 'bartag_func' );
+function bartag_func( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+		'name' => '',
+	), $atts ) );
+
+	$content = wpb_js_remove_wpautop($content, true);
+	global $block_term_counter;
+	$block_term_counter++;
+	return "<div>$block_term_counter</div>" . "<div>{$name}</div>" . "<div>{$content}</div>";
+}
+
+add_action( 'vc_before_init', 'get_term_items' );
+function get_term_items() {
+	vc_map( array(
+		"name" => __( "Add Term Item", "my-text-domain" ),
+		"base" => "bartag",
+		"class" => "",
+		"category" => __( "Content", "my-text-domain"),
+		'admin_enqueue_js' => array(get_template_directory_uri().'/vc_extend/bartag.js'),
+		'admin_enqueue_css' => array(get_template_directory_uri().'/vc_extend/bartag.css'),
+		"params" => array(
+			array(
+				"type" => "textfield",
+				"holder" => "div",
+				"class" => "",
+				"heading" => __( "Text", "my-text-domain" ),
+				"param_name" => "name",
+				"value" => __( "Default param value", "my-text-domain" ),
+				"description" => __( "Description for foo param.", "my-text-domain" )
+			),
+			array(
+				"type" => "textarea_html",
+				"holder" => "div",
+				"class" => "",
+				"heading" => __( "Content", "my-text-domain" ),
+				"param_name" => "content",
+				"value" => __( "<p>I am test text block. Click edit button to change this text.</p>", "my-text-domain" ),
+				"description" => __( "Enter your content.", "my-text-domain" )
+			)
+		)
+	) );
+}
