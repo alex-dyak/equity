@@ -20,13 +20,13 @@ get_header(); ?>
 
 				<?php the_content(); ?>
 
-				<?php wp_link_pages( array( 'before' => __( 'Pages: ', 'w4ptheme' ), 'next_or_number' => 'number' ) ); ?>
+				<?php wp_link_pages( array( 'before' => __( 'Pages: ', 'EquityX' ), 'next_or_number' => 'number' ) ); ?>
 
-				<?php the_tags( __( 'Tags: ', 'w4ptheme' ), ', ', '' ); ?>
+				<?php the_tags( __( 'Tags: ', 'EquityX' ), ', ', '' ); ?>
 
 			</div>
 
-			<?php edit_post_link( __( 'Edit this entry', 'w4ptheme' ), '', '.' ); ?>
+			<?php edit_post_link( __( 'Edit this entry', 'EquityX' ), '', '.' ); ?>
 
 		</article>
 

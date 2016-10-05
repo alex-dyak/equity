@@ -29,7 +29,7 @@
  * Theme Setup.
  */
 function w4ptheme_setup() {
-	load_theme_textdomain( 'w4ptheme', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'EquityX', get_template_directory() . '/languages' );
 	add_theme_support( 'structured-post-formats', array( 'link', 'video' ) );
 	add_theme_support( 'post-formats', array(
 			'aside',
@@ -41,8 +41,8 @@ function w4ptheme_setup() {
 			'status',
 		)
 	);
-	register_nav_menu( 'primary', __( 'Navigation Menu', 'w4ptheme' ) );
-	register_nav_menu( 'footer-menu', __( 'Footer Menu', 'w4ptheme' ) );
+	register_nav_menu( 'primary', __( 'Navigation Menu', 'EquityX' ) );
+	register_nav_menu( 'footer-menu', __( 'Footer Menu', 'EquityX' ) );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'title-tag' );
 
@@ -68,16 +68,16 @@ function w4ptheme_scripts_styles() {
 	}
 
 	// Load Stylesheets.
-	wp_enqueue_style( 'w4ptheme-style', get_template_directory_uri() . '/css/application.css', array('js_composer_front') );
+	wp_enqueue_style( 'EquityX-style', get_template_directory_uri() . '/css/application.css', array('js_composer_front') );
 
 	// Jquery
-	wp_enqueue_script( 'w4ptheme-jquery', get_template_directory_uri() . '/js/vendor/jquery.min.js', array(), NULL, TRUE );
+	wp_enqueue_script( 'EquityX-jquery', get_template_directory_uri() . '/js/vendor/jquery.min.js', array(), NULL, TRUE );
 
 	// This is where we put vendors JS functions.
-	wp_enqueue_script( 'w4ptheme-vendor', get_template_directory_uri() . '/js/vendor.min.js', array( 'w4ptheme-jquery' ), null, true );
+	wp_enqueue_script( 'EquityX-vendor', get_template_directory_uri() . '/js/vendor.min.js', array( 'EquityX-jquery' ), null, true );
 
 	// This is where we put our custom JS functions.
-	wp_enqueue_script( 'w4ptheme-application', get_template_directory_uri() . '/js/app.min.js', array( 'w4ptheme-jquery' ), null, true );
+	wp_enqueue_script( 'EquityX-application', get_template_directory_uri() . '/js/app.min.js', array( 'EquityX-jquery' ), null, true );
 
 }
 
@@ -109,7 +109,7 @@ function w4ptheme_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary.
 	if ( $paged >= 2 || $page >= 2 ) {
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'w4ptheme' ), max( $paged, $page ) );
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'EquityX' ), max( $paged, $page ) );
 	}
 
 	return $title;
@@ -118,7 +118,7 @@ function w4ptheme_wp_title( $title, $sep ) {
 add_filter( 'wp_title', 'w4ptheme_wp_title', 10, 2 );
 
 // Custom Menu.
-register_nav_menu( 'primary', __( 'Navigation Menu', 'w4ptheme' ) );
+register_nav_menu( 'primary', __( 'Navigation Menu', 'EquityX' ) );
 
 
 /**
@@ -150,46 +150,35 @@ require_once( get_template_directory() . '/inc/shortcodes.php' );
 /**
  * Widget to VC
  */
-static $block_term_counter = 0;
-add_shortcode( 'bartag', 'bartag_func' );
-function bartag_func( $atts, $content = null ) {
-	extract( shortcode_atts( array(
-		'name' => '',
-	), $atts ) );
-
-	$content = wpb_js_remove_wpautop($content, true);
-	global $block_term_counter;
-	$block_term_counter++;
-	return "<div>$block_term_counter</div>" . "<div>{$name}</div>" . "<div>{$content}</div>";
-}
 
 add_action( 'vc_before_init', 'get_term_items' );
 function get_term_items() {
 	vc_map( array(
-		"name" => __( "Add Term Item", "my-text-domain" ),
-		"base" => "bartag",
-		"class" => "",
-		"category" => __( "Content", "my-text-domain"),
-		'admin_enqueue_js' => array(get_template_directory_uri().'/vc_extend/bartag.js'),
-		'admin_enqueue_css' => array(get_template_directory_uri().'/vc_extend/bartag.css'),
+		"name"              => __( "Add Term Item", "EquityX" ),
+		"base"              => "bartag",
+		"class"             => "",
+		"category"          => __( "Content", "EquityX" ),
+		'admin_enqueue_js'  => array( get_template_directory_uri() . '/vc_extend/bartag.js' ),
+		'admin_enqueue_css' => array(
+			get_template_directory_uri() . '/vc_extend/bartag.css' ),
 		"params" => array(
 			array(
-				"type" => "textfield",
-				"holder" => "div",
-				"class" => "",
-				"heading" => __( "Text", "my-text-domain" ),
-				"param_name" => "name",
-				"value" => __( "Default param value", "my-text-domain" ),
-				"description" => __( "Description for foo param.", "my-text-domain" )
+				"type"        => "textfield",
+				"holder"      => "div",
+				"class"       => "",
+				"heading"     => __( "Text", "EquityX" ),
+				"param_name"  => "name",
+				"value"       => __( "Default param value", "EquityX" ),
+				"description" => __( "Description for foo param.", "EquityX" )
 			),
 			array(
-				"type" => "textarea_html",
-				"holder" => "div",
-				"class" => "",
-				"heading" => __( "Content", "my-text-domain" ),
-				"param_name" => "content",
-				"value" => __( "<p>I am test text block. Click edit button to change this text.</p>", "my-text-domain" ),
-				"description" => __( "Enter your content.", "my-text-domain" )
+				"type"        => "textarea_html",
+				"holder"      => "div",
+				"class"       => "",
+				"heading"     => __( "Content", "EquityX" ),
+				"param_name"  => "content",
+				"value"       => __( "<p>I am test text block. Click edit button to change this text.</p>", "EquityX" ),
+				"description" => __( "Enter your content.", "EquityX" )
 			)
 		)
 	) );

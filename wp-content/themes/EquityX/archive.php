@@ -22,34 +22,34 @@ get_header(); ?>
 
 	<?php /* If this is a category archive */
 	if ( is_category() ) { ?>
-		<h2><?php esc_html_e( 'Archive for the', 'w4ptheme' ); ?>
+		<h2><?php esc_html_e( 'Archive for the', 'EquityX' ); ?>
 			&#8216;<?php single_cat_title(); ?>
-			&#8217; <?php esc_html_e( 'Category', 'w4ptheme' ); ?></h2>
+			&#8217; <?php esc_html_e( 'Category', 'EquityX' ); ?></h2>
 
 		<?php /* If this is a tag archive */
 	} elseif ( is_tag() ) { ?>
-		<h2><?php esc_html_e( 'Posts Tagged', 'w4ptheme' ); ?>
+		<h2><?php esc_html_e( 'Posts Tagged', 'EquityX' ); ?>
 			&#8216;<?php single_tag_title(); ?>&#8217;</h2>
 
 		<?php /* If this is a daily archive */
 	} elseif ( is_day() ) { ?>
-		<h2><?php esc_html_e( 'Archive for', 'w4ptheme' ); ?> <?php the_time( 'F jS, Y' ); ?></h2>
+		<h2><?php esc_html_e( 'Archive for', 'EquityX' ); ?> <?php the_time( 'F jS, Y' ); ?></h2>
 
 		<?php /* If this is a monthly archive */
 	} elseif ( is_month() ) { ?>
-		<h2><?php esc_html_e( 'Archive for', 'w4ptheme' ); ?> <?php the_time( 'F, Y' ); ?></h2>
+		<h2><?php esc_html_e( 'Archive for', 'EquityX' ); ?> <?php the_time( 'F, Y' ); ?></h2>
 
 		<?php /* If this is a yearly archive */
 	} elseif ( is_year() ) { ?>
-		<h2 class="pagetitle"><?php esc_html_e( 'Archive for', 'w4ptheme' ); ?> <?php the_time( 'Y' ); ?></h2>
+		<h2 class="pagetitle"><?php esc_html_e( 'Archive for', 'EquityX' ); ?> <?php the_time( 'Y' ); ?></h2>
 
 		<?php /* If this is an author archive */
 	} elseif ( is_author() ) { ?>
-		<h2 class="pagetitle"><?php esc_html_e( 'Author Archive', 'w4ptheme' ); ?></h2>
+		<h2 class="pagetitle"><?php esc_html_e( 'Author Archive', 'EquityX' ); ?></h2>
 
 		<?php /* If this is a paged archive */
 	} elseif ( isset( $_GET['paged'] ) && !empty( $_GET['paged'] ) ) { ?>
-		<h2 class="pagetitle"><?php esc_html_e( 'Blog Archives', 'w4ptheme' ); ?></h2>
+		<h2 class="pagetitle"><?php esc_html_e( 'Blog Archives', 'EquityX' ); ?></h2>
 
 	<?php } ?>
 
@@ -75,7 +75,7 @@ get_header(); ?>
 
 <?php else : ?>
 
-	<h2><?php esc_html_e( 'Nothing Found', 'w4ptheme' ); ?></h2>
+	<h2><?php esc_html_e( 'Nothing Found', 'EquityX' ); ?></h2>
 
 <?php endif; ?>
 

@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<h2><?php esc_html_e( 'Error 404 - Page Not Found', 'w4ptheme' ); ?></h2>
+<h2><?php esc_html_e( 'Error 404 - Page Not Found', 'EquityX' ); ?></h2>
 
 <?php get_sidebar(); ?>
 

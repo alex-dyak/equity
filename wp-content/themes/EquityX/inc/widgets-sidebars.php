@@ -26,7 +26,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 	 */
 	function w4ptheme_widgets_init() {
 		register_sidebar( array(
-			'name'          => __( 'Sidebar Widgets', 'w4ptheme' ),
+			'name'          => __( 'Sidebar Widgets', 'EquityX' ),
 			'id'            => 'sidebar-primary',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
@@ -34,7 +34,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 			'after_title'   => '</h3>',
 		) );
 		register_sidebar( array(
-			'name'          => __( 'Sidebar Footer', 'w4ptheme' ),
+			'name'          => __( 'Sidebar Footer', 'EquityX' ),
 			'id'            => 'sidebar-footer',
 			'before_widget' => '<section class="row column footer-text">',
 			'after_widget'  => '</section>',
@@ -42,7 +42,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 			'after_title'   => '</h2>',
 		) );
 		register_sidebar( array(
-			'name'          => __( 'Join Us Footer', 'w4ptheme' ),
+			'name'          => __( 'Join Us Footer', 'EquityX' ),
 			'id'            => 'join-us-footer',
 			'before_widget' => '<section class="joinUsSection">',
 			'after_widget'  => '</section>',
@@ -50,7 +50,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 			'after_title'   => '</h2>',
 		) );
 		register_sidebar( array(
-			'name'          => __( 'Homepage Intro Section', 'w4ptheme' ),
+			'name'          => __( 'Homepage Intro Section', 'EquityX' ),
 			'id'            => 'intro-section',
 			'before_widget' => '<section class="row column">',
 			'after_widget'  => '</section>',
@@ -58,7 +58,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 			'after_title'   => '</h2>',
 		) );
 		register_sidebar( array(
-			'name'          => __( 'Header Sidebar', 'w4ptheme' ),
+			'name'          => __( 'Header Sidebar', 'EquityX' ),
 			'id'            => 'header-sidebar',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
@@ -84,7 +84,7 @@ class W4P_Contacts_Widget extends WP_Widget {
 
 	function __construct() {
 		parent::__construct( false,
-			$name = __( '[W4P] Contacts', 'w4ptheme' ) );
+			$name = __( '[W4P] Contacts', 'EquityX' ) );
 	}
 
 	/** @see WP_Widget::widget -- do not rename this */
@@ -117,7 +117,7 @@ class W4P_Contacts_Widget extends WP_Widget {
 								<li>
 									<?php if ( ! empty( $item_titles ) ) : ?>
 										<h4><?php esc_html_e( 'Address:',
-												'w4ptheme' ); ?></h4>
+												'EquityX' ); ?></h4>
 									<?php endif; ?>
 									<?php echo esc_html( $address ); ?>
 								</li>
@@ -131,7 +131,7 @@ class W4P_Contacts_Widget extends WP_Widget {
 									<?php
 									if ( ! empty( $item_titles ) ) : ?>
 										<h4><?php esc_html_e( 'Phones:',
-												'w4ptheme' ); ?></h4>
+												'EquityX' ); ?></h4>
 									<?php endif;
 									foreach (
 										explode( ',', $phones ) as $phone
@@ -155,7 +155,7 @@ class W4P_Contacts_Widget extends WP_Widget {
 								<li>
 									<?php if ( ! empty( $item_titles ) ) : ?>
 										<h4><?php esc_html_e( 'Skype:',
-												'w4ptheme' ); ?></h4>
+												'EquityX' ); ?></h4>
 									<?php endif; ?>
 									<?php if ( ! empty( $skype_url ) ) : ?>
 										<a href="skype:<?php echo esc_attr( $skype ); ?>"><?php echo esc_html( $skype ); ?></a>&nbsp;
@@ -194,7 +194,7 @@ class W4P_Contacts_Widget extends WP_Widget {
 		);
 		// Set up some default widget settings.
 		$defaults = array(
-			'title'       => __( 'Contacts', 'w4ptheme' ),
+			'title'       => __( 'Contacts', 'EquityX' ),
 			'items'       => array(),
 			'skype_url'   => true,
 			'phone_url'   => true,
@@ -213,7 +213,7 @@ class W4P_Contacts_Widget extends WP_Widget {
 		<p>
 			<label
 				for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:',
-					'w4ptheme' ); ?></label>
+					'EquityX' ); ?></label>
 			<input
 				id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
 				name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
@@ -222,7 +222,7 @@ class W4P_Contacts_Widget extends WP_Widget {
 		<p>
 			<label
 				for="<?php echo esc_attr( $this->get_field_id( 'items' ) ); ?>"><?php esc_html_e( 'Choose the Contacts to display:',
-					'w4ptheme' ); ?></label>
+					'EquityX' ); ?></label>
 			<select
 				id="<?php echo esc_attr( $this->get_field_id( 'items' ) ); ?>"
 				class="select-toggle" size="3" multiple="multiple"
@@ -241,7 +241,7 @@ class W4P_Contacts_Widget extends WP_Widget {
 			       name="<?php echo esc_attr( $this->get_field_name( 'item_titles' ) ); ?>"/>
 			<label
 				for="<?php echo esc_attr( $this->get_field_id( 'item_titles' ) ); ?>"><?php esc_html_e( 'Display item titles',
-					'w4ptheme' ) ?></label>
+					'EquityX' ) ?></label>
 		</p>
 		<p>
 			<input class="checkbox" type="checkbox" <?php checked( $phone_url,
@@ -250,7 +250,7 @@ class W4P_Contacts_Widget extends WP_Widget {
 			       name="<?php echo esc_attr( $this->get_field_name( 'phone_url' ) ); ?>"/>
 			<label
 				for="<?php echo esc_attr( $this->get_field_id( 'phone_url' ) ); ?>"><?php esc_html_e( 'Phones as URL',
-					'w4ptheme' ) ?></label>
+					'EquityX' ) ?></label>
 		</p>
 		<p>
 			<input class="checkbox" type="checkbox" <?php checked( $skype_url,
@@ -259,7 +259,7 @@ class W4P_Contacts_Widget extends WP_Widget {
 			       name="<?php echo esc_attr( $this->get_field_name( 'skype_url' ) ); ?>"/>
 			<label
 				for="<?php echo esc_attr( $this->get_field_id( 'skype_url' ) ); ?>"><?php esc_html_e( 'Skype as URL',
-					'w4ptheme' ) ?></label>
+					'EquityX' ) ?></label>
 		</p>
 	<?php
 	}
@@ -272,7 +272,7 @@ class W4P_Social_Profiles_Widget extends WP_Widget {
 
 	function __construct() {
 		parent::__construct( false,
-			$name = __( '[W4P] Social Profiles', 'w4ptheme' ) );
+			$name = __( '[W4P] Social Profiles', 'EquityX' ) );
 	}
 
 	/** @see WP_Widget::widget -- do not rename this */
@@ -327,7 +327,7 @@ class W4P_Social_Profiles_Widget extends WP_Widget {
 	function form( $instance ) {
 		// Set up some default widget settings.
 		$defaults = array(
-			'title' => __( 'Social Profiles', 'w4ptheme' ),
+			'title' => __( 'Social Profiles', 'EquityX' ),
 			'items' => array()
 		);
 		$instance = wp_parse_args( (array) $instance, $defaults );
@@ -349,7 +349,7 @@ class W4P_Social_Profiles_Widget extends WP_Widget {
 		<p>
 			<label
 				for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:',
-					'w4ptheme' ); ?></label>
+					'EquityX' ); ?></label>
 			<input
 				id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
 				name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
@@ -358,7 +358,7 @@ class W4P_Social_Profiles_Widget extends WP_Widget {
 		<p>
 			<label
 				for="<?php echo esc_attr( $this->get_field_id( 'items' ) ); ?>"><?php esc_html_e( 'Choose the Social Profiles to display:',
-					'w4ptheme' ); ?></label><br>
+					'EquityX' ); ?></label><br>
 			<select
 				id="<?php echo esc_attr( $this->get_field_id( 'items' ) ); ?>"
 				class="select-toggle"
@@ -399,10 +399,10 @@ class Join_Us_Button_Widget extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 			'join_us_widget', // Base ID
-			$name = __( 'Join Us Button Widget', 'w4ptheme' ), // Name
+			$name = __( 'Join Us Button Widget', 'EquityX' ), // Name
 			array(
 				'description' => __( 'Displays Join Us Button Widget.',
-					'w4ptheme' )
+					'EquityX' )
 			) // Args
 		);
 	}
@@ -433,13 +433,13 @@ class Join_Us_Button_Widget extends WP_Widget {
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
 					</svg>
 				</span>
-				<?php _e( strtoupper( $title ), 'w4ptheme' ); ?>
+				<?php _e( strtoupper( $title ), 'EquityX' ); ?>
 			</a>
 
 			<div class="linkTooltip">
 				<span class="linkTooltip-trigger infoIcon"></span>
 				<div class="linkTooltip-item">
-					<p class="linkTooltip-item-title"><?php _e( strtoupper( $title_content ), 'w4ptheme' ); ?></p>
+					<p class="linkTooltip-item-title"><?php _e( strtoupper( $title_content ), 'EquityX' ); ?></p>
 					<p><?php echo strip_tags( $content ); ?></p>
 				</div>
 			</div>
@@ -492,10 +492,10 @@ class Homepage_Intro_Section_Widget extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 			'intro_section_widget', // Base ID
-			$name = __( 'Homepage Intro Section Widget', 'w4ptheme' ), // Name
+			$name = __( 'Homepage Intro Section Widget', 'EquityX' ), // Name
 			array(
 				'description' => __( 'Displays Homepage Intro Section Widget.',
-					'w4ptheme' )
+					'EquityX' )
 			) // Args
 		);
 	}
@@ -549,7 +549,7 @@ class Homepage_Intro_Section_Widget extends WP_Widget {
 								<use xlink:href="#linkedin" />
 							</svg>
 						</span>
-						<?php _e( 'Connect with LinkedIn', 'w4ptheme' ); ?>
+						<?php _e( 'Connect with LinkedIn', 'EquityX' ); ?>
 					</a>
 				<?php endif; ?>
 			</div>
