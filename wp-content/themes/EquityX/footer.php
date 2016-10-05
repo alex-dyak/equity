@@ -16,16 +16,6 @@
 
 <footer id="footer" class="source-org vcard copyright footer" role="contentinfo">
 
-	<?php if ( is_active_sidebar( 'join-us-footer' ) ) : ?>
-		<div class="container">
-			<div class="join-us-footer defaultSection">
-				<div class="defaultSection-inner">
-					<?php dynamic_sidebar( 'join-us-footer' ); ?>
-				</div>
-			</div>
-		</div>
-	<?php endif; ?>
-
 	<!--        Navigation      -->
 	<nav id="footer-menu" class="footer-menu" role="navigation">
 		<?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
