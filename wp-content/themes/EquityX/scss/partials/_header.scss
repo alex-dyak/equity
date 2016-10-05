@@ -16,6 +16,13 @@
         background-color: $white;
     }
 }
+:not(.home) {
+    .mainHeader {
+        @include breakpoint(small only) {
+            background-color: $white;
+        }
+    }
+}
 .mainHeader .container {
     position: relative;
 }
@@ -33,6 +40,18 @@
     }
     @include breakpoint(large) {
         width: 170px;
+    }
+}
+:not(.home) {
+    .mainHeader-logo {
+        @include breakpoint(small only) {
+            width: 44px;
+            overflow: hidden;
+            img {
+                width: 120px;
+                max-width: none;
+            }
+        }
     }
 }
 .mainHeader-social {

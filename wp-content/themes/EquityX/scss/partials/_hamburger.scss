@@ -43,3 +43,12 @@
         }
     }
 }
+:not(.home) {
+    .hamburger {
+        @include breakpoint(small only) {
+            width: 42px;
+            height: 42px;
+            background-color: transparent;
+        }
+    }
+}

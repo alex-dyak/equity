@@ -1,0 +1,36 @@
+.termsItem {
+	position: relative;
+	max-width: 660px;
+	padding-left: 50px;
+	margin: 0 auto 10px;
+}
+.termsItem-counter {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 30px;
+	height: 30px;
+	margin-top: -2px;
+	border: 2px solid $blueSea--02;
+	border-radius: 100%;
+	font-size: $fontSize-small;
+	line-height: $lineHeight-termsCount;
+	font-family: $font-medium;
+	text-align: center;
+	color: $blue--darkest;
+	background-color: $mystic;
+}
+.termsItem-title {
+	margin-bottom: 25px;
+	font-size: $fontSize-termsTitle--large;
+	font-family: $font-base;
+	color: $blue--darkest;
+}
+.termsItem-content {
+	font-size: $fontSize-small;
+	line-height: $lineHeight-tight;
+	color: $blueSea;
+	p {
+		margin-bottom: 25px;
+	}
+}

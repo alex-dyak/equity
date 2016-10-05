@@ -16,14 +16,7 @@ get_header(); ?>
 <?php if ( have_posts() ) :
 	while ( have_posts() ) : the_post(); ?>
 
-		<article class="post" id="post-<?php the_ID(); ?>">
-
-			<h2><?php the_title(); ?></h2>
-			<div id="back-img">
-				<?php if(get_the_post_thumbnail()): ?>
-					<?php the_post_thumbnail(); ?>    <!-- need change imagesize -->
-				<?php endif; ?>
-			</div>
+		<article class="post defaultPage" id="post-<?php the_ID(); ?>">
 
 			<div class="entry">
 				<?php the_content(); ?>
