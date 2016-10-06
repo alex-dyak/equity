@@ -205,6 +205,13 @@ function get_members() {
 			    "value"       => 'Members Quantity'
 			),
 			array(
+				"type"        => "textarea",
+				"holder"      => "div",
+				"class"       => "",
+				"heading"     => __( "Short Description", "EquityX" ),
+				"param_name"  => "description",
+			),
+			array(
 				"type"        => "textfield",
 				"holder"      => "div",
 				"class"       => "",

@@ -3,25 +3,31 @@ $atts = vc_map_get_attributes( $this->getShortcode(), $atts );
 extract( $atts );
 
 
-
 if ( ! empty( $quantity ) ) :
 	$query_args = array(
 		'post_type'      => 'member',
 		'posts_per_page' => $quantity,
-	    'order'          => 'ASC'
+		'order'          => 'ASC'
 	);
-	$query = new WP_Query( $query_args );
+	$query      = new WP_Query( $query_args );
 	?>
 
-	<?php if ( $query->have_posts() ) :
-		while ( $query->have_posts() ) : $query->the_post(); ?>
+	<?php if ( ! empty( $page_title ) ) : ?>
+		<div class="title"><h3><?php echo strip_tags( $page_title ); ?></h3></div>
+	<?php endif; ?>
+	<?php if ( ! empty( $description ) ) : ?>
+		<div class="description"><?php echo strip_tags( $description ); ?></div>
+	<?php endif; ?>
 
-	<div style="float: left;" class="">
-		<ul>
+	<?php if ( $query->have_posts() ) :
+	while ( $query->have_posts() ) : $query->the_post(); ?>
+
+		<div style="float: left;" class="">
+			<ul>
 				<li class="member_item">
-				<?php if ( has_post_thumbnail() ) : ?>
-					<?php the_post_thumbnail(); ?>
-				<? endif; ?>
+					<?php if ( has_post_thumbnail() ) : ?>
+						<?php the_post_thumbnail(); ?>
+					<? endif; ?>
 					<?php if ( get_the_title() ) : ?>
 						<div class="member-name"><?php echo strtoupper( esc_html_e( get_the_title() ) ); ?></div>
 					<?php endif; ?>
@@ -43,9 +49,9 @@ if ( ! empty( $quantity ) ) :
 						<?php endif; ?>
 					</ul>
 				</li>
-		</ul>
-	</div>
+			</ul>
+		</div>
 
-		<?php endwhile; ?>
-	<?php endif; ?>
+	<?php endwhile; ?>
+<?php endif; ?>
 <?php endif; ?>
