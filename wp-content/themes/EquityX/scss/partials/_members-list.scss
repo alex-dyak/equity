@@ -1,0 +1,64 @@
+.membersList-item {
+	float: left;
+	width: 25%;
+}
+.membersList-item-inner {
+	position: relative;
+	padding: 0 40px 25px;
+	text-align: center;
+}
+.membersList-item-inner-image {
+	max-width: 150px;
+	height: 150px;
+	margin: 0 auto 20px;
+	border-radius: 100%;
+	overflow: hidden;
+}
+.membersList-item-inner-title {
+	margin-bottom: 15px;
+	font-size: $fontSize-teamTitle--large;
+	line-height: $lineHeight-tighter;
+	color: $blue--darkest;
+	text-transform: uppercase;
+}
+.membersList-item-inner-content {
+	margin-bottom: 20px;
+	font-size: $fontSize-small;
+	line-height: $lineHeight-tight;
+	font-family: $font-light;
+	color: $blueSea;
+}
+.membersList-item-inner-contacts {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	li {
+		display: inline-block;
+		margin: 0 15px;
+		a,
+		span {
+			display: block;
+			line-height: 0;
+			transition: color .3s;
+		}
+		a{
+			&.contactsIco-linkedIn {
+				color: $blue--dark;
+			}
+			&.contactsIco-twitterIco {
+				color: $blue;
+			}
+			&:hover {
+				color: $blue--darkest;
+			}
+		}
+		span {
+			&.contactsIco-linkedIn,
+			&.contactsIco-twitterIco {
+				color: $gray--lighter;
+			}
+		}
+	}
+}

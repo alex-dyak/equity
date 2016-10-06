@@ -525,7 +525,7 @@ class Join_Us_White_Button_Widget extends WP_Widget {
 
 		echo $args['before_widget']; ?>
 
-		<div class="u-text--center joinUsWidget">
+		<div class="u-text--center joinUsWidget joinUsWidget--white">
 			<a href="<?php echo $link ?>" class="btn btn--hasIcon btn--linkedIn" target="_blank">
 				<span class="btn-icon">
 					<svg class="svgIcon btn-icon-svgLinkedin">
