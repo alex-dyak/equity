@@ -1,0 +1,20 @@
+.motivationList {
+	margin: 0 0 35px;
+}
+.motivationList-box {
+	padding-top: 50px;
+	@include breakpoint(medium) {
+		padding-top: 0;
+	}
+	.vc_column-inner {
+		padding-left: 10px;
+		padding-right: 10px;
+		@include breakpoint(large) {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+	}
+	img {
+		min-width: 60px;
+	}
+}
