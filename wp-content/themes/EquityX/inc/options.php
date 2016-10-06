@@ -86,11 +86,11 @@ class W4PThemeSettingsPage {
 	 */
 	public function __construct() {
 		$this->social = array(
-			'facebook' => __( 'Facebook', 'w4ptheme' ),
-			'twitter' => __( 'Twitter', 'w4ptheme' ),
-			'googleplus' => __( 'Google+', 'w4ptheme' ),
-			'instagram' => __( 'Instagram', 'w4ptheme' ),
-			'linkedin' => __( 'LinkedIn', 'w4ptheme' ),
+			'facebook' => __( 'Facebook', 'EquityX' ),
+			'twitter' => __( 'Twitter', 'EquityX' ),
+			'googleplus' => __( 'Google+', 'EquityX' ),
+			'instagram' => __( 'Instagram', 'EquityX' ),
+			'linkedin' => __( 'LinkedIn', 'EquityX' ),
 		);
 		add_action( 'admin_menu', array( $this, 'add_plugin_page' ) );
 		add_action( 'admin_init', array( $this, 'page_init' ) );
@@ -102,8 +102,8 @@ class W4PThemeSettingsPage {
 	public function add_plugin_page() {
 		// This page will be under "Settings".
 		add_theme_page(
-			__( 'Theme Options', 'w4ptheme' ),
-			__( 'Theme Options', 'w4ptheme' ),
+			__( 'Theme Options', 'EquityX' ),
+			__( 'Theme Options', 'EquityX' ),
 			'manage_options',
 			'theme_options',
 			array( $this, 'create_theme_options_page' )
@@ -167,14 +167,14 @@ class W4PThemeSettingsPage {
 
 		add_settings_section(
 			'setting_section_id', /* ID */
-			__( 'W4P Theme Options', 'w4ptheme' ), /* Title */
+			__( 'W4P Theme Options', 'EquityX' ), /* Title */
 			array( $this, 'print_section_info' ), /* Callback */
 			'theme_options' /* Page */
 		);
 
 		add_settings_field(
 			'w4p_social_profiles', /* ID */
-			__( 'Social Profiles', 'w4ptheme' ), /* Title */
+			__( 'Social Profiles', 'EquityX' ), /* Title */
 			array( $this, 'social_profile_callback' ), /* Callback */
 			'theme_options', /* Page */
 			'setting_section_id' /* Section */
@@ -182,7 +182,7 @@ class W4PThemeSettingsPage {
 
 		add_settings_field(
 			'w4p_contacts',
-			__( 'Contacts', 'w4ptheme' ),
+			__( 'Contacts', 'EquityX' ),
 			array( $this, 'contacts_callback' ),
 			'theme_options',
 			'setting_section_id'
@@ -190,7 +190,7 @@ class W4PThemeSettingsPage {
 
 		add_settings_field(
 			'w4p_copyright',
-			__( 'Copyright', 'w4ptheme' ),
+			__( 'Copyright', 'EquityX' ),
 			array( $this, 'copyright_callback' ),
 			'theme_options',
 			'setting_section_id'
@@ -242,14 +242,14 @@ class W4PThemeSettingsPage {
 	 * @return string
 	 */
 	public function get_default_copyright() {
-		return sprintf( esc_html__( 'Copyright © %d. %s. All Rights Reserved.', 'w4ptheme' ), date( 'Y' ), get_bloginfo( 'name' ) );
+		return sprintf( esc_html__( 'Copyright © %d. %s. All Rights Reserved.', 'EquityX' ), date( 'Y' ), get_bloginfo( 'name' ) );
 	}
 
 	/**
 	 * Print the Section text
 	 */
 	public function print_section_info() {
-		esc_html_e( 'Enter your settings below:', 'w4ptheme' );
+		esc_html_e( 'Enter your settings below:', 'EquityX' );
 	}
 
 	/**
@@ -269,7 +269,7 @@ class W4PThemeSettingsPage {
 							name="w4p_social_profiles[<?php echo esc_attr( $name ); ?>][]"
 							class="<?php echo esc_attr( $name ); ?>"
 							value="<?php echo esc_attr( $value ); ?>"
-							placeholder="<?php esc_attr_e( 'http://', 'w4ptheme' ); ?>"
+							placeholder="<?php esc_attr_e( 'http://', 'EquityX' ); ?>"
 						/>
 						<button class="button w4p-social-remove"><b>&#8211;</b></button>
 					</div>
@@ -285,7 +285,7 @@ class W4PThemeSettingsPage {
 					name="w4p_social_profiles[facebook][]"
 					class="facebook"
 					value=""
-					placeholder="<?php esc_attr_e( 'http://', 'w4ptheme' ); ?>"
+					placeholder="<?php esc_attr_e( 'http://', 'EquityX' ); ?>"
 				/>
 				<button class="button w4p-social-remove">-</button>
 			</div>
@@ -293,7 +293,7 @@ class W4PThemeSettingsPage {
 
 		<hr>
 		<div class="w4p-social-profile-selector-wrapper">
-			<label for="social_profile_selector" class="w4p-option-label"><?php esc_attr_e( 'Select profile: ', 'w4ptheme' ); ?></label>
+			<label for="social_profile_selector" class="w4p-option-label"><?php esc_attr_e( 'Select profile: ', 'EquityX' ); ?></label>
 			<select id="social_profile_selector">
 				<?php
 				foreach ( $this->social as $name => $option ) { ?>
@@ -311,31 +311,31 @@ class W4PThemeSettingsPage {
 	public function contacts_callback() {
 		?>
 		<div class="w4p-contacts-wrapper">
-			<label for="w4p_contacts_address" class="w4p-option-label"><?php esc_html_e( 'Address:', 'w4ptheme' ); ?></label>
+			<label for="w4p_contacts_address" class="w4p-option-label"><?php esc_html_e( 'Address:', 'EquityX' ); ?></label>
 			<input
 				type="text"
 				id="w4p_contacts_address"
 				name="w4p_contacts_address"
 				value="<?php echo ! empty( $this->options['w4p_contacts_address'] ) ? esc_attr( $this->options['w4p_contacts_address'] ) : '' ?>"
-				placeholder="<?php esc_html_e( 'St George St, St Augustine, FL 32084, USA', 'w4ptheme' ); ?>"
+				placeholder="<?php esc_html_e( 'St George St, St Augustine, FL 32084, USA', 'EquityX' ); ?>"
 			/>
 			<hr>
-			<label for="w4p_contacts_phones" class="w4p-option-label"><?php esc_html_e( 'Telephones:', 'w4ptheme' ); ?></label>
+			<label for="w4p_contacts_phones" class="w4p-option-label"><?php esc_html_e( 'Telephones:', 'EquityX' ); ?></label>
 			<input
 				type="text"
 				id="w4p_contacts_phones"
 				name="w4p_contacts_phones"
 				value="<?php echo ! empty( $this->options['w4p_contacts_phones'] ) ? esc_attr( $this->options['w4p_contacts_phones'] ) : '' ?>"
-				placeholder="<?php esc_html_e( '+38 (123) 123-456-7, +38 (222) 765-432-1', 'w4ptheme' ); ?>"
+				placeholder="<?php esc_html_e( '+38 (123) 123-456-7, +38 (222) 765-432-1', 'EquityX' ); ?>"
 			/>
 			<hr>
-			<label for="w4p_contacts_skype" class="w4p-option-label"><?php esc_html_e( 'Skype:', 'w4ptheme' ); ?></label>
+			<label for="w4p_contacts_skype" class="w4p-option-label"><?php esc_html_e( 'Skype:', 'EquityX' ); ?></label>
 			<input
 				type="text"
 				id="w4p_contacts_skype"
 				name="w4p_contacts_skype"
 				value="<?php echo ! empty( $this->options['w4p_contacts_skype'] ) ? esc_attr( $this->options['w4p_contacts_skype'] ) : '' ?>"
-				placeholder="<?php esc_html_e( 'Skype ID', 'w4ptheme' ); ?>"
+				placeholder="<?php esc_html_e( 'Skype ID', 'EquityX' ); ?>"
 			/>
 		</div>
 	<?php }
@@ -347,7 +347,7 @@ class W4PThemeSettingsPage {
 	public function copyright_callback() {
 		?>
 		<div class="w4p-copyright-wrapper">
-			<label for="w4p_copyright" class="w4p-option-label"><?php esc_html_e( 'Copyright:', 'w4ptheme' ); ?></label>
+			<label for="w4p_copyright" class="w4p-option-label"><?php esc_html_e( 'Copyright:', 'EquityX' ); ?></label>
 			<input
 				type="text"
 				id="w4p_copyright"
@@ -364,10 +364,10 @@ if ( is_admin() ) {
 }
 
 function load_option_page_style() {
-	wp_register_script( 'w4ptheme-options-script', get_template_directory_uri() . '/inc/js/theme_options.js', array( 'jquery' ), '1.0.0', true );
-	wp_register_style( 'w4ptheme-options-style', get_template_directory_uri() . '/inc/css/theme_options.css' );
-	wp_enqueue_script( 'w4ptheme-options-script' );
-	wp_enqueue_style( 'w4ptheme-options-style' );
+	wp_register_script( 'EquityX-options-script', get_template_directory_uri() . '/inc/js/theme_options.js', array( 'jquery' ), '1.0.0', true );
+	wp_register_style( 'EquityX-options-style', get_template_directory_uri() . '/inc/css/theme_options.css' );
+	wp_enqueue_script( 'EquityX-options-script' );
+	wp_enqueue_style( 'EquityX-options-style' );
 }
 
 add_action( 'admin_enqueue_scripts', 'load_option_page_style' );

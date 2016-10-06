@@ -78,7 +78,7 @@
 		if ( $copyright = get_option( 'w4p_copyright' ) ) {
 			echo esc_html( $copyright );
 		} else {
-			echo sprintf( esc_html__( 'Copyright © %d. %s. All Rights Reserved.', 'w4ptheme' ), date( 'Y' ), get_bloginfo( 'name' ) );
+			echo sprintf( esc_html__( 'Copyright © %d. %s. All Rights Reserved.', 'EquityX' ), date( 'Y' ), get_bloginfo( 'name' ) );
 		}
 		?>
 	</div>
