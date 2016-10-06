@@ -1,0 +1,32 @@
+<?php
+/*
+* Template Name: Team Template
+*/
+
+get_header(); ?>
+
+<?php if ( have_posts() ) :
+	while ( have_posts() ) : the_post(); ?>
+
+		<article class="post" id="post-<?php the_ID(); ?>">
+
+			<?php if ( is_active_sidebar( 'intro-section' ) ) : ?>
+				<?php dynamic_sidebar( 'intro-section' ); ?>
+			<?php endif; ?>
+
+			<div class="entry">
+				<?php the_content(); ?>
+			</div>
+
+		</article>
+
+	<?php endwhile;
+endif; ?>
+
+<?php if ( is_active_sidebar( 'join-us-small' ) ) : ?>
+	<div class="join-us-small">
+		<?php dynamic_sidebar( 'join-us-small' ); ?>
+	</div>
+<?php endif; ?>
+
+<?php get_footer(); ?>
