@@ -68,7 +68,6 @@
 	}
 }
 .footer-text {
-	max-width: 600px;
 	margin: 0 35px 40px;
 	font-family: $font-light;
 	font-size: $fontSize-small;
@@ -76,6 +75,7 @@
 	text-align: center;
 	color: $gray;
 	@include breakpoint(medium) {
+		max-width: 600px;
 		margin: 0 auto 35px;
 	}
 	p {

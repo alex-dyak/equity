@@ -16,7 +16,7 @@
         background-color: $white;
     }
 }
-:not(.home) {
+body:not(.home) {
     .mainHeader {
         @include breakpoint(small only) {
             background-color: $white;
@@ -52,7 +52,7 @@
         width: 170px;
     }
 }
-:not(.home) {
+body:not(.home) {
     .mainHeader-logo {
         @include breakpoint(small only) {
             width: 44px;
