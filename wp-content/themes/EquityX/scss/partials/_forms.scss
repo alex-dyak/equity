@@ -52,9 +52,9 @@ input[type="submit"],
     color: $white;
     &:hover,
     &:active {
+        text-decoration: none;
         background-color: $white;
         color: $blue;
-        text-decoration: none;
     }
 }
 .btn--white {
