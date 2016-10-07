@@ -43,7 +43,7 @@
         }
     }
 }
-:not(.home) {
+body:not(.home) {
     .hamburger {
         @include breakpoint(small only) {
             width: 42px;
