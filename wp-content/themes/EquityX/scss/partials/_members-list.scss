@@ -1,11 +1,27 @@
+.membersList {
+	margin: 70px 0 10px;
+	text-align: center;
+	@include breakpoint(large) {
+		margin-bottom: 60px;
+	}
+}
 .membersList-item {
-	float: left;
-	width: 25%;
+	position: relative;
+	margin-bottom: 45px;
+	@include breakpoint(medium) {
+		width: 48%;
+		display: inline-block;
+		padding-bottom: 35px;
+		margin-bottom: 0;
+		vertical-align: top;
+	}
+	@include breakpoint(large) {
+		float: left;
+		width: 25%;
+	}
 }
 .membersList-item-inner {
-	position: relative;
-	padding: 0 40px 25px;
-	text-align: center;
+	padding: 0 40px;
 }
 .membersList-item-inner-image {
 	max-width: 150px;
@@ -15,11 +31,15 @@
 	overflow: hidden;
 }
 .membersList-item-inner-title {
-	margin-bottom: 15px;
-	font-size: $fontSize-teamTitle--large;
+	margin-bottom: 5px;
+	font-size: $fontSize-teamTitle--medium;
 	line-height: $lineHeight-tighter;
 	color: $blue--darkest;
 	text-transform: uppercase;
+	@include breakpoint(medium) {
+		margin-bottom: 15px;
+		font-size: $fontSize-teamTitle--large;
+	}
 }
 .membersList-item-inner-content {
 	margin-bottom: 20px;
@@ -29,11 +49,12 @@
 	color: $blueSea;
 }
 .membersList-item-inner-contacts {
-	position: absolute;
-	bottom: 0;
-	left: 0;
 	width: 100%;
-	text-align: center;
+	@include breakpoint(large) {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
 	li {
 		display: inline-block;
 		margin: 0 15px;

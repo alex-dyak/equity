@@ -69,10 +69,10 @@ if ( function_exists( 'register_sidebar' ) ) {
 		register_sidebar( array(
 			'name'          => __( 'Small Join Us', 'EquityX' ),
 			'id'            => 'join-us-small',
-			'before_widget' => '<section class="smallJoinUsSection">',
+			'before_widget' => '<section class="u-clearfix smallJoinUsSection">',
 			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="u-text--center">',
-			'after_title'   => '</h2>',
+			'before_title'  => '<p class="smallJoinUsSection-title">',
+			'after_title'   => '</p>',
 		) );
 
 		register_widget( 'W4P_Contacts_Widget' );
@@ -525,8 +525,8 @@ class Join_Us_White_Button_Widget extends WP_Widget {
 
 		echo $args['before_widget']; ?>
 
-		<div class="u-text--center joinUsWidget joinUsWidget--white">
-			<a href="<?php echo $link ?>" class="btn btn--hasIcon btn--linkedIn" target="_blank">
+		<div class="u-text--center joinUsWidget joinUsWidget--small">
+			<a href="<?php echo $link ?>" class="btn btn--white btn--hasIcon btn--linkedIn" target="_blank">
 				<span class="btn-icon">
 					<svg class="svgIcon btn-icon-svgLinkedin">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
