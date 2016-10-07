@@ -44,6 +44,28 @@ input[type="submit"],
         cursor: pointer;
     }
 }
+.btn {
+    border-radius: 48px;
+    border: 1px solid $blue;
+    box-shadow: 0 5px 20px 0 $black--20op;
+    background-color: $blue;
+    color: $white;
+    &:hover,
+    &:active {
+        text-decoration: none;
+        background-color: $white;
+        color: $blue;
+    }
+}
+.btn--white {
+    background-color: $white;
+    color: $blue;
+    &:hover,
+    &:active {
+        background-color: $blue;
+        color: $white;
+    }
+}
 .btn--fullWidth {
     width: 100%;
 }
@@ -55,17 +77,6 @@ input[type="submit"],
     font-size: $fontSize-smaller;
     line-height: $lineHeight-btn--large;
     text-transform: uppercase;
-    border-radius: 48px;
-    border: 1px solid $blue;
-    box-shadow: 0 5px 20px 0 $black--20op;
-    background-color: $blue;
-    color: $white;
-    &:hover,
-    &:active {
-        background-color: $white;
-        color: $blue;
-        text-decoration: none;
-    }
 }
 .btn--hasIcon {
     position: relative;
@@ -76,17 +87,11 @@ input[type="submit"],
         left: 20px;
         transform: translateY(-50%);
         line-height: 0;
-        color: $white;
         transition: fill .3s;
     }
     .btn-icon-svgLinkedin {
         width: 18px;
         height: 19px;
         margin-top: -5px;
-    }
-    &:hover {
-        .btn-icon {
-            color: $blue;
-        }
     }
 }
