@@ -28,5 +28,5 @@ function term_items_func( $atts, $content = null ) {
 	global $block_term_counter;
 	$block_term_counter ++;
 
-	return "<div>$block_term_counter</div>" . "<div>{$name}</div>" . "<div>{$content}</div>";
+	return "<div class='termsItem'> <div class='termsItem-counter'>$block_term_counter</div>" . "<div class='termsItem-title'>{$name}</div>" . "<div class='u-clearfix termsItem-content'>{$content}</div></div>";
 }

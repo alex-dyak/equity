@@ -422,3 +422,9 @@ ol {
     width: 22px;
     height: 18px;
 }
+.defaultPage {
+    padding-top: 60px;
+    @include breakpoint(medium) {
+        padding-top: 400px;
+    }
+}

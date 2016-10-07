@@ -16,6 +16,23 @@
         background-color: $white;
     }
 }
+:not(.home) {
+    .mainHeader {
+        @include breakpoint(small only) {
+            background-color: $white;
+            &::after {
+                position: absolute;
+                bottom: -6px;
+                left: 0;
+                width: 100%;
+                height: 6px;
+                content: '';
+                background: $blue;
+                background: linear-gradient(to right, $blue 0%, $blue 25%, $white--darker 25%, $white--darker 50%, $orange 50%, $orange 75%, $red 75%, $red 100%);
+            }
+        }
+    }
+}
 .mainHeader .container {
     position: relative;
 }
@@ -33,6 +50,18 @@
     }
     @include breakpoint(large) {
         width: 170px;
+    }
+}
+:not(.home) {
+    .mainHeader-logo {
+        @include breakpoint(small only) {
+            width: 44px;
+            overflow: hidden;
+            img {
+                width: 120px;
+                max-width: none;
+            }
+        }
     }
 }
 .mainHeader-social {
