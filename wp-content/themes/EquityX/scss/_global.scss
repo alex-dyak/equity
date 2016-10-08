@@ -392,6 +392,7 @@ ol {
             left: initial;
             right: 15px;
             top: -3px;
+            transform: rotate(90deg);
         }
     }
 }
@@ -426,5 +427,18 @@ ol {
     padding-top: 60px;
     @include breakpoint(medium) {
         padding-top: 400px;
+    }
+}
+.contactForm {
+    padding: 25px 0 50px;
+    margin: 0;
+    @include breakpoint(large) {
+        padding: 30px 100px 60px;
+    }
+    > div {
+        padding: 0;
+        @include breakpoint(medium) {
+            padding: 0 40px;
+        }
     }
 }
