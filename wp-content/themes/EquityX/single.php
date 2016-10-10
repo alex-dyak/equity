@@ -24,46 +24,7 @@ if ( ! empty( $image ) ): ?>
 
 		<a href="<?php echo get_post_type_archive_link( 'post' ); ?>"><?php echo __( strtoupper( 'Back to main' ), 'EquityX' ); ?></a>
 
-		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
-
-			<h1 class="entry-title"><?php the_title(); ?></h1>
-
-			<div class="entry-content">
-
-				<div>
-					<?php _e( 'by ', 'EquityX' ); ?>
-					<?php echo get_the_author_posts_link(); ?>    &#8212;
-					<?php echo get_the_date( "F Y" ); ?>
-				</div>
-
-				<div>
-
-					<?php
-					$text = get_the_content();
-					$excerpt_length = apply_filters( 'excerpt_length', 40 );
-					$excerpt_more = apply_filters( 'excerpt_more', ' ' . '' );
-					$text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
-					echo $text;
-					?>
-				</div>
-
-				<div>
-					<?php the_post_thumbnail(); ?>
-				</div>
-
-				<div>
-					<?php _e( 'Photo: ', 'EquityX' ); ?>
-					<?php echo get_the_author_posts_link(); ?>    &#8212;
-					<?php echo get_the_date( "F Y" ); ?>
-				</div>
-
-				<div>
-					<?php the_content(); ?>
-				</div>
-
-			</div>
-
-		</article>
+		<?php get_template_part( 'template-article-post' ); ?>
 
 	<?php endwhile;
 endif; ?>
