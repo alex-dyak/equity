@@ -9,40 +9,26 @@
 
 get_header(); ?>
 
-<?php if ( ! empty( $_GET['s'] ) ): ?>
+<?php if ( have_posts() ) : ?>
 
-	<?php if ( have_posts() ) : ?>
+	<h2><?php esc_html_e( 'Search Results for: ', 'EquityX' ); ?><?php echo $s; ?></h2>
 
-		<h2><?php esc_html_e( 'Search Results for: ', 'EquityX' ); ?><?php echo $s; ?></h2>
+	<?php while ( have_posts() ) : the_post(); ?>
 
-		<?php while ( have_posts() ) : the_post(); ?>
+		<?php get_template_part( 'template-article-blog-list' ); ?>
 
-			<?php get_template_part( 'template-article-blog-list' ); ?>
+	<?php endwhile; ?>
 
-		<?php endwhile; ?>
-
-		<section class="row entityGrid-pagination">
-			<section class="column">
-				<?php if ( function_exists( 'wp_pagenavi' ) ) {
-					wp_pagenavi( array(
-						'before'        => '<nav class="navigation pagination" role="navigation">',
-						'after'         => '</nav>',
-						'wrapper_tag'   => 'div',
-						'wrapper_class' => 'nav-links',
-						'options'       => array(),
-						'type'          => 'posts',
-						'echo'          => true
-					) );
-				}
-				?>
-			</section>
+	<section class="row entityGrid-pagination">
+		<section class="column">
+			<?php echo paginate_links(); ?>
 		</section>
+	</section>
 
-	<?php else : ?>
+<?php else : ?>
 
-		<h2><?php esc_html_e( 'Nothing Found', 'EquityX' ); ?></h2>
+	<h2><?php esc_html_e( 'Nothing Found', 'EquityX' ); ?></h2>
 
-	<?php endif; ?>
 <?php endif; ?>
 
 <?php get_sidebar(); ?>

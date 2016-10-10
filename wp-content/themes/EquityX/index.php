@@ -35,24 +35,13 @@ if ( ! empty( $image ) ): ?>
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-	<?php get_template_part( 'template-article-blog-list' ); ?>
+	<?php get_template_part( 'templates-part/template-article-blog-list' ); ?>
 
 <?php endwhile; ?>
 
 	<section class="row entityGrid-pagination">
 		<section class="column">
-			<?php if ( function_exists( 'wp_pagenavi' ) ) {
-				wp_pagenavi( array(
-					'before'        => '<nav class="navigation pagination" role="navigation">',
-					'after'         => '</nav>',
-					'wrapper_tag'   => 'div',
-					'wrapper_class' => 'nav-links',
-					'options'       => array(),
-					'type'          => 'posts',
-					'echo'          => true
-				) );
-			}
-			?>
+			<?php echo paginate_links(); ?>
 		</section>
 	</section>
 

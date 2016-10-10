@@ -24,7 +24,7 @@ if ( ! empty( $image ) ): ?>
 
 		<a href="<?php echo get_post_type_archive_link( 'post' ); ?>"><?php echo __( strtoupper( 'Back to main' ), 'EquityX' ); ?></a>
 
-		<?php get_template_part( 'template-article-post' ); ?>
+		<?php get_template_part( 'templates-part/template-article-post' ); ?>
 
 	<?php endwhile;
 endif; ?>

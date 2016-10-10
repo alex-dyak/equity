@@ -188,7 +188,6 @@ function get_term_items() {
 }
 
 /**
-<<<<<<< HEAD
  * Widget Members to VC.
  */
 add_action( 'vc_before_init', 'get_members' );
