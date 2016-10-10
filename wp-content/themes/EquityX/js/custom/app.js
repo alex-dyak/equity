@@ -13,6 +13,9 @@
             $('.js-videoBox').swipebox();
             headerPosition();
             equalHeight($('.js-equalItems'));
+            $('.js-linkTooltip').click(function(e) {
+                e.preventDefault();
+            });
         });
 
         $(window).scroll(function() {
