@@ -39,10 +39,11 @@
 	margin-bottom: 25px;
 	font-size: $fontSize-termsTitle--medium;
 	line-height: $lineHeight-tightest;
-	font-family: $font-base;
+	font-family: $font-medium;
 	color: $blue--darkest;
 	@include breakpoint(medium) {
 		font-size: $fontSize-termsTitle--large;
+		font-family: $font-base;
 	}
 }
 .termsItem-content {
