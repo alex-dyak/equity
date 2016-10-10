@@ -3,18 +3,18 @@
  * The template for displaying all single posts and attachments
  *
  * @package    WordPress
- * @subpackage W4P-Theme
- * @since      W4P Theme 1.0
+ * @subpackage EquityX-Theme
+ * @since      EquityX Theme 1.0
  */
 
 get_header(); ?>
 
 <?php
-$image = get_field( 'background_image' );
+$image = get_option( 'w4p_background_img' );
 
 if ( ! empty( $image ) ): ?>
 	<div>
-		<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"/>
+		<img src="<?php echo $image['url']; ?>" alt=""/>
 	</div>
 <?php endif; ?>
 
@@ -33,11 +33,18 @@ if ( ! empty( $image ) ): ?>
 				<div>
 					<?php _e( 'by ', 'EquityX' ); ?>
 					<?php echo get_the_author_posts_link(); ?>    &#8212;
-					<?php echo date( "F Y" ); ?>
+					<?php echo get_the_date( "F Y" ); ?>
 				</div>
 
 				<div>
-					<?php the_excerpt_max_charlength( 200 ); ?>
+
+					<?php
+					$text = get_the_content();
+					$excerpt_length = apply_filters( 'excerpt_length', 40 );
+					$excerpt_more = apply_filters( 'excerpt_more', ' ' . '' );
+					$text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
+					echo $text;
+					?>
 				</div>
 
 				<div>
@@ -47,7 +54,7 @@ if ( ! empty( $image ) ): ?>
 				<div>
 					<?php _e( 'Photo: ', 'EquityX' ); ?>
 					<?php echo get_the_author_posts_link(); ?>    &#8212;
-					<?php echo date( "F Y" ); ?>
+					<?php echo get_the_date( "F Y" ); ?>
 				</div>
 
 				<div>
@@ -63,10 +70,10 @@ endif; ?>
 
 <?php get_sidebar(); ?>
 
-<div class="join-us-footer">
-	<?php if ( is_active_sidebar( 'join-us-footer' ) ) : ?>
+<?php if ( is_active_sidebar( 'join-us-footer' ) ) : ?>
+	<div class="join-us-footer">
 		<?php dynamic_sidebar( 'join-us-footer' ); ?>
-	<?php endif; ?>
-</div>
+	</div>
+<?php endif; ?>
 
 <?php get_footer(); ?>
