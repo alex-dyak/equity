@@ -33,8 +33,7 @@ if ( ! empty( $image ) ): ?>
 				<div>
 					<?php _e( 'by ', 'EquityX' ); ?>
 					<?php echo get_the_author_posts_link(); ?>    &#8212;
-					<?php printf( _x( '%s ago', '%s = human-readable time difference', 'EquityX' ),
-						human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) ); ?>
+					<?php echo date( "F Y" ); ?>
 				</div>
 
 				<div>
@@ -48,7 +47,7 @@ if ( ! empty( $image ) ): ?>
 				<div>
 					<?php _e( 'Photo: ', 'EquityX' ); ?>
 					<?php echo get_the_author_posts_link(); ?>    &#8212;
-					<?php echo date( "d F Y" ); ?>
+					<?php echo date( "F Y" ); ?>
 				</div>
 
 				<div>
