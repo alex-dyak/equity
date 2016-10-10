@@ -1,17 +1,6 @@
 <?php
 /**
  * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link http://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage W4P-Theme
- * @since W4P Theme 1.0
  */
 
 get_header(); ?>
@@ -20,18 +9,31 @@ get_header(); ?>
 
 	<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
 
+		<?php if( has_post_thumbnail() ): ?>
+			<div>
+				<?php the_post_thumbnail(); ?>
+			</div>
+		<?php endif; ?>
+
 		<h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
 
-		<div class="entry">
-			<?php the_content(); ?>
-		</div>
+		<div class="entry-content">
 
-		<footer class="postmetadata">
-			<?php the_tags( __( 'Tags: ', 'EquityX' ), ', ', '<br />' ); ?>
-			<?php esc_html_e( 'Posted in', 'EquityX' ); ?> <?php the_category( ', ' ) ?>
-			|
-			<?php comments_popup_link( __( 'No Comments &#187;', 'EquityX' ), __( '1 Comment &#187;', 'EquityX' ), __( '% Comments &#187;', 'EquityX' ) ); ?>
-		</footer>
+			<div>
+				<?php _e( 'by ', 'EquityX' ); ?>
+				<?php echo get_the_author_posts_link(); ?>    &#8212;
+				<?php echo date( "F Y" ); ?>
+			</div>
+
+			<div>
+				<?php the_excerpt(); ?>
+			</div>
+
+			<div>
+				<?php the_content(); ?>
+			</div>
+
+		</div>
 
 	</article>
 
@@ -47,4 +49,62 @@ get_header(); ?>
 
 <?php get_sidebar(); ?>
 
+<div class="join-us-footer">
+	<?php if ( is_active_sidebar( 'join-us-footer' ) ) : ?>
+		<?php dynamic_sidebar( 'join-us-footer' ); ?>
+	<?php endif; ?>
+</div>
+
 <?php get_footer(); ?>
+
+/////////////////////////////////////////////////<?php
+$image = get_field( 'background_image' );
+
+if ( ! empty( $image ) ): ?>
+	<div>
+		<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"/>
+	</div>
+<?php endif; ?>
+
+
+<?php if ( have_posts() ) :
+	while ( have_posts() ) : the_post(); ?>
+
+		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
+
+			<h1 class="entry-title"><?php the_title(); ?></h1>
+
+			<div class="entry-content">
+
+				<div>
+					<?php _e( 'by ', 'EquityX' ); ?>
+					<?php echo get_the_author_posts_link(); ?>    &#8212;
+					<?php echo date( "F Y" ); ?>
+				</div>
+
+				<div>
+					<?php the_excerpt(); ?>
+				</div>
+
+				<div>
+					<?php the_post_thumbnail(); ?>
+				</div>
+
+				<div>
+					<?php _e( 'Photo: ', 'EquityX' ); ?>
+					<?php echo get_the_author_posts_link(); ?>    &#8212;
+					<?php echo date( "F Y" ); ?>
+				</div>
+
+				<div>
+					<?php the_content(); ?>
+				</div>
+
+			</div>
+
+		</article>
+
+	<?php endwhile;
+endif; ?>
+
+
