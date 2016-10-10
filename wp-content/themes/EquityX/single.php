@@ -37,7 +37,7 @@ if ( ! empty( $image ) ): ?>
 				</div>
 
 				<div>
-					<?php the_excerpt(); ?>
+					<?php the_excerpt_max_charlength( 200 ); ?>
 				</div>
 
 				<div>
