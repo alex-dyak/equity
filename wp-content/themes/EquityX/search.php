@@ -13,25 +13,28 @@ get_header(); ?>
 
 	<h2><?php esc_html_e( 'Search Results', 'EquityX' ); ?></h2>
 
-	<?php post_navigation(); ?>
+<?php while ( have_posts() ) : the_post(); ?>
 
-	<?php while ( have_posts() ) : the_post(); ?>
+	<?php get_template_part( 'template-article-blog-list' ); ?>
 
-		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
+<?php endwhile; ?>
 
-			<h2><?php the_title(); ?></h2>
-
-			<div class="entry">
-
-				<?php the_excerpt(); ?>
-
-			</div>
-
-		</article>
-
-	<?php endwhile; ?>
-
-	<?php post_navigation(); ?>
+	<section class="row entityGrid-pagination">
+		<section class="column">
+			<?php if ( function_exists( 'wp_pagenavi' ) ) {
+				wp_pagenavi( array(
+					'before'        => '<nav class="navigation pagination" role="navigation">',
+					'after'         => '</nav>',
+					'wrapper_tag'   => 'div',
+					'wrapper_class' => 'nav-links',
+					'options'       => array(),
+					'type'          => 'posts',
+					'echo'          => true
+				) );
+			}
+			?>
+		</section>
+	</section>
 
 <?php else : ?>
 

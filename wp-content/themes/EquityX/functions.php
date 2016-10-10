@@ -1,6 +1,6 @@
 <?php
 /**
- * W4P Theme Functions and definitions
+ * EquityX Theme Functions and definitions
  *
  * Set up the theme and provides some helper functions, which are used in the
  * theme as custom template tags. Others are attached to action and filter
@@ -21,8 +21,8 @@
  * {@link https://codex.wordpress.org/Plugin_API}
  *
  * @package WordPress
- * @subpackage W4P-Theme
- * @since W4P Theme 1.0
+ * @subpackage EquityX-Theme
+ * @since EquityX Theme 1.0
  */
 
 /**
@@ -187,7 +187,6 @@ function get_term_items() {
 	) );
 }
 
-
 /**
  * Widget Members to VC.
  */
@@ -227,27 +226,3 @@ function get_members() {
 		)
 	));
 }
-
-/**
- * Max lenght to excerpt.
- *
- * @param $charlength
- */
-function the_excerpt_max_charlength( $charlength ) {
-	$content = get_the_content();
-	$charlength ++;
-
-	if ( mb_strlen( $content ) > $charlength ) {
-		$subex   = mb_substr( $content, 0, $charlength - 5 );
-		$exwords = explode( ' ', $subex );
-		$excut   = - ( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
-		if ( $excut < 0 ) {
-			echo mb_substr( $subex, 0, $excut );
-		} else {
-			echo $subex;
-		}
-	} else {
-		echo $content;
-	}
-}
-
