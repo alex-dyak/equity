@@ -188,6 +188,7 @@ function get_term_items() {
 }
 
 /**
+<<<<<<< HEAD
  * Widget Members to VC.
  */
 add_action( 'vc_before_init', 'get_members' );
@@ -225,4 +226,15 @@ function get_members() {
 
 		)
 	));
+}
+
+/*
+ * Custom excerpt trim.
+ */
+function excerpt_trim( $length ) {
+	$text           = get_the_content();
+	$excerpt_length = apply_filters( 'excerpt_length', $length );
+	$excerpt_more   = apply_filters( 'excerpt_more', ' ' . '' );
+	$text           = wp_trim_words( $text, $excerpt_length, $excerpt_more );
+	return $text;
 }

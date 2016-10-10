@@ -5,8 +5,8 @@
  * Displays all of the head element and everything up until the "site-content" div.
  *
  * @package WordPress
- * @subpackage W4P-Theme
- * @since W4P Theme 1.0
+ * @subpackage EquityX-Theme
+ * @since EquityX Theme 1.0
  */
 ?><!doctype html>
 
