@@ -3,6 +3,13 @@
 	@include breakpoint(medium) {
 		padding-bottom: 35px;
 	}
+	&.defaultSection-inner {
+		padding-top: 60px;
+		padding-bottom: 35px;
+		@include breakpoint(medium) {
+			padding-bottom: 60px;
+		}
+	}
 }
 .joinUsSection {
 	max-width: 400px;

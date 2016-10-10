@@ -360,3 +360,18 @@ ol {
         }
     }
 }
+.backToMain {
+    font-size: $fontSize-smaller;
+    color: $stone;
+    transition: color .3s;
+    &:hover {
+        text-decoration: none;
+        color: $gray--lightest;
+    }
+    i {
+        display: inline-block;
+        margin-right: 5px;
+        font-size: $fontSize-large;
+        color: $gray--lightest;
+    }
+}

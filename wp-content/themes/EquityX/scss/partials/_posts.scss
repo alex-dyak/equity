@@ -1,0 +1,50 @@
+.postContent {
+	float: left;
+	width: 72.33%;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.postWidgets {
+	float: left;
+	width: 27.67%;
+	padding-left: 30px;
+	padding-right: 10px;
+}
+.postContent-link {
+	padding: 15px 0;
+	margin-bottom: 30px;
+	text-align: center;
+}
+.postContent-postBy {
+	padding-top: 5px;
+	padding-bottom: 20px;
+	font-size: $fontSize-small;
+	font-family: $font-light;
+	color: $blueSea;
+	a {
+		color: $blue;
+	}
+}
+.postContent-introText {
+	margin-bottom: 40px;
+	font-size: $fontSize-base;
+	line-height: $lineHeight-tight;
+	font-family: $font-base;
+	color: $stone;
+}
+.postContent-thumbnail {
+	margin-bottom: 30px;
+	line-height: 0;
+	img {
+		width: 100%;
+	}
+}
+.postContent-text {
+	margin-bottom: 45px;
+	font-size: $fontSize-small;
+	line-height: $lineHeight-loose;
+	color: $stone-70op;
+	p {
+		margin-bottom: 25px;
+	}
+}
