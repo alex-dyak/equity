@@ -66,10 +66,20 @@ if ( function_exists( 'register_sidebar' ) ) {
 			'after_title'   => '</h3>',
 		) );
 
+		register_sidebar( array(
+			'name'          => __( 'Small Join Us', 'EquityX' ),
+			'id'            => 'join-us-small',
+			'before_widget' => '<section class="u-clearfix smallJoinUsSection">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<p class="smallJoinUsSection-title">',
+			'after_title'   => '</p>',
+		) );
+
 		register_widget( 'W4P_Contacts_Widget' );
 		register_widget( 'W4P_Social_Profiles_Widget' );
 		register_widget( 'Join_Us_Button_Widget' );
 		register_widget( 'Homepage_Intro_Section_Widget' );
+		register_widget( 'Join_Us_White_Button_Widget' );
 
 	}
 
@@ -436,13 +446,13 @@ class Join_Us_Button_Widget extends WP_Widget {
 				<?php _e( strtoupper( $title ), 'EquityX' ); ?>
 			</a>
 
-			<div class="linkTooltip">
+			<a href="#" class="linkTooltip js-linkTooltip">
 				<span class="linkTooltip-trigger infoIcon"></span>
 				<div class="linkTooltip-item">
 					<p class="linkTooltip-item-title"><?php _e( strtoupper( $title_content ), 'EquityX' ); ?></p>
 					<p><?php echo strip_tags( $content ); ?></p>
 				</div>
-			</div>
+			</a>
 		</div>
 
 		<?php
@@ -466,6 +476,95 @@ class Join_Us_Button_Widget extends WP_Widget {
 		$instance['link']          = get_field( 'link', 'widget_' . $this->id );
 		$instance['title_content'] = get_field( 'title_content', 'widget_' . $this->id );
 		$instance['content']       = get_field( 'content', 'widget_' . $this->id );
+
+		return $instance;
+	}
+
+	/**
+	 * Back-end widget form.
+	 *
+	 * @see WP_Widget::form()
+	 *
+	 * @param array $instance Previously saved values from database.
+	 */
+	public function form( $instance ) {
+	}
+
+}
+
+class Join_Us_White_Button_Widget extends WP_Widget {
+	/**
+	 * Constructor
+	 */
+	public function __construct() {
+		parent::__construct(
+			'white_button_widget', // Base ID
+			$name = __( 'White Join Us Button Widget', 'EquityX' ), // Name
+			array(
+				'description' => __( 'Displays Join Us White Button.',
+					'EquityX' )
+			) // Args
+		);
+	}
+
+	/**
+	 * Front-end display of widget.
+	 *
+	 * @see WP_Widget::widget()
+	 *
+	 * @param array $args     Widget arguments.
+	 * @param array $instance Saved values from database.
+	 */
+	public function widget( $args, $instance ) {
+		extract( $args );
+		$title         = apply_filters( 'widget_title', $instance['title'] ); /* The widget title. */
+		$link          = $instance['link'];
+		$title_content = $instance['title_content'];
+		$description       = $instance['description'];
+
+
+		echo $args['before_widget']; ?>
+
+		<div class="u-text--center joinUsWidget joinUsWidget--small">
+			<a href="<?php echo $link ?>" class="btn btn--white btn--hasIcon btn--linkedIn" target="_blank">
+				<span class="btn-icon">
+					<svg class="svgIcon btn-icon-svgLinkedin">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+					</svg>
+				</span>
+				<?php _e( strtoupper( $title ), 'EquityX' ); ?>
+			</a>
+
+			<a href="#" class="linkTooltip js-linkTooltip">
+				<span class="linkTooltip-trigger infoIcon"></span>
+				<div class="linkTooltip-item">
+					<p class="linkTooltip-item-title"><?php _e( strtoupper( $title_content ), 'EquityX' ); ?></p>
+					<p><?php echo strip_tags( $description ); ?></p>
+				</div>
+			</a>
+		</div>
+
+		<?php
+		echo $args['after_widget'];
+
+	}
+
+	/**
+	 * Sanitize widget form values as they are saved.
+	 *
+	 * @see WP_Widget::update()
+	 *
+	 * @param array $new_instance Values just sent to be saved.
+	 * @param array $old_instance Previously saved values from database.
+	 *
+	 * @return array Updated safe values to be saved.
+	 */
+	public function update( $new_instance, $old_instance ) {
+		$instance                  = array();
+		$instance['title']         = get_field( 'button_title', 'widget_' . $this->id );
+		$instance['link']          = get_field( 'link', 'widget_' . $this->id );
+		$instance['title_content'] = get_field( 'title_content', 'widget_' . $this->id );
+		$instance['description']       = get_field( 'description', 'widget_' . $this->id );
 
 		return $instance;
 	}

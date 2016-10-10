@@ -148,9 +148,8 @@ require_once( get_template_directory() . '/inc/filters.php' );
 require_once( get_template_directory() . '/inc/shortcodes.php' );
 
 /**
- * Widget to VC
+ * Widget Term Items to VC
  */
-
 add_action( 'vc_before_init', 'get_term_items' );
 function get_term_items() {
 	vc_map( array(
@@ -177,7 +176,7 @@ function get_term_items() {
 				"class"       => "",
 				"heading"     => __( "Content", "EquityX" ),
 				"param_name"  => "content",
-				"value"       => __( "<p>I am test text block. Click edit button to change this text.</p>", "EquityX" ),
+				"value"       => __( "<p>Click edit button to change this text.</p>", "EquityX" ),
 				"description" => __( "Enter your content.", "EquityX" )
 			)
 		)
@@ -187,10 +186,54 @@ function get_term_items() {
 /**
  * Custom excerpt trim.
  */
-function excerpt_trim( $length ) {
-	$text           = get_the_content();
-	$excerpt_length = apply_filters( 'excerpt_length', $length );
-	$excerpt_more   = apply_filters( 'excerpt_more', ' ' . '' );
-	$text           = wp_trim_words( $text, $excerpt_length, $excerpt_more );
+function excerpt_trim( $length )
+{
+	$text = get_the_content();
+	$excerpt_length = apply_filters('excerpt_length', $length);
+	$excerpt_more = apply_filters('excerpt_more', ' ' . '');
+	$text = wp_trim_words($text, $excerpt_length, $excerpt_more);
 	return $text;
+}
+
+/**
+ * Widget Members to VC.
+ */
+add_action( 'vc_before_init', 'get_members' );
+function get_members() {
+	vc_map( array(
+		"name"     => __( "EquityX members", "EquityX" ),
+		"base"     => "equityx_members",
+		"class"    => "",
+		"category" => __( "Content", "EquityX" ),
+		"description" => __( "Members information." ),
+		"params"   => array(
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"class"       => "",
+				"heading"     => __( "Title", "EquityX" ),
+				"param_name"  => "page_title",
+			    "value"       => 'Members Quantity'
+			),
+			array(
+				"type"        => "textarea",
+				"holder"      => "div",
+				"class"       => "",
+				"heading"     => __( "Short Description", "EquityX" ),
+				"param_name"  => "description",
+			),
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"class"       => "",
+				"heading"     => __( "Members Quantity", "EquityX" ),
+				"param_name"  => "quantity",
+				"description" => __( "Enter Members Quantity.", "EquityX" )
+			),
+
+		)
+	));
+}
+
+class WPBakeryShortCode_equityx_members extends WPBakeryShortCode {
 }
