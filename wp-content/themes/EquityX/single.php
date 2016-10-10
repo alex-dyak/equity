@@ -2,41 +2,39 @@
 /**
  * The template for displaying all single posts and attachments
  *
- * @package WordPress
- * @subpackage W4P-Theme
- * @since W4P Theme 1.0
+ * @package    WordPress
+ * @subpackage EquityX-Theme
+ * @since      EquityX Theme 1.0
  */
 
 get_header(); ?>
 
+<?php
+$image = get_option( 'w4p_background_img' );
+
+if ( ! empty( $image ) ): ?>
+	<div>
+		<img src="<?php echo $image['url']; ?>" alt=""/>
+	</div>
+<?php endif; ?>
+
+
 <?php if ( have_posts() ) :
 	while ( have_posts() ) : the_post(); ?>
 
-		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
+		<a href="<?php echo get_post_type_archive_link( 'post' ); ?>"><?php echo __( strtoupper( 'Back to main' ), 'EquityX' ); ?></a>
 
-			<h1 class="entry-title"><?php the_title(); ?></h1>
-
-			<div class="entry-content">
-
-				<?php the_content(); ?>
-
-				<?php wp_link_pages( array( 'before' => __( 'Pages: ', 'EquityX' ), 'next_or_number' => 'number' ) ); ?>
-
-				<?php the_tags( __( 'Tags: ', 'EquityX' ), ', ', '' ); ?>
-
-			</div>
-
-			<?php edit_post_link( __( 'Edit this entry', 'EquityX' ), '', '.' ); ?>
-
-		</article>
-
-		<?php comments_template(); ?>
+		<?php get_template_part( 'template-article-post' ); ?>
 
 	<?php endwhile;
 endif; ?>
 
-<?php post_navigation(); ?>
-
 <?php get_sidebar(); ?>
+
+<?php if ( is_active_sidebar( 'join-us-footer' ) ) : ?>
+	<div class="join-us-footer">
+		<?php dynamic_sidebar( 'join-us-footer' ); ?>
+	</div>
+<?php endif; ?>
 
 <?php get_footer(); ?>

@@ -10,8 +10,8 @@
  * @link http://codex.wordpress.org/Template_Hierarchy
  *
  * @package WordPress
- * @subpackage W4P-Theme
- * @since W4P Theme 1.0
+ * @subpackage EquityX-Theme
+ * @since EquityX Theme 1.0
  */
 
 get_header(); ?>
