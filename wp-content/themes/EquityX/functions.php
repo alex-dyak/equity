@@ -147,6 +147,9 @@ require_once( get_template_directory() . '/inc/filters.php' );
 // Custom shortcodes.
 require_once( get_template_directory() . '/inc/shortcodes.php' );
 
+// Class for VC.
+require_once( get_template_directory() . '/inc/WPBakeryShortCode_equityx_members.php' );
+
 /**
  * Widget Term Items to VC
  */
@@ -183,6 +186,7 @@ function get_term_items() {
 		)
 	) );
 }
+
 
 /**
  * Widget Members to VC.
@@ -224,5 +228,26 @@ function get_members() {
 	));
 }
 
-class WPBakeryShortCode_equityx_members extends WPBakeryShortCode {
+/**
+ * Max lenght to excerpt.
+ *
+ * @param $charlength
+ */
+function the_excerpt_max_charlength( $charlength ) {
+	$content = get_the_content();
+	$charlength ++;
+
+	if ( mb_strlen( $content ) > $charlength ) {
+		$subex   = mb_substr( $content, 0, $charlength - 5 );
+		$exwords = explode( ' ', $subex );
+		$excut   = - ( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
+		if ( $excut < 0 ) {
+			echo mb_substr( $subex, 0, $excut );
+		} else {
+			echo $subex;
+		}
+	} else {
+		echo $content;
+	}
 }
+
