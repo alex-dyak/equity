@@ -183,3 +183,14 @@ function get_term_items() {
 		)
 	) );
 }
+
+/**
+ * Custom excerpt trim.
+ */
+function excerpt_trim( $length ) {
+	$text           = get_the_content();
+	$excerpt_length = apply_filters( 'excerpt_length', $length );
+	$excerpt_more   = apply_filters( 'excerpt_more', ' ' . '' );
+	$text           = wp_trim_words( $text, $excerpt_length, $excerpt_more );
+	return $text;
+}

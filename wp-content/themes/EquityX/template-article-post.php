@@ -5,20 +5,11 @@
 	<div class="entry-content">
 
 		<div>
-			<?php
-			$author_link = get_the_author_posts_link();
-			$date        = get_the_date( "F Y" );
-			printf( esc_html__( 'by %s &#8212; %s', 'EquityX' ), $author_link, $date ); ?>
+			<?php printf( esc_html__( 'by %s &#8212; %s', 'EquityX' ), get_the_author_posts_link(), get_the_date( "F Y" ) ); ?>
 		</div>
 
 		<div>
-			<?php
-			$text           = get_the_content();
-			$excerpt_length = apply_filters( 'excerpt_length', 40 );
-			$excerpt_more   = apply_filters( 'excerpt_more', ' ' . '' );
-			$text           = wp_trim_words( $text, $excerpt_length, $excerpt_more );
-			echo $text;
-			?>
+			<?php echo excerpt_trim( 50 ); ?>
 		</div>
 
 		<?php if ( has_post_thumbnail() ): ?>
