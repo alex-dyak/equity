@@ -1,6 +1,6 @@
 <?php
 /**
- * W4P Theme Functions and definitions
+ * EquityX Theme Functions and definitions
  *
  * Set up the theme and provides some helper functions, which are used in the
  * theme as custom template tags. Others are attached to action and filter
@@ -21,8 +21,8 @@
  * {@link https://codex.wordpress.org/Plugin_API}
  *
  * @package WordPress
- * @subpackage W4P-Theme
- * @since W4P Theme 1.0
+ * @subpackage EquityX-Theme
+ * @since EquityX Theme 1.0
  */
 
 /**
@@ -147,6 +147,9 @@ require_once( get_template_directory() . '/inc/filters.php' );
 // Custom shortcodes.
 require_once( get_template_directory() . '/inc/shortcodes.php' );
 
+// Class for VC.
+require_once( get_template_directory() . '/inc/WPBakeryShortCode_equityx_members.php' );
+
 /**
  * Widget Term Items to VC
  */
@@ -224,5 +227,13 @@ function get_members() {
 	));
 }
 
-class WPBakeryShortCode_equityx_members extends WPBakeryShortCode {
+/*
+ * Custom excerpt trim.
+ */
+function excerpt_trim( $length ) {
+	$text           = get_the_content();
+	$excerpt_length = apply_filters( 'excerpt_length', $length );
+	$excerpt_more   = apply_filters( 'excerpt_more', ' ' . '' );
+	$text           = wp_trim_words( $text, $excerpt_length, $excerpt_more );
+	return $text;
 }

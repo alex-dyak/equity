@@ -1,11 +1,11 @@
 <?php
 /**
- * W4P Theme Options
+ * EquityX Theme Options
  *
  * @link http://codex.wordpress.org/Shortcode_API
  *
  * @package WordPress
- * @subpackage W4P-Theme
+ * @subpackage EquityX-Theme
  */
 
 // Call late so child themes can override.
@@ -120,11 +120,12 @@ class W4PThemeSettingsPage {
 		$this->options['w4p_contacts_address'] = get_option( 'w4p_contacts_address' );
 		$this->options['w4p_contacts_phones'] = get_option( 'w4p_contacts_phones' );
 		$this->options['w4p_contacts_skype'] = get_option( 'w4p_contacts_skype' );
-
-		$this->options['w4p_copyright'] = get_option( 'w4p_copyright' ); ?>
+		$this->options['w4p_copyright'] = get_option( 'w4p_copyright' );
+		$this->options['w4p_background_img'] = get_option( 'w4p_background_img' );
+		?>
 		<div class="wrap">
 			<!-- <h2>My Settings</h2> -->
-			<form method="post" action="options.php">
+			<form method="post" action="options.php" enctype="multipart/form-data">
 				<?php
 				// This prints out all hidden setting fields.
 				settings_fields( 'w4p_options_group' );
@@ -165,6 +166,12 @@ class W4PThemeSettingsPage {
 			array( $this, 'sanitize_copyright' ) /* Sanitize */
 		);
 
+		register_setting(
+			'w4p_options_group', /* Option group */
+			'w4p_background_img', /* Option name */
+			array( $this, 'sanitize_img' ) /* Sanitize */
+		);
+
 		add_settings_section(
 			'setting_section_id', /* ID */
 			__( 'W4P Theme Options', 'EquityX' ), /* Title */
@@ -192,6 +199,14 @@ class W4PThemeSettingsPage {
 			'w4p_copyright',
 			__( 'Copyright', 'EquityX' ),
 			array( $this, 'copyright_callback' ),
+			'theme_options',
+			'setting_section_id'
+		);
+
+		add_settings_field(
+			'w4p_general_options',
+			__( 'General Theme Options', 'EquityX' ),
+			array( $this, 'general_theme_options_callback' ),
 			'theme_options',
 			'setting_section_id'
 		);
@@ -235,6 +250,24 @@ class W4PThemeSettingsPage {
 
 		return $new_input;
 	}
+
+	/**
+	 * 	/**
+	 * Sanitize each setting field as needed.
+	 *
+	 * @param array $input Contains all settings fields as array keys.
+	 * @return array
+	 */
+	public function sanitize_img( $input ) {
+		$data = $_FILES['w4p_background_img'];
+		if ( '' != $data['name'] ){
+			$upload = wp_handle_upload( $_FILES['w4p_background_img'], array( 'test_form' => false ) );
+			return $upload;
+		} else {
+			return get_option( 'w4p_background_img' );
+		}
+	}
+
 
 	/**
 	 * Return default copyright field text.
@@ -357,7 +390,26 @@ class W4PThemeSettingsPage {
 			/>
 		</div>
 	<?php }
+
+
+
+	/**
+	 * Get the settings option array and print one of its values
+	 */
+	public function general_theme_options_callback() {
+		?>
+		<div class="w4p-genepal-options-wrapper">
+			<label for="w4p_background_img" class="w4p-option-label"><?php esc_html_e( 'Blog Background Image:', 'EquityX' ); ?></label>
+
+			<div id="upload_preview">
+				<img style="max-width:200px;" src="<?php echo ! empty( $this->options['w4p_background_img']['url'] ) ? esc_attr( $this->options['w4p_background_img']['url'] ) : '' ?>"/>
+			</div>
+			<input type="file" id="w4p_background_img" name="w4p_background_img"/>
+		</div>
+	<?php }
 }
+
+
 
 if ( is_admin() ) {
 	$settings_page = new W4PThemeSettingsPage();

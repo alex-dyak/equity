@@ -1,10 +1,10 @@
 <?php
 /**
- * Template for displaying search forms in W4P Theme
+ * Template for displaying search forms in EquityX Theme
  *
  * @package WordPress
- * @subpackage W4P-Theme
- * @since W4P Theme 1.0
+ * @subpackage EquityX-Theme
+ * @since EquityX Theme 1.0
  */
 
 ?>
