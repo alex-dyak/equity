@@ -42,7 +42,7 @@ if ( ! empty( $quantity ) ) :
 				<ul class="u-list--plain membersList-item-inner-contacts">
 					<?php if ( get_field( 'instagram' ) ) : ?>
 						<li>
-							<a href="<?php echo strip_tags( get_field( 'instagram' ) ); ?>" class="contactsIco-linkedIn">
+							<a href="<?php echo strip_tags( get_field( 'instagram' ) ); ?>" class="contactsIco-linkedIn" target="_blank">
 								<svg class="svgIcon linkedInFilled">
 									<use xlink:href="#filllinkedin" />
 								</svg>
@@ -60,7 +60,7 @@ if ( ! empty( $quantity ) ) :
 
 					<?php if ( get_field( 'twitter' ) ) : ?>
 						<li>
-							<a href="<?php echo strip_tags( get_field( 'twitter' ) ); ?>" class="contactsIco-twitterIco">
+							<a href="<?php echo strip_tags( get_field( 'twitter' ) ); ?>" class="contactsIco-twitterIco" target="_blank">
 								<svg class="svgIcon twitterIco">
 									<use xlink:href="#twitter" />
 								</svg>
