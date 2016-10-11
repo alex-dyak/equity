@@ -57,8 +57,14 @@
 	}
 }
 .postContent-thumbnail {
+	margin-left: -30px;
+	margin-right: -30px;
 	margin-bottom: 30px;
 	line-height: 0;
+	@include breakpoint(medium) {
+		margin-left: 0;
+		margin-right: 0;
+	}
 	img {
 		width: 100%;
 	}
