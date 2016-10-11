@@ -108,5 +108,11 @@
                 </div>
             <?php endif; ?>
 
+            <div class="searchTrigger">
+                <a href="#" class="searchTrigger-item js-searchTrigger">
+                    <i class="ft-icon-search"></i>
+                </a>
+            </div>
+
         </div>
     </header><!-- Header -->
