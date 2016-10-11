@@ -131,9 +131,6 @@ function post_navigation() {
 	echo '</div>';
 }
 
-// Custom class.
-require_once( get_template_directory() . '/inc/classes.php' );
-
 // Include theme options.
 require_once( get_template_directory() . '/inc/options.php' );
 
