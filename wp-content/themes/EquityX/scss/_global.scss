@@ -298,7 +298,7 @@ ol {
 .defaultSection {
     .defaultSection-inner,
     > .vc_column-inner > .wpb_wrapper {
-        padding: 50px 30px 10px 30px;
+        padding: 30px 30px 10px 30px;
         margin-bottom: 15px;
         font-family: $font-light;
         font-size: $fontSize-small;
@@ -306,93 +306,12 @@ ol {
         background: $white;
         box-shadow: 0 0 20px 0 $black--20op;
         @include breakpoint(medium) {
+            padding-top: 50px;
             border-radius: 3px;
             box-shadow: 0 5px 20px 0 $black--20op;
         }
         @include breakpoint(large) {
             font-size: $fontSize-base;
-        }
-    }
-}
-.joinUs {
-    padding-top: 60px;
-    @include breakpoint(medium) {
-        padding-bottom: 35px;
-    }
-}
-.joinUsSection {
-    max-width: 400px;
-    margin: 0 auto;
-}
-.joinUsWidget {
-    position: relative;
-    display: inline-block;
-}
-.joinUsSection {
-    text-align: center;
-    p {
-        margin-bottom: 25px;
-    }
-    h1 {
-        margin-bottom: 15px;
-    }
-}
-.smallJoinUs-block {
-    padding: 40px 30px 20px 30px;
-    margin: 0 -30px -10px;
-    text-align: center;
-    background-color: $mystic-light;
-    box-shadow: inset 0 10px 20px -10px $black--20op;
-    @include breakpoint(medium) {
-        padding-left: 50px;
-        padding-bottom: 30px;
-        text-align: left;
-        box-shadow: none;
-    }
-}
-.smallJoinUsSection {
-    max-width: 1010px;
-    margin-bottom: 20px;
-    font-size: $fontSize-smallJoinUs--large;
-    @include breakpoint(medium) {
-        padding-right: 350px;
-        margin-bottom: 0;
-    }
-    p {
-        margin-bottom: 10px;
-        @include breakpoint(medium) {
-            margin-bottom: 0;
-        }
-    }
-}
-.smallJoinUsSection-title {
-    font-family: $font-medium;
-    text-align: center;
-    text-transform: uppercase;
-    color: $stone;
-    @include breakpoint(medium) {
-        float: left;
-        margin-right: 5px;
-    }
-}
-.joinUsWidget--small {
-    margin: 0 auto;
-    @include breakpoint(medium) {
-        position: absolute;
-        top: 50%;
-        right: 65px;
-        transform: translateY(-50%);
-        z-index: 100;
-    }
-    .linkTooltip-item {
-        top: 40px;
-        right: -10px;
-        transform: translateY(0) translateX(0);
-        &::before {
-            left: initial;
-            right: 15px;
-            top: -3px;
-            transform: rotate(90deg);
         }
     }
 }
@@ -440,5 +359,20 @@ ol {
         @include breakpoint(medium) {
             padding: 0 40px;
         }
+    }
+}
+.backToMain {
+    font-size: $fontSize-smaller;
+    color: $stone;
+    transition: color .3s;
+    &:hover {
+        text-decoration: none;
+        color: $gray--lightest;
+    }
+    i {
+        display: inline-block;
+        margin-right: 5px;
+        font-size: $fontSize-large;
+        color: $gray--lightest;
     }
 }
