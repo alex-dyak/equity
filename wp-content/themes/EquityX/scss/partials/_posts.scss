@@ -1,36 +1,62 @@
 .postContent {
-	float: left;
-	width: 72.33%;
-	padding-left: 30px;
-	padding-right: 30px;
+	@include breakpoint(large) {
+		float: left;
+		width: 72.33%;
+		//padding-left: 30px;
+		padding-right: 10px;
+	}
+	@include breakpoint(xlarge) {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
 }
 .postWidgets {
-	float: left;
-	width: 27.67%;
-	padding-left: 30px;
-	padding-right: 10px;
+	display: none;
+	@include breakpoint(large) {
+		display: block;
+		float: left;
+		width: 27.67%;
+		padding-left: 10px;
+		//padding-right: 10px;
+	}
+	@include breakpoint(xlarge) {
+		padding-left: 30px;
+		padding-right: 10px;
+	}
 }
 .postContent-link {
-	padding: 15px 0;
+	padding-bottom: 20px;
 	margin-bottom: 30px;
 	text-align: center;
+	@include breakpoint(medium) {
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
 }
 .postContent-postBy {
 	padding-top: 5px;
 	padding-bottom: 20px;
 	font-size: $fontSize-small;
 	font-family: $font-light;
+	text-align: center;
 	color: $blueSea;
+	@include breakpoint(medium) {
+		text-align: left;
+	}
 	a {
 		color: $blue;
 	}
 }
 .postContent-introText {
+	display: none;
 	margin-bottom: 40px;
 	font-size: $fontSize-base;
 	line-height: $lineHeight-tight;
 	font-family: $font-base;
 	color: $stone;
+	@include breakpoint(medium) {
+		display: block;
+	}
 }
 .postContent-thumbnail {
 	margin-bottom: 30px;
