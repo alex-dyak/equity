@@ -28,6 +28,8 @@ get_header(); ?>
 
 			<?php edit_post_link( __( 'Edit this entry', 'EquityX' ), '', '.' ); ?>
 
+			<?php w4ptheme_set_post_view( get_the_ID() ); ?>
+
 		</article>
 
 		<?php comments_template(); ?>

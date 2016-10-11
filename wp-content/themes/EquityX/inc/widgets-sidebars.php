@@ -80,6 +80,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 		register_widget( 'Join_Us_Button_Widget' );
 		register_widget( 'Homepage_Intro_Section_Widget' );
 		register_widget( 'Join_Us_White_Button_Widget' );
+		register_widget( 'Popular_Posts_Widget' );
 
 	}
 
@@ -687,6 +688,147 @@ class Homepage_Intro_Section_Widget extends WP_Widget {
 	 * @param array $instance Previously saved values from database.
 	 */
 	public function form( $instance ) {
+	}
+
+}
+
+/**
+ * Popular Posts Widget
+ */
+class Popular_Posts_Widget extends WP_Widget {
+	/**
+	 * Constructor
+	 */
+	public function __construct() {
+		parent::__construct(
+			'popular_posts_widget', // Base ID
+			$name = __( 'Popular Posts Widget', 'EquityX' ), // Name
+			array(
+				'description' => __( 'Displays Popular Posts Widget.',
+					'EquityX' )
+			) // Args
+		);
+	}
+
+	/**
+	 * Front-end display of widget.
+	 *
+	 * @see WP_Widget::widget()
+	 *
+	 * @param array $args Widget arguments.
+	 * @param array $instance Saved values from database.
+	 */
+	public function widget( $args, $instance ) {
+		extract( $args );
+		$title      = apply_filters( 'widget_title', $instance['title'] );
+		$limit  = $instance['limit'];
+		$offset     = $limit > 0 ? $limit : 0;
+
+		wp_enqueue_script( 'jquery-mCustomScrollbar', get_template_directory_uri() . '/js/vendor/jquery.mCustomScrollbar.min.js', array( 'jquery' ), NULL, TRUE );
+		wp_enqueue_style( 'style-mCustomScrollbar', get_template_directory_uri() . '/css/jquery.mCustomScrollbar.min.css' );
+
+		echo $args['before_widget']; ?>
+
+		<div class="popular_posts_widget popular-posts">
+			<h1 class="popular-posts-title"><?php esc_html_e( $title ); ?></h1>
+			<ul class="popular-posts-list">
+				<?php echo do_shortcode( "[popular-posts limit='{$limit}' offset='0']" ); ?>
+			</ul>
+			<?php if ( $limit <> -1 ) : ?>
+				<a
+					href="<?php echo esc_attr( "/?offset={$offset}&limit={$limit}" ); ?>"
+					class="view-more"
+					>
+					<?php esc_html_e( 'View more', 'EquityX' ); ?>
+				</a>
+			<?php endif; ?>
+		</div>
+
+		<?php
+		echo $args['after_widget'];
+
+	}
+
+	/**
+	 * Sanitize widget form values as they are saved.
+	 *
+	 * @see WP_Widget::update()
+	 *
+	 * @param array $new_instance Values just sent to be saved.
+	 * @param array $old_instance Previously saved values from database.
+	 *
+	 * @return array Updated safe values to be saved.
+	 */
+	public function update( $new_instance, $old_instance ) {
+		$instance               = array();
+		$instance['title']      = apply_filters( 'widget_title', $new_instance['title'] );
+		$instance['limit']  = $new_instance['limit'];
+
+		return $instance;
+	}
+
+	/**
+	 * Back-end widget form.
+	 *
+	 * @see WP_Widget::form()
+	 *
+	 * @param array $instance Previously saved values from database.
+	 */
+	public function form( $instance ) {
+		// Set up some default widget settings.
+		$defaults = array(
+			'title' => __( 'Popular Posts', 'EquityX' ),
+			'limit' => 5,
+		);
+		$instance = wp_parse_args( (array) $instance, $defaults );
+
+		// Get widget fields values.
+		if ( ! empty( $instance ) ) {
+			$title = esc_attr( $instance['title'] );
+			$limit = $instance['limit'];
+		}
+		$limit_list = array(
+			1 => '1',
+			2 => '2',
+			5 => '5',
+			7 => '7',
+			10 => '10',
+			12 => '12',
+			15 => '15',
+			17 => '17',
+			20 => '20',
+			50 => '50',
+			-1 => __( '--All--', 'EquityX' ),
+		); ?>
+		<p>
+			<label
+				for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:',
+					'EquityX' ); ?></label>
+			<input
+				id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
+				name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
+				type="text" value="<?php echo esc_attr( $title ); ?>"/>
+		</p>
+		<p>
+			<label
+				for="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>"><?php esc_html_e( 'Choose amount of posts to show:',
+					'EquityX' ); ?></label><br>
+			<select
+				id="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>"
+				name="<?php echo esc_attr( $this->get_field_name( 'limit' ) ); ?>"
+				style="min-width: 150px;">
+				<?php
+				foreach( $limit_list as $value => $label) { ?>
+					<option
+						<?php selected( $limit, $value ) ?>
+						value="<?php echo esc_attr( $value ); ?>"
+						>
+						<?php echo esc_html( $label ); ?>
+					</option>
+				<?php } ?>
+			</select>
+		</p>
+	<?php
 	}
 
 }
