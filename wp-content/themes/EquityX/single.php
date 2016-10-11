@@ -28,7 +28,7 @@ get_header(); ?>
 
 			<?php edit_post_link( __( 'Edit this entry', 'EquityX' ), '', '.' ); ?>
 
-			<?php subh_set_post_view( get_the_ID() ); ?>
+			<?php w4ptheme_set_post_view( get_the_ID() ); ?>
 
 		</article>
 

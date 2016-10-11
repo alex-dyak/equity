@@ -66,14 +66,12 @@ class PopularPosts_Shortcode {
 		extract( shortcode_atts( array(
 			'limit' => '',
 			'offset' => '',
-			'use_plugin' => false,
 		), $atts ) );
 
 		// Actual shortcode handling here.
 		ob_start();
 		set_query_var( 'limit', isset( $atts['limit'] ) ? $atts['limit'] : 5 );
 		set_query_var( 'offset', isset( $atts['offset'] ) ? $atts['offset'] : 0 );
-		set_query_var( 'use_plugin', isset( $atts['use_plugin'] ) ? $atts['use_plugin'] : false );
 		get_template_part( 'sc_templates/popular_posts' );
 		$ret = ob_get_contents();
 		ob_end_clean();
@@ -110,8 +108,7 @@ PopularPosts_Shortcode::init();
 function popular_posts_callback() {
 	$limit      = isset( $_POST['limit'] ) ? filter_var( $_POST["limit"], FILTER_SANITIZE_STRING ) : 5;
 	$offset     = isset( $_POST['offset'] ) ? filter_var( $_POST["offset"], FILTER_SANITIZE_STRING ) : 0;
-	$use_plugin = isset( $_POST['use_plugin'] ) ? filter_var( $_POST["use_plugin"], FILTER_SANITIZE_STRING ) : 0;
-	$data       = do_shortcode( "[popular-posts limit='{$limit}' offset='{$offset}' use_plugin='{$use_plugin}']" );
+	$data       = do_shortcode( "[popular-posts limit='{$limit}' offset='{$offset}']" );
 	if ( $data ) {
 		die( wp_json_encode(
 			array(
@@ -119,7 +116,6 @@ function popular_posts_callback() {
 				'content'    => $data,
 				'offset'     => $offset + $limit,
 				'limit'      => $limit,
-				'use_plugin' => $use_plugin,
 			)
 		) );
 	} else {

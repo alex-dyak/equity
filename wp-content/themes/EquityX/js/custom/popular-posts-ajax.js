@@ -13,8 +13,7 @@
             data: {
               action: "popular-posts",
               offset: params.offset,
-              limit: params.limit,
-              use_plugin: params.use_plugin
+              limit: params.limit
             },
             dataType: 'json',
             beforeSend: function () {
@@ -25,7 +24,7 @@
               if (response.type != 'error') {
                 $("ul.popular-posts-list .mCSB_container").append(response.content); //load new content inside .mCSB_container
                 $("ul.popular-posts-list").mCustomScrollbar("update");
-                $("div.popular-posts a.view-more").attr("href", "/?use_plugin="+response.use_plugin+"&offset="+response.offset+"&limit="+response.limit);
+                $("div.popular-posts a.view-more").attr("href", "/?offset="+response.offset+"&limit="+response.limit);
               }
             }
           });

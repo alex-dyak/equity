@@ -721,9 +721,8 @@ class Popular_Posts_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		extract( $args );
 		$title      = apply_filters( 'widget_title', $instance['title'] );
-		$items_num  = $instance['items_num'];
-		$use_plugin = (int) $instance['use_plugin'];
-		$offset     = $items_num > 0 ? $items_num : 0;
+		$limit  = $instance['limit'];
+		$offset     = $limit > 0 ? $limit : 0;
 
 		wp_enqueue_script( 'jquery-mCustomScrollbar', get_template_directory_uri() . '/js/vendor/jquery.mCustomScrollbar.min.js', array( 'jquery' ), NULL, TRUE );
 		wp_enqueue_style( 'style-mCustomScrollbar', get_template_directory_uri() . '/css/jquery.mCustomScrollbar.min.css' );
@@ -733,11 +732,11 @@ class Popular_Posts_Widget extends WP_Widget {
 		<div class="popular_posts_widget popular-posts">
 			<h1 class="popular-posts-title"><?php esc_html_e( $title ); ?></h1>
 			<ul class="popular-posts-list">
-				<?php echo do_shortcode( "[popular-posts limit='{$items_num}' offset='0' use_plugin='{$use_plugin}']" ); ?>
+				<?php echo do_shortcode( "[popular-posts limit='{$limit}' offset='0']" ); ?>
 			</ul>
-			<?php if ( $items_num <> -1 ) : ?>
+			<?php if ( $limit <> -1 ) : ?>
 				<a
-					href="<?php echo esc_attr( "/?use_plugin={$use_plugin}&offset={$offset}&limit={$items_num}" ); ?>"
+					href="<?php echo esc_attr( "/?offset={$offset}&limit={$limit}" ); ?>"
 					class="view-more"
 					>
 					<?php esc_html_e( 'View more', 'EquityX' ); ?>
@@ -763,8 +762,7 @@ class Popular_Posts_Widget extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 		$instance               = array();
 		$instance['title']      = apply_filters( 'widget_title', $new_instance['title'] );
-		$instance['items_num']  = $new_instance['items_num'];
-		$instance['use_plugin'] = $new_instance['use_plugin'];
+		$instance['limit']  = $new_instance['limit'];
 
 		return $instance;
 	}
@@ -780,18 +778,16 @@ class Popular_Posts_Widget extends WP_Widget {
 		// Set up some default widget settings.
 		$defaults = array(
 			'title' => __( 'Popular Posts', 'EquityX' ),
-			'items_num' => 5,
-			'use_plugin' => false,
+			'limit' => 5,
 		);
 		$instance = wp_parse_args( (array) $instance, $defaults );
 
 		// Get widget fields values.
 		if ( ! empty( $instance ) ) {
 			$title = esc_attr( $instance['title'] );
-			$items_num = $instance['items_num'];
-			$use_plugin = $instance['use_plugin'];
+			$limit = $instance['limit'];
 		}
-		$items_num_list = array(
+		$limit_list = array(
 			1 => '1',
 			2 => '2',
 			5 => '5',
@@ -815,29 +811,16 @@ class Popular_Posts_Widget extends WP_Widget {
 		</p>
 		<p>
 			<label
-				for="<?php echo esc_attr( $this->get_field_id( 'use_plugin' ) ); ?>">
-				<?php echo sprintf(
-					__( 'Use %s plugin', 'EquityX' ),
-					"<a target='_blank' href='https://wordpress.org/plugins/wordpress-popular-posts/'>WordPress Popular Posts</a>" ); ?>
-			</label>&nbsp;
-			<input
-				<?php disabled( function_exists('wpp_get_mostpopular'), false ); ?>
-				id="<?php echo esc_attr( $this->get_field_id( 'use_plugin' ) ); ?>"
-				name="<?php echo esc_attr( $this->get_field_name( 'use_plugin' ) ); ?>"
-				type="checkbox" value="1" <?php checked( $use_plugin ); ?>/><br>
-		</p>
-		<p>
-			<label
-				for="<?php echo esc_attr( $this->get_field_id( 'items_num' ) ); ?>"><?php esc_html_e( 'Choose amount of posts to show:',
+				for="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>"><?php esc_html_e( 'Choose amount of posts to show:',
 					'EquityX' ); ?></label><br>
 			<select
-				id="<?php echo esc_attr( $this->get_field_id( 'items_num' ) ); ?>"
-				name="<?php echo esc_attr( $this->get_field_name( 'items_num' ) ); ?>"
+				id="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>"
+				name="<?php echo esc_attr( $this->get_field_name( 'limit' ) ); ?>"
 				style="min-width: 150px;">
 				<?php
-				foreach( $items_num_list as $value => $label) { ?>
+				foreach( $limit_list as $value => $label) { ?>
 					<option
-						<?php selected( $items_num, $value ) ?>
+						<?php selected( $limit, $value ) ?>
 						value="<?php echo esc_attr( $value ); ?>"
 						>
 						<?php echo esc_html( $label ); ?>

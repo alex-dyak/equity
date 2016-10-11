@@ -237,17 +237,14 @@ class WPBakeryShortCode_equityx_members extends WPBakeryShortCode {
  *
  * @return string
  */
-function subh_get_post_view( $postID ) {
+function w4ptheme_get_post_view( $postID ) {
 	$count_key = 'post_views_count';
-	$count     = get_post_meta( $postID, $count_key, true );
-	if ( $count == '' ) {
-		delete_post_meta( $postID, $count_key );
-		add_post_meta( $postID, $count_key, '0' );
-
-		return '0 View';
+	$count     = (int) get_post_meta( $postID, $count_key, TRUE );
+	if ( ! $count ) {
+		update_post_meta( $postID, $count_key, 0 );
 	}
 
-	return $count . ' Views';
+	return $count;
 }
 
 /**
@@ -255,44 +252,53 @@ function subh_get_post_view( $postID ) {
  *
  * @param $postID currently viewed post/page
  */
-function subh_set_post_view( $postID ) {
+function w4ptheme_set_post_view( $postID ) {
 	$count_key = 'post_views_count';
-	$count     = (int) get_post_meta( $postID, $count_key, true );
-	if ( $count < 1 ) {
-		delete_post_meta( $postID, $count_key );
-		add_post_meta( $postID, $count_key, 1 );
-	} else {
-		$count++;
-		update_post_meta( $postID, $count_key, (string) $count );
-	}
+	$count     = (int) get_post_meta( $postID, $count_key, TRUE );
+	update_post_meta( $postID, $count_key, ++$count );
 }
 
 /**
  * Add a new column in the wp-admin posts list
- *
- * @param $defaults
- *
- * @return mixed
  */
-function subh_posts_column_views( $defaults ) {
-	$defaults['post_views'] = __( 'Views' );
-
-	return $defaults;
+function w4ptheme_columns_head($columns) {
+	$columns['views'] = 'Views';
+	return $columns;
 }
+add_filter('manage_edit-post_columns', 'w4ptheme_columns_head');
 
 /**
- * Display the number of views for each posts
- *
- * @param $column_name
- * @param $id
- *
- * @return void simply echo out the number of views
+ * Add rows.
  */
-function subh_posts_custom_column_views( $column_name, $id ) {
-	if ( $column_name === 'post_views' ) {
-		echo subh_get_post_view( get_the_ID() );
+function w4ptheme_custom_column($column, $post_id ){
+	switch ( $column ) {
+		case 'views':
+			$views_value = w4ptheme_get_post_view( $post_id );
+			echo intval($views_value);
+			break;
 	}
 }
+add_action( 'manage_post_posts_custom_column' , 'w4ptheme_custom_column', 10, 2 );
 
-add_filter( 'manage_posts_columns', 'subh_posts_column_views' );
-add_action( 'manage_posts_custom_column', 'subh_posts_custom_column_views', 5, 2 );
+/**
+ * Define sortable column.
+ */
+function w4ptheme_post_table_sorting($columns) {
+	$columns['views'] = 'views';
+	return $columns;
+}
+add_filter('manage_edit-post_sortable_columns', 'w4ptheme_post_table_sorting');
+
+/**
+ * Add sortable column data.
+ */
+function w4ptheme_post_column_orderby($vars) {
+	if (isset($vars['orderby']) && 'views' == $vars['orderby'])   {
+		$vars = array_merge($vars, array(
+			'meta_key' => 'post_views_count',
+			'orderby' => 'meta_value_num'
+		));
+	}
+	return $vars;
+}
+add_filter( 'request', 'w4ptheme_post_column_orderby' );
