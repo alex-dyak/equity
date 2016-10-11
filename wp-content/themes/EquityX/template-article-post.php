@@ -23,3 +23,7 @@
 	</div>
 
 </article>
+<?php
+$meta = get_post_meta( get_the_ID(), 'post_author', true );
+die();
+?>

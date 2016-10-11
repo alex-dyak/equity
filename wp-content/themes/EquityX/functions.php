@@ -237,3 +237,61 @@ function get_members() {
 
 class WPBakeryShortCode_equityx_members extends WPBakeryShortCode {
 }
+
+
+/**
+ * Auto add and update Author post title field.
+ *
+ * @param $post_id
+ */
+function w4ptheme_author_post_title_update( $post_id ) {
+	if ( get_post_type() == 'post_author' ) {
+		$my_post = array();
+		$my_post['ID'] = $post_id;
+		$my_post['post_title'] = get_field('author_name');
+		$my_post['post_name'] = sanitize_title(get_field('author_name'));
+		// Update the post into the database
+		wp_update_post( $my_post );
+	}
+}
+
+/**
+ * Run after ACF saves the $_POST['fields'] data
+ */
+add_action('acf/save_post', 'w4ptheme_author_post_title_update', 20);
+
+/**
+ * Add custom query vars.
+ */
+function w4ptheme_query_vars_filter($vars) {
+	$vars[] = 'post_author_meta';
+	return $vars;
+}
+add_filter( 'query_vars', 'w4ptheme_query_vars_filter' );
+
+/**
+ * Build a custom query
+ *
+ * @param $query obj The WP_Query instance (passed by reference)
+ *
+ * @link https://codex.wordpress.org/Class_Reference/WP_Query
+ * @link https://codex.wordpress.org/Class_Reference/WP_Meta_Query
+ * @link https://codex.wordpress.org/Plugin_API/Action_Reference/pre_get_posts
+ */
+function w4ptheme_pre_get_posts( $query ) {
+	// Check if the user is requesting an admin page
+	// or current query is not the main query
+	if ( is_admin() || ! $query->is_main_query() ) {
+		return;
+	}
+	$meta_query = array();
+	// add meta_query elements
+	if( ! empty( $query->query['post_author_meta'] ) ) {
+		$meta_query[] = array( 'key' => 'post_author', 'value' => get_query_var( 'post_author_meta' ), 'compare' => '=' );
+	}
+
+	if( count( $meta_query ) > 0 ){
+		$query->set( 'meta_query', $meta_query );
+	}
+}
+add_action( 'pre_get_posts', 'w4ptheme_pre_get_posts', 1 );
