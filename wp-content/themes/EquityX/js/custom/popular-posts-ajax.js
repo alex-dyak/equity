@@ -29,7 +29,7 @@
             success: function (response) {
               // Load json data from server and output message.
               if (response.type != 'error') {
-                $("ul.popular-posts-list .mCSB_container").append(response.content); //load new content inside .mCSB_container
+                $scrollArea.find(".mCSB_container").append(response.content); //load new content inside .mCSB_container
                 $scrollArea.mCustomScrollbar("update");
                 $scrollMore.attr("href", "/?offset="+response.offset+"&limit="+response.limit).removeClass('is-active');
               } else {
