@@ -16,6 +16,16 @@
             $('.js-linkTooltip').click(function(e) {
                 e.preventDefault();
             });
+            var $searchHolder = $('.js-searchHolder'),
+                $searchTrigger = $('.js-searchTrigger'),
+                $searchClose = $('.js-closeSearchForm');
+            $searchTrigger.click(function(e){
+                e.preventDefault();
+                $searchHolder.addClass('is-opened');
+            });
+            $searchClose.click(function(){
+                $searchHolder.removeClass('is-opened');
+            })
         });
 
         $(window).scroll(function() {

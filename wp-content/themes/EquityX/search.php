@@ -2,36 +2,28 @@
 /**
  * The template for displaying search results pages
  *
- * @package WordPress
- * @subpackage W4P-Theme
- * @since W4P Theme 1.0
+ * @package    WordPress
+ * @subpackage EquityX-Theme
+ * @since      EquityX Theme 1.0
  */
 
 get_header(); ?>
 
 <?php if ( have_posts() ) : ?>
 
-	<h2><?php esc_html_e( 'Search Results', 'EquityX' ); ?></h2>
-
-	<?php post_navigation(); ?>
+	<h2><?php esc_html_e( 'Search Results for: ', 'EquityX' ); ?><?php echo $s; ?></h2>
 
 	<?php while ( have_posts() ) : the_post(); ?>
 
-		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
-
-			<h2><?php the_title(); ?></h2>
-
-			<div class="entry">
-
-				<?php the_excerpt(); ?>
-
-			</div>
-
-		</article>
+		<?php get_template_part( 'templates-part/template-article-blog-list' ); ?>
 
 	<?php endwhile; ?>
 
-	<?php post_navigation(); ?>
+	<section class="row entityGrid-pagination">
+		<section class="column">
+			<?php echo paginate_links(); ?>
+		</section>
+	</section>
 
 <?php else : ?>
 
