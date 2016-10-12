@@ -80,6 +80,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 		register_widget( 'Join_Us_Button_Widget' );
 		register_widget( 'Homepage_Intro_Section_Widget' );
 		register_widget( 'Join_Us_White_Button_Widget' );
+		register_widget( 'Posts_By_Authors_Widget' );
 
 	}
 
@@ -687,6 +688,169 @@ class Homepage_Intro_Section_Widget extends WP_Widget {
 	 * @param array $instance Previously saved values from database.
 	 */
 	public function form( $instance ) {
+	}
+
+}
+
+
+/**
+ * Posts By Authors Widget
+ */
+class Posts_By_Authors_Widget extends WP_Widget {
+	/**
+	 * Constructor
+	 */
+	public function __construct() {
+		parent::__construct(
+			'posts_by_authors_widget', // Base ID
+			$name = __( 'Posts By Authors', 'EquityX' ), // Name
+			array(
+				'description' => __( 'Filters Blog Posts by selected author.',
+					'EquityX' )
+			) // Args
+		);
+	}
+
+	/**
+	 * Front-end display of widget.
+	 *
+	 * @see WP_Widget::widget()
+	 *
+	 * @param array $args     Widget arguments.
+	 * @param array $instance Saved values from database.
+	 */
+	public function widget( $args, $instance ) {
+		extract( $args );
+		$title = apply_filters( 'widget_title', $instance['title'] );
+		$limit  = $instance['limit'];
+
+		echo $args['before_widget']; ?>
+		<div class="posts_by_authors_widget posts-by-authors">
+			<h1 class="posts-by-authors-title"><?php echo $title; ?></h1>
+			<?php
+			// Getting posts from database with WP_Query.
+			$query_args = array(
+				'post_type'           => 'post_author',
+				'post_status'         => 'publish',
+				'posts_per_page'      => $limit,
+				'ignore_sticky_posts' => true,
+				'orderby'             => array( 'title' => 'ASC' ),
+			);
+			$loop = new WP_Query( $query_args );
+
+			// If count of posts is greater then 0, starting to print posts content on page.
+			if ( ! empty( $loop ) && $loop->post_count ) : ?>
+				<ul>
+					<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+						<li>
+							<div class="author-picture">
+								<?php echo wp_get_attachment_image( get_field('author_picture'), 'logo_150_111' ); ?>
+							</div>
+							<a href="<?php echo add_query_arg('post_author_meta', get_the_ID(), get_permalink( get_option( 'page_for_posts' ) ) ); ?>">
+								<h2 id="author-name"><?php the_title(); ?></h2>
+							</a>
+							<span class="author-position">
+								<?php
+								$term = get_term( get_field( 'author_position', false ), 'position' );
+								if ( $term ) {
+									echo $term->name;
+								} ?>
+							</span>
+						</li>
+
+					<?php endwhile; ?>
+					<?php wp_reset_postdata(); ?>
+				</ul>
+			<?php endif; ?>
+
+		</div>
+
+		<?php
+		echo $args['after_widget'];
+
+	}
+
+	/**
+	 * Sanitize widget form values as they are saved.
+	 *
+	 * @see WP_Widget::update()
+	 *
+	 * @param array $new_instance Values just sent to be saved.
+	 * @param array $old_instance Previously saved values from database.
+	 *
+	 * @return array Updated safe values to be saved.
+	 */
+	public function update( $new_instance, $old_instance ) {
+		$instance          = array();
+		$instance['title'] = apply_filters( 'widget_title', $new_instance['title'] );
+		$instance['limit'] = $new_instance['limit'];
+
+		return $instance;
+	}
+
+	/**
+	 * Back-end widget form.
+	 *
+	 * @see WP_Widget::form()
+	 *
+	 * @param array $instance Previously saved values from database.
+	 */
+	public function form( $instance ) {
+		// Set up some default widget settings.
+		$defaults = array(
+			'title' => __( 'Posts By Authors', 'EquityX' ),
+			'limit' => 5,
+		);
+		$instance = wp_parse_args( (array) $instance, $defaults );
+
+		// Get widget fields values.
+		if ( ! empty( $instance ) ) {
+			$title = esc_attr( $instance['title'] );
+			$limit = $instance['limit'];
+		}
+		$limit_list = array(
+			1   => '1',
+			2   => '2',
+			5   => '5',
+			7   => '7',
+			10  => '10',
+			12  => '12',
+			15  => '15',
+			17  => '17',
+			20  => '20',
+			50  => '50',
+			- 1 => __( '--All--', 'EquityX' ),
+		); ?>
+		<p>
+			<label
+				for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:',
+					'EquityX' ); ?></label>
+			<input
+				id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
+				name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
+				type="text" value="<?php echo esc_attr( $title ); ?>"/>
+		</p>
+		<p>
+			<label
+				for="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>"><?php esc_html_e( 'Choose amount of authors to show:',
+					'EquityX' ); ?></label><br>
+			<select
+				id="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>"
+				name="<?php echo esc_attr( $this->get_field_name( 'limit' ) ); ?>"
+				style="min-width: 150px;">
+				<?php
+				foreach ( $limit_list as $value => $label ) {
+					?>
+					<option
+						<?php selected( $limit, $value ) ?>
+						value="<?php echo esc_attr( $value ); ?>"
+						>
+						<?php echo esc_html( $label ); ?>
+					</option>
+				<?php } ?>
+			</select>
+		</p>
+	<?php
 	}
 
 }
