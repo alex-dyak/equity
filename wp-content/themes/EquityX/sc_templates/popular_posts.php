@@ -23,11 +23,14 @@ $loop = new WP_Query( $args );
 // If count of posts is greater then 0, starting to print posts content on page.
 if ( ! empty( $loop ) && $loop->post_count ) : ?>
 	<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-		<li>
-			<a href="<?php echo get_permalink(); ?>">
-				<h2 id="popular-post-title"><?php the_title(); ?></h2>
-			</a>
-			<span class="post-date">
+		<li class="popularItem">
+			<div>
+				<a href="<?php echo get_permalink(); ?>" class="popularItem-title">
+					<?php the_title(); ?>
+				</a>
+			</div>
+			<span class="popularItem-date">
+				<i class="ft-icon-clock"></i>
 				<?php echo get_the_date( 'F, Y' ); ?>
 			</span>
 		</li>
