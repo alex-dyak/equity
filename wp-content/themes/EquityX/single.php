@@ -40,14 +40,12 @@ get_header(); ?>
 					</div>
 					<div class="postWidgets">
 						<!--Place reserved for post widgets -->
-						<p>popular posts</p>
-						<p>posts by authors</p>
+						<?php get_sidebar(); ?>
+						<?php w4ptheme_set_post_view( get_the_ID() ); ?>
 					</div>
 				</div>
 			</div>
 		</div>
-
-<?php get_sidebar(); ?>
 
 <?php if ( is_active_sidebar( 'join-us-footer' ) ) : ?>
 	<div class="defaultSection">

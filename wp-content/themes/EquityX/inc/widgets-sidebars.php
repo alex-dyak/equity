@@ -729,17 +729,19 @@ class Popular_Posts_Widget extends WP_Widget {
 
 		echo $args['before_widget']; ?>
 
-		<div class="popular_posts_widget popular-posts">
-			<h1 class="popular-posts-title"><?php esc_html_e( $title ); ?></h1>
-			<ul class="popular-posts-list">
+		<div class="popular_posts_widget popularPosts js-popularPosts">
+			<h1 class="popularPosts-title"><?php esc_html_e( $title ); ?></h1>
+			<ul class="u-list--plain popular-posts-list popularPosts-postHolder js-popularScrollArea">
 				<?php echo do_shortcode( "[popular-posts limit='{$limit}' offset='0']" ); ?>
 			</ul>
 			<?php if ( $limit <> -1 ) : ?>
 				<a
 					href="<?php echo esc_attr( "/?offset={$offset}&limit={$limit}" ); ?>"
-					class="view-more"
+					class="view-more popularPosts-more js-popularMore"
 					>
-					<?php esc_html_e( 'View more', 'EquityX' ); ?>
+					<span>
+						<?php esc_html_e( 'View more', 'EquityX' ); ?>
+					</span>
 				</a>
 			<?php endif; ?>
 		</div>
