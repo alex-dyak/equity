@@ -5,8 +5,8 @@
  * Contains the closing of the #content div and all content after
  *
  * @package    WordPress
- * @subpackage W4P-Theme
- * @since      W4P Theme 1.0
+ * @subpackage EquityX-Theme
+ * @since      EquityX Theme 1.0
  */
 
 ?>

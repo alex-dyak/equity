@@ -20,7 +20,7 @@
 		height: 30px;
 		float: none;
 		margin-top: -5px;
-		border: 2px solid $blueSea--02;
+		border: 2px solid $blueSea--20op;
 		border-radius: 100%;
 		font-size: $fontSize-small;
 		line-height: $lineHeight-termsCount;
@@ -39,10 +39,11 @@
 	margin-bottom: 25px;
 	font-size: $fontSize-termsTitle--medium;
 	line-height: $lineHeight-tightest;
-	font-family: $font-base;
+	font-family: $font-medium;
 	color: $blue--darkest;
 	@include breakpoint(medium) {
 		font-size: $fontSize-termsTitle--large;
+		font-family: $font-base;
 	}
 }
 .termsItem-content {

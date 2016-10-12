@@ -5,8 +5,8 @@
  * Displays all of the head element and everything up until the "site-content" div.
  *
  * @package WordPress
- * @subpackage W4P-Theme
- * @since W4P Theme 1.0
+ * @subpackage EquityX-Theme
+ * @since EquityX Theme 1.0
  */
 ?><!doctype html>
 
@@ -108,14 +108,11 @@
                 </div>
             <?php endif; ?>
 
+            <div class="searchTrigger">
+                <a href="#" class="searchTrigger-item js-searchTrigger">
+                    <i class="ft-icon-search"></i>
+                </a>
+            </div>
+
         </div>
     </header><!-- Header -->
-
-    <div class="parallaxHolder">
-        <?php if(get_the_post_thumbnail()): ?>
-            <div class="parallaxHolder-item" data-parallax="scroll" data-image-src="<?php the_post_thumbnail_url(); ?>"></div>
-        <?php endif; ?>
-    </div> <!-- Parallax section -->
-
-    <div class="main"> <!-- Start main container -->
-        <div class="container">

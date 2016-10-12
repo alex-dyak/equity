@@ -7,16 +7,25 @@
  * other "pages" on your WordPress site will use a different template.
  *
  * @package WordPress
- * @subpackage W4P-Theme
- * @since W4P Theme 1.0
+ * @subpackage EquityX-Theme
+ * @since EquityX Theme 1.0
  */
 
 get_header(); ?>
 
+<div class="parallaxHolder">
+	<?php if(get_the_post_thumbnail()): ?>
+		<div class="parallaxHolder-item" data-parallax="scroll" data-image-src="<?php the_post_thumbnail_url(); ?>"></div>
+	<?php endif; ?>
+</div> <!-- Parallax section -->
+
+<div class="main defaultPage"> <!-- Start main container -->
+	<div class="container">
+
 <?php if ( have_posts() ) :
 	while ( have_posts() ) : the_post(); ?>
 
-		<article class="post defaultPage" id="post-<?php the_ID(); ?>">
+		<article class="post" id="post-<?php the_ID(); ?>">
 
 			<div class="entry">
 				<?php the_content(); ?>

@@ -17,7 +17,7 @@
  * @link       https://codex.wordpress.org/Sidebars
  *
  * @package    WordPress
- * @subpackage W4P-Theme
+ * @subpackage EquityX-Theme
  */
 
 if ( function_exists( 'register_sidebar' ) ) {
@@ -447,13 +447,13 @@ class Join_Us_Button_Widget extends WP_Widget {
 				<?php _e( strtoupper( $title ), 'EquityX' ); ?>
 			</a>
 
-			<div class="linkTooltip">
+			<a href="#" class="linkTooltip js-linkTooltip">
 				<span class="linkTooltip-trigger infoIcon"></span>
 				<div class="linkTooltip-item">
 					<p class="linkTooltip-item-title"><?php _e( strtoupper( $title_content ), 'EquityX' ); ?></p>
 					<p><?php echo strip_tags( $content ); ?></p>
 				</div>
-			</div>
+			</a>
 		</div>
 
 		<?php
@@ -536,13 +536,13 @@ class Join_Us_White_Button_Widget extends WP_Widget {
 				<?php _e( strtoupper( $title ), 'EquityX' ); ?>
 			</a>
 
-			<div class="linkTooltip">
+			<a href="#" class="linkTooltip js-linkTooltip">
 				<span class="linkTooltip-trigger infoIcon"></span>
 				<div class="linkTooltip-item">
 					<p class="linkTooltip-item-title"><?php _e( strtoupper( $title_content ), 'EquityX' ); ?></p>
 					<p><?php echo strip_tags( $description ); ?></p>
 				</div>
-			</div>
+			</a>
 		</div>
 
 		<?php
