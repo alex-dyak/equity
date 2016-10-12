@@ -33,7 +33,7 @@ get_header(); ?>
 									</a>
 								</p>
 
-								<?php get_template_part( 'template-article-post' ); ?>
+								<?php get_template_part( 'templates-part/template-article-post' ); ?>
 
 							<?php endwhile;
 						endif; ?>

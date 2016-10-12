@@ -1,0 +1,137 @@
+.searchTrigger {
+	display: none;
+	float: right;
+	margin-right: 10px;
+	.searchTrigger-item {
+		display: block;
+		padding: 5px 11px;
+		font-size: $fontSize-large;
+		color: $stone;
+		transition: color .3s;
+		&:hover {
+			color: $blue;
+		}
+	}
+}
+body.blog {
+	.searchTrigger {
+		display: block;
+		@include breakpoint(medium) {
+			display: none;
+		}
+	}
+}
+.searchForm {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	visibility: hidden;
+	transition: all .3s;
+	z-index: 200;
+	@include breakpoint(medium) {
+		position: static;
+		float: right;
+		max-width: 50%;
+		width: auto;
+		opacity: 1;
+		visibility: visible;
+	}
+	&.is-opened {
+		opacity: 1;
+		visibility: visible;
+	}
+	input[type="search"] {
+		width: 100%;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-right: 40px;
+		margin-top: 11px;
+		font-size: $fontSize-base;
+		border-bottom: none;
+		color: $blueSea;
+		@include breakpoint(medium) {
+			width: 280px;
+			margin-top: 0;
+			border-bottom: 1px solid $white--mud60op;
+		}
+	}
+}
+.searchForm-blocker {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: $mystic--90op;
+	z-index: 100;
+	@include breakpoint(medium) {
+		display: none;
+	}
+}
+.searchForm-item {
+	position: relative;
+	z-index: 200;
+	padding: 0 55px;
+	height: 62px;
+	background: $white;
+	@include breakpoint(medium) {
+		margin-top: 5px;
+		padding-left: 0;
+		padding-right: 0;
+		height: auto;
+	}
+	&::after {
+		position: absolute;
+		bottom: -6px;
+		left: 0;
+		width: 100%;
+		height: 6px;
+		content: '';
+		background: $blue;
+		background: linear-gradient(to right, $blue 0%, $blue 25%, $white--darker 25%, $white--darker 50%, $orange 50%, $orange 75%, $red 75%, $red 100%);
+		@include breakpoint(medium) {
+			display: none;
+		}
+	}
+}
+.searchForm-item-submit {
+	position: absolute;
+	top: 50%;
+	left: 15px;
+	min-width: auto;
+	height: 40px;
+	margin-top: -2px;
+	padding: 0 10px;
+	line-height: $lineHeight-buttonSubmit;
+	font-size: $fontSize-large;
+	background: transparent;
+	border: none;
+	box-shadow: none;
+	color: $stone;
+	transform: translateY(-50%);
+	@include breakpoint(medium) {
+		top: 0;
+		right: 0;
+		left: auto;
+		margin-top: 0;
+		transform: translateY(0);
+	}
+}
+.searchForm-item-close {
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	line-height: 0;
+	color: $blueSea--70op;
+	cursor: pointer;
+	transform: translateY(-50%);
+	@include breakpoint(medium) {
+		display: none;
+	}
+}
+.admin-bar .searchForm {
+	top: 46px;
+}

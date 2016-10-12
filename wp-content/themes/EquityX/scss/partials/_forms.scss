@@ -116,3 +116,34 @@ input[type="submit"],
         margin-top: -5px;
     }
 }
+.btn--arrowRight,
+.btn--arrowLeft {
+    position: relative;
+    height: 36px;
+    min-width: 136px;
+    padding-left: 18px;
+    padding-right: 38px;
+    border-radius: 38px;
+    font-size: $fontSize-smaller;
+    line-height: $lineHeight-buttonArrow;
+    text-align: left;
+    &:hover {
+        &::before {
+            border-color: $white;
+        }
+    }
+}
+.btn--arrowRight {
+    &::before {
+        position: absolute;
+        top: 50%;
+        right: 14px;
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid $blue;
+        border-bottom: 2px solid $blue;
+        transform: translateY(-50%) rotate(-45deg);
+        transition: all .3s;
+    }
+}

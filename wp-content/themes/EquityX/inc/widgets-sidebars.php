@@ -17,7 +17,7 @@
  * @link       https://codex.wordpress.org/Sidebars
  *
  * @package    WordPress
- * @subpackage W4P-Theme
+ * @subpackage EquityX-Theme
  */
 
 if ( function_exists( 'register_sidebar' ) ) {

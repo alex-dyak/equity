@@ -147,6 +147,9 @@ require_once( get_template_directory() . '/inc/filters.php' );
 // Custom shortcodes.
 require_once( get_template_directory() . '/inc/shortcodes.php' );
 
+// Class for VC.
+require_once( get_template_directory() . '/inc/WPBakeryShortCode_equityx_members.php' );
+
 /**
  * Widget Term Items to VC
  */
@@ -233,7 +236,4 @@ function get_members() {
 
 		)
 	));
-}
-
-class WPBakeryShortCode_equityx_members extends WPBakeryShortCode {
 }
