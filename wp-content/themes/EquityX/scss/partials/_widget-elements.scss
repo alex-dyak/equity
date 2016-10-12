@@ -1,10 +1,13 @@
-.popularPosts {
+.widgetItem {
+	margin-bottom: 25px;
 	box-shadow: 0 8px 16px 0 $stone--08op;
-	border-top: 3px solid $blue;
 	border-radius: 3px;
 	background: $white;
+}
+.popularPosts {
+	border-top: 3px solid $blue;
 	&.is-active {
-		.popularPosts-title {
+		.widgetItem-title {
 			background: $white;
 			&:after {
 				opacity: 1;
@@ -15,7 +18,10 @@
 		}
 	}
 }
-.popularPosts-title {
+.authorFilter {
+	border-top: 3px solid ;
+}
+.widgetItem-title {
 	position: relative;
 	padding: 15px 20px;
 	margin-bottom: 0;
@@ -41,6 +47,9 @@
 	li {
 		padding: 15px 20px;
 		border-bottom: 1px solid $black--lighter20op;
+		&:last-child {
+			border-bottom: 0;
+		}
 	}
 	.mCSB_inside > .mCSB_container {
 		margin-right: 0;

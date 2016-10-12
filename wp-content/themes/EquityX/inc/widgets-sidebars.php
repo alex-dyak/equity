@@ -730,8 +730,8 @@ class Popular_Posts_Widget extends WP_Widget {
 
 		echo $args['before_widget']; ?>
 
-		<div class="popularPosts js-popularPosts">
-			<h1 class="popularPosts-title"><?php esc_html_e( $title ); ?></h1>
+		<div class="widgetItem popularPosts js-popularPosts">
+			<h1 class="widgetItem-title"><?php esc_html_e( $title ); ?></h1>
 			<ul class="u-list--plain popularPosts-postHolder js-popularScrollArea">
 				<?php echo do_shortcode( "[popular-posts limit='{$limit}' offset='0']" ); ?>
 			</ul>
@@ -867,8 +867,8 @@ class Posts_By_Authors_Widget extends WP_Widget {
 		$limit  = $instance['limit'];
 
 		echo $args['before_widget']; ?>
-		<div class="posts_by_authors_widget posts-by-authors">
-			<h1 class="posts-by-authors-title"><?php echo $title; ?></h1>
+		<div class="posts_by_authors_widget posts-by-authors widgetItem authorFilter">
+			<h1 class="widgetItem-title"><?php echo $title; ?></h1>
 			<?php
 			// Getting posts from database with WP_Query.
 			$query_args = array(
@@ -882,22 +882,24 @@ class Posts_By_Authors_Widget extends WP_Widget {
 
 			// If count of posts is greater then 0, starting to print posts content on page.
 			if ( ! empty( $loop ) && $loop->post_count ) : ?>
-				<ul>
+				<ul class="u-list--plain">
 					<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-						<li>
-							<div class="author-picture">
+						<li class="authorFilter-item">
+							<div class="authorFilter-item-picture">
 								<?php echo wp_get_attachment_image( get_field('author_picture'), 'logo_150_111' ); ?>
 							</div>
-							<a href="<?php echo add_query_arg('post_author_meta', get_the_ID(), get_permalink( get_option( 'page_for_posts' ) ) ); ?>">
-								<h2 id="author-name"><?php the_title(); ?></h2>
-							</a>
-							<span class="author-position">
-								<?php
-								$term = get_term( get_field( 'author_position', false ), 'position' );
-								if ( $term ) {
-									echo $term->name;
-								} ?>
-							</span>
+							<div class="authorFilter-item-content">
+								<a href="<?php echo add_query_arg('post_author_meta', get_the_ID(), get_permalink( get_option( 'page_for_posts' ) ) ); ?>">
+									<?php the_title(); ?>
+								</a>
+								<span>
+									<?php
+									$term = get_term( get_field( 'author_position', false ), 'position' );
+									if ( $term ) {
+										echo $term->name;
+									} ?>
+								</span>
+							</div>
 						</li>
 
 					<?php endwhile; ?>
