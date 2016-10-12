@@ -237,3 +237,76 @@ function get_members() {
 		)
 	));
 }
+
+/**
+ * To display number of posts.
+ *
+ * @param $postID current post/page id
+ *
+ * @return string
+ */
+function w4ptheme_get_post_view( $postID ) {
+	$count_key = 'post_views_count';
+	$count     = (int) get_post_meta( $postID, $count_key, TRUE );
+	if ( ! $count ) {
+		update_post_meta( $postID, $count_key, 0 );
+	}
+
+	return $count;
+}
+
+/**
+ * To count number of views and store in database.
+ *
+ * @param $postID currently viewed post/page
+ */
+function w4ptheme_set_post_view( $postID ) {
+	$count_key = 'post_views_count';
+	$count     = (int) get_post_meta( $postID, $count_key, TRUE );
+	update_post_meta( $postID, $count_key, ++$count );
+}
+
+/**
+ * Add a new column in the wp-admin posts list
+ */
+function w4ptheme_columns_head($columns) {
+	$columns['views'] = 'Views';
+	return $columns;
+}
+add_filter('manage_edit-post_columns', 'w4ptheme_columns_head');
+
+/**
+ * Add rows.
+ */
+function w4ptheme_custom_column($column, $post_id ){
+	switch ( $column ) {
+		case 'views':
+			$views_value = w4ptheme_get_post_view( $post_id );
+			echo intval($views_value);
+			break;
+	}
+}
+add_action( 'manage_post_posts_custom_column' , 'w4ptheme_custom_column', 10, 2 );
+
+/**
+ * Define sortable column.
+ */
+function w4ptheme_post_table_sorting($columns) {
+	$columns['views'] = 'views';
+	return $columns;
+}
+add_filter('manage_edit-post_sortable_columns', 'w4ptheme_post_table_sorting');
+
+/**
+ * Add sortable column data.
+ */
+function w4ptheme_post_column_orderby($vars) {
+	if (isset($vars['orderby']) && 'views' == $vars['orderby'])   {
+		$vars = array_merge($vars, array(
+			'meta_key' => 'post_views_count',
+			'orderby' => 'meta_value_num'
+		));
+	}
+	return $vars;
+}
+add_filter( 'request', 'w4ptheme_post_column_orderby' );
