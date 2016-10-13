@@ -26,6 +26,18 @@
             $searchClose.click(function(){
                 $searchHolder.removeClass('is-opened');
             })
+            $('.js-gotoLinks').each( function () {
+                var $link = $(this).find('a'),
+                destination = $link.attr('href');
+                if( $link.length ){
+                    $link.on('click', function (e) {
+                        e.preventDefault();
+                        $('html, body').animate({
+                            scrollTop: $(destination).offset().top - $('.js-header').outerHeight() - 30
+                        }, 1000);
+                    });
+                };
+            });
         });
 
         $(window).scroll(function() {

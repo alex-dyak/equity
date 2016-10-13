@@ -380,3 +380,27 @@ ol {
     width: 30px;
     height: 30px;
 }
+.gotoLinks {
+    margin-bottom: 30px;
+    text-align: center;
+    p {
+        display: inline-block;
+        padding: 0 12px;
+        margin-bottom: 0;
+        font-size: $fontSize-small;
+        font-family: $font-light;
+        text-transform: uppercase;
+        a {
+            display: block;
+            color: $blueSea;
+            border-bottom: 2px solid transparent;
+            transition: all .3s;
+            &:hover {
+                font-family: $font-medium;
+                text-decoration: none;
+                color: $stone;
+                border-bottom: 2px solid $blue;
+            }
+        }
+    }
+}
