@@ -2,9 +2,15 @@
 	<h1 class="u-text--center entry-title"><?php the_title(); ?></h1>
 	<div class="entry-content">
 
-		<div class="postContent-postBy">
-			<?php printf( esc_html__( 'by %s &#8212; %s', 'EquityX' ), get_the_author_posts_link(), get_the_date( "F Y" ) ); ?>
-		</div>
+		<?php if ( get_field( 'post_author' ) ): ?>
+			<div class="postContent-postBy">
+				<?php echo esc_html__( 'by ', 'EquityX' ) ?>
+				<a href="<?php echo add_query_arg( 'post_author_meta', get_field( 'post_author' ), get_permalink( get_option( 'page_for_posts' ) ) ); ?>">
+					<?php printf( esc_html__( '%s', 'EquityX' ), get_field( 'author_name', get_field( 'post_author' ) ) ); ?>
+				</a>
+				<?php printf( esc_html__( ' &#8212; %s', 'EquityX' ), get_the_date( "F Y" ) ); ?>
+			</div>
+		<?php endif; ?>
 
 		<div class="postContent-introText">
 			<?php echo excerpt_trim( 50 ); ?>
