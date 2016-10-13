@@ -237,3 +237,134 @@ function get_members() {
 		)
 	));
 }
+
+/**
+ * To display number of posts.
+ *
+ * @param $postID current post/page id
+ *
+ * @return string
+ */
+function w4ptheme_get_post_view( $postID ) {
+	$count_key = 'post_views_count';
+	$count     = (int) get_post_meta( $postID, $count_key, TRUE );
+	if ( ! $count ) {
+		update_post_meta( $postID, $count_key, 0 );
+	}
+
+	return $count;
+}
+
+/**
+ * To count number of views and store in database.
+ *
+ * @param $postID currently viewed post/page
+ */
+function w4ptheme_set_post_view( $postID ) {
+	$count_key = 'post_views_count';
+	$count     = (int) get_post_meta( $postID, $count_key, TRUE );
+	update_post_meta( $postID, $count_key, ++$count );
+}
+
+/**
+ * Add a new column in the wp-admin posts list
+ */
+function w4ptheme_columns_head($columns) {
+	$columns['views'] = 'Views';
+	return $columns;
+}
+add_filter('manage_edit-post_columns', 'w4ptheme_columns_head');
+
+/**
+ * Add rows.
+ */
+function w4ptheme_custom_column($column, $post_id ){
+	switch ( $column ) {
+		case 'views':
+			$views_value = w4ptheme_get_post_view( $post_id );
+			echo intval($views_value);
+			break;
+	}
+}
+add_action( 'manage_post_posts_custom_column' , 'w4ptheme_custom_column', 10, 2 );
+
+/**
+ * Define sortable column.
+ */
+function w4ptheme_post_table_sorting($columns) {
+	$columns['views'] = 'views';
+	return $columns;
+}
+add_filter('manage_edit-post_sortable_columns', 'w4ptheme_post_table_sorting');
+
+/**
+ * Add sortable column data.
+ */
+function w4ptheme_post_column_orderby($vars) {
+	if (isset($vars['orderby']) && 'views' == $vars['orderby'])   {
+		$vars = array_merge($vars, array(
+			'meta_key' => 'post_views_count',
+			'orderby' => 'meta_value_num'
+		));
+	}
+	return $vars;
+}
+
+/**
+ * Auto add and update Author post title field.
+ *
+ * @param $post_id
+ */
+function w4ptheme_author_post_title_update( $post_id ) {
+	if ( get_post_type() == 'post_author' ) {
+		$my_post = array();
+		$my_post['ID'] = $post_id;
+		$my_post['post_title'] = get_field('author_name');
+		$my_post['post_name'] = sanitize_title(get_field('author_name'));
+		// Update the post into the database
+		wp_update_post( $my_post );
+	}
+}
+
+/**
+ * Run after ACF saves the $_POST['fields'] data
+ */
+add_action('acf/save_post', 'w4ptheme_author_post_title_update', 20);
+
+/**
+ * Add custom query vars.
+ */
+function w4ptheme_query_vars_filter($vars) {
+	$vars[] = 'post_author_meta';
+	return $vars;
+}
+add_filter( 'query_vars', 'w4ptheme_query_vars_filter' );
+
+/**
+ * Build a custom query
+ *
+ * @param $query obj The WP_Query instance (passed by reference)
+ *
+ * @link https://codex.wordpress.org/Class_Reference/WP_Query
+ * @link https://codex.wordpress.org/Class_Reference/WP_Meta_Query
+ * @link https://codex.wordpress.org/Plugin_API/Action_Reference/pre_get_posts
+ */
+function w4ptheme_pre_get_posts( $query ) {
+	// Check if the user is requesting an admin page
+	// or current query is not the main query
+	if ( is_admin() || ! $query->is_main_query() ) {
+		return;
+	}
+	$meta_query = array();
+	// add meta_query elements
+	if( ! empty( $query->query['post_author_meta'] ) ) {
+		$meta_query[] = array( 'key' => 'post_author', 'value' => get_query_var( 'post_author_meta' ), 'compare' => '=' );
+	}
+
+	if( count( $meta_query ) > 0 ){
+		$query->set( 'meta_query', $meta_query );
+	}
+}
+add_action( 'pre_get_posts', 'w4ptheme_pre_get_posts', 1 );
+add_filter( 'request', 'w4ptheme_post_column_orderby' );
+
