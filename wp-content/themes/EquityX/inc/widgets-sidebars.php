@@ -885,9 +885,9 @@ class Posts_By_Authors_Widget extends WP_Widget {
 				<ul class="u-list--plain">
 					<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 						<li class="authorFilter-item">
-							<div class="authorFilter-item-picture">
+							<a href="<?php echo add_query_arg('post_author_meta', get_the_ID(), get_permalink( get_option( 'page_for_posts' ) ) ); ?>" class="authorFilter-item-picture">
 								<?php echo wp_get_attachment_image( get_field('author_picture'), 'logo_150_111' ); ?>
-							</div>
+							</a>
 							<div class="authorFilter-item-content">
 								<a href="<?php echo add_query_arg('post_author_meta', get_the_ID(), get_permalink( get_option( 'page_for_posts' ) ) ); ?>">
 									<?php the_title(); ?>
