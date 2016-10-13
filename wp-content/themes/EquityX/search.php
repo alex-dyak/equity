@@ -57,6 +57,21 @@ get_header(); ?>
 									</section>
 
 								</div>
+							<?php else : ?>
+								<div class="u-clearfix postContent-listingTop">
+									<div class="postContent-listingTop-title">
+										<h1><?php esc_html_e( 'Nothing Found',
+												'EquityX' ); ?></h1>
+									</div>
+
+									<div class="searchForm js-searchHolder">
+										<?php get_search_form(); ?>
+										<span
+											class="searchForm-blocker js-closeSearchForm"></span>
+									</div>
+								</div>
+								<div class="postListing">
+								</div>
 							<?php endif; ?>
 						<?php else : ?>
 							<div class="u-clearfix postContent-listingTop">
