@@ -364,7 +364,12 @@ function w4ptheme_pre_get_posts( $query ) {
 	if( count( $meta_query ) > 0 ){
 		$query->set( 'meta_query', $meta_query );
 	}
+
+	if ( $query->is_search ) {
+		$query->set( 'post_type', 'post' );
+	}
+
+	return $query;
 }
 add_action( 'pre_get_posts', 'w4ptheme_pre_get_posts', 1 );
 add_filter( 'request', 'w4ptheme_post_column_orderby' );
-
