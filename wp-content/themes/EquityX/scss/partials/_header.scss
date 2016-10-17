@@ -82,6 +82,9 @@ body:not(.home) {
 //if adminbar shown
 .admin-bar .mainHeader {
     top: 46px;
+    @include breakpoint(medium) {
+        top: 32px;
+    }
 }
 #wpadminbar {
     position: fixed;
