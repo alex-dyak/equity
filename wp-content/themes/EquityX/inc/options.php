@@ -122,6 +122,7 @@ class W4PThemeSettingsPage {
 		$this->options['w4p_contacts_skype'] = get_option( 'w4p_contacts_skype' );
 		$this->options['w4p_copyright'] = get_option( 'w4p_copyright' );
 		$this->options['w4p_background_img'] = get_option( 'w4p_background_img' );
+		$this->options['w4p_404_background_image'] = get_option( 'w4p_404_background_image' );
 		?>
 		<div class="wrap">
 			<!-- <h2>My Settings</h2> -->
@@ -170,6 +171,12 @@ class W4PThemeSettingsPage {
 			'w4p_options_group', /* Option group */
 			'w4p_background_img', /* Option name */
 			array( $this, 'sanitize_img' ) /* Sanitize */
+		);
+
+		register_setting(
+			'w4p_options_group', /* Option group */
+			'w4p_404_background_image', /* Option name */
+			array( $this, 'sanitize_img_more' ) /* Sanitize */
 		);
 
 		add_settings_section(
@@ -265,6 +272,16 @@ class W4PThemeSettingsPage {
 			return $upload;
 		} else {
 			return get_option( 'w4p_background_img' );
+		}
+	}
+
+	public function sanitize_img_more( $input ) {
+		$data = $_FILES['w4p_404_background_image'];
+		if ( '' != $data['name'] ){
+			$upload = wp_handle_upload( $_FILES['w4p_404_background_image'], array( 'test_form' => false ) );
+			return $upload;
+		} else {
+			return get_option( 'w4p_404_background_image' );
 		}
 	}
 
@@ -401,10 +418,18 @@ class W4PThemeSettingsPage {
 		<div class="w4p-genepal-options-wrapper">
 			<label for="w4p_background_img" class="w4p-option-label"><?php esc_html_e( 'Blog Background Image:', 'EquityX' ); ?></label>
 
+			<input type="file" id="w4p_background_img" name="w4p_background_img"/>
 			<div id="upload_preview">
 				<img style="max-width:200px;" src="<?php echo ! empty( $this->options['w4p_background_img']['url'] ) ? esc_attr( $this->options['w4p_background_img']['url'] ) : '' ?>"/>
 			</div>
-			<input type="file" id="w4p_background_img" name="w4p_background_img"/>
+		</div>
+		<div class="w4p-genepal-options-wrapper">
+			<label for="w4p_404_background_image" class="w4p-option-label"><?php esc_html_e( '404 Background Image:', 'EquityX' ); ?></label>
+
+			<input type="file" id="w4p_404_background_image" name="w4p_404_background_image"/>
+			<div id="upload_preview">
+				<img style="max-width:200px;" src="<?php echo ! empty( $this->options['w4p_404_background_image']['url'] ) ? esc_attr( $this->options['w4p_404_background_image']['url'] ) : '' ?>"/>
+			</div>
 		</div>
 	<?php }
 }
