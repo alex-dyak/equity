@@ -348,6 +348,12 @@ ol {
         padding-top: 400px;
     }
 }
+.defaultPage--short {
+    padding-top: 60px;
+    @include breakpoint(medium) {
+        padding-top: 240px;
+    }
+}
 .contactForm {
     padding: 25px 0 50px;
     margin: 0;
