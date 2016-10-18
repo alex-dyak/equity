@@ -15,6 +15,13 @@
             equalHeight($('.js-equalItems'));
             $('.js-linkTooltip').click(function(e) {
                 e.preventDefault();
+                $(this).addClass('is-active');
+            });
+            $(document).mouseup(function (e) {
+                var container = $(".js-linkTooltip");
+                if (container.has(e.target).length === 0){
+                    container.removeClass('is-active');
+                }
             });
             var $searchHolder = $('.js-searchHolder'),
                 $searchTrigger = $('.js-searchTrigger'),
