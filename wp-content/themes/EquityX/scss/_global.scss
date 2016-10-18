@@ -128,6 +128,17 @@ ol {
     left: 0;
     width: 100%;
     z-index: -100;
+    &::before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 20%;
+        background: $mystic;
+        background: linear-gradient(to bottom, $mystic--0op 0%, $mystic 100%);
+        z-index: 200;
+    }
 }
 .parallaxHolder-item {
     width: 100%;
@@ -325,6 +336,7 @@ ol {
     transition: all .3s;
     opacity: .3;
     cursor: pointer;
+    backface-visibility: hidden;
 }
 .svgTwitter {
     width: 14px;
