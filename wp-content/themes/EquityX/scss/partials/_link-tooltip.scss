@@ -7,17 +7,16 @@
 	@include breakpoint(medium) {
 		display: block;
 	}
-	&:hover {
+	&.is-active {
 		.infoIcon {
 			opacity: 1;
 		}
 		.linkTooltip-item {
-			display: block;
+			opacity: 1;
 		}
 	}
 }
 .linkTooltip-item {
-	display: none;
 	position: absolute;
 	top: 100%;
 	right: 50%;
@@ -29,6 +28,8 @@
 	border-radius: 5px;
 	box-shadow: 0 6px 30px 0 rgba(140,160,179,.4);
 	transform: translateX(50%) translateY(10px);
+	opacity: 0;
+	transition: opacity .3s;
 	@include breakpoint(large) {
 		top: 50%;
 		right: -30px;
