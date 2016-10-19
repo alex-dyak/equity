@@ -5,7 +5,7 @@
 	transition: all .3s;
 	&.vc_toggle_size_md.vc_toggle_default .vc_toggle_content,
 	&.vc_toggle_size_md.vc_toggle_default .vc_toggle_title {
-		padding-left: 15px;
+		padding-left: 30px;
 		@include breakpoint(medium) {
 			padding-left: 12px;
 		}
