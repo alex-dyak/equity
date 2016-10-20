@@ -6,8 +6,7 @@ extract( $atts );
 if ( ! empty( $quantity ) ) :
 	$query_args = array(
 		'post_type'      => 'member',
-		'posts_per_page' => $quantity,
-		'order'          => 'ASC'
+		'posts_per_page' => $quantity
 	);
 	$query      = new WP_Query( $query_args );
 	?>
@@ -28,7 +27,7 @@ if ( ! empty( $quantity ) ) :
 					<div class="membersList-item-inner-image">
 						<?php the_post_thumbnail(); ?>
 					</div>
-				<? endif; ?>
+				<?php endif; ?>
 				<?php if ( get_the_title() ) : ?>
 					<p class="membersList-item-inner-title">
 						<?php echo strtoupper( esc_html_e( get_the_title() ) ); ?>
@@ -48,7 +47,7 @@ if ( ! empty( $quantity ) ) :
 								</svg>
 							</a>
 						</li>
-					<? else : ?>
+					<?php else : ?>
 						<li>
 							<span class="contactsIco-linkedIn">
 								<svg class="svgIcon linkedInFilled">
@@ -66,7 +65,7 @@ if ( ! empty( $quantity ) ) :
 								</svg>
 							</a>
 						</li>
-					<? else : ?>
+					<?php else : ?>
 						<li>
 							<span class="contactsIco-twitterIco">
 								<svg class="svgIcon twitterIco">
