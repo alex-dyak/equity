@@ -24,7 +24,7 @@
         "wpackagist-plugin/svg-support": ">2.2.3",
         "wpackagist-plugin/types": ">2.0",
         "wpackagist-plugin/contact-form-7": ">4.4.2",
-		"wpackagist-plugin/post-types-order": ">=1.9"
+        "wpackagist-plugin/post-types-order": ">=1.9"
     },
     "extra": {
         "installer-paths": {
