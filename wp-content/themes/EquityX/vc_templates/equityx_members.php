@@ -39,9 +39,9 @@ if ( ! empty( $quantity ) ) :
 					</div>
 				<?php endif; ?>
 				<ul class="u-list--plain membersList-item-inner-contacts">
-					<?php if ( get_field( 'instagram' ) ) : ?>
+					<?php if ( get_field( 'linkedin' ) ) : ?>
 						<li>
-							<a href="<?php echo strip_tags( get_field( 'instagram' ) ); ?>" class="contactsIco-linkedIn" target="_blank">
+							<a href="<?php echo strip_tags( get_field( 'linkedin' ) ); ?>" class="contactsIco-linkedIn" target="_blank">
 								<svg class="svgIcon linkedInFilled">
 									<use xlink:href="#filllinkedin" />
 								</svg>
