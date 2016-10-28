@@ -91,6 +91,7 @@ class W4PThemeSettingsPage {
 			'googleplus' => __( 'Google+', 'EquityX' ),
 			'instagram' => __( 'Instagram', 'EquityX' ),
 			'linkedin' => __( 'LinkedIn', 'EquityX' ),
+			'linkedin_footer' => __( 'LinkedIn_Footer', 'EquityX' ),
 		);
 		add_action( 'admin_menu', array( $this, 'add_plugin_page' ) );
 		add_action( 'admin_init', array( $this, 'page_init' ) );

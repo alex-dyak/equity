@@ -43,7 +43,7 @@
 		$twitter_link = '';
 	}
 	if ( isset( get_option( 'w4p_social_profiles' )['twitter'][1] ) ) {
-		$linkedin_link = get_option( 'w4p_social_profiles' )['linkedin'][1];
+		$linkedin_link = get_option( 'w4p_social_profiles' )['linkedin_footer'][1];
 	} else {
 		$linkedin_link = '';
 	}
@@ -86,6 +86,8 @@
 
 <div id="svgPlaceholder" class="u-hidden"></div>
 <?php wp_footer(); ?>
+
+<script type="text/javascript" src="https://api.equityx.io/linkedin_button"></script>
 
 </body>
 
