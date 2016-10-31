@@ -23,11 +23,9 @@
                     container.removeClass('is-active');
                 }
             });
-            $(document).on('touchstart', function (e) {
+            $(document).bind('touchend', function(e) {
                 var container = $(".js-linkTooltip");
-                if (!container.is(e.target)
-                    && container.has(e.target).length === 0)
-                {
+                if (container.has(e.target).length === 0){
                     container.removeClass('is-active');
                 }
             });
