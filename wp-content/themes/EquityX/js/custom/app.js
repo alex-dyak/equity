@@ -17,7 +17,7 @@
                 e.preventDefault();
                 $(this).addClass('is-active');
             });
-            $(document).mouseup(function (e) {
+            $('body').click(function (e) {
                 var container = $(".js-linkTooltip");
                 if (container.has(e.target).length === 0){
                     container.removeClass('is-active');
