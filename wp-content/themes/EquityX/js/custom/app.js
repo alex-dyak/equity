@@ -17,7 +17,13 @@
                 e.preventDefault();
                 $(this).addClass('is-active');
             });
-            $('body').click(function (e) {
+            $(document).click(function (e) {
+                var container = $(".js-linkTooltip");
+                if (container.has(e.target).length === 0){
+                    container.removeClass('is-active');
+                }
+            });
+            $(document).on('touchstart', function (e) {
                 var container = $(".js-linkTooltip");
                 if (container.has(e.target).length === 0){
                     container.removeClass('is-active');
