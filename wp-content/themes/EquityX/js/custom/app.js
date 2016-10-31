@@ -23,7 +23,7 @@
                     container.removeClass('is-active');
                 }
             });
-            $('body').bind('touchend', function(e) {
+            $(document).bind('touchend', function(e) {
                 var container = $(".js-linkTooltip");
                 if (container.has(e.target).length === 0){
                     container.removeClass('is-active');
