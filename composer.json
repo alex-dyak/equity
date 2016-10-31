@@ -24,7 +24,11 @@
         "wpackagist-plugin/svg-support": ">2.2.3",
         "wpackagist-plugin/types": ">2.0",
         "wpackagist-plugin/contact-form-7": ">4.4.2",
-        "wpackagist-plugin/post-types-order": ">=1.9"
+        "wpackagist-plugin/post-types-order": ">=1.9",
+        "wpackagist-plugin/cloudflare": ">3.0.5",
+        "wpackagist-plugin/cloudflare-flexible-ssl": ">1.2.0",
+        "wpackagist-plugin/pc-google-analytics": ">=1.1",
+        "wpackagist-plugin/better-search-replace": ">=1.2.10"
     },
     "extra": {
         "installer-paths": {
