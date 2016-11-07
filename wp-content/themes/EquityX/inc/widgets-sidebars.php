@@ -644,7 +644,7 @@ class Homepage_Intro_Section_Widget extends WP_Widget {
 			<?php endif; ?>
 			<div class="introSection-social">
 				<?php if ( $linkedin_link ) : ?>
-					<a href="<?php echo $linkedin_link; ?>" class="btn btn--hasIcon btn--linkedIn" target="_blank" title="Follow us on LinkedIn">
+					<a href="<?php echo $linkedin_link; ?>" class="btn btn--hasIcon btn--linkedIn" title="Follow us on LinkedIn" data-linkedin-login>
 						<span class="btn-icon">
 							<svg class="svgIcon btn-icon-svgLinkedin">
 								<use xlink:href="#linkedin" />
