@@ -41,6 +41,8 @@
 
     <meta name="description" content="<?php bloginfo( 'description' ); ?>"/>
 
+    <iframe src="LINK_TO_LINKEDIN_PROFILE" height="1" width="1" frameBorder="0"></iframe>
+
     <?php wp_head(); ?>
 
 </head>
