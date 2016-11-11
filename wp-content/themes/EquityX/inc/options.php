@@ -124,6 +124,8 @@ class W4PThemeSettingsPage {
 		$this->options['w4p_copyright'] = get_option( 'w4p_copyright' );
 		$this->options['w4p_background_img'] = get_option( 'w4p_background_img' );
 		$this->options['w4p_404_background_image'] = get_option( 'w4p_404_background_image' );
+
+		$this->options['w4p_linkedin_profile'] = get_option( 'w4p_linkedin_profile' );
 		?>
 		<div class="wrap">
 			<!-- <h2>My Settings</h2> -->
@@ -180,6 +182,12 @@ class W4PThemeSettingsPage {
 			array( $this, 'sanitize_img_more' ) /* Sanitize */
 		);
 
+		register_setting(
+			'w4p_options_group', /* Option group */
+			'w4p_linkedin_profile', /* Option name */
+			array( $this, 'sanitize_link' ) /* Sanitize */
+		);
+
 		add_settings_section(
 			'setting_section_id', /* ID */
 			__( 'W4P Theme Options', 'EquityX' ), /* Title */
@@ -218,10 +226,17 @@ class W4PThemeSettingsPage {
 			'theme_options',
 			'setting_section_id'
 		);
+
+		add_settings_field(
+			'w4p_linkedin_profile',
+			__( 'LINK TO LINKEDIN PROFILE', 'EquityX' ),
+			array( $this, 'linkedin_profile_callback' ),
+			'theme_options',
+			'setting_section_id'
+		);
 	}
 
 	/**
-	 * 	/**
 	 * Sanitize each setting field as needed.
 	 *
 	 * @param array $input Contains all settings fields as array keys.
@@ -242,7 +257,6 @@ class W4PThemeSettingsPage {
 	}
 
 	/**
-	 * 	/**
 	 * Sanitize each setting field as needed.
 	 *
 	 * @param array $input Contains all settings fields as array keys.
@@ -260,7 +274,23 @@ class W4PThemeSettingsPage {
 	}
 
 	/**
-	 * 	/**
+	 * Sanitize each setting field as needed.
+	 *
+	 * @param array $input Contains all settings fields as array keys.
+	 * @return array
+	 */
+	public function sanitize_link( $input ) {
+		// Sanitize Copyright value.
+		if ( isset( $input ) ) {
+			$new_input = esc_html( $input );
+		} else {
+			$new_input = '';
+		}
+
+		return $new_input;
+	}
+
+	/**
 	 * Sanitize each setting field as needed.
 	 *
 	 * @param array $input Contains all settings fields as array keys.
@@ -409,7 +439,21 @@ class W4PThemeSettingsPage {
 		</div>
 	<?php }
 
-
+	/**
+	 * Get the settings option array and print one of its values
+	 */
+	public function linkedin_profile_callback() {
+		?>
+		<div class="w4p-linkedin-profile-wrapper">
+			<label for="w4p_linkedin_profile" class="w4p-option-label"><?php esc_html_e( 'Link to linkedin profile:', 'EquityX' ); ?></label>
+			<input
+				type="text"
+				id="w4p_linkedin_profile"
+				name="w4p_linkedin_profile"
+				value="<?php echo ! empty( $this->options['w4p_linkedin_profile'] ) ? esc_attr( $this->options['w4p_linkedin_profile'] ) : '' ?>"
+				/>
+		</div>
+	<?php }
 
 	/**
 	 * Get the settings option array and print one of its values
