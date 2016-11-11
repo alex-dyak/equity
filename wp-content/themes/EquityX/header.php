@@ -41,7 +41,13 @@
 
     <meta name="description" content="<?php bloginfo( 'description' ); ?>"/>
 
-    <iframe src="LINK_TO_LINKEDIN_PROFILE" height="1" width="1" frameBorder="0"></iframe>
+	<?php
+	if ( get_option( 'w4p_linkedin_profile' ) ) : ?>
+		<?php if ( ! empty( get_option( 'w4p_linkedin_profile' ) ) ) : ?>
+			<iframe src="<?php echo get_option( 'w4p_linkedin_profile' ); ?>" height="1" width="1"
+			        frameBorder="0"></iframe>
+		<?php endif; ?>
+	<?php endif; ?>
 
     <?php wp_head(); ?>
 
@@ -51,10 +57,10 @@
 
 <div id="wrapper" class="js-wrapper">
     <?php
-    if ( isset(get_option( 'w4p_social_profiles' )['linkedin'][1]) ) {
-        $linkedin_link = get_option( 'w4p_social_profiles' )['linkedin'][1];
-    } else{
-        $linkedin_link = '';
+    if ( isset( get_option( 'w4p_social_profiles' )['linkedin'][1] ) ) {
+	    $linkedin_link = get_option( 'w4p_social_profiles' )['linkedin'][1];
+    } else {
+	    $linkedin_link = '';
     }
     ?>
 
