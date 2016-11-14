@@ -3,6 +3,29 @@
  */
 
 .vc_row {
+  &.vc_row-no-padding {
+    .vc_column-inner {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  &[data-vc-full-width] {
+    .transition(opacity 0.5s ease);
+    overflow: hidden; /** Fix overflow **/
+    &.vc_hidden {
+      opacity: 0;
+    }
+  }
+}
+
+.vc_row-no-padding {
+  .vc_inner {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.vc_row {
   &.vc_row-o-full-height {
     min-height: 100vh;
   }
@@ -106,7 +129,7 @@
         justify-content: flex-start;
       }
     }
-    &:not(.vc_row-o-equal-height){
+    &:not(.vc_row-o-equal-height) {
       > .vc_column_container {
         -webkit-box-align: start;
         -webkit-align-items: flex-start;
@@ -124,7 +147,7 @@
         justify-content: flex-end;
       }
     }
-    &:not(.vc_row-o-equal-height){
+    &:not(.vc_row-o-equal-height) {
       > .vc_column_container {
         -webkit-box-align: end;
         -webkit-align-items: flex-end;
@@ -142,7 +165,7 @@
         justify-content: center;
       }
     }
-    &:not(.vc_row-o-equal-height){
+    &:not(.vc_row-o-equal-height) {
       > .vc_column_container {
         -webkit-box-align: center;
         -webkit-align-items: center;
