@@ -15,19 +15,9 @@
             equalHeight($('.js-equalItems'));
             $('.js-linkTooltip').click(function(e) {
                 e.preventDefault();
-                $(this).addClass('is-active');
             });
-            $(document).click(function (e) {
-                var container = $(".js-linkTooltip");
-                if (container.has(e.target).length === 0){
-                    container.removeClass('is-active');
-                }
-            });
-            $(document).bind('touchend', function(e) {
-                var container = $(".js-linkTooltip");
-                if (container.has(e.target).length === 0){
-                    container.removeClass('is-active');
-                }
+            $('.js-linkTooltip').hover(function() {
+                $(this).toggleClass('is-active');
             });
             var $searchHolder = $('.js-searchHolder'),
                 $searchTrigger = $('.js-searchTrigger'),
@@ -38,7 +28,7 @@
             });
             $searchClose.click(function(){
                 $searchHolder.removeClass('is-opened');
-            })
+            });
             $('.js-gotoLinks').each( function () {
                 var $link = $(this).find('a'),
                 destination = $link.attr('href');
@@ -49,7 +39,7 @@
                             scrollTop: $(destination).offset().top - $('.js-header').outerHeight() - 30
                         }, 1000);
                     });
-                };
+                }
             });
         });
 

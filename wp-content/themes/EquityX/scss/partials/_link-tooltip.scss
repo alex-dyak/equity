@@ -4,10 +4,12 @@
 	right: -35px;
 	top: 50%;
 	transform: translateY(-50%);
+	overflow: hidden;
 	@include breakpoint(medium) {
 		display: block;
 	}
 	&.is-active {
+		overflow: visible;
 		.infoIcon {
 			opacity: 1;
 		}
