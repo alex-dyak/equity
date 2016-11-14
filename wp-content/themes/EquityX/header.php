@@ -35,12 +35,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <![endif]-->
 
-<!--    <title>--><?php //wp_title( '|', true, 'right' ); ?><!--</title>-->
-<!---->
-<!--    <meta name="title" content="--><?php //wp_title( '|', true, 'right' ); ?><!--">-->
-<!---->
-<!--    <meta name="description" content="--><?php //bloginfo( 'description' ); ?><!--"/>-->
-
 	<?php
 	if ( get_option( 'w4p_linkedin_profile' ) ) : ?>
 		<?php if ( ! empty( get_option( 'w4p_linkedin_profile' ) ) ) : ?>
