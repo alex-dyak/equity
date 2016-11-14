@@ -615,6 +615,7 @@ class Homepage_Intro_Section_Widget extends WP_Widget {
 		$intro_duration       = $instance['video_duration'];
 		$intro_description = $instance['intro_description'];
 		$intro_video_url   = $instance['intro_video_url'];
+		$intro_video_caption = $instance['video_caption'];
 
 
 
@@ -632,15 +633,12 @@ class Homepage_Intro_Section_Widget extends WP_Widget {
 			<h1 class="introSection-title"><?php echo $intro_title; ?></h1>
 			<div class="introSection-description"><?php echo $intro_description; ?></div>
 			<?php if (!empty($intro_video_url)): ?>
-				<a href="<?php echo $intro_video_url ?>" class="js-videoBox playBtn">
-					<svg class="svgIcon playBtn-svg">
-						<use xlink:href="#icon-play" />
-					</svg>
-					<span class="playBtn-icon"></span>
-					<?php if (!empty($intro_duration)): ?>
-						<span class="playBtn-timing"><strong><?php echo $intro_duration; ?></strong> minutes</span>
-					<?php endif; ?>
-				</a>
+				<div class="introSection-video">
+					<a href="<?php echo $intro_video_url ?>" class="js-videoBox introSection-video-trigger">
+						<span class="introSection-video-trigger-icon"></span>
+						<img src="<?php echo $intro_video_caption; ?>" alt="">
+					</a>
+				</div>
 			<?php endif; ?>
 			<div class="introSection-social">
 				<?php if ( $linkedin_link ) : ?>
@@ -677,6 +675,7 @@ class Homepage_Intro_Section_Widget extends WP_Widget {
 		$instance['video_duration']       = get_field( 'video_duration', 'widget_' . $this->id );
 		$instance['intro_description'] = get_field( 'intro_description', 'widget_' . $this->id );
 		$instance['intro_video_url']   = get_field( 'intro_video_url', 'widget_' . $this->id );
+		$instance['video_caption']   = get_field( 'video_caption', 'widget_' . $this->id );
 
 		return $instance;
 	}
