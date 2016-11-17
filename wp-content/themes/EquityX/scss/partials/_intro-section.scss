@@ -46,11 +46,15 @@
 }
 .introSection-video {
 	width: 250px;
+	margin-bottom: 10px;
 	display: inline-block;
 	line-height: 0;
 	overflow: hidden;
-	border-radius: 5px;
-	box-shadow: 0 12px 30px 0 $stone--12op;
+	@include breakpoint(medium) {
+		margin-bottom: 0;
+		border-radius: 5px;
+		box-shadow: 0 12px 30px 0 $stone--12op;
+	}
 	@include breakpoint(large) {
 		position: absolute;
 		top: 50%;
@@ -61,22 +65,31 @@
 	@include breakpoint(xlarge) {
 		right: 75px;
 	}
+	img {
+		display: none;
+		@include breakpoint(medium) {
+			display: block;
+		}
+	}
 }
 .introSection-video-trigger {
 	position: relative;
-	display: block;
+	display: inline-block;
 	.introSection-video-trigger-icon {
-		position: absolute;
-		top: 50%;
-		left: 50%;
+		display: inline-block;
 		width: 58px;
 		height: 58px;
 		border-radius: 100%;
 		overflow: hidden;
 		background: $white--80op;
 		border: 2px solid $white--80op;
-		transform: translateY(-50%) translateX(-50%);
 		transition: all .3s;
+		@include breakpoint(medium) {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translateY(-50%) translateX(-50%);
+		}
 		&::before {
 			position: absolute;
 			top: 50%;
