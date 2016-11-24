@@ -203,6 +203,16 @@ function excerpt_trim( $length )
  */
 add_action( 'vc_before_init', 'get_members' );
 function get_members() {
+	$args = array(
+		'type'         => 'member',
+		'taxonomy'     => 'category',
+	);
+	$categories = get_categories( $args );
+	$cat_name = array();
+	foreach($categories as $category) {
+		$cat_name[] = $category->name;
+	}
+
 	vc_map( array(
 		"name"     => __( "EquityX members", "EquityX" ),
 		"base"     => "equityx_members",
@@ -232,6 +242,15 @@ function get_members() {
 				"heading"     => __( "Members Quantity", "EquityX" ),
 				"param_name"  => "quantity",
 				"description" => __( "Enter Members Quantity.", "EquityX" )
+			),
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"class"       => "",
+				"heading"     => __( "Members Group", "EquityX" ),
+				"param_name"  => "group",
+				"description" => __( "Select the Members Group.", "EquityX" ),
+				"value"       => $cat_name
 			),
 
 		)
