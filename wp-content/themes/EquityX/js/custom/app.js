@@ -10,7 +10,9 @@
                 buttonClass: 'js-mobTrigger',
                 mobileWidth: 1023
             });
-            $('.js-videoBox').swipebox();
+            $('.js-videoBox').swipebox({
+                autoplayVideos: true,
+            });
             headerPosition();
             equalHeight($('.js-equalItems'));
             $('.js-linkTooltip').click(function(e) {
