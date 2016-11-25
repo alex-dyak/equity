@@ -7,7 +7,13 @@ if ( ! empty( $quantity ) ) :
 	$query_args = array(
 		'post_type'      => 'member',
 		'posts_per_page' => $quantity,
-		'category_name'  => $group,
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'members_team_groups',
+				'field'    => 'name',
+				'terms'    => $group
+			)
+		)
 	);
 	$query      = new WP_Query( $query_args );
 	?>
