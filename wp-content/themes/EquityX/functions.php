@@ -204,8 +204,12 @@ function excerpt_trim( $length )
 add_action( 'vc_before_init', 'get_members' );
 function get_members() {
 	$args = array(
-		'type'         => 'member',
-		'taxonomy'     => 'category',
+		'type'      => 'member',
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'team-group',
+			)
+		)
 	);
 	$categories = get_categories( $args );
 	$cat_name = array();
