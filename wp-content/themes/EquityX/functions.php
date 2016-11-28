@@ -199,18 +199,56 @@ function excerpt_trim( $length )
 }
 
 /**
+ * Register taxonomy
+ */
+add_action('vc_before_init', 'create_taxonomy', 1);
+function create_taxonomy(){
+	$labels = array(
+		'name'              => 'Groups',
+		'singular_name'     => 'Group',
+		'search_items'      => 'Search Groups',
+		'all_items'         => 'All Groups',
+		'parent_item'       => 'Parent Group',
+		'parent_item_colon' => 'Parent Group:',
+		'edit_item'         => 'Edit Group',
+		'update_item'       => 'Update Group',
+		'add_new_item'      => 'Add New Group',
+		'new_item_name'     => 'New Group Name',
+		'menu_name'         => 'Team Groups',
+	);
+	$args = array(
+		'label'                 => '',
+		'labels'                => $labels,
+		'description'           => '',
+		'public'                => true,
+		'publicly_queryable'    => null,
+		'show_in_nav_menus'     => true,
+		'show_ui'               => true,
+		'show_tagcloud'         => false,
+		'hierarchical'          => true,
+		'update_count_callback' => '',
+		'rewrite'               => true,
+		'capabilities'          => array(),
+		'meta_box_cb'           => null,
+		'show_admin_column'     => true,
+		'_builtin'              => false,
+		'show_in_quick_edit'    => null,
+	);
+	register_taxonomy('members_team_groups', array('member'), $args );
+}
+
+/**
  * Widget Members to VC.
  */
-add_action( 'vc_before_init', 'get_members' );
+add_action( 'vc_before_init', 'get_members', 9999 );
 function get_members() {
 	$args = array(
-		'type'         => 'member',
-		'taxonomy'     => 'category',
+		'type'      => 'member',
 	);
-	$categories = get_categories( $args );
-	$cat_name = array();
-	foreach($categories as $category) {
-		$cat_name[] = $category->name;
+	$terms = get_terms('members_team_groups', array('hide_empty' => false));
+	$term_name = array();
+	foreach($terms as $term) {
+		$term_name[] = $term->name;
 	}
 
 	vc_map( array(
@@ -250,7 +288,7 @@ function get_members() {
 				"heading"     => __( "Members Group", "EquityX" ),
 				"param_name"  => "group",
 				"description" => __( "Select the Members Group.", "EquityX" ),
-				"value"       => $cat_name
+				"value"       => $term_name
 			),
 
 		)
