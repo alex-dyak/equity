@@ -58,12 +58,12 @@ if ( function_exists( 'register_sidebar' ) ) {
 			'after_title'   => '</h2>',
 		) );
 		register_sidebar( array(
-			'name'          => __( 'Header Sidebar', 'EquityX' ),
-			'id'            => 'header-sidebar',
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
+			'name'          => __( 'Template Intro Section', 'EquityX' ),
+			'id'            => 'template-intro-section',
+			'before_widget' => '<section class="row column">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2>',
+			'after_title'   => '</h2>',
 		) );
 
 		register_sidebar( array(
