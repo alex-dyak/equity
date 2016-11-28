@@ -28,7 +28,8 @@
         "wpackagist-plugin/cloudflare": ">3.0.5",
         "wpackagist-plugin/cloudflare-flexible-ssl": ">1.2.0",
         "wpackagist-plugin/pc-google-analytics": ">=1.1",
-        "wpackagist-plugin/better-search-replace": ">=1.2.10"
+        "wpackagist-plugin/better-search-replace": ">=1.2.10",
+        "wpackagist-plugin/faq-wd": ">=1.0.20"
     },
     "extra": {
         "installer-paths": {
