@@ -29,7 +29,20 @@
         "wpackagist-plugin/cloudflare-flexible-ssl": ">1.2.0",
         "wpackagist-plugin/pc-google-analytics": ">=1.1",
         "wpackagist-plugin/better-search-replace": ">=1.2.10",
-        "wpackagist-plugin/faq-wd": ">=1.0.20"
+        "wpackagist-plugin/faq-wd": ">=1.0.20",
+        "wpackagist-plugin/capability-manager-enhanced": ">1.5.5",
+        "wpackagist-plugin/duplicate-page": ">=2.1",
+        "wpackagist-plugin/google-sitemap-generator": ">=4.0.7.1",
+        "wpackagist-plugin/leadin": ">=6.1.0",
+        "wpackagist-plugin/hubspot-tracking-code": ">=1.1.0",
+        "wpackagist-plugin/lazy-load": ">=0.6",
+        "wpackagist-plugin/share-this": ">=7.8",
+        "wpackagist-plugin/updraftplus": ">=1.12.29",
+        "wpackagist-plugin/user-role-editor": ">=4.28",
+        "wpackagist-plugin/w3-total-cache": ">=0.9.5.1",
+        "wpackagist-plugin/wp-google-analytics-events": ">=2.2",
+        "wpackagist-plugin/yandex-metrica": ">=1.4.2",
+        "wpackagist-plugin/zopim-live-chat": ">=1.4.4"
     },
     "extra": {
         "installer-paths": {
