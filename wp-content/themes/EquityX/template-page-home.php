@@ -12,23 +12,54 @@ get_header(); ?>
 	<?php endif; ?>
 </div> <!-- Parallax section -->
 
-<div class="main"> <!-- Start main container -->
-	<div class="container">
 
 		<?php if ( have_posts() ) :
-			while ( have_posts() ) : the_post(); ?>
+			while ( have_posts() ) : the_post();
+				$display_intro_section    = get_field( 'display_intro_section' );
+				$template_intro_title     = get_field( 'template_intro_title' );
+				$template_intro_descript  = get_field( 'template_intro_description' );
+				$template_intro_video_url = get_field( 'template_intro_video_url' );
+				$template_video_duration  = get_field( 'template_video_duration' );
+				$template_video_caption   = get_field( 'template_video_caption' );
+				?>
+				<?php if ( ! empty( $display_intro_section )): ?>
+					<div class="main"> <!-- Start main container -->
+						<div class="container">
 
-				<article class="post" id="post-<?php the_ID(); ?>">
+							<article class="post" id="post-<?php the_ID(); ?>">
+									<section class="row column">
+										<div class="intro_section_widget introSection">
+											<?php if ( ! empty( $template_intro_title ) ) : ?>
+												<h1 class="introSection-title"><?php echo $template_intro_title; ?></h1>
+											<?php endif; ?>
+											<?php if ( ! empty( $template_intro_descript ) ) : ?>
+												<div class="introSection-description"><?php echo $template_intro_descript; ?></div>
+											<?php endif; ?>
+											<?php if ( ! empty( $template_intro_video_url && $template_video_caption ) ) : ?>
+												<div class="introSection-video">
+													<a class="js-videoBox introSection-video-trigger" href="<?php echo $template_intro_video_url; ?>">
+														<span class="introSection-video-trigger-icon"></span>
+														<img src="<?php echo $template_video_caption; ?>" alt="">
+													</a>
+												</div>
+											<?php endif; ?>
+											<div class="introSection-social">
+											</div>
+									</section>
 
-					<?php if ( is_active_sidebar( 'template-intro-section' ) ) : ?>
-						<?php dynamic_sidebar( 'template-intro-section' ); ?>
+									<div class="entry">
+										<?php the_content(); ?>
+									</div>
+							</article>
+					<?php else : ?>
+					<div class="main defaultPage"> <!-- Start main container -->
+						<div class="container">
+							<article class="post" id="post-<?php the_ID(); ?>">
+								<div class="entry">
+									<?php the_content(); ?>
+								</div>
+							</article>
 					<?php endif; ?>
-
-					<div class="entry">
-						<?php the_content(); ?>
-					</div>
-
-				</article>
 
 			<?php endwhile;
 		endif; ?>
