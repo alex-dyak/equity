@@ -80,8 +80,10 @@ function w4ptheme_scripts_styles() {
 	wp_enqueue_script( 'EquityX-application', get_template_directory_uri() . '/js/app.min.js', array( 'EquityX-jquery' ), null, true );
 
 	// This is where we put slick JS functions.
-	wp_enqueue_script( 'EquityX-slick', get_template_directory_uri() . '/js/slick.min.js', array( 'EquityX-jquery' ), null, true );
+	wp_enqueue_script( 'EquityX-slick', get_template_directory_uri() . '/inc/js/slick.min.js', array( 'EquityX-jquery' ), null, true );
 
+	// Load Stylesheets.
+	wp_enqueue_style( 'EquityX-slick-style', get_template_directory_uri() . '/inc/css/slick.css', array('js_composer_front') );
 }
 
 add_action( 'wp_enqueue_scripts', 'w4ptheme_scripts_styles' );
@@ -150,44 +152,9 @@ require_once( get_template_directory() . '/inc/filters.php' );
 // Custom shortcodes.
 require_once( get_template_directory() . '/inc/shortcodes.php' );
 
-// Class for VC.
+// Classes for VC widgets.
 require_once( get_template_directory() . '/inc/WPBakeryShortCode_equityx_members.php' );
-
-/**
- * Widget Term Items to VC
- */
-add_action( 'vc_before_init', 'get_term_items' );
-function get_term_items() {
-	vc_map( array(
-		"name"              => __( "Add Term Item", "EquityX" ),
-		"base"              => "bartag",
-		"class"             => "",
-		"category"          => __( "Content", "EquityX" ),
-		'admin_enqueue_js'  => array( get_template_directory_uri() . '/vc_extend/bartag.js' ),
-		'admin_enqueue_css' => array(
-			get_template_directory_uri() . '/vc_extend/bartag.css' ),
-		"params" => array(
-			array(
-				"type"        => "textfield",
-				"holder"      => "div",
-				"class"       => "",
-				"heading"     => __( "Text", "EquityX" ),
-				"param_name"  => "name",
-				"value"       => __( "Default param value", "EquityX" ),
-				"description" => __( "Description for foo param.", "EquityX" )
-			),
-			array(
-				"type"        => "textarea_html",
-				"holder"      => "div",
-				"class"       => "",
-				"heading"     => __( "Content", "EquityX" ),
-				"param_name"  => "content",
-				"value"       => __( "<p>Click edit button to change this text.</p>", "EquityX" ),
-				"description" => __( "Enter your content.", "EquityX" )
-			)
-		)
-	) );
-}
+require_once( get_template_directory() . '/inc/WPBakeryShortCode_testimonials_slider.php' );
 
 /**
  * Custom excerpt trim.
@@ -433,3 +400,48 @@ function w4ptheme_pre_get_posts( $query ) {
 }
 add_action( 'pre_get_posts', 'w4ptheme_pre_get_posts', 1 );
 add_filter( 'request', 'w4ptheme_post_column_orderby' );
+
+/**
+ * VC testimonials slider
+ */
+add_action( 'vc_before_init', 'testimonials_slider' );
+function testimonials_slider() {
+	vc_map(
+		array(
+			'name'        => __( 'Testimonials Slider' ),
+			'base'        => 'testimonials_slider',
+			'icon'        => 'icon-wpb-slideshow',
+			'category'    => __( 'Content' ),
+			'description' => __( 'Slider with testimonials.' ),
+			'params'      => array(
+				array(
+					"type"        => "textfield",
+					"holder"      => "div",
+					"class"       => "",
+					"heading"     => __( "Testimonials in Slide", "EquityX" ),
+					'value'       => 3,
+					"param_name"  => "quantity",
+					"description" => __( "Enter Quantity Testimonials in Slide.", "EquityX" )
+				),
+				array(
+					"type"        => "textfield",
+					"holder"      => "div",
+					"class"       => "",
+					"heading"     => __( "Testimonials to Scroll", "EquityX" ),
+					'value'       => 3,
+					"param_name"  => "slides_to_scroll",
+					"description" => __( "Enter Quantity Testimonials to Scroll.", "EquityX" )
+				),
+				array(
+					"type"        => "textfield",
+					"holder"      => "div",
+					"class"       => "",
+					"heading"     => __( "Autoplay Speed (sec)", "EquityX" ),
+					'value'       => 2,
+					"param_name"  => "autoplay_speed",
+					"description" => __( "Enter the autoplay speed.", "EquityX" )
+				),
+			),
+		)
+	);
+}
