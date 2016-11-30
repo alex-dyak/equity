@@ -79,6 +79,9 @@ function w4ptheme_scripts_styles() {
 	// This is where we put our custom JS functions.
 	wp_enqueue_script( 'EquityX-application', get_template_directory_uri() . '/js/app.min.js', array( 'EquityX-jquery' ), null, true );
 
+	// This is where we put slick JS functions.
+	wp_enqueue_script( 'EquityX-slick', get_template_directory_uri() . '/js/slick.min.js', array( 'EquityX-jquery' ), null, true );
+
 }
 
 add_action( 'wp_enqueue_scripts', 'w4ptheme_scripts_styles' );
