@@ -155,6 +155,7 @@ require_once( get_template_directory() . '/inc/shortcodes.php' );
 // Classes for VC widgets.
 require_once( get_template_directory() . '/inc/WPBakeryShortCode_equityx_members.php' );
 require_once( get_template_directory() . '/inc/WPBakeryShortCode_testimonials_slider.php' );
+require_once( get_template_directory() . '/inc/WPBakeryShortCode_logo_slider.php' );
 
 /**
  * Custom excerpt trim.
@@ -431,6 +432,51 @@ function testimonials_slider() {
 					'value'       => 3,
 					"param_name"  => "slides_to_scroll",
 					"description" => __( "Enter Quantity Testimonials to Scroll.", "EquityX" )
+				),
+				array(
+					"type"        => "textfield",
+					"holder"      => "div",
+					"class"       => "",
+					"heading"     => __( "Autoplay Speed (sec)", "EquityX" ),
+					'value'       => 2,
+					"param_name"  => "autoplay_speed",
+					"description" => __( "Enter the autoplay speed.", "EquityX" )
+				),
+			),
+		)
+	);
+}
+
+/**
+ * VC Clients logo slider
+ */
+add_action( 'vc_before_init', 'logo_slider' );
+function logo_slider() {
+	vc_map(
+		array(
+			'name'        => __( 'Clients Logo Slider' ),
+			'base'        => 'logo_slider',
+			'icon'        => 'icon-wpb-slideshow',
+			'category'    => __( 'Content' ),
+			'description' => __( 'Slider with Clients Logo.' ),
+			'params'      => array(
+				array(
+					"type"        => "textfield",
+					"holder"      => "div",
+					"class"       => "",
+					"heading"     => __( "Logo in Slide", "EquityX" ),
+					'value'       => 10,
+					"param_name"  => "quantity",
+					"description" => __( "Enter Quantity Logo in Slide.", "EquityX" )
+				),
+				array(
+					"type"        => "textfield",
+					"holder"      => "div",
+					"class"       => "",
+					"heading"     => __( "Logo to Scroll", "EquityX" ),
+					'value'       => 10,
+					"param_name"  => "slides_to_scroll",
+					"description" => __( "Enter Quantity Logo to Scroll.", "EquityX" )
 				),
 				array(
 					"type"        => "textfield",

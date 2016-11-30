@@ -6,6 +6,7 @@ $speed = $autoplay_speed * 1000;
 if ( ! empty( $quantity ) ) :
 	$query_args = array(
 		'post_type' => 'testimonial',
+		'posts_per_page' => -1
 	);
 	$query      = new WP_Query( $query_args );
 	?>
