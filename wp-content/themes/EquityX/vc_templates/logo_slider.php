@@ -19,7 +19,7 @@ if ( ! empty( $quantity ) ) :
 			}
 		)
 	</script>
-	<div class="testimonials-slidelist js-slider"
+	<div class="slick-list js-slider"
 	     data-slick='{"slidesToShow": <?php echo $quantity; ?>,
 	"slidesToScroll": <?php echo $slides_to_scroll; ?>,
 	"autoplaySpeed": <?php echo $speed; ?> }'>
