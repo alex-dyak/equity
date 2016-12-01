@@ -634,7 +634,7 @@ class Homepage_Intro_Section_Widget extends WP_Widget {
 			<div class="introSection-description"><?php echo $intro_description; ?></div>
 			<?php if (!empty($intro_video_url)): ?>
 				<div class="introSection-video">
-					<a href="<?php echo $intro_video_url ?>" class="js-videoBox introSection-video-trigger">
+					<a href="#video-popup" class="js-videoBox introSection-video-trigger">
 						<span class="introSection-video-trigger-icon"></span>
 						<img src="<?php echo $intro_video_caption; ?>" alt="">
 					</a>
@@ -651,6 +651,11 @@ class Homepage_Intro_Section_Widget extends WP_Widget {
 						<?php _e( 'Connect with LinkedIn', 'EquityX' ); ?>
 					</a>
 				<?php endif; ?>
+			</div>
+			<div id="video-popup" class="introSection-popup mfp-hide">
+				<div class="mfp-iframe-scaler">
+					<iframe src="<?php echo $intro_video_url ?>" frameborder="0" allowfullscreen class="js-video-iFrame"></iframe>
+				</div>
 			</div>
 		</div>
 

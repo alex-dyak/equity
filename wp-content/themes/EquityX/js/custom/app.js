@@ -40,26 +40,49 @@
                     });
                 }
             });
+            var autoPlay = "?rel=0&autoplay=1",
+                $videoFrame = $('.js-video-iFrame'),
+                frameValue = $videoFrame.attr('src'),
+                newValue = frameValue + autoPlay;
+            $('.js-videoBox').click(function(e){
+                e.preventDefault();
+                console.log(newValue);
+                $videoFrame.attr('src', newValue);
+            });
+            //$('.js-videoBox').magnificPopup({
+            //    type: 'iframe',
+            //    patterns: {
+            //        youtube: {
+            //            index: 'youtube.com/',
+            //
+            //            id: 'v=',
+            //            src: '//www.youtube.com/embed/%id%?autoplay=1'
+            //        },
+            //        vimeo: {
+            //            index: 'vimeo.com/',
+            //            id: '/',
+            //            src: '//player.vimeo.com/video/%id%?autoplay=1'
+            //        },
+            //        gmaps: {
+            //            index: '//maps.google.',
+            //            src: '%id%&output=embed'
+            //        }
+            //    },
+            //    srcAction: 'iframe_src',
+            //});
             $('.js-videoBox').magnificPopup({
-                type: 'iframe',
-                patterns: {
-                    youtube: {
-                        index: 'youtube.com/',
-
-                        id: 'v=',
-                        src: '//www.youtube.com/embed/%id%?autoplay=1'
+                type:'inline',
+                midClick: true,
+                callbacks: {
+                    open: function() {
+                        // Will fire when this exact popup is opened
+                        // this - is Magnific Popup object
                     },
-                    vimeo: {
-                        index: 'vimeo.com/',
-                        id: '/',
-                        src: '//player.vimeo.com/video/%id%?autoplay=1'
-                    },
-                    gmaps: {
-                        index: '//maps.google.',
-                        src: '%id%&output=embed'
+                    close: function() {
+                        $videoFrame.attr('src', frameValue);
                     }
-                },
-                srcAction: 'iframe_src',
+                    // e.t.c.
+                }
             });
         });
 
