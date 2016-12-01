@@ -46,37 +46,13 @@
                 newValue = frameValue + autoPlay;
             $('.js-videoBox').click(function(e){
                 e.preventDefault();
-                console.log(newValue);
-                $videoFrame.attr('src', newValue);
             });
-            //$('.js-videoBox').magnificPopup({
-            //    type: 'iframe',
-            //    patterns: {
-            //        youtube: {
-            //            index: 'youtube.com/',
-            //
-            //            id: 'v=',
-            //            src: '//www.youtube.com/embed/%id%?autoplay=1'
-            //        },
-            //        vimeo: {
-            //            index: 'vimeo.com/',
-            //            id: '/',
-            //            src: '//player.vimeo.com/video/%id%?autoplay=1'
-            //        },
-            //        gmaps: {
-            //            index: '//maps.google.',
-            //            src: '%id%&output=embed'
-            //        }
-            //    },
-            //    srcAction: 'iframe_src',
-            //});
             $('.js-videoBox').magnificPopup({
                 type:'inline',
                 midClick: true,
                 callbacks: {
                     open: function() {
-                        // Will fire when this exact popup is opened
-                        // this - is Magnific Popup object
+                        $videoFrame.attr('src', newValue);
                     },
                     close: function() {
                         $videoFrame.attr('src', frameValue);
