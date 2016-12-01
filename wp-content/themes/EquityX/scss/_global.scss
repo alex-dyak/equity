@@ -167,9 +167,14 @@ ol {
         z-index: 200;
     }
 }
-#swipebox-close {
-    width: 50px;
-    height: 50px;
+.mfp-close {
+    position: fixed;
+    width: 50px !important;
+    height: 50px !important;
+    top: 0 !important;
+    right: 0 !important;
+    min-width: 50px;
+    font-size: 0;
     cursor: pointer;
     &::before,
     &::after {
@@ -192,11 +197,16 @@ ol {
     }
     &:hover,
     &:active {
+        background: transparent;
         &::before,
         &::after {
             background: $blue;
         }
     }
+}
+.mfp-bg {
+    opacity: 1;
+    background: $black--light;
 }
 .playBtn {
     display: inline-block;

@@ -10,9 +10,6 @@
                 buttonClass: 'js-mobTrigger',
                 mobileWidth: 1023
             });
-            $('.js-videoBox').swipebox({
-                autoplayVideos: true,
-            });
             headerPosition();
             equalHeight($('.js-equalItems'));
             $('.js-linkTooltip').click(function(e) {
@@ -42,6 +39,27 @@
                         }, 1000);
                     });
                 }
+            });
+            $('.js-videoBox').magnificPopup({
+                type: 'iframe',
+                patterns: {
+                    youtube: {
+                        index: 'youtube.com/',
+
+                        id: 'v=',
+                        src: '//www.youtube.com/embed/%id%?autoplay=1'
+                    },
+                    vimeo: {
+                        index: 'vimeo.com/',
+                        id: '/',
+                        src: '//player.vimeo.com/video/%id%?autoplay=1'
+                    },
+                    gmaps: {
+                        index: '//maps.google.',
+                        src: '%id%&output=embed'
+                    }
+                },
+                srcAction: 'iframe_src',
             });
         });
 
