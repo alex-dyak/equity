@@ -60,6 +60,18 @@
                     // e.t.c.
                 }
             });
+            $('.js-LogoSlider').slick({
+                infinite: true,
+                autoplay: true,
+                draggable: false,
+                arrows: false
+            });
+            jQuery('.js-testimonialsSlider').slick({
+                infinite: true,
+                autoplay: true,
+                draggable: false,
+                arrows: false
+            });
         });
 
         $(window).scroll(function() {

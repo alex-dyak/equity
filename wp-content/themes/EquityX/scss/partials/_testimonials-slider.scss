@@ -1,0 +1,33 @@
+.testimonialsSlider {
+
+}
+.testimonialsSlider-item {
+	outline: none;
+	padding: 0 23px;
+}
+.testimonialsSlider-item-inner {
+	padding: 30px 30px 25px;
+	border: 1px solid $borderSlider;
+	border-radius: 2px;
+}
+.testimonialsSlider-excerpt {
+	margin-bottom: 15px;
+	font-size: $fontSize-small;
+	line-height: $lineHeight-base;
+}
+.testimonialsSlider-authorInfo {
+	position: relative;
+}
+.testimonialsSlider-image {
+	position: relative;
+	float: left;
+	width: 44px;
+	height: 44px;
+	overflow: hidden;
+	border-radius: 100%;
+	 img {
+		 width: auto;
+		 max-width: none;
+		 height: 44px;
+	 }
+}

@@ -10,16 +10,7 @@ if ( ! empty( $quantity ) ) :
 	);
 	$query      = new WP_Query( $query_args );
 	?>
-	<script type="text/javascript">
-		jQuery(document).ready(function () {
-				jQuery('.js-slider').slick({
-					infinite: true,
-					autoplay: true
-				});
-			}
-		)
-	</script>
-	<div class="slick-list js-slider"
+	<div class="slick-list js-LogoSlider"
 	     data-slick='{"slidesToShow": <?php echo $quantity; ?>,
 	"slidesToScroll": <?php echo $slides_to_scroll; ?>,
 	"autoplaySpeed": <?php echo $speed; ?> }'>
