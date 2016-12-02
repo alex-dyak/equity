@@ -1,0 +1,25 @@
+.logoSlider {
+	max-width: 740px;
+	margin: 40px auto;
+}
+.logoSlider-item {
+	text-align: center;
+	outline: none;
+}
+.logoSlider-item-logo {
+	display: inline-block;
+	margin: 0 20px 20px;
+	vertical-align: middle;
+	filter: grayscale(100%);
+	opacity: 0.4;
+	transition: filter, opacity .3s;
+	&:hover {
+		opacity: 1;
+		filter: grayscale(0%);
+	}
+	img {
+		display: inline-block;
+		max-height: 30px;
+		max-width: 150px;
+	}
+}

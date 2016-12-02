@@ -11,19 +11,17 @@ if ( ! empty( $quantity ) ) :
 	);
 	$query      = new WP_Query( $query_args );
 	?>
-	<div class="slick-list js-LogoSlider"
-	     data-slick='{"slidesToShow": 1,
+	<div class="logoSlider js-LogoSlider"
+		 data-slick='{"slidesToShow": 1,
 	"slidesToScroll": <?php echo $slides_to_scroll; ?>,
 	"autoplaySpeed": <?php echo $speed; ?> }'>
 		<?php
 		if ( $query->have_posts() ) : while ( $query->have_posts() ) :?>
-			<div class="slide-container">
+			<div class="logoSlider-item">
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-					<div class="slide-item">
+					<div class="logoSlider-item-logo">
 						<?php if ( ! empty ( get_field( 'image_clients_logo' ) ) ) : ?>
-							<div class="logo-image">
-								<img src="<?php echo get_field( 'image_clients_logo' ); ?>" alt="">
-							</div>
+							<img src="<?php echo get_field( 'image_clients_logo' ); ?>" alt="">
 						<?php endif; ?>
 					</div>
 				<?php endwhile; ?>
