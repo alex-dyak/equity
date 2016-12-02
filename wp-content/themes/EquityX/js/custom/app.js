@@ -67,7 +67,7 @@
                 arrows: false,
                 adaptiveHeight: true
             });
-            jQuery('.js-testimonialsSlider').slick({
+            $('.js-testimonialsSlider').slick({
                 infinite: true,
                 autoplay: true,
                 draggable: false,
