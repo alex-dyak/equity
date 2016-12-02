@@ -10,16 +10,7 @@ if ( ! empty( $quantity ) ) :
 	);
 	$query      = new WP_Query( $query_args );
 	?>
-	<script type="text/javascript">
-		jQuery(document).ready(function () {
-				jQuery('.js-slider').slick({
-					infinite: true,
-					autoplay: true
-				});
-			}
-		)
-	</script>
-	<div class="testimonials-slidelist js-slider"
+	<div class="testimonialsSlider js-testimonialsSlider"
 	     data-slick='{"slidesToShow": <?php echo $quantity; ?>,
 	"slidesToScroll": <?php echo $slides_to_scroll; ?>,
 	"autoplaySpeed": <?php echo $speed; ?> }'>
@@ -28,33 +19,39 @@ if ( ! empty( $quantity ) ) :
 			while ( $query->have_posts() ) : $query->the_post();
 				$meta_values = get_post_meta( get_the_ID() );
 				?>
-				<div class="slide-item">
-					<div class="testimonial-excerpt">
-						<?php echo the_excerpt(); ?>
-					</div>
-					<?php if ( has_post_thumbnail() ) : ?>
-						<div class="testimonial-image">
-							<?php the_post_thumbnail(); ?>
+				<div class="testimonialsSlider-item">
+					<div class="testimonialsSlider-item-inner">
+						<div class="testimonialsSlider-excerpt">
+							<?php echo
+								substr(get_the_excerpt(), 0,120). '...';
+							?>
 						</div>
-					<?php endif; ?>
-					<?php if ( ! empty( $meta_values ) ) : ?>
-						<?php if ( ! empty( $meta_values['_testimonial_client'] ) ) : ?>
-							<div class="testimonial-client">
-								<?php echo
-									strtoupper( $meta_values['_testimonial_client'][0] )
-									. ',<br/>'; ?>
-							</div>
-						<?php endif; ?>
-						<?php if ( ! empty( $meta_values['_testimonial_job'] ) ) : ?>
-							<div class="testimonial-job">
-								<?php echo strtoupper( $meta_values['_testimonial_job'][0] ); ?>
-								<?php if ( ! empty( $meta_values['_testimonial_company'] ) ) : ?>
-									<?php echo '/'
-									           . strtoupper( $meta_values['_testimonial_company'][0] ); ?>
+						<div class="testimonialsSlider-authorInfo">
+							<?php if ( has_post_thumbnail() ) : ?>
+								<div class="testimonialsSlider-image">
+									<?php the_post_thumbnail(); ?>
+								</div>
+							<?php endif; ?>
+							<?php if ( ! empty( $meta_values ) ) : ?>
+								<?php if ( ! empty( $meta_values['_testimonial_client'] ) ) : ?>
+									<div class="testimonialsSlider-client">
+										<?php echo
+											strtoupper( $meta_values['_testimonial_client'][0] )
+											. ','; ?>
+									</div>
 								<?php endif; ?>
-							</div>
-						<?php endif; ?>
-					<?php endif; ?>
+								<?php if ( ! empty( $meta_values['_testimonial_job'] ) ) : ?>
+									<div class="testimonialsSlider-job">
+										<?php echo strtoupper( $meta_values['_testimonial_job'][0] ); ?>
+										<?php if ( ! empty( $meta_values['_testimonial_company'] ) ) : ?>
+											<?php echo '/'
+												. strtoupper( $meta_values['_testimonial_company'][0] ); ?>
+										<?php endif; ?>
+									</div>
+								<?php endif; ?>
+							<?php endif; ?>
+						</div>
+					</div>
 				</div>
 			<?php endwhile; ?>
 		<?php endif; ?>
