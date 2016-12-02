@@ -473,8 +473,8 @@ function logo_slider() {
 					"type"        => "textfield",
 					"holder"      => "div",
 					"class"       => "",
-					"heading"     => __( "Logo to Scroll", "EquityX" ),
-					'value'       => 10,
+					"heading"     => __( "Slide to Scroll", "EquityX" ),
+					'value'       => 1,
 					"param_name"  => "slides_to_scroll",
 					"description" => __( "Enter Quantity Logo to Scroll.", "EquityX" )
 				),
