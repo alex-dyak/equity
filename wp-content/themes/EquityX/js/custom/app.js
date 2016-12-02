@@ -10,9 +10,6 @@
                 buttonClass: 'js-mobTrigger',
                 mobileWidth: 1023
             });
-            $('.js-videoBox').swipebox({
-                autoplayVideos: true,
-            });
             headerPosition();
             equalHeight($('.js-equalItems'));
             $('.js-linkTooltip').click(function(e) {
@@ -41,6 +38,26 @@
                             scrollTop: $(destination).offset().top - $('.js-header').outerHeight() - 30
                         }, 1000);
                     });
+                }
+            });
+            var autoPlay = "?rel=0&autoplay=1",
+                $videoFrame = $('.js-video-iFrame'),
+                frameValue = $videoFrame.attr('src'),
+                newValue = frameValue + autoPlay;
+            $('.js-videoBox').click(function(e){
+                e.preventDefault();
+            });
+            $('.js-videoBox').magnificPopup({
+                type:'inline',
+                midClick: true,
+                callbacks: {
+                    open: function() {
+                        $videoFrame.attr('src', newValue);
+                    },
+                    close: function() {
+                        $videoFrame.attr('src', frameValue);
+                    }
+                    // e.t.c.
                 }
             });
         });
