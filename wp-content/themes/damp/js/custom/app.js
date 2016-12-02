@@ -40,53 +40,26 @@
                     });
                 }
             });
-            var autoPlay = "?rel=0&autoplay=1",
-                $videoFrame = $('.js-video-iFrame'),
-                frameValue = $videoFrame.attr('src'),
-                newValue = frameValue + autoPlay;
-            $('.js-videoBox').click(function(e){
-                e.preventDefault();
-            });
             $('.js-videoBox').magnificPopup({
-                type:'inline',
-                midClick: true,
-                callbacks: {
-                    open: function() {
-                        $videoFrame.attr('src', newValue);
+                type: 'iframe',
+                patterns: {
+                    youtube: {
+                        index: 'youtube.com/',
+
+                        id: 'v=',
+                        src: '//www.youtube.com/embed/%id%?autoplay=1'
                     },
-                    close: function() {
-                        $videoFrame.attr('src', frameValue);
-                    }
-                    // e.t.c.
-                }
-            });
-            $('.js-LogoSlider').slick({
-                infinite: true,
-                autoplay: true,
-                draggable: false,
-                arrows: false,
-                adaptiveHeight: true
-            });
-            $('.js-testimonialsSlider').slick({
-                infinite: true,
-                autoplay: true,
-                draggable: false,
-                arrows: false,
-                responsive: [
-                    {
-                        breakpoint: 1024,
-                        settings: {
-                            slidesToShow: 2,
-                            draggable: false
-                        }
+                    vimeo: {
+                        index: 'vimeo.com/',
+                        id: '/',
+                        src: '//player.vimeo.com/video/%id%?autoplay=1'
                     },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 1
-                        }
+                    gmaps: {
+                        index: '//maps.google.',
+                        src: '%id%&output=embed'
                     }
-                ]
+                },
+                srcAction: 'iframe_src',
             });
         });
 
