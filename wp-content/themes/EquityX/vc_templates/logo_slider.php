@@ -12,7 +12,7 @@ if ( ! empty( $quantity ) ) :
 	$query      = new WP_Query( $query_args );
 	?>
 	<div class="slick-list js-LogoSlider"
-	     data-slick='{"slidesToShow": <?php echo $quantity; ?>,
+	     data-slick='{"slidesToShow": 1,
 	"slidesToScroll": <?php echo $slides_to_scroll; ?>,
 	"autoplaySpeed": <?php echo $speed; ?> }'>
 		<?php

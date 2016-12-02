@@ -70,7 +70,22 @@
                 infinite: true,
                 autoplay: true,
                 draggable: false,
-                arrows: false
+                arrows: false,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2,
+                            draggable: false
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
+                ]
             });
         });
 

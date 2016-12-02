@@ -22,7 +22,9 @@ if ( ! empty( $quantity ) ) :
 				<div class="testimonialsSlider-item">
 					<div class="testimonialsSlider-item-inner">
 						<div class="testimonialsSlider-excerpt">
-							<?php echo the_excerpt(); ?>
+							<?php echo
+								substr(get_the_excerpt(), 0,120). '...';
+							?>
 						</div>
 						<div class="testimonialsSlider-authorInfo">
 							<?php if ( has_post_thumbnail() ) : ?>
@@ -35,7 +37,7 @@ if ( ! empty( $quantity ) ) :
 									<div class="testimonialsSlider-client">
 										<?php echo
 											strtoupper( $meta_values['_testimonial_client'][0] )
-											. ',<br/>'; ?>
+											. ','; ?>
 									</div>
 								<?php endif; ?>
 								<?php if ( ! empty( $meta_values['_testimonial_job'] ) ) : ?>
