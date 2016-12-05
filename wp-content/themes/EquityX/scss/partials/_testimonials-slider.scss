@@ -5,17 +5,23 @@
 	}
 }
 .testimonialsSlider-item-inner {
+	display: table;
+	height: 100%;
 	padding: 30px 30px 25px;
 	border: 1px solid $borderSlider;
 	border-radius: 2px;
+}
+.testimonialsSlider-item-innerAlignment {
+	display: table-cell;
+	vertical-align: middle;
 }
 .testimonialsSlider-excerpt {
 	margin-bottom: 15px;
 	font-size: $fontSize-small;
 	line-height: $lineHeight-base;
 	@include breakpoint(medium) {
-		height: 66px;
-		overflow: hidden;
+		//height: 66px;
+		//overflow: hidden;
 	}
 }
 .testimonialsSlider-authorInfo {
