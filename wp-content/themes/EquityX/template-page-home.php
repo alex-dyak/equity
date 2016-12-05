@@ -37,13 +37,18 @@ get_header(); ?>
 											<?php endif; ?>
 											<?php if ( ! empty( $template_intro_video_url && $template_video_caption ) ) : ?>
 												<div class="introSection-video">
-													<a class="js-videoBox introSection-video-trigger" href="<?php echo $template_intro_video_url; ?>">
+													<a class="js-videoBox introSection-video-trigger" href="#video-popup">
 														<span class="introSection-video-trigger-icon"></span>
 														<img src="<?php echo $template_video_caption; ?>" alt="">
 													</a>
 												</div>
 											<?php endif; ?>
 											<div class="introSection-social">
+											</div>
+											<div id="video-popup" class="introSection-popup mfp-hide">
+												<div class="mfp-iframe-scaler">
+													<iframe src="<?php echo $template_intro_video_url ?>" frameborder="0" allowfullscreen class="js-video-iFrame"></iframe>
+												</div>
 											</div>
 									</section>
 
