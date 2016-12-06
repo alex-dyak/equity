@@ -111,7 +111,7 @@
         }
 
         function slideEqualizer() {
-            if ( $(window).width() > 768 ){
+            if ( $(window).width() > 767 ){
                 $('.js-testimonialsSlider').on('setPosition', function () {
                     $(this).find('.slick-slide').height('auto');
                     var slickTrack = $(this).find('.slick-track');
