@@ -127,7 +127,7 @@
             var windowWidth = window.innerWidth,
                 $columns = $('body').find('[data-equal]');
             $columns.height('auto');
-            if ( windowWidth > 1025 ) {
+            if ( windowWidth > 767 ) {
                 $equalContainer.each(function () {
                     var $this = $(this),
                         columns = $this.find('[data-equal]'),
