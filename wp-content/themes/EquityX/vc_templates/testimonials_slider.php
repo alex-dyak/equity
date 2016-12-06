@@ -24,7 +24,7 @@ if ( ! empty( $quantity ) ) :
 						<div class="testimonialsSlider-item-innerAlignment">
 							<div class="testimonialsSlider-excerpt">
 								<?php echo
-									substr(get_the_excerpt(), 0,300);
+									substr(get_the_excerpt(), 0,350);
 								?>
 							</div>
 							<div class="testimonialsSlider-authorInfo">
