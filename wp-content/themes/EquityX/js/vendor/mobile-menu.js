@@ -168,6 +168,7 @@
 
             /**
              * Tells if this type of view was already changed.
+             * Tells if this type of view was already changed.
              * This prevents multiple events,
              * @type boolean
              */
