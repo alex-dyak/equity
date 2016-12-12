@@ -19,7 +19,7 @@ if ( ! empty( $quantity ) ) :
 			while ( $query->have_posts() ) : $query->the_post();
 				$meta_values = get_post_meta( get_the_ID() );
 				?>
-				<div class="testimonialsSlider-item">
+				<a href="#" class="testimonialsSlider-item">
 					<div class="testimonialsSlider-item-inner">
 						<div class="testimonialsSlider-item-innerAlignment">
 							<div class="testimonialsSlider-excerpt">
@@ -54,7 +54,7 @@ if ( ! empty( $quantity ) ) :
 							</div>
 						</div>
 					</div>
-				</div>
+				</a>
 			<?php endwhile; ?>
 		<?php endif; ?>
 	</div>
