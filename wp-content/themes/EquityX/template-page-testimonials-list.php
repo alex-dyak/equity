@@ -24,48 +24,26 @@ get_header(); ?>
 						<?php endif; ?>
 
 						<?php
-						$post_id = 0;
-						if (isset($_GET['testimonialId'])) {
-							$post_id = $_GET['testimonialId'];
-						}
+						$post_id = 0; ?>
+<!--						$post_id = $_GET['selected_post_id']; ?>-->
 
-						$paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
-						$posts_per_page = 2;
-						$selected_testimonial = 0;
 
-							do {
-								$query_args = array(
-									'post_type'           => 'testimonial',
-									'posts_per_page'      => $posts_per_page,
-									'paged'               => $paged,
-									'ignore_sticky_posts' => true,
-								);
-								$query      = new WP_Query( $query_args );
-								if( $post_id == 0 ){
+						<?php
 
-								} else {
-									if ( $query->have_posts() ) {
-										$post_counter = 0;
-										foreach ( $query->posts as $post ) {
-											$selected_testimonial = $post->ID;
-											if ( $selected_testimonial == $post_id ) {
-												$post_counter = 0;
-												break;
-											} else {
-												$post_counter ++;
-											}
-										}
-										if ( $post_counter != 0 ) {
-											$paged ++;
-										}
-									}
-								}
-							} while ( $selected_testimonial != $post_id );
+						$query_args = array(
+							'post_type'           => 'testimonial',
+							'posts_per_page'      => $posts_per_page,
+							'paged'               => $paged,
+							'ignore_sticky_posts' => true,
+						);
 
+						$query = new WP_Query( $query_args );
+
+						$highlight = ! empty( $_GET['highlight_id'] ) ? $_GET['highlight_id'] : null;
 
 						if ( $query->have_posts() ) :
 							while ( $query->have_posts() ) : $query->the_post(); ?>
-								<?php if ( $post_id == get_the_ID() ) : ?>
+								<?php if ( get_the_ID() == $highlight ) : ?>
 									<div class="selected testimonial" style="background: #07bbff;">
 										<?php get_template_part( 'templates-part/template-article-testimonials-list' ); ?>
 									</div>

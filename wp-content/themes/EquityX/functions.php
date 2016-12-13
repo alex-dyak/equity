@@ -491,3 +491,66 @@ function logo_slider() {
 		)
 	);
 }
+
+function abc() {
+	global $post, $page;
+
+	$paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
+
+	if ( ! empty( $_GET['selected_post_id'] ) ) {
+
+		if ( ! isset($post_id) ) {
+			$post_id = 0;
+		}
+
+		$posts_per_page = 2;
+		$selected_testimonial = 0;
+
+		do {
+			$query_args = array(
+				'post_type'           => 'testimonial',
+				'posts_per_page'      => $posts_per_page,
+				'paged'               => $paged,
+				'ignore_sticky_posts' => true,
+			);
+
+			$query = new WP_Query( $query_args );
+
+			if ( $post_id == 0 ) {
+				break;
+			} else {
+				if ( $query->have_posts() ) {
+					$post_counter = 0;
+					foreach ( $query->posts as $post ) {
+						$selected_testimonial = $post->ID;
+						if ( $selected_testimonial == $post_id ) {
+							$post_counter = 0;
+							break;
+						} else {
+							$post_counter ++;
+						}
+					}
+					if ( $post_counter != 0 ) {
+						$paged ++;
+					}
+				}
+			}
+
+			wp_reset_postdata();
+			wp_reset_query();
+		} while ( $selected_testimonial != $post_id  );
+
+		$paged = ! $paged ? 1 : $paged;
+
+		$link = add_query_arg( 'highlight_id', $_GET['selected_post_id'], get_permalink( $post->ID ) . 'page/' . $paged.'/' );
+
+		wp_redirect($link  );
+
+		exit;
+
+	} else if ( ! empty( $_GET['highlight_id'] ) && $paged > 1 ) {
+		wp_redirect( WP_HOME . $_SERVER['REDIRECT_URL'] );
+	}
+}
+
+add_action('wp', 'abc');
