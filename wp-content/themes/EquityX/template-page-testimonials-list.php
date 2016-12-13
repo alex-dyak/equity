@@ -24,20 +24,54 @@ get_header(); ?>
 						<?php endif; ?>
 
 						<?php
+						$post_id = 0;
+						if (isset($_GET['testimonialId'])) {
+							$post_id = $_GET['testimonialId'];
+						}
+
 						$paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
+						$posts_per_page = 2;
+						$selected_testimonial = 0;
 
-						$query_args = array(
-							'post_type'           => 'testimonial',
-							'posts_per_page'      => 5,
-							'paged'               => $paged,
-							'ignore_sticky_posts' => true,
-						);
-						$query      = new WP_Query( $query_args );
-						?>
-						<?php if ( $query->have_posts() ) :
+							do {
+								$query_args = array(
+									'post_type'           => 'testimonial',
+									'posts_per_page'      => $posts_per_page,
+									'paged'               => $paged,
+									'ignore_sticky_posts' => true,
+								);
+								$query      = new WP_Query( $query_args );
+								if( $post_id == 0 ){
+
+								} else {
+									if ( $query->have_posts() ) {
+										$post_counter = 0;
+										foreach ( $query->posts as $post ) {
+											$selected_testimonial = $post->ID;
+											if ( $selected_testimonial == $post_id ) {
+												$post_counter = 0;
+												break;
+											} else {
+												$post_counter ++;
+											}
+										}
+										if ( $post_counter != 0 ) {
+											$paged ++;
+										}
+									}
+								}
+							} while ( $selected_testimonial != $post_id );
+
+
+						if ( $query->have_posts() ) :
 							while ( $query->have_posts() ) : $query->the_post(); ?>
-
-								<?php get_template_part( 'templates-part/template-article-testimonials-list' ); ?>
+								<?php if ( $post_id == get_the_ID() ) : ?>
+									<div class="selected testimonial" style="background: #07bbff;">
+										<?php get_template_part( 'templates-part/template-article-testimonials-list' ); ?>
+									</div>
+									<?php else : ?>
+									<?php get_template_part( 'templates-part/template-article-testimonials-list' ); ?>
+								<?php endif; ?>
 
 							<?php endwhile; ?>
 

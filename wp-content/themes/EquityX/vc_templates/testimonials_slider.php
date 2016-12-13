@@ -19,7 +19,7 @@ if ( ! empty( $quantity ) ) :
 			while ( $query->have_posts() ) : $query->the_post();
 				$meta_values = get_post_meta( get_the_ID() );
 				?>
-				<a href="#" class="testimonialsSlider-item">
+				<a href="<?php echo esc_url( home_url() ) . '/testimonials' . '/?testimonialId=' . get_the_ID(); ?>" class="testimonialsSlider-item">
 					<div class="testimonialsSlider-item-inner">
 						<div class="testimonialsSlider-item-innerAlignment">
 							<div class="testimonialsSlider-excerpt">
