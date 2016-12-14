@@ -152,7 +152,7 @@
         }
 
         function footerMenuMob() {
-            var $menuContainer = $('.js-footeMenu'),
+            var $menuContainer = $('.js-footerMenu'),
                 $menuItem = $menuContainer.find('ul.menu'),
                 $links = $menuItem.find('li > a');
             $links.each(function(){
