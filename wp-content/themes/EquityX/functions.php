@@ -491,3 +491,89 @@ function logo_slider() {
 		)
 	);
 }
+
+/**
+ * Function get selected testimonial and redirect.
+ */
+function get_selected_testimonial() {
+	global $post;
+
+	$paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
+	$posts_per_page = 5;
+	$selected_testimonial = 0;
+
+	if ( ! empty( $_GET['selected_post_id'] ) ) {
+			$post_id = $_GET['selected_post_id'];
+		if ( ! isset($post_id) ) {
+			$post_id = 0;
+		}
+
+		do {
+			$query_args = array(
+				'post_type'           => 'testimonial',
+				'posts_per_page'      => $posts_per_page,
+				'paged'               => $paged,
+				'ignore_sticky_posts' => true,
+			);
+
+			$query = new WP_Query( $query_args );
+
+			if ( $post_id == 0 ) {
+				break;
+			} else {
+				if ( $query->have_posts() ) {
+					$post_counter = 0;
+					foreach ( $query->posts as $post ) {
+						$selected_testimonial = $post->ID;
+						if ( $selected_testimonial == $post_id ) {
+							$post_counter = 0;
+							break;
+						} else {
+							$post_counter ++;
+						}
+					}
+					if ( $post_counter != 0 ) {
+						$paged ++;
+					}
+				}
+			}
+
+			wp_reset_postdata();
+			wp_reset_query();
+		} while ( $selected_testimonial != $post_id  );
+
+		$paged = ! $paged ? 1 : $paged;
+
+		$link = add_query_arg( 'highlight_id', $post_id, get_permalink( $post->ID ) . 'page/' . $paged.'/' );
+
+		wp_redirect( $link );
+
+		exit;
+
+	}
+//	else if ( ! empty( $_GET['selected_post_id'] ) && get_option( 'selected_post_id' ) ) {
+//		wp_redirect( WP_HOME . $_SERVER['REDIRECT_URL'] );
+//	}
+}
+
+add_action('wp', 'get_selected_testimonial');
+
+add_filter('wp_pagenavi_class_previouspostslink', 'theme_pagination_class');
+add_filter('wp_pagenavi_class_nextpostslink', 'theme_pagination_class');
+add_filter('wp_pagenavi_class_page', 'theme_pagination_class');
+
+function theme_pagination_class($class_name) {
+	switch($class_name) {
+		case 'previouspostslink':
+			$class_name = 'prev';
+			break;
+		case 'nextpostslink':
+			$class_name = 'next';
+			break;
+		case 'page':
+			$class_name = 'current';
+      break;
+	}
+	return $class_name;
+}
+

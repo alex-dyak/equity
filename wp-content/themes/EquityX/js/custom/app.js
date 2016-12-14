@@ -111,6 +111,8 @@
                 $(this).removeClass('is-prevented');
             })
 
+            scrollToSelected();
+
         });
 
         $(window).scroll(function() {
@@ -120,7 +122,6 @@
         $(window).resize(function() {
             equalHeight($('.js-equalItems'));
             slideEqualizer();
-            footerMenuMob();
             mobileDefine();
         });
 
@@ -179,6 +180,18 @@
                 $('body').addClass('is-touch');
             }
             // end
+        }
+
+        function scrollToSelected() {
+            if( $('[data-scroll-toselected]').length ) {
+                var $selected = $('[data-scroll-toselected]'),
+                    selectedPosition = $selected.offset().top,
+                    destination = selectedPosition - $('.js-header').height() - 100;
+                $('html, body').animate({
+                    scrollTop: destination
+                }, 1000);
+                $selected.addClass('is-selected')
+            }
         }
 
     });
