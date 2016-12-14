@@ -89,9 +89,28 @@
                 ]
             });
             slideEqualizer();
-            if ( $(window).width() > 1024 ){
-                footerMenuMob();
+            mobileDefine();
+
+            var $subMenu = $('.js-hoveredMenu').find('.menu>li>.sub-menu'),
+                $links = $subMenu.closest('li').find('>a');
+
+            if( $('body').hasClass('is-touch') ){
+                $links.addClass('is-prevented');
+                if( $('.js-hoveredMenu').length ){
+                    $links.hover(function() {
+                        $(this).closest('li').toggleClass('is-active');
+                        //$links.toggleClass('is-prevented');
+                    }, function() {
+                        $links.addClass('is-prevented');
+                    });
+                }
             }
+
+            $('body').on('click', '.is-prevented', function(e) {
+                e.preventDefault();
+                $(this).removeClass('is-prevented');
+            })
+
         });
 
         $(window).scroll(function() {
@@ -102,9 +121,7 @@
             equalHeight($('.js-equalItems'));
             slideEqualizer();
             footerMenuMob();
-            if ( $(window).width() > 1024 ){
-                footerMenuMob();
-            }
+            mobileDefine();
         });
 
         function headerPosition() {
@@ -151,21 +168,18 @@
             }
         }
 
-        function footerMenuMob() {
-            var $menuContainer = $('.js-footerMenu'),
-                $menuItem = $menuContainer.find('ul.menu'),
-                $links = $menuItem.find('li > a');
-            $links.each(function(){
-                if( $(this).closest('li').find('.sub-menu').length ) {
-                    $(this).addClass('js-prevented')
-                }
-            });
-            $('body').on('click', '.js-prevented', function(e) {
-                e.preventDefault();
-                $(this).removeClass('js-prevented');
-                $(this).closest('li').find('.sub-menu').addClass('is-visible')
-            })
-        } // this function used for mobile behaviour of footer menu is it has sub menu items
+        function mobileDefine() {
+            // Define on the touch device
+            function is_touch_device() {
+                return (('ontouchstart' in window)
+                || (navigator.MaxTouchPoints > 0)
+                || (navigator.msMaxTouchPoints > 0));
+            }
+            if (is_touch_device()) {
+                $('body').addClass('is-touch');
+            }
+            // end
+        }
 
     });
 })();
