@@ -33,7 +33,7 @@
 				display: inline-block;
 				margin: 0 15px;
 			}
-			@include breakpoint(small only) {
+			@include breakpoint(small only) { // this used for mobile behaviour of footer menu is it has sub menu items
 				&:hover {
 					.sub-menu {
 						opacity: 0;

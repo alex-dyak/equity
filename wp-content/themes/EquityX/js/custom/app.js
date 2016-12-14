@@ -102,7 +102,7 @@
             equalHeight($('.js-equalItems'));
             slideEqualizer();
             footerMenuMob();
-            if ( $(window).width() > 2024 ){
+            if ( $(window).width() > 1024 ){
                 footerMenuMob();
             }
         });
@@ -165,7 +165,7 @@
                 $(this).removeClass('js-prevented');
                 $(this).closest('li').find('.sub-menu').addClass('is-visible')
             })
-        }
+        } // this function used for mobile behaviour of footer menu is it has sub menu items
 
     });
 })();
