@@ -18,7 +18,7 @@ get_header(); ?>
 			<div class="defaultSection-inner">
 				<div class="u-clearfix">
 					<?php if ( get_the_title() ): ?>
-						<h2 class="vc_custom_heading" style="text-align: center"><?php the_title(); ?></h2>
+						<h2 class="vc_custom_heading u-text--center"><?php the_title(); ?></h2>
 					<?php endif; ?>
 					<div class="testimonialsList">
 
