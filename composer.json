@@ -43,7 +43,8 @@
         "wpackagist-plugin/wp-google-analytics-events": ">=2.2",
         "wpackagist-plugin/yandex-metrica": ">=1.4.2",
         "wpackagist-plugin/zopim-live-chat": ">=1.4.4",
-        "wpackagist-plugin/wp-testimonial-with-widget": ">=2.2.4"
+        "wpackagist-plugin/wp-testimonial-with-widget": ">=2.2.4",
+        "wpackagist-plugin/wp-pagenavi": ">2.90"
     },
     "extra": {
         "installer-paths": {
