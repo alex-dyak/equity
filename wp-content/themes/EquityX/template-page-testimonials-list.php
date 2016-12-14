@@ -17,11 +17,10 @@ get_header(); ?>
 		<div class="defaultSection decoLines decoLines--fourLined">
 			<div class="defaultSection-inner">
 				<div class="u-clearfix">
-					<div class="postContent">
-
-						<?php if ( get_the_title() ): ?>
-							<h2 class="vc_custom_heading" style="text-align: center"><?php the_title(); ?></h2>
-						<?php endif; ?>
+					<?php if ( get_the_title() ): ?>
+						<h2 class="vc_custom_heading u-text--center"><?php the_title(); ?></h2>
+					<?php endif; ?>
+					<div class="testimonialsList">
 
 						<?php
 						$posts_per_page = 5;
@@ -39,7 +38,7 @@ get_header(); ?>
 						if ( $query->have_posts() ) :
 							while ( $query->have_posts() ) : $query->the_post(); ?>
 								<?php if ( get_the_ID() == $highlight ) : ?>
-									<div class="selected testimonial" style="background: #07bbff;">
+									<div class="u-isAnimated" data-scroll-toselected>
 										<?php get_template_part( 'templates-part/template-article-testimonials-list' ); ?>
 									</div>
 									<?php else : ?>
@@ -50,7 +49,7 @@ get_header(); ?>
 
 							<?php if ( function_exists( 'wp_pagenavi' ) ) {
 							wp_pagenavi( array(
-								'before'        => '<section class="row entityGrid-pagination paginationItem">',
+								'before'        => '<section class="row entityGrid-pagination paginationItem testimonialsPagination">',
 								'after'         => '</section>',
 								'wrapper_tag'   => 'div',
 								'wrapper_class' => 'nav-links',

@@ -1,15 +1,15 @@
 <article <?php post_class() ?> id="post-<?php the_ID(); ?>">
 
-	<div class="testimonialsSlider-item">
-		<div class="testimonialsSlider-item-inner">
-			<div class="testimonialsSlider-item-innerAlignment">
-				<div class="testimonialsSlider-excerpt">
+	<div class="testimonials-item">
+		<div class="testimonials-item-inner">
+			<div class="testimonials-item-innerAlignment">
+				<div class="testimonials-excerpt">
 					<?php the_content();
 					?>
 				</div>
-				<div class="testimonialsSlider-authorInfo">
+				<div class="testimonials-authorInfo">
 					<?php if ( has_post_thumbnail() ) : ?>
-						<div class="testimonialsSlider-image">
+						<div class="testimonials-image">
 							<?php the_post_thumbnail(); ?>
 						</div>
 					<?php endif; ?>
@@ -17,12 +17,12 @@
 					$meta_values = get_post_meta( get_the_ID() );
 					if ( ! empty( $meta_values ) ) : ?>
 						<?php if ( ! empty( $meta_values['_testimonial_client'] ) ) : ?>
-							<div class="testimonialsSlider-client">
+							<div class="testimonials-client">
 								<?php echo strtoupper( $meta_values['_testimonial_client'][0] ) . ','; ?>
 							</div>
 						<?php endif; ?>
 						<?php if ( ! empty( $meta_values['_testimonial_job'] ) ) : ?>
-							<div class="testimonialsSlider-job">
+							<div class="testimonials-job">
 								<?php echo strtoupper( $meta_values['_testimonial_job'][0] ); ?>
 								<?php if ( ! empty( $meta_values['_testimonial_company'] ) ) : ?>
 									<?php echo '/' . strtoupper( $meta_values['_testimonial_company'][0] ); ?>
