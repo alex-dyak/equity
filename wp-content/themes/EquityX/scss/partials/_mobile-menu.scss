@@ -35,6 +35,29 @@
 					text-decoration: none;
 				}
 			}
+			> .sub-menu {
+				position: relative;
+				margin: 0;
+				padding-top: 0;
+				padding-bottom: 0;
+				opacity: 1;
+				visibility: visible;
+				border: 0;
+				background: none;
+				a {
+					padding: 15px 15px 15px 30px;
+					font-family: $font-base;
+					font-size: $fontSize-base;
+					line-height: $lineHeight-tighter;
+					color: $gray--darker;
+					background: none;
+					text-transform: uppercase;
+					&:hover {
+						color: $white;
+						background: $blue;
+					}
+				}
+			}
 		}
 	}
 	.menu-primary-container ul {

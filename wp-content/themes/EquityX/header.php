@@ -77,7 +77,7 @@
                 <a href="#" class="hamburger js-mobTrigger">
                     <span></span>
                 </a>
-                <div class="mainNavigation-menuItem">
+                <div class="mainNavigation-menuItem js-hoveredMenu">
                     <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
                 </div>
             </nav>
