@@ -492,19 +492,21 @@ function logo_slider() {
 	);
 }
 
-function abc() {
-	global $post, $page;
+/**
+ * Function get selected testimonial and redirect.
+ */
+function get_selected_testimonial() {
+	global $post;
 
 	$paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
+	$posts_per_page = 5;
+	$selected_testimonial = 0;
 
 	if ( ! empty( $_GET['selected_post_id'] ) ) {
-
+			$post_id = $_GET['selected_post_id'];
 		if ( ! isset($post_id) ) {
 			$post_id = 0;
 		}
-
-		$posts_per_page = 2;
-		$selected_testimonial = 0;
 
 		do {
 			$query_args = array(
@@ -542,15 +544,16 @@ function abc() {
 
 		$paged = ! $paged ? 1 : $paged;
 
-		$link = add_query_arg( 'highlight_id', $_GET['selected_post_id'], get_permalink( $post->ID ) . 'page/' . $paged.'/' );
+		$link = add_query_arg( 'highlight_id', $post_id, get_permalink( $post->ID ) . 'page/' . $paged.'/' );
 
-		wp_redirect($link  );
+		wp_redirect( $link );
 
 		exit;
 
-	} else if ( ! empty( $_GET['highlight_id'] ) && $paged > 1 ) {
-		wp_redirect( WP_HOME . $_SERVER['REDIRECT_URL'] );
 	}
+//	else if ( ! empty( $_GET['selected_post_id'] ) && get_option( 'selected_post_id' ) ) {
+//		wp_redirect( WP_HOME . $_SERVER['REDIRECT_URL'] );
+//	}
 }
 
-add_action('wp', 'abc');
+add_action('wp', 'get_selected_testimonial');

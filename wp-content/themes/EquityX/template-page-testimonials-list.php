@@ -24,12 +24,7 @@ get_header(); ?>
 						<?php endif; ?>
 
 						<?php
-						$post_id = 0; ?>
-<!--						$post_id = $_GET['selected_post_id']; ?>-->
-
-
-						<?php
-
+						$posts_per_page = 5;
 						$query_args = array(
 							'post_type'           => 'testimonial',
 							'posts_per_page'      => $posts_per_page,
@@ -66,7 +61,10 @@ get_header(); ?>
 							) );
 						}
 							?>
-							<?php wp_reset_query(); ?>
+							<?php
+							wp_reset_postdata();
+							wp_reset_query();
+							?>
 						<?php else : ?>
 							<h2><?php esc_html_e( 'Nothing Found', 'EquityX' ); ?></h2>
 						<?php endif; ?>
