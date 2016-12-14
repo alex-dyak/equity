@@ -17,7 +17,7 @@
 <footer id="footer" class="source-org vcard copyright footer" role="contentinfo">
 
 	<!--        Navigation      -->
-	<nav id="footer-menu" class="footer-menu" role="navigation">
+	<nav id="footer-menu" class="footer-menu js-footerMenu" role="navigation">
 		<?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
 	</nav>
 

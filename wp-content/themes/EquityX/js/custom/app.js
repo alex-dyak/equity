@@ -89,6 +89,9 @@
                 ]
             });
             slideEqualizer();
+            if ( $(window).width() > 1024 ){
+                footerMenuMob();
+            }
         });
 
         $(window).scroll(function() {
@@ -98,6 +101,10 @@
         $(window).resize(function() {
             equalHeight($('.js-equalItems'));
             slideEqualizer();
+            footerMenuMob();
+            if ( $(window).width() > 1024 ){
+                footerMenuMob();
+            }
         });
 
         function headerPosition() {
@@ -143,6 +150,22 @@
                 });
             }
         }
+
+        function footerMenuMob() {
+            var $menuContainer = $('.js-footerMenu'),
+                $menuItem = $menuContainer.find('ul.menu'),
+                $links = $menuItem.find('li > a');
+            $links.each(function(){
+                if( $(this).closest('li').find('.sub-menu').length ) {
+                    $(this).addClass('js-prevented')
+                }
+            });
+            $('body').on('click', '.js-prevented', function(e) {
+                e.preventDefault();
+                $(this).removeClass('js-prevented');
+                $(this).closest('li').find('.sub-menu').addClass('is-visible')
+            })
+        } // this function used for mobile behaviour of footer menu is it has sub menu items
 
     });
 })();
