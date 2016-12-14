@@ -557,3 +557,23 @@ function get_selected_testimonial() {
 }
 
 add_action('wp', 'get_selected_testimonial');
+
+add_filter('wp_pagenavi_class_previouspostslink', 'theme_pagination_class');
+add_filter('wp_pagenavi_class_nextpostslink', 'theme_pagination_class');
+add_filter('wp_pagenavi_class_page', 'theme_pagination_class');
+
+function theme_pagination_class($class_name) {
+	switch($class_name) {
+		case 'previouspostslink':
+			$class_name = 'prev';
+			break;
+		case 'nextpostslink':
+			$class_name = 'next';
+			break;
+		case 'page':
+			$class_name = 'current';
+      break;
+	}
+	return $class_name;
+}
+
