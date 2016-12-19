@@ -60,6 +60,7 @@ test.php
 php_errors.log
 .htpasswd
 sitemap.xml
+robots.txt
 
 prepros.cfg
 
