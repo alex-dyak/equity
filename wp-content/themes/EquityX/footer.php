@@ -47,6 +47,16 @@
 	} else {
 		$linkedin_link = '';
 	}
+	if ( isset( get_option( 'w4p_social_profiles' )['facebook'][1] ) ) {
+		$facebook_link = get_option( 'w4p_social_profiles' )['facebook'][1];
+	} else {
+		$facebook_link = '';
+	}
+	if ( isset( get_option( 'w4p_social_profiles' )['youtube'][1] ) ) {
+		$youtube_link = get_option( 'w4p_social_profiles' )['youtube'][1];
+	} else {
+		$youtube_link = '';
+	}
 	?>
 	<?php if ( $twitter_link || $linkedin_link ) : ?>
 		<div class="footer-social">
@@ -66,6 +76,26 @@
 					<span>
 						<svg class="svgIcon svgLinkedin">
 							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+						</svg>
+					</span>
+				</a>
+			<?php endif; ?>
+			<?php if ( $facebook_link ) : ?>
+				<a href="<?php echo $facebook_link; ?>" class="socialLink socialLink--in"
+				   target="_blank" title="Follow us on Facebook">
+					<span>
+						<svg class="svgIcon svgFacebook">
+							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use>
+						</svg>
+					</span>
+				</a>
+			<?php endif; ?>
+			<?php if ( $youtube_link ) : ?>
+				<a href="<?php echo $youtube_link; ?>" class="socialLink socialLink--in"
+				   target="_blank" title="Follow us on Youtube">
+					<span>
+						<svg class="svgIcon svgYoutube">
+							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#youtube"></use>
 						</svg>
 					</span>
 				</a>
