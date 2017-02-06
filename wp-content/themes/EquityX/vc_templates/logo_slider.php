@@ -21,7 +21,7 @@ if ( ! empty( $quantity ) ) :
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 					<div class="logoSlider-item-logo">
 						<?php if ( ! empty ( get_field( 'image_clients_logo' ) ) ) : ?>
-							<img src="<?php echo get_field( 'image_clients_logo' ); ?>" alt="">
+							<a href="<?php echo get_home_url() . '/our-partners'; ?>" target="_blank"><img src="<?php echo get_field( 'image_clients_logo' ); ?>" alt=""></a>
 						<?php endif; ?>
 					</div>
 				<?php endwhile; ?>
