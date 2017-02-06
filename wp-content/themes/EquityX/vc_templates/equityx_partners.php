@@ -18,7 +18,7 @@ if ( ! empty( $quantity ) ) :
 		<div class="membersList-item" data-equal="1">
 			<div class="membersList-item-inner">
 
-				<div class="partnersList-image">
+				<div class="membersList-item-inner-image membersList-item-inner-image--partnersList">
 					<?php if ( ! empty ( get_field( 'image_clients_logo' ) ) ) : ?>
 						<a href="<?php echo get_field( 'partners_link' ); ?>" target="_blank">
 							<img style="max-width: 200px;" src="<?php echo get_field( 'image_clients_logo' ); ?>" alt="">
