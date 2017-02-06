@@ -156,6 +156,7 @@ require_once( get_template_directory() . '/inc/shortcodes.php' );
 require_once( get_template_directory() . '/inc/WPBakeryShortCode_equityx_members.php' );
 require_once( get_template_directory() . '/inc/WPBakeryShortCode_testimonials_slider.php' );
 require_once( get_template_directory() . '/inc/WPBakeryShortCode_logo_slider.php' );
+require_once( get_template_directory() . '/inc/WPBakeryShortCode_equityx_partners.php' );
 
 /**
  * Custom excerpt trim.
@@ -265,6 +266,49 @@ function get_members() {
 				"value"       => $term_name
 			),
 
+		)
+	));
+}
+
+/**
+ * Widget Partners to VC.
+ */
+add_action( 'vc_before_init', 'get_partners', 9999 );
+function get_partners() {
+	$args = array(
+		'type'      => 'clients-logo',
+	);
+
+	vc_map( array(
+		"name"     => __( "EquityX partners", "EquityX" ),
+		"base"     => "equityx_partners",
+		"class"    => "",
+		"category" => __( "Content", "EquityX" ),
+		"description" => __( "Partners information." ),
+		"params"   => array(
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"class"       => "",
+				"heading"     => __( "Title", "EquityX" ),
+				"param_name"  => "page_title",
+				"value"       => 'Partners Quantity'
+			),
+			array(
+				"type"        => "textarea",
+				"holder"      => "div",
+				"class"       => "",
+				"heading"     => __( "Short Description", "EquityX" ),
+				"param_name"  => "description",
+			),
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"class"       => "",
+				"heading"     => __( "Partners Quantity", "EquityX" ),
+				"param_name"  => "quantity",
+				"description" => __( "Enter Partners Quantity in row.", "EquityX" )
+			),
 		)
 	));
 }
