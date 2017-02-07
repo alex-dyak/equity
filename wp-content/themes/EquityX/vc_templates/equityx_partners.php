@@ -25,11 +25,6 @@ if ( ! empty( $quantity ) ) :
 						</a>
 					<?php endif; ?>
 				</div>
-				<?php if ( get_the_title() ) : ?>
-					<p class="membersList-item-inner-title">
-						<?php echo strtoupper( esc_html_e( get_the_title() ) ); ?>
-					</p>
-				<?php endif; ?>
 			</div>
 		</div>
 
