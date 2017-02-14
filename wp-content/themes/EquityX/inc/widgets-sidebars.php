@@ -439,7 +439,7 @@ class Join_Us_Button_Widget extends WP_Widget {
 		echo $args['before_widget']; ?>
 
 		<div class="u-text--center joinUsWidget">
-			<a href="<?php echo $link ?>" class="btn btn--hasIcon btn--linkedIn" data-linkedin-login>
+			<a href="<?php echo $link ?>" class="btn btn--hasIcon btn--linkedIn">
 				<span class="btn-icon">
 					<svg class="svgIcon btn-icon-svgLinkedin">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
@@ -528,7 +528,7 @@ class Join_Us_White_Button_Widget extends WP_Widget {
 		echo $args['before_widget']; ?>
 
 		<div class="u-text--center joinUsWidget joinUsWidget--small">
-			<a href="<?php echo $link ?>" class="btn btn--white btn--hasIcon btn--linkedIn" data-linkedin-login>
+			<a href="<?php echo $link ?>" class="btn btn--white btn--hasIcon btn--linkedIn">
 				<span class="btn-icon">
 					<svg class="svgIcon btn-icon-svgLinkedin">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
@@ -642,7 +642,7 @@ class Homepage_Intro_Section_Widget extends WP_Widget {
 			<?php endif; ?>
 			<div class="introSection-social">
 				<?php if ( $linkedin_link ) : ?>
-					<a href="<?php echo $linkedin_link; ?>" class="btn btn--hasIcon btn--linkedIn" title="Follow us on LinkedIn" data-linkedin-login>
+					<a href="<?php echo $linkedin_link; ?>" class="btn btn--hasIcon btn--linkedIn" title="Follow us on LinkedIn">
 						<span class="btn-icon">
 							<svg class="svgIcon btn-icon-svgLinkedin">
 								<use xlink:href="#linkedin" />

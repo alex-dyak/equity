@@ -117,7 +117,7 @@
 <div id="svgPlaceholder" class="u-hidden"></div>
 <?php wp_footer(); ?>
 
-<script type="text/javascript" src="https://api.equityx.io/linkedin_button"></script>
+<!--<script type="text/javascript" src="https://api.equityx.io/linkedin_button"></script>-->
 
 </body>
 

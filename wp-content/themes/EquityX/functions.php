@@ -174,10 +174,10 @@ function excerpt_trim( $length )
 }
 
 /**
- * Register taxonomy
+ * Register taxonomy members
  */
-add_action('vc_before_init', 'create_taxonomy', 1);
-function create_taxonomy(){
+add_action('vc_before_init', 'create_taxonomy_member', 1);
+function create_taxonomy_member(){
 	$labels = array(
 		'name'              => 'Groups',
 		'singular_name'     => 'Group',
@@ -271,13 +271,60 @@ function get_members() {
 }
 
 /**
+ * Register taxonomy Clients Logo
+ */
+add_action( 'vc_before_init', 'create_taxonomy_logo', 1 );
+function create_taxonomy_logo() {
+	// Registering custom taxonomy called location
+	$labels = array(
+		'name'              => _x( 'Clients Categories', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Clients Category', 'taxonomy singular name' ),
+		'search_items'      => __( 'Search Clients Categories' ),
+		'all_items'         => __( 'All Clients Categories' ),
+		'parent_item'       => __( 'Parent Clients Category' ),
+		'parent_item_colon' => __( 'Parent Clients Category:' ),
+		'edit_item'         => __( 'Edit Clients Category' ),
+		'update_item'       => __( 'Update Clients Category' ),
+		'add_new_item'      => __( 'Add New Clients Category' ),
+		'new_item_name'     => __( 'New State Clients Category' ),
+		'menu_name'         => __( 'Clients Category' ),
+	);
+
+	$args = array(
+		'label'                 => '',
+		'labels'                => $labels,
+		'description'           => '',
+		'public'                => TRUE,
+		'publicly_queryable'    => NULL,
+		'show_in_nav_menus'     => TRUE,
+		'show_ui'               => TRUE,
+		'show_tagcloud'         => FALSE,
+		'hierarchical'          => TRUE,
+		'update_count_callback' => '',
+		'rewrite'               => TRUE,
+		'capabilities'          => array(),
+		'meta_box_cb'           => NULL,
+		'show_admin_column'     => TRUE,
+		'_builtin'              => FALSE,
+		'show_in_quick_edit'    => NULL,
+	);
+	// Registering location taxonomy to post_type post
+	register_taxonomy( 'clients-category', 'clients-logo', $args );
+
+}
+
+/**
  * Widget Partners to VC.
  */
 add_action( 'vc_before_init', 'get_partners', 9999 );
 function get_partners() {
 	$args = array(
-		'type'      => 'clients-logo',
+		'taxonomy' => 'clients-category',
 	);
+	$terms = get_terms( $args );
+	foreach ( $terms as $term ) {
+		$term_name[$term->slug] = $term->name;
+	}
 
 	vc_map( array(
 		"name"     => __( "EquityX partners", "EquityX" ),
@@ -293,6 +340,14 @@ function get_partners() {
 				"heading"     => __( "Title", "EquityX" ),
 				"param_name"  => "page_title",
 				"value"       => 'Partners Quantity'
+			),
+			array(
+				"type"        => "dropdown",
+				"holder"      => "div",
+				"class"       => "",
+				"heading"     => __( "Clients Category", "EquityX" ),
+				"param_name"  => "clients_category",
+				"value"       => $term_name,
 			),
 			array(
 				"type"        => "textarea",
