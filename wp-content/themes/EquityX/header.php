@@ -99,7 +99,7 @@
 
             <?php if ( $linkedin_link ) : ?>
                 <div class="mainHeader-social">
-                    <a href="<?php echo $linkedin_link; ?>" class="btn btn--hasIcon btn--linkedIn" title="Follow us on LinkedIn" data-linkedin-login>
+                    <a href="<?php echo $linkedin_link; ?>" class="btn btn--hasIcon btn--linkedIn" title="Follow us on LinkedIn">
                     <span class="btn-icon">
                         <svg class="svgIcon btn-icon-svgLinkedin">
                             <use xlink:href="#linkedin" />
