@@ -90,9 +90,11 @@ class W4PThemeSettingsPage {
 			'twitter'         => __( 'Twitter', 'EquityX' ),
 			'googleplus'      => __( 'Google+', 'EquityX' ),
 			'instagram'       => __( 'Instagram', 'EquityX' ),
-			'linkedin'        => __( 'LinkedIn', 'EquityX' ),
 			'linkedin_footer' => __( 'LinkedIn_Footer', 'EquityX' ),
 			'youtube'         => __( 'Youtube', 'EquityX' ),
+			'login_linkedin'  => __( 'Login LinkedIn', 'EquityX' ),
+			'login_facebook'  => __( 'Login Facebook', 'EquityX' ),
+			'login_google'    => __( 'Login Google', 'EquityX' ),
 		);
 		add_action( 'admin_menu', array( $this, 'add_plugin_page' ) );
 		add_action( 'admin_init', array( $this, 'page_init' ) );

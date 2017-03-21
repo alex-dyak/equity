@@ -43,6 +43,7 @@ function w4ptheme_setup() {
 	);
 	register_nav_menu( 'primary', __( 'Navigation Menu', 'EquityX' ) );
 	register_nav_menu( 'footer-menu', __( 'Footer Menu', 'EquityX' ) );
+	register_nav_menu( 'popup-menu', __( 'Popup Menu', 'EquityX' ) );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'title-tag' );
 
