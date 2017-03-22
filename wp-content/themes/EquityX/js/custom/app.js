@@ -60,6 +60,11 @@
                     // e.t.c.
                 }
             });
+            $('.js-loginPopup').magnificPopup({
+                type:'inline',
+                mainClass: 'loginWrap',
+                midClick: true
+            });
             $('.js-LogoSlider').slick({
                 infinite: true,
                 autoplay: true,
