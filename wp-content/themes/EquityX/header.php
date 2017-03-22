@@ -132,7 +132,6 @@
 								$get_request = '/?';
 								$get_request .= http_build_query( $_GET ) . "\n";
 								?>
-								<?php if( $_GET['utm_source'] == 'invitation' && $_GET['utm_medium'] == 'email' && $_GET['utm_campaign'] == 'admin-invite' ) : ?>
 								<?php if ( $login_google ) : ?>
 									<a href="<?php echo $login_google . $get_request; ?>" class="btn btn--hasIcon btn--google" title="Connect with Google">
 									<span class="btn-icon">
@@ -163,7 +162,6 @@
 										<?php _e( 'Connect with Facebook', 'EquityX' ); ?>
 									</a>
 								<?php endif; ?>
-							<?php endif; ?>
 							<?php else : ?>
 								<?php if ( $login_google ) : ?>
 									<a href="<?php echo $login_google; ?>" class="btn btn--hasIcon btn--google" title="Connect with Google">
