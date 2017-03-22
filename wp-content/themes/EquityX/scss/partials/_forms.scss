@@ -97,11 +97,18 @@ input[type="submit"],
     width: 100%;
 }
 .btn--linkedIn {
-    font-size: $fontSize-smaller;
+    background: $color--linkedin;
+}
+.btn--google {
+    background: $color--google;
+}
+.btn--facebook {
+    background: $color--facebook;
 }
 .btn--hasIcon {
     position: relative;
     padding-left: 65px;
+    font-size: $fontSize-smaller;
     .btn-icon {
         position: absolute;
         top: 50%;
@@ -110,10 +117,9 @@ input[type="submit"],
         line-height: 0;
         transition: fill .3s;
     }
-    .btn-icon-svgLinkedin {
+    .svgIcon {
         width: 18px;
-        height: 19px;
-        margin-top: -5px;
+        height: 18px;
     }
 }
 .btn--arrowRight,
