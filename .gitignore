@@ -73,6 +73,10 @@ wp-content/plugins/*
 wp-content/mu-plugins/*/
 wp-content/upgrade
 wp-content/uploads/*
+wp-content/cache/*
+wp-content/ewww/*
+wp-content/advanced-cache.php
+wp-content/w3tc-config/*
 !wp-content/uploads/.gitkeep
 
 # WordPress

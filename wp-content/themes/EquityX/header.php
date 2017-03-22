@@ -51,10 +51,20 @@
 
 <div id="wrapper" class="js-wrapper">
     <?php
-    if ( isset( get_option( 'w4p_social_profiles' )['linkedin'][1] ) ) {
-	    $linkedin_link = get_option( 'w4p_social_profiles' )['linkedin'][1];
+    if ( isset( get_option( 'w4p_social_profiles' )['login_linkedin'][1] ) ) {
+	    $login_linkedin = get_option( 'w4p_social_profiles' )['login_linkedin'][1];
     } else {
-	    $linkedin_link = '';
+	    $login_linkedin = '';
+    }
+    if ( isset( get_option( 'w4p_social_profiles' )['login_facebook'][1] ) ) {
+	    $login_facebook = get_option( 'w4p_social_profiles' )['login_facebook'][1];
+    } else {
+	    $login_facebook = '';
+    }
+    if ( isset( get_option( 'w4p_social_profiles' )['login_google'][1] ) ) {
+	    $login_google = get_option( 'w4p_social_profiles' )['login_google'][1];
+    } else {
+	    $login_google = '';
     }
     ?>
 
@@ -97,18 +107,111 @@
                      alt=""/>
             <?php } endif; /* End check for header image. */ ?>
 
-            <?php if ( $linkedin_link ) : ?>
-                <div class="mainHeader-social">
-                    <a href="<?php echo $linkedin_link; ?>" class="btn btn--hasIcon btn--linkedIn" title="Follow us on LinkedIn">
-                    <span class="btn-icon">
-                        <svg class="svgIcon btn-icon-svgLinkedin">
-                            <use xlink:href="#linkedin" />
-                        </svg>
-                    </span>
-                        <?php _e( 'Connect with LinkedIn', 'EquityX' ); ?>
-                    </a>
-                </div>
-            <?php endif; ?>
+
+	        <div class="mainHeader-social">
+		        <a href="#login-popup" class="btn js-loginPopup" title="<?php _e( 'join us!', 'EquityX' ); ?>">
+			        <?php _e( 'join us!', 'EquityX' ); ?>
+		        </a>
+
+		        <div id="login-popup" class="loginPopup mfp-hide">
+					<div class="loginPopup-deco"></div>
+					<div class="loginPopup-inner">
+						<div class="loginPopup-title">
+							<span class="loginPopup-logo">
+								<img
+									src="<?php header_image(); ?>"
+									width="<?php echo esc_attr( get_custom_header()->width ); ?>"
+									height="<?php echo esc_attr( get_custom_header()->height ); ?>"
+									alt=""/>
+							</span>
+							<strong>Login</strong>
+							<span>Start Converting Service to Equity</span>
+						</div>
+						<div class="loginPopup-socials">
+							<?php if( ! empty( $_GET ) ) :
+								$get_request = '/?';
+								$get_request .= http_build_query( $_GET ) . "\n";
+								?>
+								<?php if ( $login_google ) : ?>
+									<a href="<?php echo $login_google . $get_request; ?>" class="btn btn--hasIcon btn--google" title="Connect with Google">
+									<span class="btn-icon">
+										<svg class="svgIcon btn-icon-svgGoogle">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fillgoogle"></use>
+										</svg>
+									</span>
+										<?php _e( 'Connect with Google', 'EquityX' ); ?>
+									</a>
+								<?php endif; ?>
+								<?php if ( $login_linkedin ) : ?>
+									<a href="<?php echo $login_linkedin . $get_request; ?>" class="btn btn--hasIcon btn--linkedIn" title="Connect with LinkedIn">
+									<span class="btn-icon">
+										<svg class="svgIcon btn-icon-svgLinkedin">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+										</svg>
+									</span>
+										<?php _e( 'Connect with LinkedIn', 'EquityX' ); ?>
+									</a>
+								<?php endif; ?>
+								<?php if ( $login_facebook ) : ?>
+									<a href="<?php echo $login_facebook . $get_request; ?>" class="btn btn--hasIcon btn--facebook" title="Connect with Facebook">
+									<span class="btn-icon">
+										<svg class="svgIcon btn-icon-svgFacebook">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fillfacebook"></use>
+										</svg>
+									</span>
+										<?php _e( 'Connect with Facebook', 'EquityX' ); ?>
+									</a>
+								<?php endif; ?>
+							<?php else : ?>
+								<?php if ( $login_google ) : ?>
+									<a href="<?php echo $login_google; ?>" class="btn btn--hasIcon btn--google" title="Connect with Google">
+									<span class="btn-icon">
+										<svg class="svgIcon btn-icon-svgGoogle">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fillgoogle"></use>
+										</svg>
+									</span>
+										<?php _e( 'Connect with Google', 'EquityX' ); ?>
+									</a>
+								<?php endif; ?>
+								<?php if ( $login_linkedin ) : ?>
+									<a href="<?php echo $login_linkedin; ?>" class="btn btn--hasIcon btn--linkedIn" title="Connect with LinkedIn">
+									<span class="btn-icon">
+										<svg class="svgIcon btn-icon-svgLinkedin">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#filllinkedin"></use>
+										</svg>
+									</span>
+										<?php _e( 'Connect with LinkedIn', 'EquityX' ); ?>
+									</a>
+								<?php endif; ?>
+								<?php if ( $login_facebook ) : ?>
+									<a href="<?php echo $login_facebook; ?>" class="btn btn--hasIcon btn--facebook" title="Connect with Facebook">
+									<span class="btn-icon">
+										<svg class="svgIcon btn-icon-svgFacebook">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fillfacebook"></use>
+										</svg>
+									</span>
+										<?php _e( 'Connect with Facebook', 'EquityX' ); ?>
+									</a>
+								<?php endif; ?>
+							<?php endif; ?>
+						</div>
+						<div class="loginPopup-bymail">
+							<?php _e( 'Or ', 'EquityX' ); ?>
+							<a href="<?php echo wp_login_url(); ?>" title="Signup"><?php _e( 'Sign up', 'EquityX' ); ?></a> /
+							<a href="<?php echo wp_login_url(); ?>" title="Login"><?php _e( 'Login', 'EquityX' ); ?></a>
+							<?php _e( ' using email', 'EquityX' ); ?>
+						</div>
+						<div class="loginPopup-terms">
+							<?php _e( 'By clicking "Connect" I agree to EquityX\'s ', 'EquityX' ); ?>
+							<!--        Navigation      -->
+							<nav id="popup-menu" class="loginPopup-menu" role="navigation">
+								<?php wp_nav_menu( array( 'theme_location' => 'popup-menu' ) ); ?>
+							</nav>
+						</div>
+					</div>
+		        </div>
+	        </div>
+
 
             <div class="searchTrigger">
                 <a href="#" class="searchTrigger-item js-searchTrigger">

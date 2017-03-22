@@ -429,34 +429,82 @@ class Join_Us_Button_Widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 		extract( $args );
-		$title         = apply_filters( 'widget_title',
-			$instance['title'] ); /* The widget title. */
-		$link          = $instance['link'];
-		$title_content = $instance['title_content'];
-		$content       = $instance['content'];
+		$title          = apply_filters( 'widget_title', $instance['title'] ); /* The widget title. */
+		$login_linkedin = $instance['login_linkedin'];
+		$login_facebook = $instance['login_facebook'];
+		$login_google   = $instance['login_google'];
 
 
 		echo $args['before_widget']; ?>
 
 		<div class="u-text--center joinUsWidget">
-			<a href="<?php echo $link ?>" class="btn btn--hasIcon btn--linkedIn">
-				<span class="btn-icon">
-					<svg class="svgIcon btn-icon-svgLinkedin">
-						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
-					</svg>
-				</span>
-				<?php _e( strtoupper( $title ), 'EquityX' ); ?>
-			</a>
-
-			<a href="#" class="linkTooltip js-linkTooltip">
-				<span class="linkTooltip-trigger infoIcon"></span>
-				<div class="linkTooltip-item">
-					<p class="linkTooltip-item-title"><?php _e( strtoupper( $title_content ), 'EquityX' ); ?></p>
-					<p><?php echo strip_tags( $content ); ?></p>
-				</div>
-			</a>
+			<?php if( ! empty( $_GET ) ) :
+				$get_request = '/?';
+				$get_request .= http_build_query( $_GET ) . "\n";
+				?>
+				<?php if ( $login_google ) : ?>
+					<a href="<?php echo $login_google . $get_request; ?>" class="btn btn--hasIcon btn--google" title="Connect with Google">
+						<span class="btn-icon">
+							<svg class="svgIcon btn-icon-svgGoogle">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fillgoogle"></use>
+							</svg>
+						</span>
+						<?php _e( 'Connect with Google', 'EquityX' ); ?>
+					</a>
+				<?php endif; ?>
+				<?php if ( $login_linkedin ) : ?>
+					<a href="<?php echo $login_linkedin . $get_request; ?>" class="btn btn--hasIcon btn--linkedIn" title="Connect with LinkedIn">
+						<span class="btn-icon">
+							<svg class="svgIcon btn-icon-svgLinkedin">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+							</svg>
+						</span>
+						<?php _e( 'Connect with LinkedIn', 'EquityX' ); ?>
+					</a>
+				<?php endif; ?>
+				<?php if ( $login_facebook ) : ?>
+					<a href="<?php echo $login_facebook . $get_request; ?>" class="btn btn--hasIcon btn--facebook" title="Connect with Facebook">
+						<span class="btn-icon">
+							<svg class="svgIcon btn-icon-svgFacebook">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fillfacebook"></use>
+							</svg>
+						</span>
+						<?php _e( 'Connect with Facebook', 'EquityX' ); ?>
+					</a>
+				<?php endif; ?>
+			<?php else : ?>
+				<?php if ( $login_google ) : ?>
+					<a href="<?php echo $login_google; ?>" class="btn btn--hasIcon btn--google" title="Connect with Google">
+						<span class="btn-icon">
+							<svg class="svgIcon btn-icon-svgGoogle">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fillgoogle"></use>
+							</svg>
+						</span>
+						<?php _e( 'Connect with Google', 'EquityX' ); ?>
+					</a>
+				<?php endif; ?>
+				<?php if ( $login_linkedin ) : ?>
+					<a href="<?php echo $login_linkedin; ?>" class="btn btn--hasIcon btn--linkedIn" title="Connect with LinkedIn">
+						<span class="btn-icon">
+							<svg class="svgIcon btn-icon-svgLinkedin">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+							</svg>
+						</span>
+						<?php _e( 'Connect with LinkedIn', 'EquityX' ); ?>
+					</a>
+				<?php endif; ?>
+				<?php if ( $login_facebook ) : ?>
+					<a href="<?php echo $login_facebook; ?>" class="btn btn--hasIcon btn--facebook" title="Connect with Facebook">
+						<span class="btn-icon">
+							<svg class="svgIcon btn-icon-svgFacebook">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fillfacebook"></use>
+							</svg>
+						</span>
+						<?php _e( 'Connect with Facebook', 'EquityX' ); ?>
+					</a>
+				<?php endif; ?>
+			<?php endif; ?>
 		</div>
-
 		<?php
 		echo $args['after_widget'];
 
@@ -473,11 +521,11 @@ class Join_Us_Button_Widget extends WP_Widget {
 	 * @return array Updated safe values to be saved.
 	 */
 	public function update( $new_instance, $old_instance ) {
-		$instance                  = array();
-		$instance['title']         = get_field( 'title', 'widget_' . $this->id );
-		$instance['link']          = get_field( 'link', 'widget_' . $this->id );
-		$instance['title_content'] = get_field( 'title_content', 'widget_' . $this->id );
-		$instance['content']       = get_field( 'content', 'widget_' . $this->id );
+		$instance                   = array();
+		$instance['title']          = get_field( 'title', 'widget_' . $this->id );
+		$instance['login_linkedin'] = get_field( 'login_linkedin', 'widget_' . $this->id );
+		$instance['login_facebook'] = get_field( 'login_facebook', 'widget_' . $this->id );
+		$instance['login_google']   = get_field( 'login_google', 'widget_' . $this->id );
 
 		return $instance;
 	}
@@ -519,30 +567,15 @@ class Join_Us_White_Button_Widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 		extract( $args );
-		$title         = apply_filters( 'widget_title', $instance['title'] ); /* The widget title. */
-		$link          = $instance['link'];
-		$title_content = $instance['title_content'];
-		$description       = $instance['description'];
+		$title = apply_filters( 'widget_title', $instance['title'] ); /* The widget title. */
+
 
 
 		echo $args['before_widget']; ?>
 
 		<div class="u-text--center joinUsWidget joinUsWidget--small">
-			<a href="<?php echo $link ?>" class="btn btn--white btn--hasIcon btn--linkedIn">
-				<span class="btn-icon">
-					<svg class="svgIcon btn-icon-svgLinkedin">
-						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
-					</svg>
-				</span>
-				<?php _e( strtoupper( $title ), 'EquityX' ); ?>
-			</a>
-
-			<a href="#" class="linkTooltip js-linkTooltip">
-				<span class="linkTooltip-trigger infoIcon"></span>
-				<div class="linkTooltip-item">
-					<p class="linkTooltip-item-title"><?php _e( strtoupper( $title_content ), 'EquityX' ); ?></p>
-					<p><?php echo strip_tags( $description ); ?></p>
-				</div>
+			<a href="#login-popup" class="btn js-loginPopup" title="<?php _e( 'join us!', 'EquityX' ); ?>">
+				<?php _e( $title, 'EquityX' ); ?>
 			</a>
 		</div>
 
@@ -564,9 +597,9 @@ class Join_Us_White_Button_Widget extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 		$instance                  = array();
 		$instance['title']         = get_field( 'button_title', 'widget_' . $this->id );
-		$instance['link']          = get_field( 'link', 'widget_' . $this->id );
-		$instance['title_content'] = get_field( 'title_content', 'widget_' . $this->id );
-		$instance['description']       = get_field( 'description', 'widget_' . $this->id );
+		$instance['login_linkedin'] = get_field( 'login_linkedin', 'widget_' . $this->id );
+		$instance['login_facebook'] = get_field( 'login_facebook', 'widget_' . $this->id );
+		$instance['login_google']   = get_field( 'login_google', 'widget_' . $this->id );
 
 		return $instance;
 	}
@@ -611,23 +644,13 @@ class Homepage_Intro_Section_Widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 		extract( $args );
-		$intro_title       = apply_filters( 'widget_title', $instance['intro_title'] );
-		$intro_duration       = $instance['video_duration'];
-		$intro_description = $instance['intro_description'];
-		$intro_video_url   = $instance['intro_video_url'];
+		$intro_title         = apply_filters( 'widget_title', $instance['intro_title'] );
+		$intro_duration      = $instance['video_duration'];
+		$intro_description   = $instance['intro_description'];
+		$intro_video_url     = $instance['intro_video_url'];
 		$intro_video_caption = $instance['video_caption'];
 
-
-
 		echo $args['before_widget']; ?>
-
-		<?php
-			if ( isset(get_option( 'w4p_social_profiles' )['linkedin'][1]) ) {
-				$linkedin_link = get_option( 'w4p_social_profiles' )['linkedin'][1];
-			} else{
-				$linkedin_link = '';
-			}
-		?>
 
 		<div class="intro_section_widget introSection">
 			<h1 class="introSection-title"><?php echo $intro_title; ?></h1>
@@ -641,17 +664,11 @@ class Homepage_Intro_Section_Widget extends WP_Widget {
 				</div>
 			<?php endif; ?>
 			<div class="introSection-social">
-				<?php if ( $linkedin_link ) : ?>
-					<a href="<?php echo $linkedin_link; ?>" class="btn btn--hasIcon btn--linkedIn" title="Follow us on LinkedIn">
-						<span class="btn-icon">
-							<svg class="svgIcon btn-icon-svgLinkedin">
-								<use xlink:href="#linkedin" />
-							</svg>
-						</span>
-						<?php _e( 'Connect with LinkedIn', 'EquityX' ); ?>
-					</a>
-				<?php endif; ?>
+				<a href="#login-popup" class="btn js-loginPopup" title="<?php _e( 'join us!', 'EquityX' ); ?>">
+					<?php _e( 'join us!', 'EquityX' ); ?>
+				</a>
 			</div>
+
 			<div id="video-popup" class="introSection-popup mfp-hide">
 				<div class="mfp-iframe-scaler">
 					<iframe src="<?php echo $intro_video_url ?>" frameborder="0" allowfullscreen class="js-video-iFrame"></iframe>
