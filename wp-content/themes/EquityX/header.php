@@ -195,12 +195,6 @@
 								<?php endif; ?>
 							<?php endif; ?>
 						</div>
-						<div class="loginPopup-bymail">
-							<?php _e( 'Or ', 'EquityX' ); ?>
-							<a href="<?php echo wp_login_url(); ?>" title="Signup"><?php _e( 'Sign up', 'EquityX' ); ?></a> /
-							<a href="<?php echo wp_login_url(); ?>" title="Login"><?php _e( 'Login', 'EquityX' ); ?></a>
-							<?php _e( ' using email', 'EquityX' ); ?>
-						</div>
 						<div class="loginPopup-terms">
 							<?php _e( 'By clicking "Connect" I agree to EquityX\'s ', 'EquityX' ); ?>
 							<!--        Navigation      -->
