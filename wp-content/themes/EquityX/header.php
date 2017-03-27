@@ -133,16 +133,6 @@
 								$get_request .= http_build_query( $_GET ) . "\n";
 								?>
 								<?php if( $_GET['utm_source'] == 'invitation' && $_GET['utm_medium'] == 'email' && $_GET['utm_campaign'] == 'admin-invite' ) : ?>
-								<?php if ( $login_facebook ) : ?>
-									<a href="<?php echo $login_facebook . $get_request; ?>" class="btn btn--hasIcon btn--facebook" title="Connect with Facebook">
-									<span class="btn-icon">
-										<svg class="svgIcon btn-icon-svgFacebook">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fillfacebook"></use>
-										</svg>
-									</span>
-										<?php _e( 'Connect with Facebook', 'EquityX' ); ?>
-									</a>
-								<?php endif; ?>
 								<?php if ( $login_google ) : ?>
 									<a href="<?php echo $login_google . $get_request; ?>" class="btn btn--hasIcon btn--google" title="Connect with Google">
 									<span class="btn-icon">
@@ -163,10 +153,8 @@
 										<?php _e( 'Connect with LinkedIn', 'EquityX' ); ?>
 									</a>
 								<?php endif; ?>
-							<?php endif; ?>
-							<?php else : ?>
 								<?php if ( $login_facebook ) : ?>
-									<a href="<?php echo $login_facebook; ?>" class="btn btn--hasIcon btn--facebook" title="Connect with Facebook">
+									<a href="<?php echo $login_facebook . $get_request; ?>" class="btn btn--hasIcon btn--facebook" title="Connect with Facebook">
 									<span class="btn-icon">
 										<svg class="svgIcon btn-icon-svgFacebook">
 											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fillfacebook"></use>
@@ -175,6 +163,8 @@
 										<?php _e( 'Connect with Facebook', 'EquityX' ); ?>
 									</a>
 								<?php endif; ?>
+							<?php endif; ?>
+							<?php else : ?>
 								<?php if ( $login_google ) : ?>
 									<a href="<?php echo $login_google; ?>" class="btn btn--hasIcon btn--google" title="Connect with Google">
 									<span class="btn-icon">
@@ -193,6 +183,16 @@
 										</svg>
 									</span>
 										<?php _e( 'Connect with LinkedIn', 'EquityX' ); ?>
+									</a>
+								<?php endif; ?>
+								<?php if ( $login_facebook ) : ?>
+									<a href="<?php echo $login_facebook; ?>" class="btn btn--hasIcon btn--facebook" title="Connect with Facebook">
+									<span class="btn-icon">
+										<svg class="svgIcon btn-icon-svgFacebook">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fillfacebook"></use>
+										</svg>
+									</span>
+										<?php _e( 'Connect with Facebook', 'EquityX' ); ?>
 									</a>
 								<?php endif; ?>
 							<?php endif; ?>
