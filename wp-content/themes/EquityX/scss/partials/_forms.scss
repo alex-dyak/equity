@@ -97,13 +97,25 @@ input[type="submit"],
     width: 100%;
 }
 .btn--linkedIn {
+    border-color: $color--linkedin;
     background: $color--linkedin;
+    &:hover {
+        color: $color--linkedin
+    }
 }
 .btn--google {
+    border-color: $color--google;
     background: $color--google;
+    &:hover {
+        color: $color--google
+    }
 }
 .btn--facebook {
+    border-color: $color--facebook;
     background: $color--facebook;
+    &:hover {
+        color: $color--facebook
+    }
 }
 .btn--hasIcon {
     position: relative;
