@@ -45,7 +45,11 @@
         "wpackagist-plugin/zopim-live-chat": ">=1.4.4",
         "wpackagist-plugin/wp-testimonial-with-widget": ">=2.2.4",
         "wpackagist-plugin/wp-pagenavi": ">2.90",
-        "wpackagist-plugin/ewww-image-optimizer": "3.1.3"
+        "wpackagist-plugin/ewww-image-optimizer": "3.1.3",
+        "wpackagist-plugin/add-to-any": ">=1.7.7",
+        "wpackagist-plugin/go-live-update-urls": ">=4.1.2",
+        "wpackagist-plugin/intercom": ">=2.5.9",
+        "wpackagist-plugin/simple-301-redirects": ">=1.07"
     },
     "extra": {
         "installer-paths": {
