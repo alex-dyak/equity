@@ -555,6 +555,14 @@ function testimonials_slider() {
  */
 add_action( 'vc_before_init', 'logo_slider' );
 function logo_slider() {
+	$args = array(
+		'taxonomy' => 'clients-category',
+	);
+	$terms = get_terms( $args );
+	foreach ( $terms as $term ) {
+		$term_name[$term->slug] = $term->name;
+	}
+
 	vc_map(
 		array(
 			'name'        => __( 'Clients Logo Slider' ),
@@ -571,6 +579,14 @@ function logo_slider() {
 					'value'       => 10,
 					"param_name"  => "quantity",
 					"description" => __( "Enter Quantity Logo in Slide.", "EquityX" )
+				),
+				array(
+					"type"        => "dropdown",
+					"holder"      => "div",
+					"class"       => "",
+					"heading"     => __( "Clients Category", "EquityX" ),
+					"param_name"  => "clients_category",
+					"value"       => $term_name,
 				),
 				array(
 					"type"        => "textfield",
