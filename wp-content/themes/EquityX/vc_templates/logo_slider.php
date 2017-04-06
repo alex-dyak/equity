@@ -8,6 +8,7 @@ if ( ! empty( $quantity ) ) :
 		'post_type'      => 'clients-logo',
 		'posts_per_page' => $quantity,
 		'paged'          => 1,
+		'clients-category' => $clients_category,
 	);
 	$query      = new WP_Query( $query_args );
 	?>
