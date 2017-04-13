@@ -158,6 +158,9 @@ input[type="submit"],
     padding-left: 57px;
     text-align: left;
     font-size: $fontSize-smaller;
+    @include breakpoint(large) {
+        min-width: 240px;
+    }
     .btn-icon {
         position: absolute;
         top: 50%;
