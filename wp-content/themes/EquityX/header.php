@@ -117,12 +117,12 @@
 				}
 				?>
 				<?php if ( $login_user_link ) : ?>
-					<a href="<?php echo $login_user_link; ?>" class="btn btn--white" title="<?php _e( 'Login', 'EquityX' ); ?>">
+					<a href="<?php echo $login_user_link; ?>" class="btn btn--login" title="<?php _e( 'Login', 'EquityX' ); ?>">
 						<?php _e( 'Login', 'EquityX' ); ?>
 					</a>
 				<?php endif; ?>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		        <a href="#login-popup" class="btn js-loginPopup" title="<?php _e( 'join us!', 'EquityX' ); ?>">
+		        <a href="#login-popup" class="btn btn--join js-loginPopup" title="<?php _e( 'join us!', 'EquityX' ); ?>">
 			        <?php _e( 'join us!', 'EquityX' ); ?>
 		        </a>
 

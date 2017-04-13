@@ -64,17 +64,17 @@ input[type="submit"],
     text-transform: uppercase;
     text-align: center;
     text-decoration: none;
-    border-radius: 48px;
+    //border-radius: 48px;
     border: 1px solid $blue;
     background-color: $blue;
     color: $white;
     transition: all .3s ease-out;
     -webkit-appearance: none;
-    box-shadow: 0 5px 20px 0 $black--20op;
+    //box-shadow: 0 5px 20px 0 $black--20op;
     appearance: none;
     outline: none;
     @include breakpoint(large) {
-        min-width: 240px;
+        min-width: auto;
     }
     &:hover,
     &:active {
@@ -91,6 +91,38 @@ input[type="submit"],
     &:active {
         background-color: $blue;
         color: $white;
+    }
+}
+.btn--turquoise {
+    border: 1px solid $color--turquoise;
+    background-color: $color--turquoise;
+    color: $white;
+    &:hover,
+    &:active {
+        background-color: $white;
+        color: $color--turquoise;
+    }
+}
+.btn--login {
+    background-color: $white;
+    color: $black;
+    box-shadow: none;
+    font-weight: normal;
+    &:hover,
+    &:active {
+        //background-color: $blue;
+        color: $blue;
+        box-shadow: 0 5px 20px 0 $black--20op;
+    }
+}
+.btn--join {
+    box-shadow: none;
+    font-weight: normal;
+    &:hover,
+    &:active {
+        background-color: lighten($blue, 5%);
+        color: $white;
+        box-shadow: 0 5px 20px 0 $black--20op;
     }
 }
 .btn--fullWidth {
@@ -122,12 +154,14 @@ input[type="submit"],
 }
 .btn--hasIcon {
     position: relative;
-    padding-left: 65px;
+    padding-right: 15px;
+    padding-left: 57px;
+    text-align: left;
     font-size: $fontSize-smaller;
     .btn-icon {
         position: absolute;
         top: 50%;
-        left: 20px;
+        left: 15px;
         transform: translateY(-50%);
         line-height: 0;
         transition: fill .3s;
@@ -144,7 +178,7 @@ input[type="submit"],
     min-width: 136px;
     padding-left: 18px;
     padding-right: 38px;
-    border-radius: 38px;
+    //border-radius: 38px;
     font-size: $fontSize-smaller;
     line-height: $lineHeight-buttonArrow;
     text-align: left;
@@ -181,18 +215,18 @@ input[type="submit"],
             text-transform: uppercase;
             text-align: center;
             text-decoration: none;
-            border-radius: 48px;
+            border-radius: 0;
             border: 1px solid $blue;
             background-color: $blue;
             background-image: none;
             color: $white;
             transition: all .3s ease-out;
             -webkit-appearance: none;
-            box-shadow: 0 5px 20px 0 $black--20op;
+            //box-shadow: 0 5px 20px 0 $black--20op;
             appearance: none;
             outline: none;
             @include breakpoint(large) {
-                min-width: 240px;
+                //min-width: 240px;
             }
             &:hover,
             &:active {
@@ -200,6 +234,19 @@ input[type="submit"],
                 text-decoration: none;
                 background-color: $white !important;
                 color: $blue !important;
+            }
+        }
+    }
+    &.btnElement--turquoise {
+        > a.vc_general,
+        > button.vc_general {
+            border: 1px solid $color--turquoise;
+            background-color: $color--turquoise;
+            color: $white;
+            &:hover,
+            &:active {
+                background-color: $white;
+                color: $color--turquoise;
             }
         }
     }
