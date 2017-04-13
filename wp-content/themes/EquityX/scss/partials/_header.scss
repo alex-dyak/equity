@@ -71,8 +71,10 @@ body:not(.home) {
         display: block;
     }
     .btn {
+        border-radius: 0;
         margin-top: 1px;
         margin-bottom: 1px;
+        min-width: auto;
         @include breakpoint(large) {
             margin-top: 6px;
             margin-bottom: 6px;
