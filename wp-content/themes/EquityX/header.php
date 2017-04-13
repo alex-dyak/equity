@@ -109,6 +109,19 @@
 
 
 	        <div class="mainHeader-social">
+				<?php
+				if ( isset( get_option( 'w4p_social_profiles' )['login_user_link'][1] ) ) {
+					$login_user_link = get_option( 'w4p_social_profiles' )['login_user_link'][1];
+				} else {
+					$login_user_link = '';
+				}
+				?>
+				<?php if ( $login_user_link ) : ?>
+					<a href="<?php echo $login_user_link; ?>" class="btn btn--white" title="<?php _e( 'Login', 'EquityX' ); ?>">
+						<?php _e( 'Login', 'EquityX' ); ?>
+					</a>
+				<?php endif; ?>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		        <a href="#login-popup" class="btn js-loginPopup" title="<?php _e( 'join us!', 'EquityX' ); ?>">
 			        <?php _e( 'join us!', 'EquityX' ); ?>
 		        </a>

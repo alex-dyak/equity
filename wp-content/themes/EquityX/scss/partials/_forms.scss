@@ -97,6 +97,7 @@ input[type="submit"],
     width: 100%;
 }
 .btn--linkedIn {
+    border-radius: 0;
     border-color: $color--linkedin;
     background: $color--linkedin;
     &:hover {
@@ -104,6 +105,7 @@ input[type="submit"],
     }
 }
 .btn--google {
+    border-radius: 0;
     border-color: $color--google;
     background: $color--google;
     &:hover {
@@ -111,6 +113,7 @@ input[type="submit"],
     }
 }
 .btn--facebook {
+    border-radius: 0;
     border-color: $color--facebook;
     background: $color--facebook;
     &:hover {
