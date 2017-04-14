@@ -78,6 +78,7 @@ wp-content/ewww/*
 wp-content/advanced-cache.php
 wp-content/w3tc-config/*
 !wp-content/uploads/.gitkeep
+wp-content/updraft/*
 
 # WordPress
 /wp/*
