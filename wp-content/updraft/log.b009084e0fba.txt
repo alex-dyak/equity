@@ -1,0 +1,805 @@
+0000.002 (0) Opened log file at time: Thu, 13 Apr 2017 09:06:11 +0000 on http://equityx.loc/wp
+0000.005 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.12.29 WP: 4.7 PHP: 5.5.19 (apache2handler, Windows NT W4P-20160116 6.2 build 9200 (Windows 8 Home Premium Edition) i586) MySQL: 5.5.41 WPLANG: en_US Server: Apache/2.4.10 (Win32) safe_mode: 0 max_execution_time: 900 memory_limit: -1 (used: 31.4M | 31.5M) multisite: N openssl: OpenSSL 1.0.1i 6 Aug 2014 mcrypt: Y LANG:  ZipArchive::addFile: Y
+0000.008 (0) Free space on disk containing Updraft's temporary directory: 11439.7 MB
+0000.018 (0) Tasks: Backup files: 1 (schedule: daily) Backup DB:  (schedule: daily)
+0000.019 (0) Processed schedules. Combining jobs from identical schedules. Tasks now: Backup files: 1 Backup DB: 1
+0000.200 (0) Requesting semaphore lock (fd) (apparently via scheduler: last_scheduled_action_called_at=1490601425, seconds_ago=1472946)
+0000.203 (0) Set semaphore last lock (fd) time to 2017-04-13 09:06:11
+0000.204 (0) Semaphore lock (fd) complete
+0000.211 (0) Backup run: resumption=0, nonce=b009084e0fba, begun at=1492074371 (0s ago), job type=backup
+0000.213 (0) Scheduling a resumption (1) after 300 seconds (1492074671) in case this run gets aborted
+0000.370 (0) Checking if we have a zip executable available
+0000.375 (0) Creation of backups of directories: beginning
+0000.389 (0) Beginning creation of dump of plugins (split every: 400 MB)
+0011.609 (0) Total entities for the zip file: 1283 directories, 7406 files (0 skipped as non-modified), 113.3 MB
+0011.650 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (0 MB, 1 (1) files added so far); re-opening (prior size: 0 KB)
+0011.749 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 100 files added (on-disk size: 232.1 KB)
+0011.807 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 200 files added (on-disk size: 232.1 KB)
+0011.865 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 300 files added (on-disk size: 232.1 KB)
+0011.994 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 400 files added (on-disk size: 232.1 KB)
+0012.053 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 500 files added (on-disk size: 232.1 KB)
+0012.056 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (8.3 MB, 7406 files batched, 501 (502) added so far); re-opening (prior size: 232.1 KB)
+0017.870 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 600 files added (on-disk size: 3411.2 KB)
+0017.936 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 700 files added (on-disk size: 3411.2 KB)
+0018.003 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 800 files added (on-disk size: 3411.2 KB)
+0018.069 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 900 files added (on-disk size: 3411.2 KB)
+0018.135 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 1000 files added (on-disk size: 3411.2 KB)
+0018.137 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (1.6 MB, 7406 files batched, 501 (1003) added so far); re-opening (prior size: 3411.2 KB)
+0025.233 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 1100 files added (on-disk size: 4066 KB)
+0025.295 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 1200 files added (on-disk size: 4066 KB)
+0025.358 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 1300 files added (on-disk size: 4066 KB)
+0025.420 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 1400 files added (on-disk size: 4066 KB)
+0025.483 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 1500 files added (on-disk size: 4066 KB)
+0025.487 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 25 MB added on this batch (25 MB, 7406 files batched, 501 (1504) added so far); re-opening (prior size: 4066 KB)
+0034.593 (0) A useful amount of data was added after this amount of zip processing: 10.2 s (normalised: 10.2 s, rate: 2504 KB/s)
+0034.662 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 1600 files added (on-disk size: 16144.7 KB)
+0034.728 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 1700 files added (on-disk size: 16144.7 KB)
+0034.796 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 1800 files added (on-disk size: 16144.7 KB)
+0034.867 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 1900 files added (on-disk size: 16144.7 KB)
+0034.938 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 2000 files added (on-disk size: 16144.7 KB)
+0034.942 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (4.4 MB, 7406 files batched, 501 (2005) added so far); re-opening (prior size: 16144.7 KB)
+0038.812 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 2100 files added (on-disk size: 17744.8 KB)
+0038.881 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 2200 files added (on-disk size: 17744.8 KB)
+0038.953 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 2300 files added (on-disk size: 17744.8 KB)
+0039.023 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 2400 files added (on-disk size: 17744.8 KB)
+0039.094 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 2500 files added (on-disk size: 17744.8 KB)
+0039.100 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (2.3 MB, 7406 files batched, 501 (2506) added so far); re-opening (prior size: 17744.8 KB)
+0043.400 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 2600 files added (on-disk size: 18542 KB)
+0043.468 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 2700 files added (on-disk size: 18542 KB)
+0043.537 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 2800 files added (on-disk size: 18542 KB)
+0043.607 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 2900 files added (on-disk size: 18542 KB)
+0043.682 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 3000 files added (on-disk size: 18542 KB)
+0043.689 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (12.4 MB, 7406 files batched, 501 (3007) added so far); re-opening (prior size: 18542 KB)
+0049.459 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 3100 files added (on-disk size: 25220.8 KB)
+0049.534 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 3200 files added (on-disk size: 25220.8 KB)
+0049.610 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 3300 files added (on-disk size: 25220.8 KB)
+0049.689 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 3400 files added (on-disk size: 25220.8 KB)
+0049.767 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 3500 files added (on-disk size: 25220.8 KB)
+0049.774 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (10.3 MB, 7406 files batched, 501 (3508) added so far); re-opening (prior size: 25220.8 KB)
+0056.087 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 3600 files added (on-disk size: 28645.8 KB)
+0056.171 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 3700 files added (on-disk size: 28645.8 KB)
+0056.255 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 3800 files added (on-disk size: 28645.8 KB)
+0056.338 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 3900 files added (on-disk size: 28645.8 KB)
+0056.421 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 4000 files added (on-disk size: 28645.8 KB)
+0056.732 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (8 MB, 7406 files batched, 501 (4009) added so far); re-opening (prior size: 28645.8 KB)
+0063.490 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 4100 files added (on-disk size: 31137.4 KB)
+0063.576 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 4200 files added (on-disk size: 31137.4 KB)
+0063.696 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 4300 files added (on-disk size: 31137.4 KB)
+0063.892 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 4400 files added (on-disk size: 31137.4 KB)
+0064.099 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 4500 files added (on-disk size: 31137.4 KB)
+0064.122 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (3.3 MB, 7406 files batched, 501 (4510) added so far); re-opening (prior size: 31137.4 KB)
+0069.169 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 4600 files added (on-disk size: 32512.2 KB)
+0069.379 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 4700 files added (on-disk size: 32512.2 KB)
+0069.554 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 4800 files added (on-disk size: 32512.2 KB)
+0069.710 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 4900 files added (on-disk size: 32512.2 KB)
+0069.890 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 5000 files added (on-disk size: 32512.2 KB)
+0069.908 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (7.4 MB, 7406 files batched, 501 (5011) added so far); re-opening (prior size: 32512.2 KB)
+0077.850 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 5100 files added (on-disk size: 34845.6 KB)
+0078.102 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 5200 files added (on-disk size: 34845.6 KB)
+0078.359 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 5300 files added (on-disk size: 34845.6 KB)
+0078.601 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 5400 files added (on-disk size: 34845.6 KB)
+0078.852 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 5500 files added (on-disk size: 34845.6 KB)
+0078.884 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (9.6 MB, 7406 files batched, 501 (5512) added so far); re-opening (prior size: 34845.6 KB)
+0087.029 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 5600 files added (on-disk size: 37798.8 KB)
+0087.278 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 5700 files added (on-disk size: 37798.8 KB)
+0087.543 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 5800 files added (on-disk size: 37798.8 KB)
+0087.752 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 5900 files added (on-disk size: 37798.8 KB)
+0088.219 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 6000 files added (on-disk size: 37798.8 KB)
+0088.238 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (2 MB, 7406 files batched, 501 (6013) added so far); re-opening (prior size: 37798.8 KB)
+0095.204 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 6100 files added (on-disk size: 38713.3 KB)
+0095.335 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 6200 files added (on-disk size: 38713.3 KB)
+0095.511 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 6300 files added (on-disk size: 38713.3 KB)
+0095.697 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 6400 files added (on-disk size: 38713.3 KB)
+0095.899 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 6500 files added (on-disk size: 38713.3 KB)
+0095.926 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (5 MB, 7406 files batched, 501 (6514) added so far); re-opening (prior size: 38713.3 KB)
+0108.458 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 6600 files added (on-disk size: 40208.1 KB)
+0108.603 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 6700 files added (on-disk size: 40208.1 KB)
+0108.782 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 6800 files added (on-disk size: 40208.1 KB)
+0108.971 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 6900 files added (on-disk size: 40208.1 KB)
+0109.134 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 7000 files added (on-disk size: 40208.1 KB)
+0109.161 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (3.5 MB, 7406 files batched, 501 (7015) added so far); re-opening (prior size: 40208.1 KB)
+0115.573 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 7100 files added (on-disk size: 42138.8 KB)
+0115.744 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 7200 files added (on-disk size: 42138.8 KB)
+0115.922 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 7300 files added (on-disk size: 42138.8 KB)
+0116.083 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip.tmp: 7400 files added (on-disk size: 42138.8 KB)
+0121.608 (0) Created plugins zip (0) - 46700.1 KB in 121.2 s (385.3 KB/s) (SHA1 checksum: 4d6b82c4f1726fe286d7968e406f02b4dc4d7ba7)
+0121.612 (0) Beginning creation of dump of themes (split every: 400 MB)
+0150.747 (0) Total entities for the zip file: 3611 directories, 24392 files (0 skipped as non-modified), 112.9 MB
+0151.109 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (0 MB, 1 (1) files added so far); re-opening (prior size: 0 KB)
+0151.268 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 100 files added (on-disk size: 627.4 KB)
+0151.338 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 200 files added (on-disk size: 627.4 KB)
+0151.409 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 300 files added (on-disk size: 627.4 KB)
+0151.485 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 400 files added (on-disk size: 627.4 KB)
+0151.559 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 500 files added (on-disk size: 627.4 KB)
+0151.562 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (5.2 MB, 24392 files batched, 501 (502) added so far); re-opening (prior size: 627.4 KB)
+0155.665 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 600 files added (on-disk size: 2806.6 KB)
+0155.741 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 700 files added (on-disk size: 2806.6 KB)
+0155.820 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 800 files added (on-disk size: 2806.6 KB)
+0155.900 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 900 files added (on-disk size: 2806.6 KB)
+0155.980 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 1000 files added (on-disk size: 2806.6 KB)
+0155.984 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (2.6 MB, 24392 files batched, 501 (1003) added so far); re-opening (prior size: 2806.6 KB)
+0159.322 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 1100 files added (on-disk size: 3651.7 KB)
+0159.405 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 1200 files added (on-disk size: 3651.7 KB)
+0159.488 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 1300 files added (on-disk size: 3651.7 KB)
+0159.572 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 1400 files added (on-disk size: 3651.7 KB)
+0159.657 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 1500 files added (on-disk size: 3651.7 KB)
+0159.661 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (3 MB, 24392 files batched, 501 (1504) added so far); re-opening (prior size: 3651.7 KB)
+0162.667 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 1600 files added (on-disk size: 4480.6 KB)
+0162.754 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 1700 files added (on-disk size: 4480.6 KB)
+0162.843 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 1800 files added (on-disk size: 4480.6 KB)
+0162.932 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 1900 files added (on-disk size: 4480.6 KB)
+0163.026 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 2000 files added (on-disk size: 4480.6 KB)
+0163.032 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (4.5 MB, 24392 files batched, 501 (2005) added so far); re-opening (prior size: 4480.6 KB)
+0165.375 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 2100 files added (on-disk size: 5456.8 KB)
+0165.466 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 2200 files added (on-disk size: 5456.8 KB)
+0165.558 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 2300 files added (on-disk size: 5456.8 KB)
+0165.652 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 2400 files added (on-disk size: 5456.8 KB)
+0165.750 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 2500 files added (on-disk size: 5456.8 KB)
+0165.757 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (2.6 MB, 24392 files batched, 501 (2506) added so far); re-opening (prior size: 5456.8 KB)
+0168.893 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 2600 files added (on-disk size: 6311.7 KB)
+0168.991 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 2700 files added (on-disk size: 6311.7 KB)
+0169.089 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 2800 files added (on-disk size: 6311.7 KB)
+0169.189 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 2900 files added (on-disk size: 6311.7 KB)
+0169.291 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 3000 files added (on-disk size: 6311.7 KB)
+0169.299 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (0.1 MB, 24392 files batched, 501 (3007) added so far); re-opening (prior size: 6311.7 KB)
+0170.542 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 3100 files added (on-disk size: 6458.4 KB)
+0170.661 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 3200 files added (on-disk size: 6458.4 KB)
+0170.769 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 3300 files added (on-disk size: 6458.4 KB)
+0170.875 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 3400 files added (on-disk size: 6458.4 KB)
+0170.982 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 3500 files added (on-disk size: 6458.4 KB)
+0170.992 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (0.3 MB, 24392 files batched, 501 (3508) added so far); re-opening (prior size: 6458.4 KB)
+0173.704 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 3600 files added (on-disk size: 6694.3 KB)
+0173.812 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 3700 files added (on-disk size: 6694.3 KB)
+0173.921 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 3800 files added (on-disk size: 6694.3 KB)
+0174.031 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 3900 files added (on-disk size: 6694.3 KB)
+0174.145 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 4000 files added (on-disk size: 6694.3 KB)
+0174.157 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (1.4 MB, 24392 files batched, 501 (4009) added so far); re-opening (prior size: 6694.3 KB)
+0177.355 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 4100 files added (on-disk size: 7208.7 KB)
+0177.469 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 4200 files added (on-disk size: 7208.7 KB)
+0177.583 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 4300 files added (on-disk size: 7208.7 KB)
+0177.703 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 4400 files added (on-disk size: 7208.7 KB)
+0177.819 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 4500 files added (on-disk size: 7208.7 KB)
+0177.832 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (1 MB, 24392 files batched, 501 (4510) added so far); re-opening (prior size: 7208.7 KB)
+0180.982 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 4600 files added (on-disk size: 7650 KB)
+0181.098 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 4700 files added (on-disk size: 7650 KB)
+0181.252 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 4800 files added (on-disk size: 7650 KB)
+0181.426 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 4900 files added (on-disk size: 7650 KB)
+0181.596 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 5000 files added (on-disk size: 7650 KB)
+0181.618 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (0.6 MB, 24392 files batched, 501 (5011) added so far); re-opening (prior size: 7650 KB)
+0184.468 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 5100 files added (on-disk size: 7961.9 KB)
+0184.672 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 5200 files added (on-disk size: 7961.9 KB)
+0184.870 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 5300 files added (on-disk size: 7961.9 KB)
+0185.072 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 5400 files added (on-disk size: 7961.9 KB)
+0185.253 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 5500 files added (on-disk size: 7961.9 KB)
+0185.280 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (1.3 MB, 24392 files batched, 501 (5512) added so far); re-opening (prior size: 7961.9 KB)
+0188.715 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 5600 files added (on-disk size: 8377.3 KB)
+0188.900 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 5700 files added (on-disk size: 8377.3 KB)
+0189.091 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 5800 files added (on-disk size: 8377.3 KB)
+0189.272 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 5900 files added (on-disk size: 8377.3 KB)
+0189.457 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 6000 files added (on-disk size: 8377.3 KB)
+0189.482 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (3.3 MB, 24392 files batched, 501 (6013) added so far); re-opening (prior size: 8377.3 KB)
+0193.123 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 6100 files added (on-disk size: 9297.9 KB)
+0193.333 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 6200 files added (on-disk size: 9297.9 KB)
+0193.542 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 6300 files added (on-disk size: 9297.9 KB)
+0193.753 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 6400 files added (on-disk size: 9297.9 KB)
+0193.978 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 6500 files added (on-disk size: 9297.9 KB)
+0194.013 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (7.4 MB, 24392 files batched, 501 (6514) added so far); re-opening (prior size: 9297.9 KB)
+0199.251 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 6600 files added (on-disk size: 11146.7 KB)
+0199.482 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 6700 files added (on-disk size: 11146.7 KB)
+0199.676 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 6800 files added (on-disk size: 11146.7 KB)
+0199.885 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 6900 files added (on-disk size: 11146.7 KB)
+0200.087 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 7000 files added (on-disk size: 11146.7 KB)
+0200.115 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (3.4 MB, 24392 files batched, 501 (7015) added so far); re-opening (prior size: 11146.7 KB)
+0204.145 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 7100 files added (on-disk size: 12309.6 KB)
+0204.336 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 7200 files added (on-disk size: 12309.6 KB)
+0204.535 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 7300 files added (on-disk size: 12309.6 KB)
+0204.754 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 7400 files added (on-disk size: 12309.6 KB)
+0204.999 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 7500 files added (on-disk size: 12309.6 KB)
+0205.033 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (2.6 MB, 24392 files batched, 501 (7516) added so far); re-opening (prior size: 12309.6 KB)
+0208.646 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 7600 files added (on-disk size: 13136.3 KB)
+0208.900 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 7700 files added (on-disk size: 13136.3 KB)
+0209.098 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 7800 files added (on-disk size: 13136.3 KB)
+0209.303 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 7900 files added (on-disk size: 13136.3 KB)
+0209.527 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 8000 files added (on-disk size: 13136.3 KB)
+0209.564 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (0.6 MB, 24392 files batched, 501 (8017) added so far); re-opening (prior size: 13136.3 KB)
+0212.485 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 8100 files added (on-disk size: 13445.6 KB)
+0212.701 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 8200 files added (on-disk size: 13445.6 KB)
+0212.921 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 8300 files added (on-disk size: 13445.6 KB)
+0213.122 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 8400 files added (on-disk size: 13445.6 KB)
+0213.320 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 8500 files added (on-disk size: 13445.6 KB)
+0213.357 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (0.9 MB, 24392 files batched, 501 (8518) added so far); re-opening (prior size: 13445.6 KB)
+0216.872 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 8600 files added (on-disk size: 13787.5 KB)
+0217.077 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 8700 files added (on-disk size: 13787.5 KB)
+0217.290 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 8800 files added (on-disk size: 13787.5 KB)
+0217.495 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 8900 files added (on-disk size: 13787.5 KB)
+0217.705 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 9000 files added (on-disk size: 13787.5 KB)
+0217.747 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (0.9 MB, 24392 files batched, 501 (9019) added so far); re-opening (prior size: 13787.5 KB)
+0221.346 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 9100 files added (on-disk size: 14185.7 KB)
+0221.580 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 9200 files added (on-disk size: 14185.7 KB)
+0221.826 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 9300 files added (on-disk size: 14185.7 KB)
+0222.074 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 9400 files added (on-disk size: 14185.7 KB)
+0222.338 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 9500 files added (on-disk size: 14185.7 KB)
+0222.396 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (2.7 MB, 24392 files batched, 501 (9520) added so far); re-opening (prior size: 14185.7 KB)
+0226.173 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 9600 files added (on-disk size: 15044.5 KB)
+0226.494 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 9700 files added (on-disk size: 15044.5 KB)
+0226.810 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 9800 files added (on-disk size: 15044.5 KB)
+0227.091 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 9900 files added (on-disk size: 15044.5 KB)
+0227.346 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 10000 files added (on-disk size: 15044.5 KB)
+0227.400 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (0.8 MB, 24392 files batched, 501 (10021) added so far); re-opening (prior size: 15044.5 KB)
+0230.652 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 10100 files added (on-disk size: 15401.5 KB)
+0230.913 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 10200 files added (on-disk size: 15401.5 KB)
+0231.178 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 10300 files added (on-disk size: 15401.5 KB)
+0231.457 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 10400 files added (on-disk size: 15401.5 KB)
+0231.731 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 10500 files added (on-disk size: 15401.5 KB)
+0231.795 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (1.7 MB, 24392 files batched, 501 (10522) added so far); re-opening (prior size: 15401.5 KB)
+0235.021 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 10600 files added (on-disk size: 15973.3 KB)
+0235.257 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 10700 files added (on-disk size: 15973.3 KB)
+0235.491 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 10800 files added (on-disk size: 15973.3 KB)
+0235.740 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 10900 files added (on-disk size: 15973.3 KB)
+0235.969 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 11000 files added (on-disk size: 15973.3 KB)
+0236.024 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (4.5 MB, 24392 files batched, 501 (11023) added so far); re-opening (prior size: 15973.3 KB)
+0240.296 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 11100 files added (on-disk size: 17607.8 KB)
+0240.545 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 11200 files added (on-disk size: 17607.8 KB)
+0240.803 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 11300 files added (on-disk size: 17607.8 KB)
+0241.060 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 11400 files added (on-disk size: 17607.8 KB)
+0241.301 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 11500 files added (on-disk size: 17607.8 KB)
+0241.359 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (2.6 MB, 24392 files batched, 501 (11524) added so far); re-opening (prior size: 17607.8 KB)
+0245.223 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 11600 files added (on-disk size: 18515.1 KB)
+0245.487 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 11700 files added (on-disk size: 18515.1 KB)
+0245.743 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 11800 files added (on-disk size: 18515.1 KB)
+0245.992 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 11900 files added (on-disk size: 18515.1 KB)
+0246.244 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 12000 files added (on-disk size: 18515.1 KB)
+0246.304 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (4 MB, 24392 files batched, 501 (12025) added so far); re-opening (prior size: 18515.1 KB)
+0250.701 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 12100 files added (on-disk size: 19724.5 KB)
+0250.978 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 12200 files added (on-disk size: 19724.5 KB)
+0251.244 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 12300 files added (on-disk size: 19724.5 KB)
+0251.549 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 12400 files added (on-disk size: 19724.5 KB)
+0251.833 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 12500 files added (on-disk size: 19724.5 KB)
+0251.909 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (1.7 MB, 24392 files batched, 501 (12526) added so far); re-opening (prior size: 19724.5 KB)
+0255.626 (0) The scheduled resumption is within 45 seconds - will reschedule
+0255.628 (0) Rescheduling resumption 1: moving to 345 seconds from now (1492074972)
+0255.631 (0) To decrease the likelihood of overlaps, increasing resumption interval to: 300 + 45 = 345
+0255.850 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 12600 files added (on-disk size: 20402.1 KB)
+0256.129 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 12700 files added (on-disk size: 20402.1 KB)
+0256.401 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 12800 files added (on-disk size: 20402.1 KB)
+0256.702 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 12900 files added (on-disk size: 20402.1 KB)
+0257.005 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 13000 files added (on-disk size: 20402.1 KB)
+0257.087 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (2.8 MB, 24392 files batched, 501 (13027) added so far); re-opening (prior size: 20402.1 KB)
+0262.338 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 13100 files added (on-disk size: 21289.4 KB)
+0262.692 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 13200 files added (on-disk size: 21289.4 KB)
+0263.042 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 13300 files added (on-disk size: 21289.4 KB)
+0263.409 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 13400 files added (on-disk size: 21289.4 KB)
+0263.844 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 13500 files added (on-disk size: 21289.4 KB)
+0263.954 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (1.3 MB, 24392 files batched, 501 (13528) added so far); re-opening (prior size: 21289.4 KB)
+0268.004 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 13600 files added (on-disk size: 21799.6 KB)
+0268.313 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 13700 files added (on-disk size: 21799.6 KB)
+0268.650 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 13800 files added (on-disk size: 21799.6 KB)
+0269.002 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 13900 files added (on-disk size: 21799.6 KB)
+0269.392 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 14000 files added (on-disk size: 21799.6 KB)
+0269.501 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (3.7 MB, 24392 files batched, 501 (14029) added so far); re-opening (prior size: 21799.6 KB)
+0274.743 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 14100 files added (on-disk size: 22760.8 KB)
+0275.169 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 14200 files added (on-disk size: 22760.8 KB)
+0275.544 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 14300 files added (on-disk size: 22760.8 KB)
+0275.891 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 14400 files added (on-disk size: 22760.8 KB)
+0276.245 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 14500 files added (on-disk size: 22760.8 KB)
+0276.346 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (4.9 MB, 24392 files batched, 501 (14530) added so far); re-opening (prior size: 22760.8 KB)
+0281.273 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 14600 files added (on-disk size: 23929.3 KB)
+0281.644 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 14700 files added (on-disk size: 23929.3 KB)
+0282.017 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 14800 files added (on-disk size: 23929.3 KB)
+0282.395 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 14900 files added (on-disk size: 23929.3 KB)
+0282.794 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 15000 files added (on-disk size: 23929.3 KB)
+0282.906 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (0.7 MB, 24392 files batched, 501 (15031) added so far); re-opening (prior size: 23929.3 KB)
+0285.429 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 15100 files added (on-disk size: 24234.6 KB)
+0285.881 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 15200 files added (on-disk size: 24234.6 KB)
+0286.455 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 15300 files added (on-disk size: 24234.6 KB)
+0286.805 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 15400 files added (on-disk size: 24234.6 KB)
+0287.171 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 15500 files added (on-disk size: 24234.6 KB)
+0287.285 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (0.2 MB, 24392 files batched, 501 (15532) added so far); re-opening (prior size: 24234.6 KB)
+0290.877 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 15600 files added (on-disk size: 24443.1 KB)
+0291.208 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 15700 files added (on-disk size: 24443.1 KB)
+0291.547 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 15800 files added (on-disk size: 24443.1 KB)
+0291.883 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 15900 files added (on-disk size: 24443.1 KB)
+0292.242 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 16000 files added (on-disk size: 24443.1 KB)
+0292.354 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (1.4 MB, 24392 files batched, 501 (16033) added so far); re-opening (prior size: 24443.1 KB)
+0296.264 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 16100 files added (on-disk size: 24973.7 KB)
+0296.682 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 16200 files added (on-disk size: 24973.7 KB)
+0297.361 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 16300 files added (on-disk size: 24973.7 KB)
+0297.765 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 16400 files added (on-disk size: 24973.7 KB)
+0298.156 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 16500 files added (on-disk size: 24973.7 KB)
+0298.286 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (0.7 MB, 24392 files batched, 501 (16534) added so far); re-opening (prior size: 24973.7 KB)
+0302.871 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 16600 files added (on-disk size: 25310.3 KB)
+0303.207 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 16700 files added (on-disk size: 25310.3 KB)
+0303.583 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 16800 files added (on-disk size: 25310.3 KB)
+0303.938 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 16900 files added (on-disk size: 25310.3 KB)
+0304.301 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 17000 files added (on-disk size: 25310.3 KB)
+0304.425 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (0.8 MB, 24392 files batched, 501 (17035) added so far); re-opening (prior size: 25310.3 KB)
+0307.949 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 17100 files added (on-disk size: 25722.9 KB)
+0308.329 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 17200 files added (on-disk size: 25722.9 KB)
+0308.766 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 17300 files added (on-disk size: 25722.9 KB)
+0309.303 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 17400 files added (on-disk size: 25722.9 KB)
+0310.054 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 17500 files added (on-disk size: 25722.9 KB)
+0310.219 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (0.3 MB, 24392 files batched, 501 (17536) added so far); re-opening (prior size: 25722.9 KB)
+0317.753 (0) The time we have been running (317.7) is approaching the resumption interval (345) - increasing resumption interval to 348
+0318.078 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 17600 files added (on-disk size: 25946.8 KB)
+0318.471 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 17700 files added (on-disk size: 25946.8 KB)
+0318.868 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 17800 files added (on-disk size: 25946.8 KB)
+0319.241 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 17900 files added (on-disk size: 25946.8 KB)
+0319.630 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 18000 files added (on-disk size: 25946.8 KB)
+0319.782 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (3.7 MB, 24392 files batched, 501 (18037) added so far); re-opening (prior size: 25946.8 KB)
+0324.916 (0) The time we have been running (324.9) is approaching the resumption interval (348) - increasing resumption interval to 355
+0325.184 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 18100 files added (on-disk size: 26824 KB)
+0325.576 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 18200 files added (on-disk size: 26824 KB)
+0325.949 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 18300 files added (on-disk size: 26824 KB)
+0326.329 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 18400 files added (on-disk size: 26824 KB)
+0326.777 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 18500 files added (on-disk size: 26824 KB)
+0326.923 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (6.3 MB, 24392 files batched, 501 (18538) added so far); re-opening (prior size: 26824 KB)
+0332.764 (0) The time we have been running (332.8) is approaching the resumption interval (355) - increasing resumption interval to 363
+0333.048 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 18600 files added (on-disk size: 28575.1 KB)
+0333.432 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 18700 files added (on-disk size: 28575.1 KB)
+0333.861 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 18800 files added (on-disk size: 28575.1 KB)
+0334.293 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 18900 files added (on-disk size: 28575.1 KB)
+0334.660 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 19000 files added (on-disk size: 28575.1 KB)
+0334.824 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (4.2 MB, 24392 files batched, 501 (19039) added so far); re-opening (prior size: 28575.1 KB)
+0341.315 (0) The time we have been running (341.3) is approaching the resumption interval (363) - increasing resumption interval to 372
+0341.604 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 19100 files added (on-disk size: 29753.5 KB)
+0342.015 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 19200 files added (on-disk size: 29753.5 KB)
+0342.398 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 19300 files added (on-disk size: 29753.5 KB)
+0342.791 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 19400 files added (on-disk size: 29753.5 KB)
+0343.172 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 19500 files added (on-disk size: 29753.5 KB)
+0343.328 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (2.6 MB, 24392 files batched, 501 (19540) added so far); re-opening (prior size: 29753.5 KB)
+0348.127 (0) The time we have been running (348.1) is approaching the resumption interval (372) - increasing resumption interval to 379
+0348.419 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 19600 files added (on-disk size: 30689.9 KB)
+0349.047 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 19700 files added (on-disk size: 30689.9 KB)
+0349.447 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 19800 files added (on-disk size: 30689.9 KB)
+0349.942 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 19900 files added (on-disk size: 30689.9 KB)
+0350.348 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 20000 files added (on-disk size: 30689.9 KB)
+0350.368 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (1.5 MB, 465 (20005) files added so far); re-opening (prior size: 30689.9 KB)
+0355.202 (0) The time we have been running (355.2) is approaching the resumption interval (379) - increasing resumption interval to 386
+0355.674 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 20100 files added (on-disk size: 31217.6 KB)
+0356.255 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 20200 files added (on-disk size: 31217.6 KB)
+0356.848 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 20300 files added (on-disk size: 31217.6 KB)
+0357.375 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (0.2 MB, 364 (20369) files added so far); re-opening (prior size: 31217.6 KB)
+0360.964 (0) The time we have been running (361) is approaching the resumption interval (386) - increasing resumption interval to 391
+0361.137 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 20400 files added (on-disk size: 31372.3 KB)
+0361.580 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 20500 files added (on-disk size: 31372.3 KB)
+0361.965 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 20600 files added (on-disk size: 31372.3 KB)
+0362.760 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 20700 files added (on-disk size: 31372.3 KB)
+0363.142 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 20800 files added (on-disk size: 31372.3 KB)
+0363.368 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (0.9 MB, 457 (20826) files added so far); re-opening (prior size: 31372.3 KB)
+0368.346 (0) The time we have been running (368.3) is approaching the resumption interval (391) - increasing resumption interval to 399
+0368.687 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 20900 files added (on-disk size: 31723.7 KB)
+0369.098 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 21000 files added (on-disk size: 31723.7 KB)
+0370.059 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 21100 files added (on-disk size: 31723.7 KB)
+0370.371 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (0.5 MB, 349 (21175) files added so far); re-opening (prior size: 31723.7 KB)
+0373.622 (0) The time we have been running (373.6) is approaching the resumption interval (399) - increasing resumption interval to 404
+0373.773 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 21200 files added (on-disk size: 31977 KB)
+0374.189 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 21300 files added (on-disk size: 31977 KB)
+0374.786 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 21400 files added (on-disk size: 31977 KB)
+0375.516 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 21500 files added (on-disk size: 31977 KB)
+0375.960 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 21600 files added (on-disk size: 31977 KB)
+0376.307 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (2.9 MB, 24392 files batched, 501 (21676) added so far); re-opening (prior size: 31977 KB)
+0381.967 (0) The time we have been running (382) is approaching the resumption interval (404) - increasing resumption interval to 412
+0382.151 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 21700 files added (on-disk size: 32899.1 KB)
+0383.048 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 21800 files added (on-disk size: 32899.1 KB)
+0383.607 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 21900 files added (on-disk size: 32899.1 KB)
+0384.293 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 22000 files added (on-disk size: 32899.1 KB)
+0384.372 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (0.1 MB, 335 (22011) files added so far); re-opening (prior size: 32899.1 KB)
+0387.619 (0) The time we have been running (387.6) is approaching the resumption interval (412) - increasing resumption interval to 418
+0388.312 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 22100 files added (on-disk size: 33010.4 KB)
+0388.986 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 22200 files added (on-disk size: 33010.4 KB)
+0389.674 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 22300 files added (on-disk size: 33010.4 KB)
+0390.370 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (0.9 MB, 377 (22388) files added so far); re-opening (prior size: 33010.4 KB)
+0394.076 (0) The time we have been running (394.1) is approaching the resumption interval (418) - increasing resumption interval to 425
+0394.196 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 22400 files added (on-disk size: 33363.7 KB)
+0394.736 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 22500 files added (on-disk size: 33363.7 KB)
+0395.238 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 22600 files added (on-disk size: 33363.7 KB)
+0395.758 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 22700 files added (on-disk size: 33363.7 KB)
+0396.234 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 22800 files added (on-disk size: 33363.7 KB)
+0396.369 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (3.6 MB, 443 (22831) files added so far); re-opening (prior size: 33363.7 KB)
+0400.420 (0) The time we have been running (400.4) is approaching the resumption interval (425) - increasing resumption interval to 431
+0400.799 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 22900 files added (on-disk size: 34658.2 KB)
+0401.269 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 23000 files added (on-disk size: 34658.2 KB)
+0401.710 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 23100 files added (on-disk size: 34658.2 KB)
+0402.150 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 23200 files added (on-disk size: 34658.2 KB)
+0402.575 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 23300 files added (on-disk size: 34658.2 KB)
+0402.727 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (3 MB, 24392 files batched, 501 (23332) added so far); re-opening (prior size: 34658.2 KB)
+0408.061 (0) The time we have been running (408.1) is approaching the resumption interval (431) - increasing resumption interval to 439
+0408.473 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 23400 files added (on-disk size: 35689.7 KB)
+0408.962 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 23500 files added (on-disk size: 35689.7 KB)
+0409.472 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 23600 files added (on-disk size: 35689.7 KB)
+0410.076 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 23700 files added (on-disk size: 35689.7 KB)
+0410.372 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (1.5 MB, 404 (23736) files added so far); re-opening (prior size: 35689.7 KB)
+0415.141 (0) The time we have been running (415.1) is approaching the resumption interval (439) - increasing resumption interval to 446
+0415.886 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 23800 files added (on-disk size: 36258 KB)
+0416.412 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 23900 files added (on-disk size: 36258 KB)
+0416.943 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 24000 files added (on-disk size: 36258 KB)
+0417.370 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (3.4 MB, 341 (24077) files added so far); re-opening (prior size: 36258 KB)
+0422.311 (0) The time we have been running (422.3) is approaching the resumption interval (446) - increasing resumption interval to 453
+0422.511 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 24100 files added (on-disk size: 37247.2 KB)
+0423.278 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 24200 files added (on-disk size: 37247.2 KB)
+0423.832 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip.tmp: 24300 files added (on-disk size: 37247.2 KB)
+0427.505 (0) The time we have been running (427.5) is approaching the resumption interval (453) - increasing resumption interval to 458
+0427.729 (0) Created themes zip (0) - 37657.7 KB in 306.1 s (123 KB/s) (SHA1 checksum: 86a6a96a8caa29507a4bcbae038f36bb920c3756)
+0427.734 (0) Exclusion option setting (uploads): backup*,*backups,backwpup*,wp-clone,snapshots
+0427.735 (0) Looking for candidates to back up in: C:\OpenServer\domains\equityx.loc/wp-content/uploads
+0427.736 (0) finding files: .gitkeep: adding to list (1)
+0427.737 (0) finding files: 2016: adding to list (2)
+0427.737 (0) finding files: 2017: adding to list (3)
+0427.738 (0) finding files: equityx.types_.2016-10-11.zip: adding to list (4)
+0427.739 (0) finding files: js_composer: adding to list (5)
+0427.740 (0) Beginning creation of dump of uploads (split every: 400 MB)
+0427.912 (0) Total entities for the zip file: 10 directories, 327 files (0 skipped as non-modified), 16 MB
+0427.964 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-uploads.zip.tmp: 100 files added (on-disk size: 0 KB)
+0428.014 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-uploads.zip.tmp: 200 files added (on-disk size: 0 KB)
+0428.061 (0) Zip: backup_2017-04-13-1106_EquityX_b009084e0fba-uploads.zip.tmp: 300 files added (on-disk size: 0 KB)
+0429.916 (0) The time we have been running (429.9) is approaching the resumption interval (458) - increasing resumption interval to 460
+0430.003 (0) Created uploads zip (0) - 15692.1 KB in 2.3 s (6967 KB/s) (SHA1 checksum: 30247edbec8bfd41399e9ca24d4b1f6bf553fb32)
+0430.008 (0) Beginning backup of other directories found in the content directory (index: 0)
+0430.008 (0) Exclusion option setting (others): upgrade,cache,updraft,backup*,*backups,mysql.sql,debug.log
+0430.009 (0) Looking for candidates to back up in: C:\OpenServer\domains\equityx.loc/wp-content
+0430.010 (0) finding files: mu-plugins: adding to list (1)
+0430.011 (0) finding files: plugins: skipping: this is the plugins directory
+0430.012 (0) finding files: themes: skipping: this is the themes directory
+0430.013 (0) finding files: updraft: skipping: this is the updraft directory
+0430.014 (0) finding files: uploads: skipping: this is the uploads directory
+0430.027 (0) Total entities for the zip file: 1 directories, 3 files (0 skipped as non-modified), 0 MB
+0430.040 (0) The time we have been running (430) is approaching the resumption interval (460) - increasing resumption interval to 461
+0430.045 (0) Created others zip (0) - 2.9 KB in 0 s (132.1 KB/s) (SHA1 checksum: f85d81a88dc0afae1825bf2e3620f17651da2d92)
+0430.052 (0) Saving backup status to database (elements: 8)
+0430.055 (0) Beginning creation of database dump (WordPress DB)
+0430.128 (0) Table eq_options: Total expected rows (approximate): 892
+0430.231 (0) Table eq_options: Total rows added: 873 in 0.10 seconds
+0430.238 (0) Table eq_options: finishing file (backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_options.table.gz - 226.4 KB)
+0430.245 (0) Table eq_users: Total expected rows (approximate): 6
+0430.260 (0) Table eq_users: Total rows added: 6 in 0.01 seconds
+0430.265 (0) Table eq_users: finishing file (backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_users.table.gz - 1.1 KB)
+0430.272 (0) Table eq_usermeta: Total expected rows (approximate): 103
+0430.293 (0) Table eq_usermeta: Total rows added: 205 in 0.02 seconds
+0430.298 (0) Table eq_usermeta: finishing file (backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_usermeta.table.gz - 4.9 KB)
+0430.304 (0) Table eq_commentmeta: Total expected rows (approximate): 0
+0430.317 (0) Table eq_commentmeta: Total rows added: 0 in 0.01 seconds
+0430.329 (0) Table eq_commentmeta: finishing file (backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_commentmeta.table.gz - 0.4 KB)
+0430.336 (0) Table eq_comments: Total expected rows (approximate): 0
+0430.352 (0) Table eq_comments: Total rows added: 0 in 0.01 seconds
+0430.357 (0) Table eq_comments: finishing file (backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_comments.table.gz - 0.5 KB)
+0430.365 (0) Table eq_links: Total expected rows (approximate): 0
+0430.380 (0) Table eq_links: Total rows added: 0 in 0.01 seconds
+0430.385 (0) Table eq_links: finishing file (backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_links.table.gz - 0.4 KB)
+0430.397 (0) Table eq_postmeta: Total expected rows (approximate): 3837
+0430.540 (0) Table eq_postmeta: Total rows added: 3586 in 0.14 seconds
+0430.546 (0) Table eq_postmeta: finishing file (backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_postmeta.table.gz - 51.8 KB)
+0430.557 (0) Table eq_posts: Total expected rows (approximate): 206
+0430.776 (0) Table eq_posts: Total rows added: 641 in 0.22 seconds
+0430.782 (0) Table eq_posts: finishing file (backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_posts.table.gz - 184.3 KB)
+0430.788 (0) Table eq_term_relationships: Total expected rows (approximate): 110
+0430.804 (0) Table eq_term_relationships: Total rows added: 110 in 0.01 seconds
+0430.809 (0) Table eq_term_relationships: finishing file (backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_term_relationships.table.gz - 0.7 KB)
+0430.817 (0) Table eq_term_taxonomy: Total expected rows (approximate): 43
+0430.837 (0) Table eq_term_taxonomy: Total rows added: 43 in 0.02 seconds
+0430.843 (0) Table eq_term_taxonomy: finishing file (backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_term_taxonomy.table.gz - 0.8 KB)
+0430.850 (0) Table eq_termmeta: Total expected rows (approximate): 0
+0430.867 (0) Table eq_termmeta: Total rows added: 0 in 0.02 seconds
+0430.872 (0) Table eq_termmeta: finishing file (backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_termmeta.table.gz - 0.4 KB)
+0430.879 (0) Table eq_terms: Total expected rows (approximate): 43
+0430.895 (0) Table eq_terms: Total rows added: 43 in 0.02 seconds
+0430.900 (0) Table eq_terms: finishing file (backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_terms.table.gz - 1 KB)
+0430.912 (0) Table eq_em_bookings: Total expected rows (approximate): 0
+0430.930 (0) Table eq_em_bookings: Total rows added: 0 in 0.02 seconds
+0430.936 (0) Table eq_em_bookings: finishing file (backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_em_bookings.table.gz - 0.5 KB)
+0430.946 (0) Table eq_em_events: Total expected rows (approximate): 1
+0430.962 (0) Table eq_em_events: Total rows added: 1 in 0.01 seconds
+0430.967 (0) Table eq_em_events: finishing file (backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_em_events.table.gz - 1.2 KB)
+0430.977 (0) Table eq_em_locations: Total expected rows (approximate): 1
+0430.992 (0) Table eq_em_locations: Total rows added: 1 in 0.01 seconds
+0430.998 (0) Table eq_em_locations: finishing file (backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_em_locations.table.gz - 0.6 KB)
+0431.007 (0) Table eq_em_meta: Total expected rows (approximate): 0
+0431.021 (0) Table eq_em_meta: Total rows added: 0 in 0.01 seconds
+0431.027 (0) Table eq_em_meta: finishing file (backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_em_meta.table.gz - 0.4 KB)
+0431.031 (0) The time we have been running (431) is approaching the resumption interval (461) - increasing resumption interval to 462
+0431.038 (0) Table eq_em_tickets: Total expected rows (approximate): 0
+0431.052 (0) Table eq_em_tickets: Total rows added: 0 in 0.01 seconds
+0431.058 (0) Table eq_em_tickets: finishing file (backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_em_tickets.table.gz - 0.4 KB)
+0431.067 (0) Table eq_em_tickets_bookings: Total expected rows (approximate): 0
+0431.082 (0) Table eq_em_tickets_bookings: Total rows added: 0 in 0.01 seconds
+0431.088 (0) Table eq_em_tickets_bookings: finishing file (backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_em_tickets_bookings.table.gz - 0.3 KB)
+0431.106 (0) Table eq_ewwwio_images: Total expected rows (approximate): 757
+0431.172 (0) Table eq_ewwwio_images: Total rows added: 762 in 0.06 seconds
+0431.178 (0) Table eq_ewwwio_images: finishing file (backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_ewwwio_images.table.gz - 18.7 KB)
+0431.188 (0) Table eq_w3tc_cdn_queue: Total expected rows (approximate): 0
+0431.207 (0) Table eq_w3tc_cdn_queue: Total rows added: 0 in 0.02 seconds
+0431.212 (0) Table eq_w3tc_cdn_queue: finishing file (backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_w3tc_cdn_queue.table.gz - 0.4 KB)
+0431.220 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_options.table.gz (1/20): adding to final database dump
+0431.277 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_users.table.gz (2/20): adding to final database dump
+0431.279 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_usermeta.table.gz (3/20): adding to final database dump
+0431.283 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_commentmeta.table.gz (4/20): adding to final database dump
+0431.285 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_comments.table.gz (5/20): adding to final database dump
+0431.286 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_links.table.gz (6/20): adding to final database dump
+0431.288 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_postmeta.table.gz (7/20): adding to final database dump
+0431.327 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_posts.table.gz (8/20): adding to final database dump
+0431.395 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_term_relationships.table.gz (9/20): adding to final database dump
+0431.397 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_term_taxonomy.table.gz (10/20): adding to final database dump
+0431.399 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_termmeta.table.gz (11/20): adding to final database dump
+0431.400 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_terms.table.gz (12/20): adding to final database dump
+0431.402 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_em_bookings.table.gz (13/20): adding to final database dump
+0431.403 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_em_events.table.gz (14/20): adding to final database dump
+0431.405 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_em_locations.table.gz (15/20): adding to final database dump
+0431.407 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_em_meta.table.gz (16/20): adding to final database dump
+0431.408 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_em_tickets.table.gz (17/20): adding to final database dump
+0431.410 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_em_tickets_bookings.table.gz (18/20): adding to final database dump
+0431.411 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_ewwwio_images.table.gz (19/20): adding to final database dump
+0431.421 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-db-table-eq_w3tc_cdn_queue.table.gz (20/20): adding to final database dump
+0431.427 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-db.gz: finished writing out complete database file (464 KB)
+0431.448 (0) Total database tables backed up: 20 (backup_2017-04-13-1106_EquityX_b009084e0fba-db.gz, size: 502056, checksum (SHA1): e572243cc434be512aadce220e346a3046848a06)
+0431.455 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip: plugins: This file has not yet been successfully uploaded: will queue
+0431.456 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip: themes: This file has not yet been successfully uploaded: will queue
+0431.457 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-uploads.zip: uploads: This file has not yet been successfully uploaded: will queue
+0431.458 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-others.zip: others: This file has not yet been successfully uploaded: will queue
+0431.459 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-db.gz: db: This file has not yet been successfully uploaded: will queue
+0431.460 (0) Saving backup history. Total backup size: 98.2 MB
+0431.463 (0) Requesting upload of the files that have not yet been successfully uploaded (5)
+0431.467 (0) Cloud backup selection (1/1): googledrive (last)
+0431.469 (0) Beginning dispatch of backup to remote (googledrive)
+0431.474 (0) Google Drive: requesting access token: client_id=239677591552-blg0935h1plkdmojmpdk3qdacu0p99a4.apps.googleusercontent.com
+0431.984 (0) Google Drive: successfully obtained access token
+0434.293 (0) Google Drive quota usage: used=1332.3 MB, total=30720 MB, available=29387.7 MB
+0434.294 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip: Attempting to upload to Google Drive (into folder id: 0B_9Cis3XxDMrM3p0eC11Vkt1X1E)
+0436.093 (0) The time we have been running (436.1) is approaching the resumption interval (462) - increasing resumption interval to 467
+0436.095 (0) Googledrive chunked upload: 2.2 % uploaded (1048576)
+0437.419 (0) The time we have been running (437.4) is approaching the resumption interval (467) - increasing resumption interval to 468
+0437.421 (0) Googledrive chunked upload: 4.4 % uploaded (2097152)
+0438.733 (0) The time we have been running (438.7) is approaching the resumption interval (468) - increasing resumption interval to 469
+0438.735 (0) Googledrive chunked upload: 6.6 % uploaded (3145728)
+0440.049 (0) The time we have been running (440) is approaching the resumption interval (469) - increasing resumption interval to 471
+0440.051 (0) Googledrive chunked upload: 8.8 % uploaded (4194304)
+0441.385 (0) The time we have been running (441.4) is approaching the resumption interval (471) - increasing resumption interval to 472
+0441.387 (0) Googledrive chunked upload: 11 % uploaded (5242880)
+0442.697 (0) The time we have been running (442.7) is approaching the resumption interval (472) - increasing resumption interval to 473
+0442.700 (0) Googledrive chunked upload: 13.2 % uploaded (6291456)
+0443.994 (0) The time we have been running (444) is approaching the resumption interval (473) - increasing resumption interval to 474
+0443.997 (0) Googledrive chunked upload: 15.3 % uploaded (7340032)
+0445.292 (0) The time we have been running (445.3) is approaching the resumption interval (474) - increasing resumption interval to 476
+0445.295 (0) Googledrive chunked upload: 17.5 % uploaded (8388608)
+0446.609 (0) The time we have been running (446.6) is approaching the resumption interval (476) - increasing resumption interval to 477
+0446.612 (0) Googledrive chunked upload: 19.7 % uploaded (9437184)
+0447.927 (0) The time we have been running (447.9) is approaching the resumption interval (477) - increasing resumption interval to 478
+0447.930 (0) Googledrive chunked upload: 21.9 % uploaded (10485760)
+0449.246 (0) The time we have been running (449.2) is approaching the resumption interval (478) - increasing resumption interval to 480
+0449.313 (0) Googledrive chunked upload: 24.1 % uploaded (11534336)
+0450.618 (0) The time we have been running (450.6) is approaching the resumption interval (480) - increasing resumption interval to 481
+0450.621 (0) Googledrive chunked upload: 26.3 % uploaded (12582912)
+0451.941 (0) The time we have been running (451.9) is approaching the resumption interval (481) - increasing resumption interval to 482
+0451.943 (0) Googledrive chunked upload: 28.5 % uploaded (13631488)
+0453.229 (0) The time we have been running (453.2) is approaching the resumption interval (482) - increasing resumption interval to 484
+0453.231 (0) Googledrive chunked upload: 30.7 % uploaded (14680064)
+0454.537 (0) The time we have been running (454.5) is approaching the resumption interval (484) - increasing resumption interval to 485
+0454.541 (0) Googledrive chunked upload: 32.9 % uploaded (15728640)
+0455.857 (0) The time we have been running (455.9) is approaching the resumption interval (485) - increasing resumption interval to 486
+0455.860 (0) Googledrive chunked upload: 35.1 % uploaded (16777216)
+0457.174 (0) The time we have been running (457.2) is approaching the resumption interval (486) - increasing resumption interval to 488
+0457.177 (0) Googledrive chunked upload: 37.3 % uploaded (17825792)
+0458.833 (0) The time we have been running (458.8) is approaching the resumption interval (488) - increasing resumption interval to 489
+0458.836 (0) Googledrive chunked upload: 39.5 % uploaded (18874368)
+0460.147 (0) The time we have been running (460.1) is approaching the resumption interval (489) - increasing resumption interval to 491
+0460.154 (0) Googledrive chunked upload: 41.7 % uploaded (19922944)
+0461.541 (0) The time we have been running (461.5) is approaching the resumption interval (491) - increasing resumption interval to 492
+0461.544 (0) Googledrive chunked upload: 43.9 % uploaded (20971520)
+0462.867 (0) The time we have been running (462.9) is approaching the resumption interval (492) - increasing resumption interval to 493
+0462.870 (0) Googledrive chunked upload: 46 % uploaded (22020096)
+0464.205 (0) The time we have been running (464.2) is approaching the resumption interval (493) - increasing resumption interval to 495
+0464.207 (0) Googledrive chunked upload: 48.2 % uploaded (23068672)
+0465.565 (0) The time we have been running (465.6) is approaching the resumption interval (495) - increasing resumption interval to 496
+0465.567 (0) Googledrive chunked upload: 50.4 % uploaded (24117248)
+0466.881 (0) The time we have been running (466.9) is approaching the resumption interval (496) - increasing resumption interval to 497
+0466.883 (0) Googledrive chunked upload: 52.6 % uploaded (25165824)
+0468.202 (0) The time we have been running (468.2) is approaching the resumption interval (497) - increasing resumption interval to 499
+0468.205 (0) Googledrive chunked upload: 54.8 % uploaded (26214400)
+0469.517 (0) The time we have been running (469.5) is approaching the resumption interval (499) - increasing resumption interval to 500
+0469.519 (0) Googledrive chunked upload: 57 % uploaded (27262976)
+0470.822 (0) The time we have been running (470.8) is approaching the resumption interval (500) - increasing resumption interval to 501
+0470.823 (0) Googledrive chunked upload: 59.2 % uploaded (28311552)
+0472.130 (0) The time we have been running (472.1) is approaching the resumption interval (501) - increasing resumption interval to 503
+0472.133 (0) Googledrive chunked upload: 61.4 % uploaded (29360128)
+0473.472 (0) The time we have been running (473.5) is approaching the resumption interval (503) - increasing resumption interval to 504
+0473.474 (0) Googledrive chunked upload: 63.6 % uploaded (30408704)
+0474.775 (0) The time we have been running (474.8) is approaching the resumption interval (504) - increasing resumption interval to 505
+0474.777 (0) Googledrive chunked upload: 65.8 % uploaded (31457280)
+0476.109 (0) The time we have been running (476.1) is approaching the resumption interval (505) - increasing resumption interval to 507
+0476.112 (0) Googledrive chunked upload: 68 % uploaded (32505856)
+0477.423 (0) The time we have been running (477.4) is approaching the resumption interval (507) - increasing resumption interval to 508
+0477.425 (0) Googledrive chunked upload: 70.2 % uploaded (33554432)
+0478.833 (0) The time we have been running (478.8) is approaching the resumption interval (508) - increasing resumption interval to 509
+0478.835 (0) Googledrive chunked upload: 72.4 % uploaded (34603008)
+0480.149 (0) The time we have been running (480.1) is approaching the resumption interval (509) - increasing resumption interval to 511
+0480.151 (0) Googledrive chunked upload: 74.6 % uploaded (35651584)
+0481.455 (0) The time we have been running (481.5) is approaching the resumption interval (511) - increasing resumption interval to 512
+0481.458 (0) Googledrive chunked upload: 76.7 % uploaded (36700160)
+0482.764 (0) The time we have been running (482.8) is approaching the resumption interval (512) - increasing resumption interval to 513
+0482.766 (0) Googledrive chunked upload: 78.9 % uploaded (37748736)
+0484.083 (0) The time we have been running (484.1) is approaching the resumption interval (513) - increasing resumption interval to 515
+0484.085 (0) Googledrive chunked upload: 81.1 % uploaded (38797312)
+0485.403 (0) The time we have been running (485.4) is approaching the resumption interval (515) - increasing resumption interval to 516
+0485.405 (0) Googledrive chunked upload: 83.3 % uploaded (39845888)
+0486.732 (0) The time we have been running (486.7) is approaching the resumption interval (516) - increasing resumption interval to 517
+0486.734 (0) Googledrive chunked upload: 85.5 % uploaded (40894464)
+0488.107 (0) The time we have been running (488.1) is approaching the resumption interval (517) - increasing resumption interval to 519
+0488.147 (0) Googledrive chunked upload: 87.7 % uploaded (41943040)
+0489.456 (0) The time we have been running (489.5) is approaching the resumption interval (519) - increasing resumption interval to 520
+0489.458 (0) Googledrive chunked upload: 89.9 % uploaded (42991616)
+0490.776 (0) The time we have been running (490.8) is approaching the resumption interval (520) - increasing resumption interval to 521
+0490.779 (0) Googledrive chunked upload: 92.1 % uploaded (44040192)
+0492.077 (0) The time we have been running (492.1) is approaching the resumption interval (521) - increasing resumption interval to 523
+0492.079 (0) Googledrive chunked upload: 94.3 % uploaded (45088768)
+0493.369 (0) The time we have been running (493.4) is approaching the resumption interval (523) - increasing resumption interval to 524
+0493.371 (0) Googledrive chunked upload: 96.5 % uploaded (46137344)
+0494.688 (0) The time we have been running (494.7) is approaching the resumption interval (524) - increasing resumption interval to 525
+0494.691 (0) Googledrive chunked upload: 98.7 % uploaded (47185920)
+0496.448 (0) The time we have been running (496.4) is approaching the resumption interval (525) - increasing resumption interval to 527
+0496.450 (0) Googledrive chunked upload: 100 % uploaded (47185920)
+0496.453 (0) OK: Archive backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip uploaded to Google Drive in 62.16 seconds
+0496.456 (0) Recording as successfully uploaded: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip (76b0dc4d64f04099e23c3ca5a161b1bc)
+0496.467 (0) Deleting local file: backup_2017-04-13-1106_EquityX_b009084e0fba-plugins.zip: OK
+0497.056 (0) Google Drive quota usage: used=1377.9 MB, total=30720 MB, available=29342.1 MB
+0497.058 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip: Attempting to upload to Google Drive (into folder id: 0B_9Cis3XxDMrM3p0eC11Vkt1X1E)
+0498.871 (0) The time we have been running (498.9) is approaching the resumption interval (527) - increasing resumption interval to 529
+0498.873 (0) Googledrive chunked upload: 2.7 % uploaded (1048576)
+0500.186 (0) The time we have been running (500.2) is approaching the resumption interval (529) - increasing resumption interval to 531
+0500.188 (0) Googledrive chunked upload: 5.4 % uploaded (2097152)
+0501.504 (0) The time we have been running (501.5) is approaching the resumption interval (531) - increasing resumption interval to 532
+0501.506 (0) Googledrive chunked upload: 8.2 % uploaded (3145728)
+0502.802 (0) The time we have been running (502.8) is approaching the resumption interval (532) - increasing resumption interval to 533
+0502.805 (0) Googledrive chunked upload: 10.9 % uploaded (4194304)
+0504.139 (0) The time we have been running (504.1) is approaching the resumption interval (533) - increasing resumption interval to 535
+0504.141 (0) Googledrive chunked upload: 13.6 % uploaded (5242880)
+0505.466 (0) The time we have been running (505.5) is approaching the resumption interval (535) - increasing resumption interval to 536
+0505.469 (0) Googledrive chunked upload: 16.3 % uploaded (6291456)
+0506.778 (0) The time we have been running (506.8) is approaching the resumption interval (536) - increasing resumption interval to 537
+0506.780 (0) Googledrive chunked upload: 19 % uploaded (7340032)
+0508.107 (0) The time we have been running (508.1) is approaching the resumption interval (537) - increasing resumption interval to 539
+0508.109 (0) Googledrive chunked upload: 21.8 % uploaded (8388608)
+0509.424 (0) The time we have been running (509.4) is approaching the resumption interval (539) - increasing resumption interval to 540
+0509.432 (0) Googledrive chunked upload: 24.5 % uploaded (9437184)
+0510.766 (0) The time we have been running (510.8) is approaching the resumption interval (540) - increasing resumption interval to 541
+0510.768 (0) Googledrive chunked upload: 27.2 % uploaded (10485760)
+0512.083 (0) The time we have been running (512.1) is approaching the resumption interval (541) - increasing resumption interval to 543
+0512.089 (0) Googledrive chunked upload: 29.9 % uploaded (11534336)
+0513.436 (0) The time we have been running (513.4) is approaching the resumption interval (543) - increasing resumption interval to 544
+0513.438 (0) Googledrive chunked upload: 32.6 % uploaded (12582912)
+0514.785 (0) The time we have been running (514.8) is approaching the resumption interval (544) - increasing resumption interval to 545
+0514.790 (0) Googledrive chunked upload: 35.4 % uploaded (13631488)
+0516.136 (0) The time we have been running (516.1) is approaching the resumption interval (545) - increasing resumption interval to 547
+0516.140 (0) Googledrive chunked upload: 38.1 % uploaded (14680064)
+0517.469 (0) The time we have been running (517.5) is approaching the resumption interval (547) - increasing resumption interval to 548
+0517.473 (0) Googledrive chunked upload: 40.8 % uploaded (15728640)
+0518.813 (0) The time we have been running (518.8) is approaching the resumption interval (548) - increasing resumption interval to 549
+0518.818 (0) Googledrive chunked upload: 43.5 % uploaded (16777216)
+0520.185 (0) The time we have been running (520.2) is approaching the resumption interval (549) - increasing resumption interval to 551
+0520.188 (0) Googledrive chunked upload: 46.2 % uploaded (17825792)
+0521.514 (0) The time we have been running (521.5) is approaching the resumption interval (551) - increasing resumption interval to 552
+0521.520 (0) Googledrive chunked upload: 48.9 % uploaded (18874368)
+0522.857 (0) The time we have been running (522.8) is approaching the resumption interval (552) - increasing resumption interval to 553
+0522.863 (0) Googledrive chunked upload: 51.7 % uploaded (19922944)
+0524.221 (0) The time we have been running (524.2) is approaching the resumption interval (553) - increasing resumption interval to 555
+0524.226 (0) Googledrive chunked upload: 54.4 % uploaded (20971520)
+0525.558 (0) The time we have been running (525.5) is approaching the resumption interval (555) - increasing resumption interval to 556
+0525.563 (0) Googledrive chunked upload: 57.1 % uploaded (22020096)
+0526.963 (0) The time we have been running (527) is approaching the resumption interval (556) - increasing resumption interval to 557
+0526.969 (0) Googledrive chunked upload: 59.8 % uploaded (23068672)
+0528.341 (0) The time we have been running (528.3) is approaching the resumption interval (557) - increasing resumption interval to 559
+0528.346 (0) Googledrive chunked upload: 62.5 % uploaded (24117248)
+0529.747 (0) The time we have been running (529.7) is approaching the resumption interval (559) - increasing resumption interval to 560
+0529.753 (0) Googledrive chunked upload: 65.3 % uploaded (25165824)
+0531.113 (0) The time we have been running (531.1) is approaching the resumption interval (560) - increasing resumption interval to 562
+0531.118 (0) Googledrive chunked upload: 68 % uploaded (26214400)
+0532.478 (0) The time we have been running (532.5) is approaching the resumption interval (562) - increasing resumption interval to 563
+0532.483 (0) Googledrive chunked upload: 70.7 % uploaded (27262976)
+0533.820 (0) The time we have been running (533.8) is approaching the resumption interval (563) - increasing resumption interval to 564
+0533.823 (0) Googledrive chunked upload: 73.4 % uploaded (28311552)
+0535.178 (0) The time we have been running (535.2) is approaching the resumption interval (564) - increasing resumption interval to 566
+0535.183 (0) Googledrive chunked upload: 76.1 % uploaded (29360128)
+0536.583 (0) The time we have been running (536.6) is approaching the resumption interval (566) - increasing resumption interval to 567
+0536.588 (0) Googledrive chunked upload: 78.9 % uploaded (30408704)
+0537.917 (0) The time we have been running (537.9) is approaching the resumption interval (567) - increasing resumption interval to 568
+0537.923 (0) Googledrive chunked upload: 81.6 % uploaded (31457280)
+0539.303 (0) The time we have been running (539.3) is approaching the resumption interval (568) - increasing resumption interval to 570
+0539.309 (0) Googledrive chunked upload: 84.3 % uploaded (32505856)
+0540.659 (0) The time we have been running (540.7) is approaching the resumption interval (570) - increasing resumption interval to 571
+0540.661 (0) Googledrive chunked upload: 87 % uploaded (33554432)
+0542.021 (0) The time we have been running (542) is approaching the resumption interval (571) - increasing resumption interval to 573
+0542.024 (0) Googledrive chunked upload: 89.7 % uploaded (34603008)
+0543.326 (0) The time we have been running (543.3) is approaching the resumption interval (573) - increasing resumption interval to 574
+0543.328 (0) Googledrive chunked upload: 92.5 % uploaded (35651584)
+0544.634 (0) The time we have been running (544.6) is approaching the resumption interval (574) - increasing resumption interval to 575
+0544.637 (0) Googledrive chunked upload: 95.2 % uploaded (36700160)
+0545.938 (0) The time we have been running (545.9) is approaching the resumption interval (575) - increasing resumption interval to 576
+0545.944 (0) Googledrive chunked upload: 97.9 % uploaded (37748736)
+0547.819 (0) The time we have been running (547.8) is approaching the resumption interval (576) - increasing resumption interval to 578
+0547.822 (0) Googledrive chunked upload: 100 % uploaded (37748736)
+0547.828 (0) OK: Archive backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip uploaded to Google Drive in 50.77 seconds
+0547.831 (0) Recording as successfully uploaded: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip (27fddcee81bbaafc0a6d5b75b8320888)
+0547.842 (0) Deleting local file: backup_2017-04-13-1106_EquityX_b009084e0fba-themes.zip: OK
+0548.462 (0) Google Drive quota usage: used=1414.6 MB, total=30720 MB, available=29305.4 MB
+0548.464 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-uploads.zip: Attempting to upload to Google Drive (into folder id: 0B_9Cis3XxDMrM3p0eC11Vkt1X1E)
+0550.426 (0) The time we have been running (550.4) is approaching the resumption interval (578) - increasing resumption interval to 581
+0550.428 (0) Googledrive chunked upload: 6.5 % uploaded (1048576)
+0551.777 (0) The time we have been running (551.8) is approaching the resumption interval (581) - increasing resumption interval to 582
+0551.784 (0) Googledrive chunked upload: 13.1 % uploaded (2097152)
+0553.135 (0) The time we have been running (553.1) is approaching the resumption interval (582) - increasing resumption interval to 584
+0553.144 (0) Googledrive chunked upload: 19.6 % uploaded (3145728)
+0554.487 (0) The time we have been running (554.5) is approaching the resumption interval (584) - increasing resumption interval to 585
+0554.494 (0) Googledrive chunked upload: 26.1 % uploaded (4194304)
+0555.842 (0) The time we have been running (555.8) is approaching the resumption interval (585) - increasing resumption interval to 586
+0555.848 (0) The scheduled resumption is within 45 seconds - will reschedule
+0555.852 (0) Rescheduling resumption 1: moving to 631 seconds from now (1492075558)
+0555.856 (0) To decrease the likelihood of overlaps, increasing resumption interval to: 586 + 45 = 631
+0555.857 (0) Googledrive chunked upload: 32.6 % uploaded (5242880)
+0557.219 (0) Googledrive chunked upload: 39.2 % uploaded (6291456)
+0558.575 (0) Googledrive chunked upload: 45.7 % uploaded (7340032)
+0559.919 (0) Googledrive chunked upload: 52.2 % uploaded (8388608)
+0561.279 (0) Googledrive chunked upload: 58.7 % uploaded (9437184)
+0562.636 (0) Googledrive chunked upload: 65.3 % uploaded (10485760)
+0563.950 (0) Googledrive chunked upload: 71.8 % uploaded (11534336)
+0565.262 (0) Googledrive chunked upload: 78.3 % uploaded (12582912)
+0566.576 (0) Googledrive chunked upload: 84.8 % uploaded (13631488)
+0567.934 (0) Googledrive chunked upload: 91.4 % uploaded (14680064)
+0569.312 (0) Googledrive chunked upload: 97.9 % uploaded (15728640)
+0570.764 (0) Googledrive chunked upload: 100 % uploaded (15728640)
+0570.773 (0) OK: Archive backup_2017-04-13-1106_EquityX_b009084e0fba-uploads.zip uploaded to Google Drive in 22.31 seconds
+0570.778 (0) Recording as successfully uploaded: backup_2017-04-13-1106_EquityX_b009084e0fba-uploads.zip (f0cf7887af8ae2fb9f1d50a456853902)
+0570.791 (0) Deleting local file: backup_2017-04-13-1106_EquityX_b009084e0fba-uploads.zip: OK
+0571.382 (0) Google Drive quota usage: used=1430 MB, total=30720 MB, available=29290 MB
+0571.385 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-others.zip: Attempting to upload to Google Drive (into folder id: 0B_9Cis3XxDMrM3p0eC11Vkt1X1E)
+0573.202 (0) Googledrive chunked upload: 100 % uploaded
+0573.210 (0) OK: Archive backup_2017-04-13-1106_EquityX_b009084e0fba-others.zip uploaded to Google Drive in 1.82 seconds
+0573.216 (0) Recording as successfully uploaded: backup_2017-04-13-1106_EquityX_b009084e0fba-others.zip (dc6ac68ab05520a0d324ecf707bee888)
+0573.222 (0) Deleting local file: backup_2017-04-13-1106_EquityX_b009084e0fba-others.zip: OK
+0573.789 (0) Google Drive quota usage: used=1430 MB, total=30720 MB, available=29290 MB
+0573.792 (0) backup_2017-04-13-1106_EquityX_b009084e0fba-db.gz: Attempting to upload to Google Drive (into folder id: 0B_9Cis3XxDMrM3p0eC11Vkt1X1E)
+0576.000 (0) Googledrive chunked upload: 100 % uploaded
+0576.010 (0) OK: Archive backup_2017-04-13-1106_EquityX_b009084e0fba-db.gz uploaded to Google Drive in 2.21 seconds
+0576.015 (0) Recording as successfully uploaded: backup_2017-04-13-1106_EquityX_b009084e0fba-db.gz (fd1a14b130782be692c7f7589b5ad0e8)
+0576.024 (0) Deleting local file: backup_2017-04-13-1106_EquityX_b009084e0fba-db.gz: OK
+0576.031 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0576.034 (0) Number of backup sets in history: 3; groups (db): 1
+0576.037 (0) Examining (for databases) backup set with group_id=0, nonce=b009084e0fba, datestamp=1492074371 (Apr 13 2017 09:06:11)
+0576.039 (0) This backup set is the backup set just made, so will not be deleted.
+0576.040 (0) Examining (for databases) backup set with group_id=0, nonce=c41d74da494c, datestamp=1490601425 (Mar 27 2017 07:57:05)
+0576.041 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0576.042 (0) Examining (for databases) backup set with group_id=0, nonce=f1c7e6ace162, datestamp=1490172964 (Mar 22 2017 08:56:04)
+0576.043 (0) 1490172964: db: this set includes a database (backup_2017-03-22-1056_EquityX_f1c7e6ace162-db.gz); db count is now 2
+0576.044 (0) 1490172964: db: over retain limit (2); will delete this database
+0576.046 (0) Delete file: backup_2017-03-22-1056_EquityX_f1c7e6ace162-db.gz, service=googledrive
+0577.905 (0) backup_2017-03-22-1056_EquityX_f1c7e6ace162-db.gz: Deletion successful
+0577.914 (0) This backup set remains non-empty (f=1/d=0); will retain in history
+0577.917 (0) Number of backup sets in history: 3; groups (files): 1
+0577.919 (0) Examining (for files) backup set with nonce=b009084e0fba, datestamp=1492074371 (Apr 13 2017 09:06:11)
+0577.922 (0) This backup set is the backup set just made, so will not be deleted.
+0577.924 (0) This backup set is the backup set just made, so will not be deleted.
+0577.925 (0) This backup set is the backup set just made, so will not be deleted.
+0577.925 (0) This backup set is the backup set just made, so will not be deleted.
+0577.926 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0577.928 (0) Examining (for files) backup set with nonce=c41d74da494c, datestamp=1490601425 (Mar 27 2017 07:57:05)
+0577.929 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0577.931 (0) Examining (for files) backup set with nonce=f1c7e6ace162, datestamp=1490172964 (Mar 22 2017 08:56:04)
+0577.932 (0) plugins: over retain limit (2); will delete this file entity
+0577.934 (0) themes: over retain limit (2); will delete this file entity
+0577.936 (0) uploads: over retain limit (2); will delete this file entity
+0577.936 (0) others: over retain limit (2); will delete this file entity
+0577.937 (0) Delete file: backup_2017-03-22-1056_EquityX_f1c7e6ace162-plugins.zip, service=googledrive
+0577.939 (0) Delete file: backup_2017-03-22-1056_EquityX_f1c7e6ace162-themes.zip, service=googledrive
+0577.940 (0) Delete file: backup_2017-03-22-1056_EquityX_f1c7e6ace162-uploads.zip, service=googledrive
+0577.942 (0) Delete file: backup_2017-03-22-1056_EquityX_f1c7e6ace162-others.zip, service=googledrive
+0580.124 (0) backup_2017-03-22-1056_EquityX_f1c7e6ace162-others.zip: Deletion successful
+0581.018 (0) backup_2017-03-22-1056_EquityX_f1c7e6ace162-uploads.zip: Deletion successful
+0581.880 (0) backup_2017-03-22-1056_EquityX_f1c7e6ace162-themes.zip: Deletion successful
+0582.789 (0) backup_2017-03-22-1056_EquityX_f1c7e6ace162-plugins.zip: Deletion successful
+0582.794 (0) This backup set is now empty; will remove from history
+0582.796 (0) Deleting log file (log.f1c7e6ace162.txt)
+0582.798 (0) Retain: saving new backup history (sets now: 2) and finishing retain operation
+0582.803 (0) Resume backup (b009084e0fba, 0): finish run
+0582.809 (0) Decremented the semaphore (fd) by 1
+0582.811 (0) Semaphore (fd) unlocked
+0582.812 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0582.818 (0) Fetching RSS news feed
+0583.690 (0) Fetched RSS news feed; result is a: SimplePie
+0584.456 (0) Sending email ('Files and database (Full backup)') report (attachments: 0, size: 0 KB) to: admin...
+0584.787 (0) The backup apparently succeeded and is now complete
