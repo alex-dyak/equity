@@ -157,6 +157,7 @@ input[type="submit"],
     padding-right: 15px;
     padding-left: 57px;
     text-align: left;
+    min-width: 240px;
     font-size: $fontSize-smaller;
     @include breakpoint(large) {
         min-width: 240px;
