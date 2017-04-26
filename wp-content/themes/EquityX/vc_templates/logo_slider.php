@@ -22,7 +22,11 @@ if ( ! empty( $quantity ) ) :
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 					<div class="logoSlider-item-logo">
 						<?php if ( ! empty ( get_field( 'image_clients_logo' ) ) ) : ?>
-							<a href="<?php echo get_home_url() . '/our-partners'; ?>" target="_blank"><img src="<?php echo get_field( 'image_clients_logo' ); ?>" alt=""></a>
+							<?php if ( ! empty ( get_field( 'partners_link' ) ) ) : ?>
+								<a href="<?php echo get_field( 'partners_link' ); ?>" target="_blank"><img src="<?php echo get_field( 'image_clients_logo' ); ?>" alt=""></a>
+							<?php else: ?>
+								<a href="<?php echo get_home_url() . '/our-partners'; ?>" target="_blank"><img src="<?php echo get_field( 'image_clients_logo' ); ?>" alt=""></a>
+							<?php endif; ?>
 						<?php endif; ?>
 					</div>
 				<?php endwhile; ?>
