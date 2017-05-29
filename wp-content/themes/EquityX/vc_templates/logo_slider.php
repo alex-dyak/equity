@@ -12,7 +12,7 @@ if ( ! empty( $quantity ) ) :
 	);
 	$query      = new WP_Query( $query_args );
 	?>
-	<div class="logoSlider js-LogoSlider <?php echo $css_class; ?>"
+	<div class="logoSlider js-LogoSlider <?php if ( $css_class ) echo $css_class; ?>"
 		 data-slick='{"slidesToShow": 1,
 	"slidesToScroll": <?php echo $slides_to_scroll; ?>,
 	"autoplaySpeed": <?php echo $speed; ?> }'>
