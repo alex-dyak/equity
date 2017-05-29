@@ -606,6 +606,14 @@ function logo_slider() {
 					"param_name"  => "autoplay_speed",
 					"description" => __( "Enter the autoplay speed.", "EquityX" )
 				),
+				array(
+					"type"        => "textfield",
+					"holder"      => "div",
+					"class"       => "",
+					"heading"     => __( "Custom CSS class", "EquityX" ),
+					"param_name"  => "css_class",
+					"description" => __( "Enter Custom CSS class.", "EquityX" )
+				),
 			),
 		)
 	);
