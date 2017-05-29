@@ -652,7 +652,7 @@ class Homepage_Intro_Section_Widget extends WP_Widget {
 
 		echo $args['before_widget']; ?>
 
-		<div class="intro_section_widget introSection">
+		<div class="intro_section_widget introSection introSection--frontPage">
 			<h1 class="introSection-title"><?php echo $intro_title; ?></h1>
 			<div class="introSection-description"><?php echo $intro_description; ?></div>
 			<?php if (!empty($intro_video_url)): ?>

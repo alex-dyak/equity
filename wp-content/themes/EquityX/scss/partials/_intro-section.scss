@@ -126,3 +126,30 @@
 		background: #000;
 	}
 }
+.introSection--frontPage {
+	text-align: center;
+	.introSection-title {
+		max-width: 580px;
+		padding: 0 15px;
+		margin: 0 auto 20px;
+		text-align: center;
+		font-size: $fontSize-introTitle--small-v2;
+		@include breakpoint(large) {
+			font-size: $fontSize-introTitle--medium-v2;
+		}
+		@include breakpoint(xlarge) {
+			font-size: $fontSize-introTitle--large-v2;
+		}
+	}
+	.introSection-video {
+		display: none;
+	}
+	.introSection-description {
+		max-width: 550px;
+		padding: 0 15px;
+		margin: 0 auto 40px;
+	}
+	.introSection-social {
+		display: block;
+	}
+}
