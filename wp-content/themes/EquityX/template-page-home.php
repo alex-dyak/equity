@@ -27,30 +27,30 @@ get_header(); ?>
 						<div class="container">
 
 							<article class="post" id="post-<?php the_ID(); ?>">
-									<section class="row column">
-										<div class="intro_section_widget introSection">
-											<?php if ( ! empty( $template_intro_title ) ) : ?>
-												<h1 class="introSection-title"><?php echo $template_intro_title; ?></h1>
-											<?php endif; ?>
-											<?php if ( ! empty( $template_intro_descript ) ) : ?>
-												<div class="introSection-description"><?php echo $template_intro_descript; ?></div>
-											<?php endif; ?>
-											<?php if ( ! empty( $template_intro_video_url && $template_video_caption ) ) : ?>
-												<div class="introSection-video">
-													<a class="js-videoBox introSection-video-trigger" href="#video-popup">
-														<span class="introSection-video-trigger-icon"></span>
-														<img src="<?php echo $template_video_caption; ?>" alt="">
-													</a>
-												</div>
-											<?php endif; ?>
-											<div class="introSection-social">
-											</div>
-											<div id="video-popup" class="introSection-popup mfp-hide">
-												<div class="mfp-iframe-scaler">
-													<iframe src="<?php echo $template_intro_video_url ?>" frameborder="0" allowfullscreen class="js-video-iFrame"></iframe>
-												</div>
-											</div>
-									</section>
+								<section class="row column">
+                                    <div class="intro_section_widget introSection">
+                                        <?php if ( ! empty( $template_intro_title ) ) : ?>
+                                            <h1 class="introSection-title"><?php echo $template_intro_title; ?></h1>
+                                        <?php endif; ?>
+                                        <?php if ( ! empty( $template_intro_descript ) ) : ?>
+                                            <div class="introSection-description"><?php echo $template_intro_descript; ?></div>
+                                        <?php endif; ?>
+                                        <?php if ( ! empty( $template_intro_video_url && $template_video_caption ) ) : ?>
+                                            <div class="introSection-video">
+                                                <a class="js-videoBox introSection-video-trigger" href="#video-popup">
+                                                    <span class="introSection-video-trigger-icon"></span>
+                                                    <img src="<?php echo $template_video_caption; ?>" alt="">
+                                                </a>
+                                            </div>
+                                        <?php endif; ?>
+                                        <div class="introSection-social">
+                                        </div>
+                                        <div id="video-popup" class="introSection-popup mfp-hide">
+                                            <div class="mfp-iframe-scaler">
+                                                <iframe src="<?php echo $template_intro_video_url ?>" frameborder="0" allowfullscreen class="js-video-iFrame"></iframe>
+                                            </div>
+                                        </div>
+								</section>
 
 									<div class="entry">
 										<?php the_content(); ?>
