@@ -74,7 +74,7 @@
             });
             $('.js-testimonialsSlider').slick({
                 infinite: true,
-                //autoplay: true,
+                autoplay: true,
                 draggable: false,
                 arrows: false,
                 dots: true,
