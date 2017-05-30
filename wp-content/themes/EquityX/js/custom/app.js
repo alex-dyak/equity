@@ -77,6 +77,7 @@
                 autoplay: true,
                 draggable: false,
                 arrows: false,
+                dots: true,
                 responsive: [
                     {
                         breakpoint: 1024,

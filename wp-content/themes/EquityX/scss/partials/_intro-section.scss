@@ -1,7 +1,7 @@
 .introSection {
 	position: relative;
-	margin-top: 180px;
-	margin-bottom: 100px;
+	margin-top: 130px;
+	margin-bottom: 30px;
 	padding: 0 10px;
 	text-align: center;
 	@include breakpoint(medium) {
@@ -10,11 +10,11 @@
 		text-align: left;
 	}
 	@include breakpoint(large) {
-		margin-top: 250px;
-		margin-bottom: 160px;
+		margin-top: 150px;
+		margin-bottom: 50px;
 	}
 	@include breakpoint(xlarge) {
-		margin-top: 245px;
+		margin-top: 180px;
 	}
 }
 .introSection-title {
@@ -148,6 +148,7 @@
 		max-width: 550px;
 		padding: 0 15px;
 		margin: 0 auto 40px;
+		font-size: 24px;
 	}
 	.introSection-social {
 		display: block;

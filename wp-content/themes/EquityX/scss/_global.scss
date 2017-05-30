@@ -10,7 +10,7 @@ body {
     font-size: $fontSize-base;
     font-weight: $fontWeight-light;
     line-height: $lineHeight-base;
-    color: $black;
+    color: $stone;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: none;
     -webkit-font-smoothing: antialiased;
@@ -40,7 +40,7 @@ h1 {
     font-size: $fontSize-h1--small;
     font-weight: $fontWeight-normal;
     line-height: $lineHeight-stightest;
-    color: $black--light;
+    color: $stone;
     @include breakpoint(medium) {
         margin-bottom: 20px;
         font-size: $fontSize-h1--medium;
@@ -56,7 +56,7 @@ h2 {
     font-size: $fontSize-large;
     font-weight: $fontWeight-normal;
     line-height: $lineHeight-stightest;
-    color: $black--light;
+    color: $stone;
     @include breakpoint(medium) {
         margin-bottom: 20px;
         font-size: $fontSize-larger;
@@ -72,7 +72,7 @@ h3 {
     font-size: $fontSize-large;
     font-weight: $fontWeight-normal;
     line-height: $lineHeight-tightest;
-    color: $black--light;
+    color: $stone;
     @include breakpoint(medium) {
         margin-bottom: 15px;
         font-size: $fontSize-larger;
@@ -84,7 +84,7 @@ h4 {
     font-size: $fontSize-large;
     font-weight: $fontWeight-normal;
     line-height: $lineHeight-tighter;
-    color: $black--light;
+    color: $stone;
 }
 blockquote {
     margin: 1em 0;
@@ -154,19 +154,19 @@ ol {
         }
     }
 }
-.parallax-mirror {
-    &::before {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        content: "";
-        width: 100%;
-        height: 20%;
-        background: $mystic;
-        background: linear-gradient(to bottom, $mystic--0op 0%, $mystic 100%);
-        z-index: 200;
-    }
-}
+//.parallax-mirror {
+//    &::before {
+//        position: absolute;
+//        bottom: 0;
+//        left: 0;
+//        content: "";
+//        width: 100%;
+//        height: 20%;
+//        background: $mystic;
+//        background: linear-gradient(to bottom, $mystic--0op 0%, $mystic 100%);
+//        z-index: 200;
+//    }
+//}
 .mfp-close {
     position: fixed;
     width: 50px !important;
