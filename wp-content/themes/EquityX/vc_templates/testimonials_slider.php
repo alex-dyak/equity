@@ -32,7 +32,7 @@ if ( ! empty( $quantity ) ) :
 									$attachment_id = get_post_thumbnail_id();
 									?>
 									<div class="testimonials-image">
-										<?php echo wp_get_attachment_image( $attachment_id, 'medium' ); ?>
+										<?php echo wp_get_attachment_image( $attachment_id, 'testimonial_size' ); ?>
 									</div>
 								<?php endif; ?>
 								<?php if ( ! empty( $meta_values ) ) : ?>

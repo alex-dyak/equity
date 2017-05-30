@@ -47,6 +47,11 @@ function w4ptheme_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'title-tag' );
 
+	// Add image size.
+	if ( function_exists( 'add_image_size' ) ) {
+		add_image_size( 'testimonial_size', 300, 205, TRUE );
+	}
+
 	if ( function_exists( 'add_image_size' ) ) {
 		add_image_size( 'footer_logo', 240, 89, true );
 		add_image_size( 'logo_150_111', 150, 111, true );
