@@ -121,10 +121,6 @@
 						<?php _e( 'Login', 'EquityX' ); ?>
 					</a>
 				<?php endif; ?>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		        <a href="#login-popup" class="btn btn--join js-loginPopup" title="<?php _e( 'join us!', 'EquityX' ); ?>">
-			        <?php _e( 'join us!', 'EquityX' ); ?>
-		        </a>
 
 		        <div id="login-popup" class="loginPopup mfp-hide">
 					<div class="loginPopup-deco"></div>
