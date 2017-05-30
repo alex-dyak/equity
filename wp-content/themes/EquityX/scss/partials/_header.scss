@@ -36,6 +36,7 @@ body:not(.home) {
 }
 .mainHeader .container {
     position: relative;
+    min-height: 40px;
 }
 .mainHeader-logo {
     position: absolute;
