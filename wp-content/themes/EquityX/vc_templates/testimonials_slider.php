@@ -31,8 +31,8 @@ if ( ! empty( $quantity ) ) :
 						<div class="testimonials-item-innerAlignment">
 							<div class="testimonials-excerpt">
 								<?php echo
-									substr(get_the_excerpt(), 0,350);
-								?>
+									substr(get_the_excerpt(), 0,120);
+								?>...
 							</div>
 						</div>
                         <div class="testimonials-authorInfo">

@@ -25,8 +25,7 @@
 
 	<div class="footer-logo">
 		<a target="_self" href="<?php echo get_home_url(); ?>">
-			<img class="attachment-240x89"
-				 src="<?php echo get_template_directory_uri(); ?>/img/Logo/logo-2in1-min.png">
+            <img src="http://www.equityx.com/wp-content/uploads/2016/11/logo-1-min.png" alt="">
 		</a>
 	</div>
 
