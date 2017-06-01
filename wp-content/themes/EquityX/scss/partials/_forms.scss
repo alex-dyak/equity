@@ -293,18 +293,23 @@ input[type="submit"],
     }
 }
 .topLineSection-box {
-    width: 50% !important;
+    width: auto !important;
     line-height: 1;
+    @include breakpoint(medium) {
+        width: 50% !important;
+    }
     .vc_column-inner {
         display: inline-block;
         width: auto;
-        padding: 0 10px;
+        padding: 0 5px;
         @include breakpoint(large) {
             padding: 0 30px;
         }
     }
     + .topLineSection-box {
-        border-left: 1px solid #b5bcc4;
+        @include breakpoint(medium) {
+            border-left: 1px solid #b5bcc4;
+        }
     }
 }
 .strangeBackground {
