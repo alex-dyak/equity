@@ -19,7 +19,7 @@ get_header(); ?>
 	<?php endif; ?>
 </div> <!-- Parallax section -->
 
-<div class="main defaultPage"> <!-- Start main container -->
+<div class="main defaultPageTemplate"> <!-- Start main container -->
 	<div class="container">
 
 <?php if ( have_posts() ) :
