@@ -456,3 +456,109 @@ ol {
         }
     }
 }
+.decoFlexContainer {
+    position: relative;
+    margin-bottom: 30px;
+    @include breakpoint(medium) {
+        margin-bottom: 0;
+    }
+    .vc_column-inner {
+        padding: 0 !important;
+        justify-content: center;
+        h3 {
+            font-size: 20px;
+            @include breakpoint(medium) {
+                font-size: 2.2vw;
+            }
+        }
+    }
+    .decoFlexContainer-image {
+        margin-bottom: 15px;
+        img {
+            width: 100%;
+            max-width: 80px;
+        }
+    }
+}
+.topLine-item {
+    position: relative;
+    height: 170px;
+    @include breakpoint(large) {
+        height: 296px;
+        margin-top: 60px;
+    }
+    img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 150px;
+        max-width: none;
+        @include breakpoint(large) {
+            width: 265px;
+        }
+    }
+}
+.bottomLine-item {
+    position: relative;
+    height: 160px;
+    @include breakpoint(large) {
+        height: 280px;
+    }
+    img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 21px;
+        max-width: none;
+        @include breakpoint(large) {
+            width: 37px;
+        }
+    }
+}
+.defaultPageTemplate {
+    padding: 120px 15px 0;
+    //padding-top: 170px;
+    background: $white;
+    @include breakpoint(medium) {
+        padding: 170px 0 0;
+    }
+}
+.styledText {
+    ul {
+        margin: 0 0 25px;
+        list-style: none;
+        font-family: $font-light;
+        li {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 25px;
+            &::before {
+                position: absolute;
+                top: 5px;
+                left: 18px;
+                width: 12px;
+                height: 12px;
+                content: "";
+                border-radius: 100%;
+                background: #03a9f4;
+            }
+        }
+    }
+}
+.motivationBox-image {
+    margin-bottom: 20px;
+    img {
+        width: 45px;
+        @include breakpoint(medium) {
+            width: 90px;
+        }
+    }
+}
+.coloredSection {
+    padding: 60px 0;
+    .vc_column-inner {
+        padding-top: 0 !important;
+    }
+}
