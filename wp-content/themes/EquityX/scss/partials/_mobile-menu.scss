@@ -7,7 +7,6 @@
 	}
 }
 .mobileMenu {
-	display: none; /*remove if menu needed*/
 	@include breakpoint(large) {
 		display: none;
 	}

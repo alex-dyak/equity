@@ -1,5 +1,4 @@
 .mainNavigation {
-	display: none; /*remove if menu needed*/
 	float: left;
 	margin-top: 10px;
 	.menu {
@@ -37,10 +36,10 @@
 	}
 }
 .mainNavigation-menuItem {
-	display: none;  /*remove if menu needed*/
+	display: none;
 	@include breakpoint(large) {
-		//display: block;  /*uncomment if menu needed*/
-		opacity: 0;
+		display: block;
+		//opacity: 0;
 	}
 }
 .menu {
