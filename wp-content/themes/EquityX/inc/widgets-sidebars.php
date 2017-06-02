@@ -664,7 +664,7 @@ class Homepage_Intro_Section_Widget extends WP_Widget {
 				</div>
 			<?php endif; ?>
 			<div class="introSection-social">
-				<a href="https://app.equityx.com/" class="btn js-loginPopup" title="<?php _e( 'join us!', 'EquityX' ); ?>">
+				<a href="https://app.equityx/users/auth/linkedin?startup=true" class="btn js-loginPopup" title="<?php _e( 'join us!', 'EquityX' ); ?>">
 					<?php _e( 'join us!', 'EquityX' ); ?>
 				</a>
 			</div>
