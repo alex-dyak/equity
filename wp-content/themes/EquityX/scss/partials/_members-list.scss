@@ -1,34 +1,56 @@
 .membersList {
-	margin: 70px 0 10px;
+	margin: 70px -15px 10px;
 	text-align: center;
+	font-size: 0;
+	line-height: 0;
 	@include breakpoint(large) {
 		margin-bottom: 30px;
 	}
 }
 .membersList-item {
 	position: relative;
+	padding: 0 15px;
 	margin-bottom: 45px;
-	@include breakpoint(medium) {
-		width: 48%;
-		display: inline-block;
-		padding-bottom: 35px;
+	font-size: $fontSize-base;
+	line-height: $lineHeight-base;
+	text-align: center;
+	@media screen and (min-width: 480px) {
+		float: left;
+		width: 50%;
+		//padding-bottom: 35px;
 		margin-bottom: 40px;
 		vertical-align: top;
 	}
 	@include breakpoint(large) {
-		float: left;
 		width: 25%;
 	}
 }
 .membersList-item-inner {
-	padding: 0 40px;
+	position: relative;
+	display: inline-block;
+	max-width: 260px;
+	width: 100%;
+	background: $white;
+	border: 1px solid #d4e5e7;
 }
 .membersList-item-inner-image {
-	max-width: 150px;
-	height: 150px;
-	margin: 0 auto 20px;
-	border-radius: 100%;
+	position: relative;
+	height: 215px;
+	//max-width: 150px;
+	//margin: 0 auto 20px;
+	//border-radius: 100%;
 	overflow: hidden;
+	img {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+	}
+}
+.membersList-item-inner-wrap {
+	padding: 20px 20px 15px;
+	text-align: left;
 }
 .membersList-item-inner-title {
 	margin-bottom: 5px;
@@ -37,27 +59,29 @@
 	color: $blue--darkest;
 	text-transform: uppercase;
 	@include breakpoint(medium) {
-		margin-bottom: 15px;
 		font-size: $fontSize-teamTitle--large;
 	}
 }
 .membersList-item-inner-content {
-	margin-bottom: 20px;
-	font-size: $fontSize-small;
+	margin-bottom: 10px;
+	font-size: 13px;
 	line-height: $lineHeight-tight;
 	font-family: $font-light;
 	color: $blueSea;
 }
 .membersList-item-inner-contacts {
 	width: 100%;
-	@include breakpoint(large) {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-	}
+	//@include breakpoint(large) {
+	//	position: absolute;
+	//	bottom: 0;
+	//	left: 0;
+	//}
 	li {
 		display: inline-block;
-		margin: 0 15px;
+		margin: 0 7px;
+		&:first-child {
+			margin-left: 0;
+		}
 		a,
 		span {
 			display: block;

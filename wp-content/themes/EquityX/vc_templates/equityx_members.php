@@ -35,53 +35,55 @@ if ( ! empty( $quantity ) ) :
 						<?php the_post_thumbnail(); ?>
 					</div>
 				<?php endif; ?>
-				<?php if ( get_the_title() ) : ?>
-					<p class="membersList-item-inner-title">
-						<?php echo strtoupper( esc_html_e( get_the_title() ) ); ?>
-					</p>
-				<?php endif; ?>
-				<?php if ( ! empty( get_the_content() ) ) : ?>
-					<div class="membersList-item-inner-content">
-						<?php echo strtoupper( strip_tags( get_the_content() ) ); ?>
-					</div>
-				<?php endif; ?>
-				<ul class="u-list--plain membersList-item-inner-contacts">
-					<?php if ( get_field( 'linkedin' ) ) : ?>
-						<li>
-							<a href="<?php echo strip_tags( get_field( 'linkedin' ) ); ?>" class="contactsIco-linkedIn" target="_blank">
-								<svg class="svgIcon linkedInFilled">
-									<use xlink:href="#filllinkedin" />
-								</svg>
-							</a>
-						</li>
-					<?php else : ?>
-						<li>
-							<span class="contactsIco-linkedIn">
-								<svg class="svgIcon linkedInFilled">
-									<use xlink:href="#filllinkedin" />
-								</svg>
-							</span>
-						</li>
-					<?php endif; ?>
+                <div class="membersList-item-inner-wrap">
+                    <?php if ( get_the_title() ) : ?>
+                        <p class="membersList-item-inner-title">
+                            <?php echo strtoupper( esc_html_e( get_the_title() ) ); ?>
+                        </p>
+                    <?php endif; ?>
+                    <?php if ( ! empty( get_the_content() ) ) : ?>
+                        <div class="membersList-item-inner-content">
+                            <?php echo strtoupper( strip_tags( get_the_content() ) ); ?>
+                        </div>
+                    <?php endif; ?>
+                    <ul class="u-list--plain membersList-item-inner-contacts">
+                        <?php if ( get_field( 'linkedin' ) ) : ?>
+                            <li>
+                                <a href="<?php echo strip_tags( get_field( 'linkedin' ) ); ?>" class="contactsIco-linkedIn" target="_blank">
+                                    <svg class="svgIcon linkedInFilled">
+                                        <use xlink:href="#filllinkedin" />
+                                    </svg>
+                                </a>
+                            </li>
+                        <?php else : ?>
+                            <li>
+                                <span class="contactsIco-linkedIn">
+                                    <svg class="svgIcon linkedInFilled">
+                                        <use xlink:href="#filllinkedin" />
+                                    </svg>
+                                </span>
+                            </li>
+                        <?php endif; ?>
 
-					<?php if ( get_field( 'twitter' ) ) : ?>
-						<li>
-							<a href="<?php echo strip_tags( get_field( 'twitter' ) ); ?>" class="contactsIco-twitterIco" target="_blank">
-								<svg class="svgIcon twitterIco">
-									<use xlink:href="#twitter" />
-								</svg>
-							</a>
-						</li>
-					<?php else : ?>
-						<li>
-							<span class="contactsIco-twitterIco">
-								<svg class="svgIcon twitterIco">
-									<use xlink:href="#twitter" />
-								</svg>
-							</span>
-						</li>
-					<?php endif; ?>
-				</ul>
+                        <?php if ( get_field( 'twitter' ) ) : ?>
+                            <li>
+                                <a href="<?php echo strip_tags( get_field( 'twitter' ) ); ?>" class="contactsIco-twitterIco" target="_blank">
+                                    <svg class="svgIcon twitterIco">
+                                        <use xlink:href="#twitter" />
+                                    </svg>
+                                </a>
+                            </li>
+                        <?php else : ?>
+                            <li>
+                                <span class="contactsIco-twitterIco">
+                                    <svg class="svgIcon twitterIco">
+                                        <use xlink:href="#twitter" />
+                                    </svg>
+                                </span>
+                            </li>
+                        <?php endif; ?>
+                    </ul>
+                </div>
 			</div>
 		</div>
 
