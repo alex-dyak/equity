@@ -5,6 +5,10 @@
 
 get_header(); ?>
 
+<!-- FRONT PAGE TEMPLATE -->
+<!-- FRONT PAGE TEMPLATE -->
+<!-- FRONT PAGE TEMPLATE -->
+
 <div class="parallaxHolder">
     <?php if(get_the_post_thumbnail()): ?>
         <div class="parallaxHolder-item" data-parallax="scroll" data-image-src="<?php the_post_thumbnail_url(); ?>"></div>

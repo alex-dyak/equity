@@ -5,6 +5,10 @@
 
 get_header(); ?>
 
+<!-- HOME PAGE TEMPLATE -->
+<!-- HOME PAGE TEMPLATE -->
+<!-- HOME PAGE TEMPLATE -->
+
 <div class="parallaxHolder">
 	<?php if ( get_the_post_thumbnail() ): ?>
 		<div class="parallaxHolder-item" data-parallax="scroll"
@@ -28,7 +32,7 @@ get_header(); ?>
 
 							<article class="post" id="post-<?php the_ID(); ?>">
 								<section class="row column">
-                                    <div class="intro_section_widget introSection">
+                                    <div class="intro_section_widget introSection introSection--large">
                                         <?php if ( ! empty( $template_intro_title ) ) : ?>
                                             <h1 class="introSection-title"><?php echo $template_intro_title; ?></h1>
                                         <?php endif; ?>

@@ -16,6 +16,10 @@
 
 get_header(); ?>
 
+<!-- INDEX PAGE TEMPLATE -->
+<!-- INDEX PAGE TEMPLATE -->
+<!-- INDEX PAGE TEMPLATE -->
+
 <div class="parallaxHolder">
 	<?php
 	$image = get_option( 'w4p_background_img' );
