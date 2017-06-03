@@ -1,8 +1,7 @@
 #footer {
-	padding-top: 50px;
+	padding-top: 20px;
 }
 .footer-menu {
-	display: none; /*remove to see block*/
 	position: relative;
 	padding-top: 6px;
 	margin-bottom: 20px;
@@ -20,7 +19,6 @@
 		background: linear-gradient(to right, rgba(9, 172, 248, 1) 0%, rgba(9, 172, 248, 1) 25%, rgba(80, 210, 195, 1) 25%, rgba(80, 210, 195, 1) 50%, rgba(255, 153, 0, 1) 50%, rgba(255, 153, 0, 1) 75%, rgba(237, 85, 100, 1) 75%, rgba(237, 85, 100, 1) 100%);
 	}
 	@include breakpoint(medium) {
-		padding-top: 35px;
 		margin-bottom: 45px;
 		background-color: transparent;
 		box-shadow: none;
