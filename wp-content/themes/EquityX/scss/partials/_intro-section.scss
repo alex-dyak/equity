@@ -17,6 +17,15 @@
 		margin-top: 180px;
 	}
 }
+.introSection--large {
+	@include breakpoint(large) {
+		margin-top: 200px;
+		margin-bottom: 150px;
+	}
+	@include breakpoint(xlarge) {
+		margin-top: 250px;
+	}
+}
 .introSection-title {
 	max-width: 280px;
 	margin: 0 auto 15px;

@@ -13,11 +13,9 @@
 
 get_header(); ?>
 
-<div class="parallaxHolder">
-	<?php if(get_the_post_thumbnail()): ?>
-		<div class="parallaxHolder-item" data-parallax="scroll" data-image-src="<?php the_post_thumbnail_url(); ?>"></div>
-	<?php endif; ?>
-</div> <!-- Parallax section -->
+<!-- DEFAULT PAGE TEMPLATE -->
+<!-- DEFAULT PAGE TEMPLATE -->
+<!-- DEFAULT PAGE TEMPLATE -->
 
 <div class="main defaultPageTemplate"> <!-- Start main container -->
 	<div class="container">

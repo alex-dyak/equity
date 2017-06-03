@@ -521,8 +521,14 @@ ol {
     padding: 120px 15px 0;
     //padding-top: 170px;
     background: $white;
+    font-family: $font-light;
+    font-size: $fontSize-small;
+    color: $gray--80op;
     @include breakpoint(medium) {
         padding: 170px 0 0;
+    }
+    @include breakpoint(large) {
+        font-size: $fontSize-base;
     }
 }
 .styledText {
@@ -560,5 +566,12 @@ ol {
     padding: 60px 0;
     .vc_column-inner {
         padding-top: 0 !important;
+    }
+}
+.fullWidthSection {
+    overflow: hidden;
+    .fullWidthSection-row {
+        margin: 0 -99999px;
+        padding: 0 99999px;
     }
 }

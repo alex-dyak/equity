@@ -5,17 +5,14 @@
 
 get_header(); ?>
 
+<!-- TESTIMONIALS PAGE TEMPLATE -->
+<!-- TESTIMONIALS PAGE TEMPLATE -->
+<!-- TESTIMONIALS PAGE TEMPLATE -->
 
-<div class="parallaxHolder">
-	<?php if ( get_the_post_thumbnail() ): ?>
-		<div class="parallaxHolder-item" data-parallax="scroll" data-image-src="<?php the_post_thumbnail_url(); ?>"></div>
-	<?php endif; ?>
-</div> <!-- Parallax section -->
-
-<div class="main defaultPage"> <!-- Start main container -->
+<div class="main defaultPageTemplate fullWidthSection"> <!-- Start main container -->
 	<div class="container">
-		<div class="defaultSection decoLines decoLines--fourLined">
-			<div class="defaultSection-inner">
+		<div class="fullWidthSection-row" style="background-color: #fff;">
+			<div class="fullWidthSection-row-inner" style="padding-top: 35px;">
 				<div class="u-clearfix">
 					<?php if ( get_the_title() ): ?>
 						<h2 class="vc_custom_heading u-text--center"><?php the_title(); ?></h2>
@@ -72,8 +69,8 @@ get_header(); ?>
 			</div>
 
 			<?php if ( is_active_sidebar( 'join-us-footer' ) ) : ?>
-				<div class="defaultSection">
-					<div class="defaultSection-inner joinUs">
+				<div class="fullWidthSection-row" style="background-color: #edfaf9 !important;">
+					<div class="fullWidthSection-row-inner joinUs">
 						<?php dynamic_sidebar( 'join-us-footer' ); ?>
 					</div>
 				</div>
