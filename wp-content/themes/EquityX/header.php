@@ -115,13 +115,22 @@
 				} else {
 					$login_user_link = '';
 				}
+				if ( isset( get_option( 'w4p_social_profiles' )['expert_link'][1] ) ) {
+					$expert_link = get_option( 'w4p_social_profiles' )['expert_link'][1];
+				} else {
+					$expert_link = '';
+				}
 				?>
 				<?php if ( $login_user_link ) : ?>
 					<a href="<?php echo $login_user_link; ?>" class="btn btn--login" title="<?php _e( 'Login', 'EquityX' ); ?>">
 						<?php _e( 'Login', 'EquityX' ); ?>
 					</a>
 				<?php endif; ?>
-
+                <?php if ( $expert_link ) : ?>
+                <a href="<?php echo $expert_link; ?>" class="btn btn--login" title="<?php _e( 'Become an Expert', 'EquityX' ); ?>">
+                    <?php _e( 'Become an Expert', 'EquityX' ); ?>
+                </a>
+                <?php endif; ?>
 		        <div id="login-popup" class="loginPopup mfp-hide">
 					<div class="loginPopup-deco"></div>
 					<div class="loginPopup-inner">
