@@ -95,8 +95,7 @@ class W4PThemeSettingsPage {
 			'login_linkedin'  => __( 'Login LinkedIn', 'EquityX' ),
 			'login_facebook'  => __( 'Login Facebook', 'EquityX' ),
 			'login_google'    => __( 'Login Google', 'EquityX' ),
-			'login_user_link' => __( 'Login User Link', 'EquityX' ),
-			'expert_link'     => __( 'Become Expert Link', 'EquityX' ),
+			'login_user_link'    => __( 'Login User Link', 'EquityX' ),
 		);
 		add_action( 'admin_menu', array( $this, 'add_plugin_page' ) );
 		add_action( 'admin_init', array( $this, 'page_init' ) );

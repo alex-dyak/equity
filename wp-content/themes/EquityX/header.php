@@ -115,11 +115,6 @@
 				} else {
 					$login_user_link = '';
 				}
-				if ( isset( get_option( 'w4p_social_profiles' )['expert_link'][1] ) ) {
-					$expert_link = get_option( 'w4p_social_profiles' )['expert_link'][1];
-				} else {
-					$expert_link = '';
-				}
 				?>
 				<?php if ( $login_user_link ) : ?>
 					<a href="<?php echo $login_user_link; ?>" class="btn btn--login" title="<?php _e( 'Login', 'EquityX' ); ?>">
