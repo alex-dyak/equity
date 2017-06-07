@@ -128,7 +128,7 @@
 				<?php endif; ?>
                 <?php if ( $expert_link ) : ?>
                 <a href="<?php echo $expert_link; ?>" class="btn btn--login" title="<?php _e( 'Join as an Expert', 'EquityX' ); ?>">
-                    <?php _e( 'Become an Expert', 'EquityX' ); ?>
+                    <?php _e( 'Join as an Expert', 'EquityX' ); ?>
                 </a>
                 <?php endif; ?>
 		        <div id="login-popup" class="loginPopup mfp-hide">
