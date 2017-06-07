@@ -649,6 +649,8 @@ class Homepage_Intro_Section_Widget extends WP_Widget {
 		$intro_description   = $instance['intro_description'];
 		$intro_video_url     = $instance['intro_video_url'];
 		$intro_video_caption = $instance['video_caption'];
+		$intro_button_name   = $instance['intro_button_name'];
+		$intro_button_url    = $instance['intro_button_url'];
 
 		echo $args['before_widget']; ?>
 
@@ -664,8 +666,8 @@ class Homepage_Intro_Section_Widget extends WP_Widget {
 				</div>
 			<?php endif; ?>
 			<div class="introSection-social">
-				<a href="https://app.equityx/users/auth/linkedin?startup=true" class="btn js-loginPopup" title="<?php _e( 'join us!', 'EquityX' ); ?>">
-					<?php _e( 'join us!', 'EquityX' ); ?>
+				<a href="<?php echo $intro_button_url ?>" class="btn js-loginPopup" title="<?php _e( $intro_button_name, 'EquityX' ); ?>">
+					<?php _e( $intro_button_name, 'EquityX' ); ?>
 				</a>
 			</div>
 
@@ -694,10 +696,12 @@ class Homepage_Intro_Section_Widget extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 		$instance                      = array();
 		$instance['intro_title']       = get_field( 'intro_title', 'widget_' . $this->id );
-		$instance['video_duration']       = get_field( 'video_duration', 'widget_' . $this->id );
+		$instance['video_duration']    = get_field( 'video_duration', 'widget_' . $this->id );
 		$instance['intro_description'] = get_field( 'intro_description', 'widget_' . $this->id );
 		$instance['intro_video_url']   = get_field( 'intro_video_url', 'widget_' . $this->id );
-		$instance['video_caption']   = get_field( 'video_caption', 'widget_' . $this->id );
+		$instance['video_caption']     = get_field( 'video_caption', 'widget_' . $this->id );
+		$instance['intro_button_name'] = get_field( 'intro_button_name', 'widget_' . $this->id );
+		$instance['intro_button_url']  = get_field( 'intro_button_url', 'widget_' . $this->id );
 
 		return $instance;
 	}
