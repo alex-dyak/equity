@@ -1,0 +1,24 @@
+[class*="-has-fill"] > .vc_column-inner {
+	padding-top: 0;
+}
+//.vc_row {
+//	@include breakpoint(small only) {
+//		margin-left: 0;
+//		margin-right: 0;
+//	}
+//}
+//.vc_column_container > .vc_column-inner {
+//	@include breakpoint(small only) {
+//		padding-left: 0;
+//		padding-right: 0;
+//	}
+//}
+.wpb_button, .wpb_content_element,
+ul.wpb_thumbnails-fluid > li {
+	@include breakpoint(small only) {
+		margin-bottom: 20px;
+	}
+}
+.wpb_widgetised_column {
+	position: relative;
+}

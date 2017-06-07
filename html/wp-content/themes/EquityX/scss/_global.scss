@@ -1,0 +1,458 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    min-width: 320px;
+    font-family: $font-base;
+    font-size: $fontSize-base;
+    font-weight: $fontWeight-light;
+    line-height: $lineHeight-base;
+    color: $stone;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: $mystic;
+}
+a {
+    color: $black;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+p {
+    margin: 0 0 1.421rem;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+h1 {
+    margin: 0 0 15px;
+    font-family: $font-base;
+    font-size: $fontSize-h1--small;
+    font-weight: $fontWeight-normal;
+    line-height: $lineHeight-stightest;
+    color: $stone;
+    @include breakpoint(medium) {
+        margin-bottom: 20px;
+        font-size: $fontSize-h1--medium;
+    }
+    @include breakpoint(large) {
+        margin-bottom: 30px;
+        font-size: $fontSize-h1--large;
+    }
+}
+h2 {
+    margin: 0 0 15px;
+    font-family: $font-base;
+    font-size: $fontSize-large;
+    font-weight: $fontWeight-normal;
+    line-height: $lineHeight-stightest;
+    color: $stone;
+    @include breakpoint(medium) {
+        margin-bottom: 20px;
+        font-size: $fontSize-larger;
+    }
+    @include breakpoint(large) {
+        margin-bottom: 30px;
+        font-size: $fontSize-largest;
+    }
+}
+h3 {
+    margin: 0 0 15px;
+    font-family: $font-base;
+    font-size: $fontSize-large;
+    font-weight: $fontWeight-normal;
+    line-height: $lineHeight-tightest;
+    color: $stone;
+    @include breakpoint(medium) {
+        margin-bottom: 15px;
+        font-size: $fontSize-larger;
+    }
+}
+h4 {
+    margin: 0 0 .75em;
+    font-family: $font-medium;
+    font-size: $fontSize-large;
+    font-weight: $fontWeight-normal;
+    line-height: $lineHeight-tighter;
+    color: $stone;
+}
+blockquote {
+    margin: 1em 0;
+    padding-left: 20px;
+    font-size: $fontSize-larger;
+    line-height: $lineHeight-tight;
+    border: 1px solid $black;
+    border-left-width: 26px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+ul,
+ol {
+    margin: 0 0 1em 3em;
+    padding: 0;
+}
+.caption,
+.wp-caption .wp-caption-text,
+.gallery-caption {
+    font-style: italic;
+    font-size: $fontSize-small;
+    color: $black;
+}
+#svgPlaceholder {
+    display: none;
+}
+.svgIcon {
+    fill: currentColor;
+}
+.container {
+    max-width: 1210px;
+    margin: 0 auto;
+    @include breakpoint(medium) {
+        padding: 0 15px;
+    }
+}
+.parallaxHolder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -100;
+    &::before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 20%;
+        background: $mystic;
+        background: linear-gradient(to bottom, $mystic--0op 0%, $mystic 100%);
+        z-index: 200;
+    }
+}
+.parallaxHolder-item {
+    width: 100%;
+    &::before {
+        content: "";
+        display: block;
+        height: 500px;
+        width: 100%;
+        @include breakpoint(medium) {
+            height: 0;
+            width: 100%;
+            padding-bottom: 50%;
+        }
+    }
+}
+//.parallax-mirror {
+//    &::before {
+//        position: absolute;
+//        bottom: 0;
+//        left: 0;
+//        content: "";
+//        width: 100%;
+//        height: 20%;
+//        background: $mystic;
+//        background: linear-gradient(to bottom, $mystic--0op 0%, $mystic 100%);
+//        z-index: 200;
+//    }
+//}
+.mfp-close {
+    position: fixed;
+    width: 50px !important;
+    height: 50px !important;
+    top: 0 !important;
+    right: 0 !important;
+    min-width: 50px;
+    font-size: 0;
+    cursor: pointer;
+    &::before,
+    &::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        content: "";
+        width: 30px;
+        height: 4px;
+        margin-left: -15px;
+        margin-top: -2px;
+        background: $white;
+        transition: background .3s;
+    }
+    &::before {
+        transform: rotate(45deg);
+    }
+    &::after {
+        transform: rotate(-45deg);
+    }
+    &:hover,
+    &:active {
+        background: transparent;
+        &::before,
+        &::after {
+            background: $blue;
+        }
+    }
+}
+.mfp-bg {
+    opacity: 1;
+    background: $black--light;
+}
+.playBtn {
+    display: inline-block;
+    font-size: $fontSize-small;
+    color: $black--light30op;
+    transition: all .3s;
+    @include breakpoint(medium) {
+        padding: 5px;
+        border-radius: 48px;
+        border: 1px solid $white;
+        background: $white--80op;
+        color: $black--light;
+        box-shadow: 0 5px 20px 0 $black--20op;
+    }
+    &:hover {
+        color: $blue;
+        text-decoration: none;
+        @include breakpoint(medium) {
+            background: $blue;
+            border-color: $blue;
+            color: $white;
+        }
+        .playBtn-icon {
+            background: $white;
+            &::before {
+                border-color: transparent transparent transparent $blue;
+            }
+        }
+    }
+    .playBtn-svg {
+        width: 50px;
+        height: 50px;
+        @include breakpoint(medium) {
+            display: none;
+        }
+    }
+    span {
+        display: none;
+        vertical-align: middle;
+        margin-right: 5px;
+        @include breakpoint(medium) {
+            display: inline-block;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    strong {
+        font-size: $fontSize-base;
+        font-family: $font-medium;
+    }
+}
+.playBtn-icon {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    background: $blue;
+    border-radius: 100%;
+    transition: all .3s;
+    &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        content: "";
+        margin-left: 2px;
+        border-style: solid;
+        border-width: 5px 0 5px 8px;
+        border-color: transparent transparent transparent $white;
+        transform: translateX(-50%) translateY(-50%);
+        transition: all .3s;
+    }
+}
+.plainSection {
+    margin: 0 -30px -15px;
+    font-family: $font-light;
+    color: $black--light80op;
+    background: $white;
+    .vc_row {
+        margin: 0;
+    }
+}
+.imageBullet-item {
+    margin-top: 35px;
+    p {
+        margin-bottom: 25px;
+        font-size: $fontSize-small;
+        line-height: $lineHeight-tight;
+        @include breakpoint(medium) {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 35px;
+        }
+        img {
+            display: block;
+            max-width: 45px;
+            margin: 0 auto;
+            padding-bottom: 15px;
+            @include breakpoint(medium) {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                max-width: 45px;
+                margin: 0;
+                padding-bottom: 0;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}
+.defaultSection {
+    .defaultSection-inner,
+    > .vc_column-inner > .wpb_wrapper {
+        padding: 30px 30px 10px 30px;
+        margin-bottom: 15px;
+        font-family: $font-light;
+        font-size: $fontSize-small;
+        color: $gray--80op;
+        background: $white;
+        box-shadow: 0 0 20px 0 $black--20op;
+        @include breakpoint(medium) {
+            padding-top: 50px;
+            border-radius: 3px;
+            box-shadow: 0 5px 20px 0 $black--20op;
+        }
+        @include breakpoint(large) {
+            font-size: $fontSize-base;
+        }
+    }
+}
+.infoIcon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    background: url("../images/info.png") 50% 50% no-repeat;
+    background-size: 100%;
+    transition: all .3s;
+    opacity: .3;
+    cursor: pointer;
+    backface-visibility: hidden;
+}
+.svgTwitter {
+    width: 14px;
+    height: 10px;
+}
+.svgLinkedin {
+    width: 14px;
+    height: 12px;
+}
+.svgFacebook {
+    width: 25px;
+    height: 30px;
+}
+.svgYoutube {
+    width: 24px;
+    height: 24px;
+}
+.linkedInFilled {
+    width: 18px;
+    height: 18px;
+}
+.twitterIco {
+    width: 22px;
+    height: 18px;
+}
+.defaultPage {
+    padding-top: 60px;
+    @include breakpoint(medium) {
+        padding-top: 400px;
+    }
+}
+.defaultPage--short {
+    padding-top: 60px;
+    @include breakpoint(medium) {
+        padding-top: 240px;
+    }
+}
+.contactForm {
+    padding: 25px 0 50px;
+    margin: 0;
+    @include breakpoint(large) {
+        padding: 30px 100px 60px;
+    }
+    > div {
+        padding: 0;
+        @include breakpoint(medium) {
+            padding: 0 40px;
+        }
+    }
+}
+.backToMain {
+    font-size: $fontSize-smaller;
+    color: $stone;
+    transition: color .3s;
+    &:hover {
+        text-decoration: none;
+        color: $gray--lightest;
+    }
+    i {
+        display: inline-block;
+        margin-right: 5px;
+        font-size: $fontSize-large;
+        color: $gray--lightest;
+    }
+}
+.icon-svgClose {
+    width: 30px;
+    height: 30px;
+}
+.gotoLinks {
+    margin-bottom: 30px;
+    text-align: center;
+    p {
+        display: inline-block;
+        padding: 0 12px;
+        margin-bottom: 0;
+        font-size: $fontSize-small;
+        font-family: $font-light;
+        text-transform: uppercase;
+        a {
+            display: block;
+            color: $blueSea;
+            border-bottom: 2px solid transparent;
+            transition: all .3s;
+            &:hover {
+                font-family: $font-medium;
+                text-decoration: none;
+                color: $stone;
+                border-bottom: 2px solid $blue;
+            }
+        }
+    }
+}
+.clearTable {
+    @include breakpoint(small only) {
+        tr {
+            display: block;
+            margin-bottom: 40px;
+            td {
+                display: block;
+                width: auto !important;
+                img {
+                    display: block !important;
+                    margin: 0 auto 20px !important;
+                }
+            }
+        }
+    }
+}

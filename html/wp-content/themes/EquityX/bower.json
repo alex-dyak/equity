@@ -1,0 +1,22 @@
+{
+  "name": "progect-name",
+  "version": "1.0.0",
+  "authors": [
+    "WEB4PRO <web4pro.net>"
+  ],
+  "description": "Basic template for a new project.",
+  "main": "index.html",
+  "license": "MIT",
+  "dependencies": {
+
+    "motion-ui": "~1.2.2"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "private": true
+}

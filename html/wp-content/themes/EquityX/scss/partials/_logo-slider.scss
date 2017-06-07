@@ -1,0 +1,26 @@
+.logoSlider {
+	max-width: 980px;
+	margin: 40px auto;
+}
+.logoSlider-item {
+	text-align: center;
+	outline: none;
+}
+.logoSlider-item-logo {
+	display: inline-block;
+	margin: 0 20px 20px;
+	vertical-align: middle;
+	transition: opacity .3s;
+	&:hover {
+		opacity: 0.8;
+	}
+	a {
+		display: block;
+		min-height: 100px;
+	}
+	img {
+		display: inline-block;
+		max-height: 100px;
+		max-width: 200px;
+	}
+}

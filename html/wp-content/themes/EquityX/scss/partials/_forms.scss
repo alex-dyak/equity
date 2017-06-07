@@ -1,0 +1,312 @@
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+textarea {
+    width: 100%;
+    padding: 12px 2px;
+    font-size: $fontSize-small;
+    line-height: $lineHeight-input;
+    font-family: $font-light;
+    border-radius: 0;
+    border: 0;
+    border-bottom: 1px solid $white--mud60op;
+    -webkit-appearance: none;
+    box-sizing: border-box; // redefine foundation content-box for search type
+    outline: none;
+    color: $stone;
+    &:focus {
+        border-bottom-color: $white--mud;
+    }
+    &::placeholder {
+        color: $stone--40op;
+    }
+    &.wpcf7-not-valid {
+        border-bottom-color: $red;
+    }
+}
+/*form 7*/
+span[class*='-form-control-wrap'] {
+    position: relative;
+    display: block;
+    padding-bottom: 25px;
+    margin-bottom: 5px;
+    @include breakpoint(medium) {
+        margin-bottom: 20px;
+    }
+}
+span[class*='-not-valid-tip'] {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    font-size: $fontSize-smaller;
+    line-height: 20px;
+    color: $red;
+}
+/*end*/
+textarea {
+    resize: vertical;
+    height: 150px;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.btn {
+    display: inline-block;
+    min-width: 140px;
+    height: 48px;
+    padding: 0 20px;
+    font-family: $font-medium;
+    line-height: $lineHeight-btn--large;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    //border-radius: 48px;
+    border: 1px solid $blue;
+    background-color: $blue;
+    color: $white;
+    transition: all .3s ease-out;
+    -webkit-appearance: none;
+    //box-shadow: 0 5px 20px 0 $black--20op;
+    appearance: none;
+    outline: none;
+    @include breakpoint(large) {
+        min-width: auto;
+    }
+    &:hover,
+    &:active {
+        cursor: pointer;
+        text-decoration: none;
+        background-color: $white;
+        color: $blue;
+    }
+}
+.btn--white {
+    background-color: $white;
+    color: $blue;
+    &:hover,
+    &:active {
+        background-color: $blue;
+        color: $white;
+    }
+}
+.btn--turquoise {
+    border: 1px solid $color--turquoise;
+    background-color: $color--turquoise;
+    color: $white;
+    &:hover,
+    &:active {
+        background-color: $white;
+        color: $color--turquoise;
+    }
+}
+.btn--login {
+    background-color: transparent;
+    color: $black;
+    box-shadow: none;
+    font-weight: normal;
+    border: 0;
+    &:hover,
+    &:active {
+        background-color: transparent;
+        color: $blue;
+       // box-shadow: 0 5px 20px 0 $black--20op;
+    }
+}
+.btn--join {
+    box-shadow: none;
+    font-weight: normal;
+    &:hover,
+    &:active {
+        background-color: lighten($blue, 5%);
+        color: $white;
+        box-shadow: 0 5px 20px 0 $black--20op;
+    }
+}
+.btn--fullWidth {
+    width: 100%;
+}
+.btn--linkedIn {
+    border-radius: 0;
+    border-color: $color--linkedin;
+    background: $color--linkedin;
+    &:hover {
+        color: $color--linkedin
+    }
+}
+.btn--google {
+    border-radius: 0;
+    border-color: $color--google;
+    background: $color--google;
+    &:hover {
+        color: $color--google
+    }
+}
+.btn--facebook {
+    border-radius: 0;
+    border-color: $color--facebook;
+    background: $color--facebook;
+    &:hover {
+        color: $color--facebook
+    }
+}
+.btn--hasIcon {
+    position: relative;
+    padding-right: 15px;
+    padding-left: 57px;
+    text-align: left;
+    min-width: 240px;
+    font-size: $fontSize-smaller;
+    @include breakpoint(large) {
+        min-width: 240px;
+    }
+    .btn-icon {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        line-height: 0;
+        transition: fill .3s;
+    }
+    .svgIcon {
+        width: 18px;
+        height: 18px;
+    }
+}
+.btn--arrowRight,
+.btn--arrowLeft {
+    position: relative;
+    height: 36px;
+    min-width: 136px;
+    padding-left: 18px;
+    padding-right: 38px;
+    //border-radius: 38px;
+    font-size: $fontSize-smaller;
+    line-height: $lineHeight-buttonArrow;
+    text-align: left;
+    &:hover {
+        &::before {
+            border-color: $white;
+        }
+    }
+}
+.btn--arrowRight {
+    &::before {
+        position: absolute;
+        top: 50%;
+        right: 14px;
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid $blue;
+        border-bottom: 2px solid $blue;
+        transform: translateY(-50%) rotate(-45deg);
+        transition: all .3s;
+    }
+}
+.btnElement {
+    &.btnElement--custom {
+        > a.vc_general,
+        > button.vc_general {
+            display: inline-block;
+            min-width: 140px;
+            height: 48px;
+            padding: 0 20px;
+            font-family: $font-medium;
+            line-height: $lineHeight-btn--large;
+            text-transform: uppercase;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 0;
+            border: 1px solid $blue;
+            background-color: $blue;
+            background-image: none;
+            color: $white;
+            transition: all .3s ease-out;
+            -webkit-appearance: none;
+            //box-shadow: 0 5px 20px 0 $black--20op;
+            appearance: none;
+            outline: none;
+            @include breakpoint(large) {
+                //min-width: 240px;
+            }
+            &:hover,
+            &:active {
+                cursor: pointer;
+                text-decoration: none;
+                background-color: $white !important;
+                color: $blue !important;
+            }
+        }
+    }
+    &.btnElement--turquoise {
+        > a.vc_general,
+        > button.vc_general {
+            border: 1px solid $color--turquoise;
+            background-color: $color--turquoise;
+            color: $white;
+            &:hover,
+            &:active {
+                background-color: $white;
+                color: $color--turquoise;
+            }
+        }
+    }
+    &.btnElement--white {
+        > a.vc_general,
+        > button.vc_general {
+            border: 1px solid $white;
+            background-color: $white;
+            color: $blue;
+            &:hover,
+            &:active {
+                background-color: transparent !important;
+                border-color: $white;
+                color: $white !important;
+            }
+        }
+    }
+}
+.topLineSection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 15px 0;
+    margin: 0;
+    font-size: 12px;
+    @include breakpoint(large) {
+        padding: 30px 0;
+        font-size: 16px;
+    }
+    .wpb_content_element {
+        margin-bottom: 0;
+    }
+    h3 {
+        font-size: 20px;
+        margin-bottom: 5px;
+        @include breakpoint(large) {
+            font-size: 30px;
+        }
+    }
+}
+.topLineSection-box {
+    width: 50% !important;
+    line-height: 1;
+    .vc_column-inner {
+        display: inline-block;
+        width: auto;
+        padding: 0 10px;
+        @include breakpoint(large) {
+            padding: 0 30px;
+        }
+    }
+    + .topLineSection-box {
+        border-left: 1px solid #b5bcc4;
+    }
+}
+.strangeBackground {
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 30%, rgba(255,255,255,0.7) 70%, rgba(255,255,255,0) 100%);
+}

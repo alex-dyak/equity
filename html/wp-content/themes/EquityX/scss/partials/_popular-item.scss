@@ -1,0 +1,21 @@
+.popularItem-title {
+	margin-bottom: 10px;
+	font-size: $fontSize-small;
+	line-height: $lineHeight-base;
+	font-family: $font-base;
+	color: $stone--lighter;
+	transition: color .3s;
+	&:hover {
+		text-decoration: none;
+		color: $blue;
+	}
+}
+.popularItem-date {
+	font-size: $fontSize-smaller;
+	color: $white--mudLight;
+	i {
+		display: inline-block;
+		vertical-align: middle;
+		margin-top: -5px;
+	}
+}

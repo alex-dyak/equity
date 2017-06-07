@@ -1,0 +1,37 @@
+.socialLink {
+	position: relative;
+	display: inline-block;
+	width: 36px;
+	height: 36px;
+	margin: 0 10px;
+	border-radius: 100%;
+	color: $white;
+	transition: background .3s;
+	span {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		line-height: 0;
+	}
+	svg {
+		transition: fill .3s;
+	}
+	&:hover {
+		background: transparent;
+	}
+}
+.socialLink--tw {
+	border: 1px solid $blue--light;
+	background: $blue--light;
+	&:hover {
+		color: $blue--light;
+	}
+}
+.socialLink--in {
+	border: 1px solid $blue--dark;
+	background: $blue--dark;
+	&:hover {
+		color: $blue--dark;
+	}
+}
