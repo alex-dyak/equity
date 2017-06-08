@@ -96,7 +96,6 @@ class W4PThemeSettingsPage {
 			'login_facebook'  => __( 'Login Facebook', 'EquityX' ),
 			'login_google'    => __( 'Login Google', 'EquityX' ),
 			'login_user_link' => __( 'Login User Link', 'EquityX' ),
-			'expert_link'     => __( 'Become an Expert Link', 'EquityX' ),
 		);
 		add_action( 'admin_menu', array( $this, 'add_plugin_page' ) );
 		add_action( 'admin_init', array( $this, 'page_init' ) );
@@ -131,6 +130,9 @@ class W4PThemeSettingsPage {
 		$this->options['w4p_404_background_image'] = get_option( 'w4p_404_background_image' );
 
 		$this->options['w4p_linkedin_profile'] = get_option( 'w4p_linkedin_profile' );
+
+		$this->options['expert_link_name'] = get_option( 'expert_link_name' );
+		$this->options['expert_link']      = get_option( 'expert_link' );
 		?>
 		<div class="wrap">
 			<!-- <h2>My Settings</h2> -->
@@ -193,6 +195,16 @@ class W4PThemeSettingsPage {
 			array( $this, 'sanitize_link' ) /* Sanitize */
 		);
 
+		// Expert Link.
+		register_setting(
+			'w4p_options_group', /* Option group */
+			'expert_link_name' /* Option name */
+		);
+		register_setting(
+			'w4p_options_group', /* Option group */
+			'expert_link' /* Option name */
+		);
+
 		add_settings_section(
 			'setting_section_id', /* ID */
 			__( 'W4P Theme Options', 'EquityX' ), /* Title */
@@ -239,6 +251,15 @@ class W4PThemeSettingsPage {
 			'theme_options',
 			'setting_section_id'
 		);
+
+		add_settings_field(
+			'expert_link_name',
+			__( 'Expert Button', 'w4ptheme' ),
+			array( $this, 'expert_link_callback' ),
+			'theme_options',
+			'setting_section_id'
+		);
+
 	}
 
 	/**
@@ -480,6 +501,31 @@ class W4PThemeSettingsPage {
 			<div id="upload_preview">
 				<img style="max-width:200px;" src="<?php echo ! empty( $this->options['w4p_404_background_image']['url'] ) ? esc_attr( $this->options['w4p_404_background_image']['url'] ) : '' ?>"/>
 			</div>
+		</div>
+	<?php }
+
+	/**
+	 * Get the Expert Button.
+	 */
+	public function expert_link_callback() {
+		?>
+		<hr>
+		<div class="w4p-manager-email-wrapper">
+			<label for="expert_link_name" class="w4p-option-label"><?php esc_html_e( 'Button Title:', 'w4ptheme' ); ?></label>
+			<input
+				type="text"
+				id="expert_link_name"
+				name="expert_link_name"
+				value="<?php echo ! empty( $this->options['expert_link_name'] ) ? esc_attr( $this->options['expert_link_name'] ) : '' ?>"
+				/>
+			<br/>
+			<label for="expert_link" class="w4p-option-label"><?php esc_html_e( 'Button Link:', 'w4ptheme' ); ?></label>
+			<input
+				type="text"
+				id="expert_link"
+				name="expert_link"
+				value="<?php echo ! empty( $this->options['expert_link'] ) ? esc_attr( $this->options['expert_link'] ) : '' ?>"
+				/>
 		</div>
 	<?php }
 }
