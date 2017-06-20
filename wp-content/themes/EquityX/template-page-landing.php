@@ -24,6 +24,8 @@ get_header(); ?>
 	$template_video_duration  = get_field( 'template_video_duration' );
 	$template_video_caption   = get_field( 'template_video_caption' );
 	$template_image           = get_field( 'template_intro_image' );
+	$button_text              = get_field( 'button_text' ) ? get_field( 'button_text' ) : 'Button';
+	$button_url               = get_field( 'button_url' ) ? get_field( 'button_url' ) : '#' ;
 	?>
 	<?php if ( ! empty( $display_intro_section ) ): ?>
 	<div class="main"> <!-- Start main container -->
@@ -63,7 +65,7 @@ get_header(); ?>
                                     <div
                                             class="introLanding-description"><?php echo $template_intro_descript; ?></div>
                                 <?php endif; ?>
-                                <a href="#" class="btn">check if you qualify</a>
+                                <a href="<?php echo $button_url ?>" class="btn"><?php echo $button_text ?></a>
                             </div>
 
                             <div class="introSection-social">
