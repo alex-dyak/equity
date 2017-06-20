@@ -110,3 +110,32 @@
 .u-isAnimated {
     transition: all .3s;
 }
+.u-clear--both {
+    clear: both;
+}
+.u-font--light {
+    font-family: $font-light;
+}
+.u-list--decorated {
+    ul {
+        list-style: none;
+        margin: 0;
+        li {
+            position: relative;
+            padding-left: 34px;
+            margin-bottom: 40px;
+            font-size: 20px;
+            color: #1a2c3f;
+            &::before {
+                position: absolute;
+                content: "";
+                width: 12px;
+                height: 12px;
+                left: 0;
+                top: 9px;
+                background-color: #03a9f4;
+                border-radius: 100%;
+            }
+        }
+    }
+}

@@ -31,58 +31,74 @@ get_header(); ?>
 
 			<article class="post" id="post-<?php the_ID(); ?>">
 				<section class="row column">
-					<div class="intro_section_widget introSection introSection--large">
-						<?php if ( ! empty( $template_intro_title ) ) : ?>
-							<h1 class="introSection-title"><?php echo $template_intro_title; ?></h1>
-						<?php endif; ?>
-						<?php if ( ! empty( $template_intro_descript ) ) : ?>
-							<div
-								class="introSection-description"><?php echo $template_intro_descript; ?></div>
-						<?php endif;
-
-						if (! empty( $template_intro_video_url && $template_video_caption ) ) { ?>
-							<div class="introSection-video">
-								<a class="js-videoBox introSection-video-trigger"
-								   href="#video-popup">
+					<div class="intro_section_widget introLanding">
+						<div class="introLanding-inner u-clearfix">
+                            <div class="introLanding-inner-rightCol">
+                                <?php if (! empty( $template_intro_video_url && $template_video_caption ) ) { ?>
+                                <div class="introSection-video">
+                                    <a class="js-videoBox introSection-video-trigger"
+                                       href="#video-popup">
 									<span
-										class="introSection-video-trigger-icon"></span>
-									<img src="<?php echo $template_video_caption; ?>" alt="">
-								</a>
-							</div>
-						<?php } elseif( ! empty( $template_image ) && is_int( $template_image ) ) { ?>
-							<!-- Intro Section Image -->
-							<div class="introSection-image">
-								<?php echo wp_get_attachment_image( $template_image ); ?>
-							</div>
-						<?php } ?>
+                                            class="introSection-video-trigger-icon"></span>
+                                        <img src="<?php echo $template_video_caption; ?>" alt="">
+                                    </a>
+                                </div>
+                                <?php } elseif( ! empty( $template_image ) && is_int( $template_image ) ) { ?>
+                                <!-- Intro Section Image -->
+                                <div class="introLanding-image">
+                                    <?php
+                                    printf( '<img src="%s" srcset="%s">',
+                                        wp_get_attachment_image_url( $template_image ),
+                                        wp_get_attachment_image_srcset( $template_image, 'full' )
+                                    );
+                                    ?>
+                                </div>
+                                <?php } ?>
+                            </div>
+                            <div class="introLanding-inner-leftCol">
+                                <?php if ( ! empty( $template_intro_title ) ) : ?>
+                                    <h1 class="introLanding-title"><?php echo $template_intro_title; ?></h1>
+                                <?php endif; ?>
+                                <?php if ( ! empty( $template_intro_descript ) ) : ?>
+                                    <div
+                                            class="introLanding-description"><?php echo $template_intro_descript; ?></div>
+                                <?php endif; ?>
+                                <a href="#" class="btn">check if you qualify</a>
+                            </div>
 
-						<div class="introSection-social">
-						</div>
-						<div id="video-popup" class="introSection-popup mfp-hide">
-							<div class="mfp-iframe-scaler">
-								<iframe
-									src="<?php echo $template_intro_video_url ?>"
-									frameborder="0" allowfullscreen
-									class="js-video-iFrame"></iframe>
-							</div>
-						</div>
-
-						<?php // check if the flexible content field has rows of data
-						if ( have_rows( 'startup_and_expert_block' ) ): // loop through the rows of data
-							while ( have_rows( 'startup_and_expert_block' ) ) : the_row();
-								if ( get_row_layout() == 'block_title' ): ?>
-									<div class="expert-title"><?php echo the_sub_field( 'title' ); ?></div>
-								<?php elseif ( get_row_layout() == 'startup_block' ):  ?>
-									<div class="startup-number"><?php echo the_sub_field( 'number' ); ?></div>
-									<div class="startup-text"><?php echo the_sub_field( 'text' ); ?></div>
-								<?php elseif ( get_row_layout() == 'expert_block' ):  ?>
-									<div class="expert-number"><?php echo the_sub_field( 'number' ); ?></div>
-									<div class="expert-text"><?php echo the_sub_field( 'text' ); ?></div>
-								<?php endif;
-							endwhile;
-						endif;?>
-
-				</section>
+                            <div class="introSection-social">
+                            </div>
+                            <div id="video-popup" class="introSection-popup mfp-hide">
+                                <div class="mfp-iframe-scaler">
+                                    <iframe
+                                            src="<?php echo $template_intro_video_url ?>"
+                                            frameborder="0" allowfullscreen
+                                            class="js-video-iFrame"></iframe>
+                                </div>
+                            </div>
+                            <div class="introLanding-statistic u-clearfix">
+                                <?php // check if the flexible content field has rows of data
+                                if ( have_rows( 'startup_and_expert_block' ) ): // loop through the rows of data
+                                    while ( have_rows( 'startup_and_expert_block' ) ) : the_row();
+                                        if ( get_row_layout() == 'block_title' ): ?>
+                                            <div class="expert-title u-clear--both"><?php echo the_sub_field( 'title' ); ?></div>
+                                        <?php elseif ( get_row_layout() == 'startup_block' ):  ?>
+                                            <div class="introLanding-statistic-statCol">
+                                                <div class="startup-number"><?php echo the_sub_field( 'number' ); ?></div>
+                                                <div class="startup-text"><?php echo the_sub_field( 'text' ); ?></div>
+                                            </div>
+                                        <?php elseif ( get_row_layout() == 'expert_block' ):  ?>
+                                            <div class="introLanding-statistic-statCol">
+                                                <div class="expert-number"><?php echo the_sub_field( 'number' ); ?></div>
+                                                <div class="expert-text"><?php echo the_sub_field( 'text' ); ?></div>
+                                            </div>
+                                        <?php endif;
+                                    endwhile;
+                                endif;?>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
 				<div class="entry">
 					<?php the_content(); ?>
