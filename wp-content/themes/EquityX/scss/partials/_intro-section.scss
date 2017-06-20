@@ -163,3 +163,116 @@
 		display: block;
 	}
 }
+.page-template-template-page-landing {
+	overflow-x: hidden;
+}
+.introLanding {
+	padding: 170px 99999px 60px;
+	margin: 0 -99999px;
+	background: linear-gradient(to bottom, rgba(90,191,232,0.6) 0%,rgba(255,255,255,0.4) 100%);
+}
+.introLanding-inner {
+	position: relative;
+	padding: 0 15px;
+	text-align: center;
+	@include breakpoint(medium) {
+		text-align: left;
+	}
+	@include breakpoint(large) {
+		padding: 0 60px;
+	}
+	.btn {
+		margin-bottom: 20px;
+	}
+}
+.introLanding-statistic {
+	position: absolute;
+	padding: 20px 0;
+	bottom: -60px;
+	min-width: 280px;
+	left: 50%;
+	z-index: 100;
+	background: $white;
+	transform: translate(-50%, 50%);
+	box-shadow: 0 5px 6px 0 rgba(17,18,19,0.12);
+}
+.introLanding-title {
+	margin-bottom: 25px;
+	font-size: 24px;
+	color: #1a2c3f;
+	text-align: center;
+	@include breakpoint(medium) {
+		font-size: 36px;
+		text-align: left;
+	}
+	@include breakpoint(large) {
+		font-size: 50px;
+	}
+}
+.introLanding-image {
+	max-width: 400px;
+	margin: 0 auto 35px;
+	@include breakpoint(medium) {
+		max-width: none;
+		margin: 0;
+	}
+}
+.introLanding-description {
+	margin-bottom: 35px;
+	font-size: 18px;
+	color: #1a2c3f;
+	text-align: center;
+	@include breakpoint(medium) {
+		text-align: left;
+		max-width: 430px;
+		font-size: 22px;
+	}
+}
+.introLanding-inner-leftCol {
+	@include breakpoint(medium) {
+		width: 57%;
+		float: left;
+	}
+}
+.introLanding-inner-rightCol {
+	@include breakpoint(medium) {
+		width: 43%;
+		float: right;
+	}
+}
+.introLanding-statistic-statCol {
+	float: left;
+	width: 50%;
+	padding: 0 20px;
+	text-align: center;
+	& + .introLanding-statistic-statCol {
+		border-left: 1px solid #cccccc;
+	}
+}
+.expert-title {
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 12px;
+	font-family: $font-light;
+	color: rgba(26, 44, 63, 0.6);
+}
+.startup-number {
+	color: #03a9f4;
+}
+.expert-number {
+	color: #50d2c2;
+}
+.startup-number,
+.expert-number {
+	margin-bottom: 5px;
+	font-size: 36px;
+	font-family: $font-medium;
+	line-height: 1;
+}
+.startup-text,
+.expert-text {
+	font-size: 14px;
+	color: #1a2c3f;
+	text-transform: uppercase;
+}
