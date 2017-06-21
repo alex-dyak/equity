@@ -49,7 +49,7 @@ get_header(); ?>
                                 <!-- Intro Section Image -->
                                 <div class="introLanding-image">
                                     <?php
-                                        echo wp_get_attachment_image( $template_image, 'full' );
+                                      echo wp_get_attachment_image( $template_image, 'full' );
                                     ?>
                                 </div>
                                 <?php } ?>

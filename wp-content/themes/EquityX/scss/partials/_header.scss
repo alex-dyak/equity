@@ -82,6 +82,9 @@ body:not(.home) {
             margin-bottom: 6px;
         }
     }
+    a + a {
+        margin-left: 5px;
+    }
 }
 //if adminbar shown
 .admin-bar .mainHeader {
