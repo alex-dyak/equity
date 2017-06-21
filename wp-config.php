@@ -10,3 +10,6 @@ define('WP_CACHE', true); // Added by W3 Total Cache
 require_once('vendor/autoload.php');
 require_once('config/application.php');
 require_once(ABSPATH . 'wp-settings.php');
+
+//Disable internal Wp-Cron function
+define('DISABLE_WP_CRON', true);

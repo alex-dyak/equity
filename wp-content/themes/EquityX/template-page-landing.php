@@ -24,6 +24,8 @@ get_header(); ?>
 	$template_video_duration  = get_field( 'template_video_duration' );
 	$template_video_caption   = get_field( 'template_video_caption' );
 	$template_image           = get_field( 'template_intro_image' );
+	$button_text              = get_field( 'button_text' ) ? get_field( 'button_text' ) : 'Button';
+	$button_url               = get_field( 'button_url' ) ? get_field( 'button_url' ) : '#' ;
 	?>
 	<?php if ( ! empty( $display_intro_section ) ): ?>
 	<div class="main"> <!-- Start main container -->
@@ -60,7 +62,7 @@ get_header(); ?>
                                     <div
                                             class="introLanding-description"><?php echo $template_intro_descript; ?></div>
                                 <?php endif; ?>
-                                <a href="#" class="btn">check if you qualify</a>
+                                <a href="<?php echo $button_url ?>" class="btn"><?php echo $button_text ?></a>
                             </div>
 
                             <div class="introSection-social">
@@ -75,8 +77,8 @@ get_header(); ?>
                             </div>
                             <div class="introLanding-statistic u-clearfix">
                                 <?php // check if the flexible content field has rows of data
-                                if ( have_rows( 'startup_and_expert_block' ) ): // loop through the rows of data
-                                    while ( have_rows( 'startup_and_expert_block' ) ) : the_row();
+                                if ( have_rows( 'startup_and_expert_block', 'option' ) ): // loop through the rows of data
+                                    while ( have_rows( 'startup_and_expert_block', 'option' ) ) : the_row();
                                         if ( get_row_layout() == 'block_title' ): ?>
                                             <div class="expert-title u-clear--both"><?php echo the_sub_field( 'title' ); ?></div>
                                         <?php elseif ( get_row_layout() == 'startup_block' ):  ?>
