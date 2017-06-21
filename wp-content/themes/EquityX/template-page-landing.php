@@ -47,10 +47,7 @@ get_header(); ?>
                                 <!-- Intro Section Image -->
                                 <div class="introLanding-image">
                                     <?php
-                                    printf( '<img src="%s" srcset="%s">',
-                                        wp_get_attachment_image_url( $template_image ),
-                                        wp_get_attachment_image_srcset( $template_image, 'full' )
-                                    );
+                                      echo wp_get_attachment_image( $template_image, 'full' );
                                     ?>
                                 </div>
                                 <?php } ?>

@@ -104,15 +104,21 @@ input[type="submit"],
     }
 }
 .btn--login {
+    padding: 10px;
+    height: auto;
+    color: $black--light;
+    font-size: $fontSize-small;
+    font-family: $font-medium;
+    line-height: $lineHeight-stightest;
     background-color: transparent;
-    color: $black;
+    border: 1px solid #78a5bc;
     box-shadow: none;
     font-weight: normal;
-    border: 0;
     &:hover,
     &:active {
         background-color: transparent;
-        color: $blue;
+        color: #78a5bc;
+        border-color: #78a5bc;
        // box-shadow: 0 5px 20px 0 $black--20op;
     }
 }
@@ -128,6 +134,24 @@ input[type="submit"],
 }
 .btn--fullWidth {
     width: 100%;
+}
+.btn--menuItem {
+    display: inline-block;
+    padding: 10px 0;
+    height: auto;
+    color: $black--light;
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    transition: border .3s;
+    font-size: $fontSize-small;
+    font-family: $font-medium;
+    line-height: $lineHeight-stightest;
+    &:hover {
+        color: $black--light;
+        border-color: $blue;
+        background: transparent;
+    }
 }
 .btn--linkedIn {
     border-radius: 0;

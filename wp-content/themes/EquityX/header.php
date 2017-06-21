@@ -132,7 +132,7 @@
 					</a>
 				<?php endif; ?>
                 <?php if ( $expert_button_link ) : ?>
-                <a href="<?php echo $expert_button_link; ?>" class="btn btn--login" title="<?php echo $expert_button_name; ?>">
+                <a href="<?php echo $expert_button_link; ?>" class="btn btn--menuItem" title="<?php echo $expert_button_name; ?>">
                     <?php echo $expert_button_name; ?>
                 </a>
                 <?php endif; ?>
