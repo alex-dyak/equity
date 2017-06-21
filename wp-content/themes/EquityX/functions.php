@@ -724,3 +724,31 @@ function meks_remove_wp_archives(){
 		$wp_query->set_404(); //set to 404 not found page
 	}
 }
+
+/**
+ * Add Options Page
+ */
+if( function_exists( 'acf_add_options_page' ) ) {
+	acf_add_options_page();
+}
+
+if( !wp_next_scheduled( 'startup_experts_update' ) ) {
+	wp_schedule_event( time(), 'daily', 'startup_experts_update' );
+}
+add_action( 'startup_experts_update', 'startup_experts' );
+
+function startup_experts() {
+	if ( have_rows( 'startup_and_expert_block', 'option' ) ) {
+		while ( have_rows( 'startup_and_expert_block', 'option' ) ) {
+			the_row();
+			if ( get_row_layout() == 'startup_block' ) {
+				$startups_number = get_sub_field( 'number' ) + mt_rand( 0, 5 );
+				update_sub_field( 'number', $startups_number );
+			}
+			if ( get_row_layout() == 'expert_block' ) {
+				$experts_number = get_sub_field( 'number' ) + mt_rand( 2, 20 );
+				update_sub_field( 'number', $experts_number );
+			}
+		}
+	} // loop through the rows of data
+}
