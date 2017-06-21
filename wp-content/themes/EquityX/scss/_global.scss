@@ -523,7 +523,7 @@ ol {
     background: $white;
     font-family: $font-light;
     font-size: $fontSize-small;
-    color: $gray--80op;
+    //color: $gray--80op;
     @include breakpoint(medium) {
         padding: 170px 0 0;
     }
@@ -538,17 +538,17 @@ ol {
         font-family: $font-light;
         li {
             position: relative;
-            padding-left: 50px;
+            padding-left: 30px;
             margin-bottom: 25px;
             &::before {
                 position: absolute;
                 top: 5px;
-                left: 18px;
-                width: 12px;
-                height: 12px;
+                left: 0;
+                width: 18px;
+                height: 15px;
                 content: "";
-                border-radius: 100%;
-                background: #03a9f4;
+                //border-radius: 100%;
+                background: url("../images/bullet-1.png") 0 0 no-repeat;
             }
         }
     }
