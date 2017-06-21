@@ -164,7 +164,9 @@
 	}
 }
 .page-template-template-page-landing {
-	overflow-x: hidden !important;
+	.wrapper {
+		overflow-x: hidden !important;
+	}
 }
 .introLanding {
 	padding: 170px 99999px 60px;
