@@ -49,10 +49,7 @@ get_header(); ?>
                                 <!-- Intro Section Image -->
                                 <div class="introLanding-image">
                                     <?php
-                                    printf( '<img src="%s" srcset="%s">',
-                                        wp_get_attachment_image_url( $template_image ),
-                                        wp_get_attachment_image_srcset( $template_image, 'full' )
-                                    );
+                                        echo wp_get_attachment_image( $template_image, 'full' );
                                     ?>
                                 </div>
                                 <?php } ?>
@@ -80,8 +77,8 @@ get_header(); ?>
                             </div>
                             <div class="introLanding-statistic u-clearfix">
                                 <?php // check if the flexible content field has rows of data
-                                if ( have_rows( 'startup_and_expert_block' ) ): // loop through the rows of data
-                                    while ( have_rows( 'startup_and_expert_block' ) ) : the_row();
+                                if ( have_rows( 'startup_and_expert_block', 'option' ) ): // loop through the rows of data
+                                    while ( have_rows( 'startup_and_expert_block', 'option' ) ) : the_row();
                                         if ( get_row_layout() == 'block_title' ): ?>
                                             <div class="expert-title u-clear--both"><?php echo the_sub_field( 'title' ); ?></div>
                                         <?php elseif ( get_row_layout() == 'startup_block' ):  ?>
