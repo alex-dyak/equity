@@ -732,8 +732,11 @@ if( function_exists( 'acf_add_options_page' ) ) {
 	acf_add_options_page();
 }
 
-if( !wp_next_scheduled( 'startup_experts_update' ) ) {
-	wp_schedule_event( time(), 'daily', 'startup_experts_update' );
+/**
+ * Cron schedule.
+ */
+if ( ! wp_next_scheduled( 'startup_experts_update' ) ) {
+	wp_schedule_event( time(), 'hourly', 'startup_experts_update' );
 }
 add_action( 'startup_experts_update', 'startup_experts' );
 
@@ -752,3 +755,4 @@ function startup_experts() {
 		}
 	} // loop through the rows of data
 }
+
