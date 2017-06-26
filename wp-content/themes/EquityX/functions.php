@@ -777,11 +777,8 @@ function startup_experts() {
 					$current_number = get_sub_field( 'current_number' );
 				}
 				$numbers_differents = $current_number - $start_number_to_day;
-				echo $random . '<br/>' . $current_number . '<br/>';
 				if ( $numbers_differents <= 5 ) {
 					update_sub_field( 'current_number', $current_number );
-					echo 'St# ' . get_sub_field( 'start_number_to_day' ) . '<br/>';
-					echo 'Cr# ' . get_sub_field( 'current_number' ) . '<br/>';
 				}
 			}
 			if ( get_row_layout() == 'expert_block' ) {
@@ -793,11 +790,8 @@ function startup_experts() {
 					$current_number = get_sub_field( 'current_number' );
 				}
 				$numbers_differents = $current_number - $start_number_to_day;
-				echo $random . '<br/>' . $current_number . '<br/>';
 				if ( $numbers_differents <= 20 ) {
 					update_sub_field( 'current_number', $current_number );
-					echo 'St# ' . get_sub_field( 'start_number_to_day' ) . '<br/>';
-					echo 'Cr# ' . get_sub_field( 'current_number' ) . '<br/>';
 				}
 			}
 		}
