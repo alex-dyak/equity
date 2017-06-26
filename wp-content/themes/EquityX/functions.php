@@ -732,27 +732,90 @@ if( function_exists( 'acf_add_options_page' ) ) {
 	acf_add_options_page();
 }
 
+/////////////////////////////////
+add_filter( 'cron_schedules', 'add_cron_interval' );
+
+function add_cron_interval( $schedules ) {
+	$schedules['30_sec'] = array(
+		'interval' => 30,
+		'display'  => esc_html__( 'Every 30 Seconds' ),
+	);
+	$schedules['5_min'] = array(
+		'interval' => 300,
+		'display'  => esc_html__( 'Every 5 minute' ),
+	);
+
+	return $schedules;
+}
+//wp_clear_scheduled_hook( 'startup_experts_update' );
+//wp_clear_scheduled_hook( 'start_number_to_day' );
+///////////////////////////////////////////
+
 /**
  * Cron schedule.
  */
 if ( ! wp_next_scheduled( 'startup_experts_update' ) ) {
-	wp_schedule_event( time(), 'hourly', 'startup_experts_update' );
+	wp_schedule_event( time(), '30_sec', 'startup_experts_update' );
 }
 add_action( 'startup_experts_update', 'startup_experts' );
+
+if ( ! wp_next_scheduled( 'start_number_to_day' ) ) {
+	wp_schedule_event( time(), 'daily', 'start_number_to_day' );
+}
+add_action( 'start_number_to_day', 'start_number_to_day_update' );
 
 function startup_experts() {
 	if ( have_rows( 'startup_and_expert_block', 'option' ) ) {
 		while ( have_rows( 'startup_and_expert_block', 'option' ) ) {
 			the_row();
 			if ( get_row_layout() == 'startup_block' ) {
-				$startups_number = get_sub_field( 'number' ) + mt_rand( 0, 5 );
-				update_sub_field( 'number', $startups_number );
+				$start_number_to_day = get_sub_field( 'start_number_to_day' );
+				$random = mt_rand( -5, 2 );
+				if ( $random > 0 ) {
+					$current_number = get_sub_field( 'current_number' ) + $random;
+				} else {
+					$current_number = get_sub_field( 'current_number' );
+				}
+				$numbers_differents = $current_number - $start_number_to_day;
+				echo $random . '<br/>' . $current_number . '<br/>';
+				if ( $numbers_differents <= 5 ) {
+					update_sub_field( 'current_number', $current_number );
+					echo 'St# ' . get_sub_field( 'start_number_to_day' ) . '<br/>';
+					echo 'Cr# ' . get_sub_field( 'current_number' ) . '<br/>';
+				}
 			}
 			if ( get_row_layout() == 'expert_block' ) {
-				$experts_number = get_sub_field( 'number' ) + mt_rand( 2, 20 );
-				update_sub_field( 'number', $experts_number );
+				$start_number_to_day = get_sub_field( 'start_number_to_day' );
+				$random = mt_rand( -3, 5 );
+				if ( $random > 0 ) {
+					$current_number = get_sub_field( 'current_number' ) + $random;
+				} else {
+					$current_number = get_sub_field( 'current_number' );
+				}
+				$numbers_differents = $current_number - $start_number_to_day;
+				echo $random . '<br/>' . $current_number . '<br/>';
+				if ( $numbers_differents <= 20 ) {
+					update_sub_field( 'current_number', $current_number );
+					echo 'St# ' . get_sub_field( 'start_number_to_day' ) . '<br/>';
+					echo 'Cr# ' . get_sub_field( 'current_number' ) . '<br/>';
+				}
 			}
 		}
 	} // loop through the rows of data
 }
 
+function start_number_to_day_update() {
+	if ( have_rows( 'startup_and_expert_block', 'option' ) ) {
+		while ( have_rows( 'startup_and_expert_block', 'option' ) ) {
+			the_row();
+			if ( get_row_layout() == 'startup_block' ) {
+				$current_number = get_sub_field( 'current_number' );
+				update_sub_field( 'start_number_to_day', $current_number );
+			}
+			if ( get_row_layout() == 'expert_block' ) {
+				$current_number = get_sub_field( 'current_number' );
+				update_sub_field( 'start_number_to_day', $current_number );
+			}
+		}
+	} // loop through the rows of data
+}

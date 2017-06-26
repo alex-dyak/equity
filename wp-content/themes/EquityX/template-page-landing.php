@@ -82,15 +82,15 @@ get_header(); ?>
                                         if ( get_row_layout() == 'block_title' ): ?>
                                             <div class="expert-title u-clear--both"><?php echo the_sub_field( 'title' ); ?></div>
                                         <?php elseif ( get_row_layout() == 'startup_block' ):  ?>
-                                            <div class="introLanding-statistic-statCol">
-                                                <div class="startup-number"><?php echo the_sub_field( 'number' ); ?></div>
-                                                <div class="startup-text"><?php echo the_sub_field( 'text' ); ?></div>
-                                            </div>
+	                                        <div class="introLanding-statistic-statCol">
+		                                        <div class="startup-number"><!-- mfunc --><?php echo the_sub_field( 'current_number' ); ?><!-- /mfunc --></div>
+		                                        <div class="startup-text"><?php echo the_sub_field( 'text' ); ?></div>
+	                                        </div>
                                         <?php elseif ( get_row_layout() == 'expert_block' ):  ?>
-                                            <div class="introLanding-statistic-statCol">
-                                                <div class="expert-number"><?php echo the_sub_field( 'number' ); ?></div>
-                                                <div class="expert-text"><?php echo the_sub_field( 'text' ); ?></div>
-                                            </div>
+	                                        <div class="introLanding-statistic-statCol">
+		                                        <div class="expert-number"><!-- mfunc --><?php echo the_sub_field( 'current_number' ); ?><!-- /mfunc --></div>
+		                                        <div class="expert-text"><?php echo the_sub_field( 'text' ); ?></div>
+	                                        </div>
                                         <?php endif;
                                     endwhile;
                                 endif;?>
