@@ -84,7 +84,8 @@ input[type="submit"],
         color: $blue;
     }
 }
-.btn--white {
+.btn--white,
+input[type="submit"].btn--white {
     background-color: $white;
     color: $blue;
     &:hover,
@@ -338,4 +339,48 @@ input[type="submit"],
 }
 .strangeBackground {
     background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 30%, rgba(255,255,255,0.7) 70%, rgba(255,255,255,0) 100%);
+}
+.notifyForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-title {
+        padding-right: 13px;
+        font-size: 16px;
+        font-family: $font-medium;
+        color: $white;
+    }
+    &-input {
+        padding: 0 7px;
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="search"],
+        textarea {
+            color: $white;
+            background: transparent;
+            border: 1px solid $white;
+            height: 48px;
+            line-height: 46px;
+            max-width: 235px;
+            padding: 0 15px;
+            &::placeholder {
+                color: $white;
+            }
+        }
+        span {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+    }
+    &-submit {
+        white-space: nowrap;
+        padding-left: 13px;
+    }
+    input[type="submit"].btn--white {
+        border: 1px solid $white;
+        &:hover {
+            border: 1px solid $white;
+        }
+    }
 }

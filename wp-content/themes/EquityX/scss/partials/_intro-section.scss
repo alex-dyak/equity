@@ -163,7 +163,8 @@
 		display: block;
 	}
 }
-.page-template-template-page-landing {
+.page-template-template-page-landing,
+.page-template-template-page-notifyme {
 	#wrapper {
 		overflow-x: hidden !important;
 	}
@@ -277,4 +278,18 @@
 	font-size: 14px;
 	color: #1a2c3f;
 	text-transform: uppercase;
+}
+.introLanding--tiny {
+	.introLanding-title {
+		font-size: 22px;
+		@include breakpoint(medium) {
+			font-size: 30px;
+		}
+		@include breakpoint(large) {
+			font-size: 44px;
+		}
+	}
+	.introLanding-description {
+		max-width: none;
+	}
 }
