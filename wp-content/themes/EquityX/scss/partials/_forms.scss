@@ -341,17 +341,32 @@ input[type="submit"].btn--white {
     background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 30%, rgba(255,255,255,0.7) 70%, rgba(255,255,255,0) 100%);
 }
 .notifyForm {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: 450px;
+    margin: 0 auto;
+    @include breakpoint(medium) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: none;
+    }
     &-title {
-        padding-right: 13px;
+        margin-bottom: 15px;
+        text-align: center;
         font-size: 16px;
         font-family: $font-medium;
         color: $white;
+        @include breakpoint(medium) {
+            text-align: left;
+            padding-right: 13px;
+            margin-bottom: 0;
+        }
     }
     &-input {
-        padding: 0 7px;
+        margin-bottom: 15px;
+        @include breakpoint(medium) {
+            padding: 0 7px;
+            margin-bottom: 0;
+        }
         input[type="text"],
         input[type="email"],
         input[type="password"],
@@ -362,10 +377,13 @@ input[type="submit"].btn--white {
             border: 1px solid $white;
             height: 48px;
             line-height: 46px;
-            max-width: 235px;
+            //max-width: 235px;
             padding: 0 15px;
             &::placeholder {
                 color: $white;
+            }
+            @include breakpoint(medium) {
+                max-width: 235px;
             }
         }
         span {
@@ -375,7 +393,9 @@ input[type="submit"].btn--white {
     }
     &-submit {
         white-space: nowrap;
-        padding-left: 13px;
+        @include breakpoint(medium) {
+            padding-left: 13px;
+        }
     }
     input[type="submit"].btn--white {
         border: 1px solid $white;
