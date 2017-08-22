@@ -1,0 +1,19 @@
+.page-template-template-page-notifyme {
+	background: $white;
+	.mainNavigation {
+		display: none;
+	}
+	.mainHeader-social {
+		display: none;
+	}
+	.mainHeader.is-not-top {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	.footer-sidebar,
+	.footer-social,
+	.footer-credentials,
+	.footer-menu {
+		display: none;
+	}
+}
