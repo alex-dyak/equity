@@ -189,6 +189,7 @@
 	}
 }
 .introLanding-statistic {
+	display: none; // to display a block, comment out the line
 	position: absolute;
 	padding: 20px 0;
 	bottom: -60px;
@@ -233,13 +234,13 @@
 }
 .introLanding-inner-leftCol {
 	@include breakpoint(medium) {
-		width: 57%;
+		width: 58%;
 		float: left;
 	}
 }
 .introLanding-inner-rightCol {
 	@include breakpoint(medium) {
-		width: 43%;
+		width: 42%;
 		float: right;
 	}
 }
@@ -251,6 +252,10 @@
 	& + .introLanding-statistic-statCol {
 		border-left: 1px solid #cccccc;
 	}
+}
+.introSection-btnBox {
+	margin: 20px 0;
+	text-align: center;
 }
 .expert-title {
 	margin-bottom: 10px;

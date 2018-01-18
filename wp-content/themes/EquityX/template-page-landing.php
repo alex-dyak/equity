@@ -62,7 +62,6 @@ get_header(); ?>
                                     <div
                                             class="introLanding-description"><?php echo $template_intro_descript; ?></div>
                                 <?php endif; ?>
-                                <a href="<?php echo $button_url ?>" class="btn"><?php echo $button_text ?></a>
                             </div>
 
                             <div class="introSection-social">
@@ -96,6 +95,9 @@ get_header(); ?>
                                 endif;?>
                             </div>
                         </div>
+						<div class="introSection-btnBox">
+							<a href="<?php echo $button_url ?>" class="btn"><?php echo $button_text ?></a>
+						</div>
                     </div>
                 </section>
 
