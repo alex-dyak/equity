@@ -184,12 +184,34 @@
 	@include breakpoint(large) {
 		padding: 0 60px;
 	}
+	&-flex {
+		@include breakpoint(medium) {
+			display: flex;
+		}
+	}
 	.btn {
 		margin-bottom: 20px;
 	}
 }
+.introLanding-flex-rightCol {
+	@include breakpoint(medium) {
+		order: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+}
+.introLanding-flex-leftCol {
+	@include breakpoint(medium) {
+		order: 0;
+	}
+}
+.introSection-btnBox {
+	margin: 20px 0;
+	text-align: center;
+}
 .introLanding-statistic {
-	display: none; // to display a block, comment out the line
+	//display: none; // to display a block, comment out the line
 	position: absolute;
 	padding: 20px 0;
 	bottom: -60px;
@@ -252,10 +274,6 @@
 	& + .introLanding-statistic-statCol {
 		border-left: 1px solid #cccccc;
 	}
-}
-.introSection-btnBox {
-	margin: 20px 0;
-	text-align: center;
 }
 .expert-title {
 	margin-bottom: 10px;

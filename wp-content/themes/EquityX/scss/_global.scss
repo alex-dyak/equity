@@ -619,3 +619,14 @@ ol {
         }
     }
 }
+.displeyOnMobile {
+    @include breakpoint(medium) {
+        display: none;
+    }
+}
+.displeyOnDesktop {
+    display: none;
+    @include breakpoint(medium) {
+        display: inline-block;
+    }
+}
