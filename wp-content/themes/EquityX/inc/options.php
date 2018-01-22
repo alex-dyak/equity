@@ -349,7 +349,7 @@ class W4PThemeSettingsPage {
 	 * @return string
 	 */
 	public function get_default_copyright() {
-		return sprintf( esc_html__( 'Copyright © %d. %s. All Rights Reserved.', 'EquityX' ), date( 'Y' ), get_bloginfo( 'name' ) );
+		//return sprintf( esc_html__( 'Copyright © %d. %s. All Rights Reserved.', 'EquityX' ), date( 'Y' ), get_bloginfo( 'name' ) );
 	}
 
 	/**
