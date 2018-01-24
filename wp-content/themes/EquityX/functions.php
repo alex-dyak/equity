@@ -163,6 +163,7 @@ require_once( get_template_directory() . '/inc/WPBakeryShortCode_equityx_members
 require_once( get_template_directory() . '/inc/WPBakeryShortCode_testimonials_slider.php' );
 require_once( get_template_directory() . '/inc/WPBakeryShortCode_logo_slider.php' );
 require_once( get_template_directory() . '/inc/WPBakeryShortCode_equityx_partners.php' );
+require_once( get_template_directory() . '/inc/WPBakeryShortCode_equityx_form.php' );
 
 /**
  * Custom excerpt trim.
@@ -813,3 +814,207 @@ function start_number_to_day_update() {
 		}
 	} // loop through the rows of data
 }
+
+/**
+ * Widget Form to VC.
+ */
+add_action( 'vc_before_init', 'equityx_form', 9999 );
+function equityx_form() {
+
+	vc_map( array(
+		"name"        => __( "EquityX Form", "EquityX" ),
+		"base"        => "equityx_form",
+		"class"       => "",
+		"category"    => __( "Content", "EquityX" ),
+		"description" => __( "Create custom form." ),
+		"params"      => array(
+			array(
+				"type"       => "checkbox",
+				"holder"     => "div",
+				"class"      => "",
+				"heading"    => __( "Choose fields for the form", "EquityX" ),
+				"param_name" => "first_name",
+				"value"      => array( 'First Name' => 'first_name' ),
+			),
+			array(
+				"type"       => "checkbox",
+				"holder"     => "div",
+				"class"      => "",
+				"param_name" => "last_name",
+				'value'      => array( 'Last Name' => 'last_name' ),
+			),
+			array(
+				"type"       => "checkbox",
+				"holder"     => "div",
+				"class"      => "",
+				"param_name" => "startup",
+				'value'      => array( 'Startup' => 'startup' ),
+			),
+			array(
+				"type"       => "checkbox",
+				"holder"     => "div",
+				"class"      => "",
+				"param_name" => "email",
+				'value'      => array( 'Email' => 'email' ),
+			),
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"class"       => "",
+				"heading"     => __( "Submit Button Text", "EquityX" ),
+				"param_name"  => "submit_text",
+				"description" => __( "Choose the submit button text", "EquityX" ),
+			),
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"class"       => "",
+				"heading"     => __( "Mail To:", "EquityX" ),
+				"param_name"  => "mail_to",
+			),
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"class"       => "",
+				"heading"     => __( "Mail From:", "EquityX" ),
+				"param_name"  => "mail_from",
+			),
+			array(
+				"type"        => "textfield",
+				"holder"      => "div",
+				"class"       => "",
+				"heading"     => __( "Mail Subject:", "EquityX" ),
+				"param_name"  => "mail_subject",
+			),
+		),
+	));
+}
+
+add_action( 'init', 'form_records_ct' );
+function form_records_ct() {
+
+	$labels = array(
+		'name'                => __( 'Form Records', "EquityX" ),
+		'singular_name'       => __( 'Form Record', "EquityX" ),
+		'add_new'             => __( 'Add New', "EquityX" ),
+		'add_new_item'        => __( 'Add New Form Record', "EquityX" ),
+		'edit_item'           => __( 'Edit Form Record', "EquityX" ),
+		'new_item'            => __( 'New Form Record', "EquityX" ),
+		'all_items'           => __( 'All Form Records', "EquityX" ),
+		'view_item'           => __( 'View Form Record', "EquityX" ),
+		'search_items'        => __( 'Search Form Records', "EquityX" ),
+		'not_found'           => __( 'No Form Records found', "EquityX" ),
+		'not_found_in_trash'  => __( 'No Form Records found in Trash', "EquityX" ),
+		'menu_name'           => __( 'Form Records', "EquityX" ),
+	);
+
+	$supports = array( 'title', 'editor' );
+
+	$slug = get_theme_mod( 'form_record_permalink' );
+	$slug = ( empty( $slug ) ) ? 'event' : $slug;
+
+	$args = array(
+		'labels'              => $labels,
+		'public'              => true,
+		'publicly_queryable'  => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'query_var'           => true,
+		'rewrite'             => array( 'slug' => $slug ),
+		'capability_type'     => 'post',
+		'has_archive'         => true,
+		'hierarchical'        => false,
+		'menu_position'       => null,
+		'supports'            => $supports,
+	);
+
+	register_post_type( 'form-record', $args );
+
+}
+
+add_filter( 'manage_posts_columns', 'form_record_table_head', 10, 2 );
+function form_record_table_head( $defaults, $post_type ) {
+	if ( $post_type == 'form-record' ) {
+		$defaults['email']   = 'Email';
+		$defaults['startup'] = 'Startup';
+		$defaults['sender']  = 'Sent By';
+
+		return $defaults;
+	} else {
+		return $defaults;
+	}
+}
+
+add_action( 'manage_posts_custom_column', 'form_record_table_content', 10, 2 );
+function form_record_table_content( $column_name, $post_id ) {
+	if ($column_name == 'email') {
+		echo get_post_meta( $post_id, '_equityx_email', true );
+	}
+	if ($column_name == 'startup') {
+		echo get_post_meta( $post_id, '_equityx_startup', true );
+	}
+
+	if ($column_name == 'sender') {
+		echo get_post_meta( $post_id, '_equityx_sender', true );
+	}
+
+}
+
+add_action('wp_enqueue_scripts', 'equityx_form_add_script');
+function equityx_form_add_script() {
+	wp_enqueue_script( 'equityx_form-script', get_template_directory_uri().'/js/custom/ajax-form-script.js', array('jquery') );
+	wp_localize_script( 'equityx_form-script', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+}
+
+function ajax_equityx_form_action_callback() {
+	$error = '';
+	$status = 'error';
+	if (empty($_POST['first_name']) || empty($_POST['email']) ) {
+		$error = 'All fields are required to enter.';
+	} else {
+		if (!wp_verify_nonce($_POST['_acf_nonce'], $_POST['action'])) {
+			$error = 'Verification error, try again.';
+		} else {
+
+			$email_to   = $_POST['mail_to'] ? $_POST['mail_to'] : get_option( 'admin_email' );
+			$subject    = $_POST['mail_subject'] ? $_POST['mail_subject'] : '';
+			$first_name = filter_var($_POST['first_name'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+			$last_name = filter_var($_POST['last_name'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+			$email      = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+			$startup    = $_POST['startup'] ? $_POST['startup'] : '';
+			$message    = "From: $first_name $last_name <$email> ";
+			$message   .= $startup ? ' Startup: ' . $startup : '';
+			$header = 'From: '.get_option('blogname').' <noreply@yourdomain.com>'.PHP_EOL;
+			$header .= 'Reply-To: '.$email.PHP_EOL;
+
+			// Create post with data.
+			$new_post = array(
+				'post_title'  => 'Sent from ' . $first_name . ' ' . $last_name,
+				'post_author' => $first_name . ' ' . $last_name,
+				'post_status' => 'publish',
+				'post_date'   => date( 'Y-m-d H:i:s' ),
+				'post_type'   => 'form-record',
+			);
+			$post_id = wp_insert_post($new_post);
+			update_post_meta( $post_id, '_equityx_email', $email );
+			update_post_meta( $post_id, '_equityx_startup', $startup );
+			update_post_meta( $post_id, '_equityx_sender', $first_name . ' ' . $last_name );
+
+			$sendmsg = __( 'Thanks, for the message. We will respond as soon as possible.', 'EquityX' );
+
+			if ( wp_mail( $email_to, $subject, $message, $header ) ) {
+				$status = 'success';
+				$error = $sendmsg;
+			} else {
+				$error = 'Some errors occurred.';
+			}
+		}
+	}
+
+	$resp = array('status' => $status, 'errmessage' => $error);
+	header( "Content-Type: application/json" );
+	echo json_encode($resp);
+	die();
+}
+add_action( 'wp_ajax_equityx_form_action', 'ajax_equityx_form_action_callback' );
+add_action( 'wp_ajax_nopriv_equityx_form_action', 'ajax_equityx_form_action_callback' );
