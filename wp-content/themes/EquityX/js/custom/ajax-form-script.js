@@ -1,17 +1,24 @@
-jQuery(document).ready(function($) {
-
-  // Perform AJAX login on form submit
-  $('form#equityx_form').on('submit', function(e){
-    $.ajax({
-      type: 'POST',
-      dataType: 'json',
-      url: ajax_form_object.ajaxurl,
-      data: $this.serialize(),
-      success: function(data){
-          document.location.href = ajax_from_object.this;
+jQuery(document).ready(function ($) {
+  $('#contactbutton').click(function () {
+    var first_name = $('#first_name').val();
+    var email = $('#email').val();
+    if (!first_name || !email) {
+      $('#contact-msg').html('At least one of the form fields is empty.');
+      return false;
+    } else {
+        $.ajax({
+          type: 'POST',
+          url: ajax_object.ajax_url,
+          data: $('#equityx_form').serialize(),
+          dataType: 'json',
+          success: function (response) {
+            if (response.status == 'success') {
+              $('#equityx_form')[0].reset();
+            }
+            $('#contact-msg').html(response.errmessage);
+          }
+        });
       }
-    });
-    e.preventDefault();
-  });
-
+    }
+  );
 });

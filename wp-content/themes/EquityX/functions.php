@@ -890,48 +890,6 @@ function equityx_form() {
 	));
 }
 
-//function ajax_form_init(){
-//
-//	wp_register_script('ajax-form-script', get_template_directory_uri() . 'js/custom/ajax-form-script.js', array('jquery') );
-//	wp_enqueue_script('ajax-form-script');
-//
-//	wp_localize_script( 'ajax-form-script', 'ajax_form_object', array(
-//		'ajaxurl' => admin_url( 'admin-ajax.php' ),
-//		//'redirecturl' => home_url(),
-//		//'loadingmessage' => __('Sending user info, please wait...')
-//	));
-//
-//}
-//add_action('init', 'ajax_form_init');
-//
-//function ajax_form(){
-//
-//	// First check the nonce, if it fails the function will break
-//	check_ajax_referer( 'ajax-form-nonce', 'security' );
-//
-//	// Nonce is checked, get the POST data and sign user on
-//	$email_to   =  get_option( 'admin_email' );
-//	$subject    = 'test';
-//	$first_name = $_POST['first_name'] ? $_POST['first_name'] : '';
-//	$last_name  = $_POST['last_name'] ? $_POST['last_name'] : '';
-//	$email      = $_POST['email'] ? $_POST['email'] : 'example@example.com';
-//	$startup    = $_POST['startup'] ? $_POST['startup'] : '';
-//	$message    = "From: $first_name $last_name < $email >";
-//	$message   .= '<br/>';
-//	$message   .= $startup ? 'Startup: ' . $startup : '';
-//	$headers    = [
-//		"From: EquityX <wp-contacts@equityx.io>",
-//		"Reply-To: $email",
-//		'content-type: text/html',
-//	];
-//
-//	wp_mail( $email_to, $subject, $message, $headers );
-//
-//	die();
-//}
-//add_action("wp_ajax_contact_send", "ajax_form");
-//add_action("wp_ajax_nopriv_contact_send", "ajax_form");
-
 add_action( 'init', 'form_records_ct' );
 function form_records_ct() {
 
@@ -1001,3 +959,62 @@ function form_record_table_content( $column_name, $post_id ) {
 	}
 
 }
+
+add_action('wp_enqueue_scripts', 'equityx_form_add_script');
+function equityx_form_add_script() {
+	wp_enqueue_script( 'equityx_form-script', get_template_directory_uri().'/js/custom/ajax-form-script.js', array('jquery') );
+	wp_localize_script( 'equityx_form-script', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+}
+
+function ajax_equityx_form_action_callback() {
+	$error = '';
+	$status = 'error';
+	if (empty($_POST['first_name']) || empty($_POST['email']) ) {
+		$error = 'All fields are required to enter.';
+	} else {
+		if (!wp_verify_nonce($_POST['_acf_nonce'], $_POST['action'])) {
+			$error = 'Verification error, try again.';
+		} else {
+
+			$email_to   = $_POST['mail_to'] ? $_POST['mail_to'] : get_option( 'admin_email' );
+			$subject    = $_POST['mail_subject'] ? $_POST['mail_subject'] : '';
+			$first_name = filter_var($_POST['first_name'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+			$last_name = filter_var($_POST['last_name'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+			$email      = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+			$startup    = $_POST['startup'] ? $_POST['startup'] : '';
+			$message    = "From: $first_name $last_name <$email> ";
+			$message   .= $startup ? ' Startup: ' . $startup : '';
+			$header = 'From: '.get_option('blogname').' <noreply@yourdomain.com>'.PHP_EOL;
+			$header .= 'Reply-To: '.$email.PHP_EOL;
+
+			// Create post with data.
+			$new_post = array(
+				'post_title'  => 'Sent from ' . $first_name . ' ' . $last_name,
+				'post_author' => $first_name . ' ' . $last_name,
+				'post_status' => 'publish',
+				'post_date'   => date( 'Y-m-d H:i:s' ),
+				'post_type'   => 'form-record',
+			);
+			$post_id = wp_insert_post($new_post);
+			update_post_meta( $post_id, '_equityx_email', $email );
+			update_post_meta( $post_id, '_equityx_startup', $startup );
+			update_post_meta( $post_id, '_equityx_sender', $first_name . ' ' . $last_name );
+
+			$sendmsg = __( 'Thanks, for the message. We will respond as soon as possible.', 'EquityX' );
+
+			if ( wp_mail( $email_to, $subject, $message, $header ) ) {
+				$status = 'success';
+				$error = $sendmsg;
+			} else {
+				$error = 'Some errors occurred.';
+			}
+		}
+	}
+
+	$resp = array('status' => $status, 'errmessage' => $error);
+	header( "Content-Type: application/json" );
+	echo json_encode($resp);
+	die();
+}
+add_action( 'wp_ajax_equityx_form_action', 'ajax_equityx_form_action_callback' );
+add_action( 'wp_ajax_nopriv_equityx_form_action', 'ajax_equityx_form_action_callback' );

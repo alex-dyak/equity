@@ -1,38 +1,6 @@
 <?php
 $atts = vc_map_get_attributes( $this->getShortcode(), $atts );
 extract( $atts );
-
-if ( ! empty( $_POST ) ) {
-	$email_to   = $mail_to ? $mail_to : get_option( 'admin_email' );
-	$subject    = $mail_subject ? $mail_subject : '';
-	$first_name = $_POST['first_name'] ? $_POST['first_name'] : '';
-	$last_name  = $_POST['last_name'] ? $_POST['last_name'] : '';
-	$email      = $_POST['email'] ? $_POST['email'] : 'example@example.com';
-	$startup    = $_POST['startup'] ? $_POST['startup'] : '';
-	$message    = "From: $first_name $last_name < $email >";
-	$message   .= '<br/>';
-	$message   .= $startup ? 'Startup: ' . $startup : '';
-	$headers    = [
-		"From: EquityX <wp-contacts@equityx.io>",
-		"Reply-To: $email",
-		'content-type: text/html',
-	];
-
-	wp_mail( $email_to, $subject, $message, $headers );
-	$new_post = array(
-		'post_title' => $first_name . ' ' . $last_name,
-		'author' => $first_name . ' ' . $last_name,
-		'post_content' => $message,
-		'post_status' => 'publish',
-		'post_date' => date('Y-m-d H:i:s'),
-		'post_type' => 'form-record',
-	);
-	$post_id = wp_insert_post($new_post);
-	update_post_meta( $post_id, '_equityx_email', $email );
-	update_post_meta( $post_id, '_equityx_startup', $startup );
-	update_post_meta( $post_id, '_equityx_sender', $first_name . ' ' . $last_name );
-}
-
 ?>
 
 
@@ -53,6 +21,10 @@ if ( ! empty( $_POST ) ) {
 		<label for="email"><?php _e( 'Email', 'EquityX' ); ?></label>
 		<input id="email" type="email" name="email" required="required">
 	<?php endif; ?>
-	<input type="submit" class="submit" value="<?php echo $submit_text ? $submit_text : 'Submit'; ?>">
-	<?php wp_nonce_field( 'ajax-form-nonce', 'security' ); ?>
+	<input type="hidden" name="action" value="equityx_form_action" />
+	<?php echo wp_nonce_field( 'equityx_form_action', '_acf_nonce', true, false ); ?>
+	<input type="hidden" name="mail_to" value="<?php echo $mail_to; ?>">
+	<input type="hidden" name="mail_subject" value="<?php echo $mail_subject; ?>">
+	<input type="button" id="contactbutton" class="submit" name="submit" value="<?php echo $submit_text ? $submit_text : 'Submit'; ?>">
 </form>
+<div id="contact-msg"></div>
