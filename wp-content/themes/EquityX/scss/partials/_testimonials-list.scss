@@ -59,6 +59,18 @@ a.testimonials-item {
 		height: 66px;
 	}
 }
+.testimonials-logo {
+	position: absolute;
+	top: 165px;
+	right: 0;
+	z-index: 1000;
+	height: 50px;
+	img {
+		width: auto;
+		max-width: none;
+		height: 100%;
+	}
+}
 .testimonials-client {
 	font-family: $font-medium;
 	color: $stone;
