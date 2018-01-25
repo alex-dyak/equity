@@ -4,7 +4,7 @@ extract( $atts );
 ?>
 
 
-<form id="equityx_form" class="equityx-custom-form" method="post">
+<form id="equityx_form" class="equityx-custom-form js-equityx-form" method="post">
 	<?php if( $first_name ) : ?>
 		<label for="first_name"><?php _e( 'First Name', 'EquityX' ); ?></label>
 		<input id="first_name" type="text" name="first_name" required="required">
@@ -26,5 +26,5 @@ extract( $atts );
 	<input type="hidden" name="mail_to" value="<?php echo $mail_to; ?>">
 	<input type="hidden" name="mail_subject" value="<?php echo $mail_subject; ?>">
 	<input type="button" id="contactbutton" class="submit" name="submit" value="<?php echo $submit_text ? $submit_text : 'Submit'; ?>">
+	<div id="contact-msg"></div>
 </form>
-<div id="contact-msg"></div>

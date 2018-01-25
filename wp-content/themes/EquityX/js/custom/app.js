@@ -200,5 +200,39 @@
             }
         }
 
+        // Custom Form - active label
+        $('.js-equityx-form').find('input, textarea').on('keyup blur focus', function (e) {
+
+            var $this = $(this),
+                label = $this.prev('label');
+
+            if (e.type === 'keyup') {
+                console.log('keyup');
+                if ($this.val() === '') {
+                    label.removeClass('is-active is-focus');
+                } else {
+                    label.addClass('is-active is-focus');
+                }
+            } else if (e.type === 'blur') {
+                console.log('blur');
+                if( $this.val() === '' ) {
+                    label.removeClass('is-active is-focus');
+                } else {
+                    label.removeClass('is-focus');
+                }
+            } else if (e.type === 'focus') {
+                console.log('focus');
+
+                if( $this.val() === '' ) {
+                    label.removeClass('is-active is-focus');
+                    label.addClass('is-active is-focus');
+                }
+                else if( $this.val() !== '' ) {
+                    label.addClass('is-focus');
+                }
+            }
+
+        });
+
     });
 })();
