@@ -250,8 +250,12 @@
 	text-align: center;
 	@include breakpoint(medium) {
 		text-align: left;
-		max-width: 430px;
+		max-width: 500px;
 		font-size: 22px;
+	}
+	ul, ol {
+		margin: 0 0 1em 1em;
+		padding: 0;
 	}
 }
 .introLanding-inner-leftCol {
