@@ -13,9 +13,9 @@ extract( $atts );
 		<label for="last_name"><?php _e( 'Last Name', 'EquityX' ); ?></label>
 		<input id="last_name" type="text" name="last_name" required="required">
 	<?php endif; ?>
-	<?php if( $startup ) : ?>
-		<label for="startup"><?php _e( 'Startup', 'EquityX' ); ?></label>
-		<input id="startup" type="text" name="startup" required="required">
+	<?php if( $company ) : ?>
+		<label for="company"><?php _e( 'Company', 'EquityX' ); ?></label>
+		<input id="company" type="text" name="company" required="required">
 	<?php endif; ?>
 	<?php if( $email ) : ?>
 		<label for="email"><?php _e( 'Email', 'EquityX' ); ?></label>
