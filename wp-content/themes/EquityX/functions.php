@@ -984,7 +984,7 @@ function ajax_equityx_form_action_callback() {
 			$company    = $_POST['company'] ? $_POST['company'] : '';
 			$message    = "From: $first_name $last_name <$email> ";
 			$message   .= $company ? ' Company: ' . $company : '';
-			$header = 'From: '.get_option('blogname').' <noreply@yourdomain.com>'.PHP_EOL;
+			$header = 'From: '.get_option('blogname').' <wp-contacts@equityx.io>'.PHP_EOL;
 			$header .= 'Reply-To: '.$email.PHP_EOL;
 
 			// Create post with data.
@@ -1000,7 +1000,7 @@ function ajax_equityx_form_action_callback() {
 			update_post_meta( $post_id, '_equityx_company', $company );
 			update_post_meta( $post_id, '_equityx_sender', $first_name . ' ' . $last_name );
 
-			$sendmsg = __( 'Thanks, for the message. We will respond as soon as possible.', 'EquityX' );
+			$sendmsg = __( 'Thank you. We\'ve received your details and we\'ll be in touch with you soon! The EquityX team.', 'EquityX' );
 
 			if ( wp_mail( $email_to, $subject, $message, $header ) ) {
 				$status = 'success';
