@@ -19,20 +19,32 @@ if ( ! empty( $quantity ) ) :
 			while ( $query->have_posts() ) : $query->the_post();
 				$meta_values = get_post_meta( get_the_ID() );
 				?>
-				<a href="<?php echo add_query_arg('selected_post_id', get_the_ID(), esc_url( home_url() ) . '/testimonials'); ?>"  class="testimonials-item" >
+				<div class="testimonials-item" >
 					<div class="testimonials-item-inner">
                         <?php if ( has_post_thumbnail() ) :
                             $attachment_id = get_post_thumbnail_id();
                             ?>
-                            <div class="testimonials-image">
-                                <?php echo wp_get_attachment_image( $attachment_id, 'testimonial_size' ); ?>
-                            </div>
+                            <a href="<?php echo $meta_values['_testimonial_url'][0] ?>" class="testimonials-image" style="z-index: 1000;">
+								<?php if ( ! empty( $meta_values['_testimonial_url'] ) ) : ?>
+									<?php echo wp_get_attachment_image( $attachment_id, 'testimonial_size' ); ?>
+								<?php else : ?>
+									<?php echo wp_get_attachment_image( $attachment_id, 'testimonial_size' ); ?>
+								<?php endif; ?>
+                            </a>
                         <?php endif; ?>
+						<?php if( get_field( 'testimonials_logo' ) ) : ?>
+							<div class="testimonials-logo">
+								<?php echo wp_get_attachment_image( get_field( 'testimonials_logo' ), 'logo_150_111' ); ?>
+							</div>
+						<?php endif; ?>
 						<div class="testimonials-item-innerAlignment">
 							<div class="testimonials-excerpt">
 								<?php echo
 									substr(get_the_excerpt(), 0,120);
-								?>...
+								?>...<br>
+								<a href="<?php echo add_query_arg('selected_post_id', get_the_ID(), esc_url( home_url() ) . '/testimonials'); ?>">
+									<?php _e( 'Read more', 'EquityX' ) ?>
+								</a>
 							</div>
 						</div>
                         <div class="testimonials-authorInfo">
@@ -53,7 +65,7 @@ if ( ! empty( $quantity ) ) :
                             <?php endif; ?>
                         </div>
 					</div>
-				</a>
+				</div>
 			<?php endwhile; ?>
 		<?php endif; ?>
 	</div>
