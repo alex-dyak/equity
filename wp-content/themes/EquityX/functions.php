@@ -847,8 +847,8 @@ function equityx_form() {
 				"type"       => "checkbox",
 				"holder"     => "div",
 				"class"      => "",
-				"param_name" => "startup",
-				'value'      => array( 'Startup' => 'startup' ),
+				"param_name" => "company",
+				'value'      => array( 'Company' => 'company' ),
 			),
 			array(
 				"type"       => "checkbox",
@@ -936,7 +936,7 @@ add_filter( 'manage_posts_columns', 'form_record_table_head', 10, 2 );
 function form_record_table_head( $defaults, $post_type ) {
 	if ( $post_type == 'form-record' ) {
 		$defaults['email']   = 'Email';
-		$defaults['startup'] = 'Startup';
+		$defaults['company'] = 'Company';
 		$defaults['sender']  = 'Sent By';
 
 		return $defaults;
@@ -950,8 +950,8 @@ function form_record_table_content( $column_name, $post_id ) {
 	if ($column_name == 'email') {
 		echo get_post_meta( $post_id, '_equityx_email', true );
 	}
-	if ($column_name == 'startup') {
-		echo get_post_meta( $post_id, '_equityx_startup', true );
+	if ($column_name == 'company') {
+		echo get_post_meta( $post_id, '_equityx_company', true );
 	}
 
 	if ($column_name == 'sender') {
@@ -981,9 +981,9 @@ function ajax_equityx_form_action_callback() {
 			$first_name = filter_var($_POST['first_name'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
 			$last_name = filter_var($_POST['last_name'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
 			$email      = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-			$startup    = $_POST['startup'] ? $_POST['startup'] : '';
+			$company    = $_POST['company'] ? $_POST['company'] : '';
 			$message    = "From: $first_name $last_name <$email> ";
-			$message   .= $startup ? ' Startup: ' . $startup : '';
+			$message   .= $company ? ' Company: ' . $company : '';
 			$header = 'From: '.get_option('blogname').' <noreply@yourdomain.com>'.PHP_EOL;
 			$header .= 'Reply-To: '.$email.PHP_EOL;
 
@@ -997,7 +997,7 @@ function ajax_equityx_form_action_callback() {
 			);
 			$post_id = wp_insert_post($new_post);
 			update_post_meta( $post_id, '_equityx_email', $email );
-			update_post_meta( $post_id, '_equityx_startup', $startup );
+			update_post_meta( $post_id, '_equityx_company', $company );
 			update_post_meta( $post_id, '_equityx_sender', $first_name . ' ' . $last_name );
 
 			$sendmsg = __( 'Thanks, for the message. We will respond as soon as possible.', 'EquityX' );
