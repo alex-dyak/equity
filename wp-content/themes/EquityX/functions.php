@@ -945,6 +945,7 @@ function form_record_table_head( $defaults, $post_type ) {
 		$defaults['email']   = 'Email';
 		$defaults['company'] = 'Company';
 		$defaults['sender']  = 'Sent By';
+		$defaults['who_you'] = 'Who Are You';
 
 		return $defaults;
 	} else {
@@ -963,6 +964,10 @@ function form_record_table_content( $column_name, $post_id ) {
 
 	if ($column_name == 'sender') {
 		echo get_post_meta( $post_id, '_equityx_sender', true );
+	}
+
+	if ($column_name == 'who_you') {
+		echo get_post_meta( $post_id, '_equityx_who_you', true );
 	}
 
 }
@@ -1008,6 +1013,7 @@ function ajax_equityx_form_action_callback() {
 			update_post_meta( $post_id, '_equityx_email', $email );
 			update_post_meta( $post_id, '_equityx_company', $company );
 			update_post_meta( $post_id, '_equityx_sender', $first_name . ' ' . $last_name );
+			update_post_meta( $post_id, '_equityx_who_you', $who_are_you );
 
 			$sendmsg = __( 'Thank you. We\'ve received your details and we\'ll be in touch with you soon! The EquityX team.', 'EquityX' );
 
