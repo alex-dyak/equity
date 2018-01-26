@@ -21,6 +21,13 @@ extract( $atts );
 		<label for="email"><?php _e( 'Email', 'EquityX' ); ?></label>
 		<input id="email" type="email" name="email" required="required">
 	<?php endif; ?>
+	<?php if( $who_are_you ) : ?>
+		<label for="who_are_you"><?php _e( 'I am a:', 'EquityX' ); ?></label>
+		<input type="radio" name="who_are_you" VALUE="expert"><?php _e( 'Industry expert', 'EquityX' ); ?>
+		<input type="radio" name="who_are_you" VALUE="investor"><?php _e( 'Investor', 'EquityX' ); ?>
+		<input type="radio" name="who_are_you" VALUE="startup"><?php _e( 'Startup', 'EquityX' ); ?>
+		<input type="radio" name="who_are_you" VALUE="other"><?php _e( 'Other..', 'EquityX' ); ?>
+	<?php endif; ?>
 	<input type="hidden" name="action" value="equityx_form_action" />
 	<?php echo wp_nonce_field( 'equityx_form_action', '_acf_nonce', true, false ); ?>
 	<input type="hidden" name="mail_to" value="<?php echo $mail_to; ?>">

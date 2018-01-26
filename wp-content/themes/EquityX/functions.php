@@ -858,6 +858,13 @@ function equityx_form() {
 				'value'      => array( 'Email' => 'email' ),
 			),
 			array(
+				"type"       => "checkbox",
+				"holder"     => "div",
+				"class"      => "",
+				"param_name" => "who_are_you",
+				'value'      => array( 'Who are you' => 'who_are_you' ),
+			),
+			array(
 				"type"        => "textfield",
 				"holder"      => "div",
 				"class"       => "",
@@ -976,16 +983,18 @@ function ajax_equityx_form_action_callback() {
 			$error = 'Verification error, try again.';
 		} else {
 
-			$email_to   = $_POST['mail_to'] ? $_POST['mail_to'] : get_option( 'admin_email' );
-			$subject    = $_POST['mail_subject'] ? $_POST['mail_subject'] : '';
-			$first_name = filter_var($_POST['first_name'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
-			$last_name = filter_var($_POST['last_name'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
-			$email      = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-			$company    = $_POST['company'] ? $_POST['company'] : '';
-			$message    = "From: $first_name $last_name <$email> ";
-			$message   .= $company ? ' Company: ' . $company : '';
-			$header = 'From: '.get_option('blogname').' <wp-contacts@equityx.io>'.PHP_EOL;
-			$header .= 'Reply-To: '.$email.PHP_EOL;
+			$email_to    = $_POST['mail_to'] ? $_POST['mail_to'] : get_option( 'admin_email' );
+			$subject     = $_POST['mail_subject'] ? $_POST['mail_subject'] : '';
+			$first_name  = filter_var( $_POST['first_name'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW );
+			$last_name   = filter_var( $_POST['last_name'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW );
+			$email       = filter_var( $_POST['email'], FILTER_SANITIZE_EMAIL );
+			$company     = $_POST['company'] ? $_POST['company'] : '';
+			$who_are_you = $_POST['who_are_you'] ? $_POST['who_are_you'] : '';
+			$message     = "From: $first_name $last_name <$email> ";
+			$message    .= $company ? '. Company: ' . $company : '';
+			$message    .= $who_are_you ? '. I am a: ' . $who_are_you : '';
+			$header      = 'From: ' . get_option( 'blogname' ) . ' <wp-contacts@equityx.io>' . PHP_EOL;
+			$header     .= 'Reply-To: ' . $email . PHP_EOL;
 
 			// Create post with data.
 			$new_post = array(
