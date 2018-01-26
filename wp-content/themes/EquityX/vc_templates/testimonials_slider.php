@@ -26,9 +26,9 @@ if ( ! empty( $quantity ) ) :
                             ?>
                             <a href="<?php echo $meta_values['_testimonial_url'][0] ?>" class="testimonials-image" style="z-index: 1000;">
 								<?php if ( ! empty( $meta_values['_testimonial_url'] ) ) : ?>
-									<?php echo wp_get_attachment_image( $attachment_id, 'testimonial_size' ); ?>
+									<?php echo wp_get_attachment_image( $attachment_id, 'full' ); ?>
 								<?php else : ?>
-									<?php echo wp_get_attachment_image( $attachment_id, 'testimonial_size' ); ?>
+									<?php echo wp_get_attachment_image( $attachment_id, 'full' ); ?>
 								<?php endif; ?>
                             </a>
                         <?php endif; ?>
