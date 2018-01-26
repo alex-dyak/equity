@@ -15,7 +15,8 @@
 	line-height: $lineHeight-base;
 	text-align: center;
 	@media screen and (min-width: 480px) {
-		float: left;
+		display: inline-block;
+		//float: left;
 		width: 50%;
 		//padding-bottom: 35px;
 		margin-bottom: 40px;
