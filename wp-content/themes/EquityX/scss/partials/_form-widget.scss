@@ -1,4 +1,4 @@
-.equityx-custom-form {
+.customForm {
     position: relative;
     width: 100%;
     padding: 30px 30px 10px 30px;
@@ -31,20 +31,12 @@
         }
     }
     label {
-        display: inline-block;
         color: $gray--80op;
-        transform: translate(10px, 35px) scale(1);
         transition: all .3s;
         cursor: text;
         -moz-user-select: none;
         -khtml-user-select: none;
         user-select: none;
-        &.is-active {
-            transform: translate(0, 8px) scale(0.8);
-        }
-        &.is-focus {
-            color: $blue--dark;
-        }
     }
     input:not([type="button"]) {
         margin-bottom: 10px;
@@ -54,7 +46,65 @@
         width: 100%;
         margin: 30px auto;
     }
-    #contact-msg {
+    &-inputBox {
+        label {
+            display: inline-block;
+            transform: translate(10px, 35px) scale(1);
+            &.is-active {
+                transform: translate(0, 8px) scale(0.8);
+            }
+            &.is-focus {
+                color: $blue--dark;
+            }
+        }
+    }
+    &-checkBox {
+        padding: 15px 10px;
+        label {
+            display: block;
+            margin: 5px 0;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        label > input[type="radio"] {
+            display: none;
+        }
+        input[type="radio"] + span:before {
+            content: "\f096";
+            display: inline-block;
+            margin-right: 5px;
+            font-family: "FontAwesome";
+            font-weight: normal;
+            width: 1em;
+        }
+        /**--- Checked ---**/
+        input[type="radio"]:checked + span:before {
+            content: "\f14a";
+            color: $blue--dark;
+            animation: pop 180ms ease-in;
+        }
+        /**--- Disabled ---**/
+        input[type="radio"]:disabled + span {
+            color: $gray--80op;
+        }
+        input[type="radio"]:disabled + span:before {
+            content: "\f0c8";
+            color: $gray--80op;
+        }
+        /**--- Animation ---**/
+        @keyframes pop {
+            0% {
+                transform: scale(0);
+            }
+            90% {
+                transform: scale(1.4);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    }
+    &-message {
         text-align: center;
     }
 }
