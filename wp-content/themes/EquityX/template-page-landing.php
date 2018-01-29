@@ -52,12 +52,10 @@ get_header(); ?>
 									?>
 								</div>
 								<?php } ?>
-								<?php if( get_field( 'text_above_the_button' ) ) : ?>
-									<div class="introSection-text">
-										<?php the_field( 'text_above_the_button' ); ?>
-									</div>
-								<?php endif; ?>
 								<div class="introSection-btnBox displeyOnDesktop">
+									<?php if( get_field( 'text_above_the_button' ) ) : ?>
+										<?php the_field( 'text_above_the_button' ); ?>
+									<?php endif; ?>
 									<a href="<?php echo $button_url ?>" class="btn"><?php echo $button_text ?></a>
 								</div>
 							</div>
@@ -70,6 +68,9 @@ get_header(); ?>
 											class="introLanding-description"><?php echo $template_intro_descript; ?></div>
 								<?php endif; ?>
 								<div class="introSection-btnBox displeyOnMobile">
+									<?php if( get_field( 'text_above_the_button' ) ) : ?>
+										<?php the_field( 'text_above_the_button' ); ?>
+									<?php endif; ?>
 									<a href="<?php echo $button_url ?>" class="btn"><?php echo $button_text ?></a>
 								</div>
 							</div>
