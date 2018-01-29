@@ -52,6 +52,11 @@ get_header(); ?>
 									?>
 								</div>
 								<?php } ?>
+								<?php if( get_field( 'text_above_the_button' ) ) : ?>
+									<div class="introSection-text">
+										<?php the_field( 'text_above_the_button' ); ?>
+									</div>
+								<?php endif; ?>
 								<div class="introSection-btnBox displeyOnDesktop">
 									<a href="<?php echo $button_url ?>" class="btn"><?php echo $button_text ?></a>
 								</div>
