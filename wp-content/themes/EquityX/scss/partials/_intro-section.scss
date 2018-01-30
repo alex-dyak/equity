@@ -265,6 +265,9 @@
 	@include breakpoint(large) {
 		font-size: 22px;
 	}
+	p {
+		margin: 0;
+	}
 	ul, ol {
 		display: inline-block;
 		margin: 0 0 1em 1em;
