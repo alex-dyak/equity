@@ -66,6 +66,17 @@
     } else {
 	    $login_google = '';
     }
+
+    if ( get_option( 'expert_link_name' ) ) {
+      $expert_button_name = get_option( 'expert_link_name' );
+    } else {
+      $expert_button_name = '';
+    }
+    if ( get_option( 'expert_link' ) ) {
+      $expert_button_link = get_option( 'expert_link' );
+    } else {
+      $expert_button_link = '';
+    }
     ?>
 
     <div class="mobileMenu js-mobWrap">
@@ -78,7 +89,9 @@
                     alt=""/></a>
         </div>
         <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+        <?php wp_nav_menu( array( 'theme_location' => 'mobile-menu' ) ); ?>
         <?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
+
     </div><!-- Mobile menu -->
 
     <header id="header" class="mainHeader js-header" role="banner">
