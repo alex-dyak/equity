@@ -1,6 +1,13 @@
 <?php
 $atts = vc_map_get_attributes( $this->getShortcode(), $atts );
 extract( $atts );
+
+$pagename = get_query_var('pagename');
+if ( !$pagename && $id > 0 ) {
+	// If a static page is set as the front page, $pagename will not be set. Retrieve it from the queried object
+	$post = $wp_query->get_queried_object();
+	$pagename = $post->post_name;
+}
 ?>
 
 
@@ -48,6 +55,7 @@ extract( $atts );
 	<?php echo wp_nonce_field( 'equityx_form_action', '_acf_nonce', true, false ); ?>
 	<input type="hidden" name="mail_to" value="<?php echo $mail_to; ?>">
 	<input type="hidden" name="mail_subject" value="<?php echo $mail_subject; ?>">
+	<input type="hidden" name="page_name" value="<?php echo $pagename; ?>">
 	<input type="button" id="contactbutton" class="submit" name="submit" value="<?php echo $submit_text ? $submit_text : 'Submit'; ?>">
 	<div id="contact-msg" class="customForm-message"></div>
 </form>
